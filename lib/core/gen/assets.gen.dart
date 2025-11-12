@@ -42,13 +42,36 @@ class $AssetsLottieAnimationsGen {
 class $AssetsSvgIconsGen {
   const $AssetsSvgIconsGen();
 
+  /// File path: assets/svg_icons/App store_ App Icon.png
+  AssetGenImage get appStoreAppIconPng =>
+      const AssetGenImage('assets/svg_icons/App store_ App Icon.png');
+
+  /// File path: assets/svg_icons/App store_ App Icon.svg
+  SvgGenImage get appStoreAppIconSvg =>
+      const SvgGenImage('assets/svg_icons/App store_ App Icon.svg');
+
+  /// File path: assets/svg_icons/Apple Icons Blue.svg
+  SvgGenImage get appleIconsBlue =>
+      const SvgGenImage('assets/svg_icons/Apple Icons Blue.svg');
+
   /// File path: assets/svg_icons/AppleIcon.svg
   SvgGenImage get appleIcon =>
       const SvgGenImage('assets/svg_icons/AppleIcon.svg');
 
+  /// File path: assets/svg_icons/Untitled.zip
+  String get untitled => 'assets/svg_icons/Untitled.zip';
+
+  /// File path: assets/svg_icons/apple icon sign in.svg
+  SvgGenImage get appleIconSignIn =>
+      const SvgGenImage('assets/svg_icons/apple icon sign in.svg');
+
   /// File path: assets/svg_icons/back_icon.svg
   SvgGenImage get backIcon =>
       const SvgGenImage('assets/svg_icons/back_icon.svg');
+
+  /// File path: assets/svg_icons/google icons blue .svg
+  SvgGenImage get googleIconsBlue =>
+      const SvgGenImage('assets/svg_icons/google icons blue .svg');
 
   /// File path: assets/svg_icons/google_icon.svg
   SvgGenImage get googleIcon =>
@@ -62,17 +85,33 @@ class $AssetsSvgIconsGen {
   SvgGenImage get nowlnLogo =>
       const SvgGenImage('assets/svg_icons/nowln_logo.svg');
 
+  /// File path: assets/svg_icons/sign in goole.svg
+  SvgGenImage get signInGoole =>
+      const SvgGenImage('assets/svg_icons/sign in goole.svg');
+
+  /// File path: assets/svg_icons/sign_in_page_icon.svg
+  SvgGenImage get signInPageIcon =>
+      const SvgGenImage('assets/svg_icons/sign_in_page_icon.svg');
+
   /// File path: assets/svg_icons/sign_un_back_scrren..svg
   SvgGenImage get signUnBackScrren =>
       const SvgGenImage('assets/svg_icons/sign_un_back_scrren..svg');
 
   /// List of all assets
   List<dynamic> get values => [
+    appStoreAppIconPng,
+    appStoreAppIconSvg,
+    appleIconsBlue,
     appleIcon,
+    untitled,
+    appleIconSignIn,
     backIcon,
+    googleIconsBlue,
     googleIcon,
     neverBack,
     nowlnLogo,
+    signInGoole,
+    signInPageIcon,
     signUnBackScrren,
   ];
 }
