@@ -192,4 +192,104 @@ class AppsTextStyles {
     letterSpacing: -0.05 * 16, // -5%
     color: const Color(0xFF4C586E),
   );
+  static final TextStyle PasswordDescription = GoogleFonts.workSans(
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 16,
+    height: 1.4, // 140%
+    letterSpacing: -0.05 * 16, // -5%
+    color: const Color(0xFF4C586E),
+  );
+  // ignore: non_constant_identifier_names
+  static final TextStyle SaimTitle = GoogleFonts.alfaSlabOne(
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 52,
+    height: 0.8, // 80%
+    letterSpacing: 0,
+    color: const Color(0xFF011F54),
+  );
+  static final TextStyle typeSomeThingHere = GoogleFonts.alfaSlabOne(
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 32,
+    height: 0.8, // 80%
+    letterSpacing: 0, // 0%
+    color: const Color(0xFF869CBB),
+  );
+  static final TextStyle WorkSansRegular14 = GoogleFonts.workSans(
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 14,
+    height: 1.6, // 160%
+    letterSpacing: 0, // 0px
+    color: const Color(0xFF4C586E),
+  );
+  static final TextStyle extraBold32Centered = GoogleFonts.workSans(
+    fontWeight: FontWeight.w800, // ExtraBold
+    fontSize: 32,
+    height: 1.2, // line-height: 120%
+    letterSpacing: -1,
+    color: const Color(0xFF011F54), // #011F54
+  );
+  static final TextStyle regular32Uppercase = GoogleFonts.alfaSlabOne(
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 32,
+    height: 0.8, // line-height 80%
+    letterSpacing: 0.02 * 32, // 2% of font size
+    // Flutter-এ text-transform নেই, তাই Text widget-এ uppercase ব্যবহার করতে হবে
+    color: Color(0xFF011F54), // চাইলে তোমার color বসাও
+  );
+  static final TextStyle regular16l = GoogleFonts.workSans(
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 16,
+    height: 1.4, // line-height: 140%
+    letterSpacing: -0.5,
+    color: const Color(0xFF011F54), // #011F54
+  );
+  static final TextStyle letsStartNext = GoogleFonts.alfaSlabOne(
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 20,
+    height: 1.4, // line-height: 140%
+    letterSpacing: -0.5,
+    color: const Color(0xFF011F54), // #011F54
+  );
+  static final TextStyle black24Uppercase = GoogleFonts.workSans(
+    fontWeight: FontWeight.w900, // Black
+    fontSize: 24,
+    height: 0.9, // line-height: 90%
+    letterSpacing: -0.5,
+    color: const Color(0xFF011F54), // #011F54
+  );
+  static final TextStyle extraBold16 = GoogleFonts.workSans(
+    fontWeight: FontWeight.w800, // ExtraBold
+    fontSize: 16,
+    height: 1.4, // line-height: 140%
+    letterSpacing: -0.5, // -0.5px
+    color: const Color(0xFF011F54), // #011F54
+  );
+  static final TextStyle extraBold22 = GoogleFonts.workSans(
+    fontWeight: FontWeight.w800, // ExtraBold
+    fontSize: 22.31,
+    height: 1.4, // line-height: 140%
+    letterSpacing: -0.56, // -0.56px
+    color: const Color(0xFF011F54), // #011F54
+  );
+  static final TextStyle black24UppercaseSome = GoogleFonts.workSans(
+    fontWeight: FontWeight.w900, // Black
+    fontSize: 24,
+    height: 0.9, // line-height: 90%
+    letterSpacing: -0.5, // -0.5px
+    color: const Color(0xFFFFFCF1), // #FFFCF1
+  );
+  static final TextStyle regular18 = GoogleFonts.workSans(
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 18,
+    height: 1.4, // line-height: 140%
+    letterSpacing: -0.5, // -0.5px
+    color: const Color(0xFFFFFCF1), // #FFFCF1
+  );
+  static final TextStyle semiBold18 = GoogleFonts.workSans(
+    fontWeight: FontWeight.w600, // SemiBold
+    fontSize: 18,
+    height: 1.4, // line-height: 140%
+    letterSpacing: -0.5, // -0.5px
+    color: const Color(0xFFFFFCF1), // #FFFCF1
+  );
 }

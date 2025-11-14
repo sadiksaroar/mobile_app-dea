@@ -14,13 +14,12 @@ class _PulsingEntryScreenState extends State<PulsingEntryScreen>
   @override
   void initState() {
     super.initState();
-    // Initialize the animation controller for pulsing effect
     _controller = AnimationController(
       vsync: this,
       duration: Duration(seconds: 1),
       lowerBound: 0.8,
       upperBound: 1.2,
-    )..repeat(reverse: true); // Make the pulsing effect repeat
+    )..repeat(reverse: true);
 
     _scaleAnimation = Tween<double>(begin: 0.8, end: 1.2).animate(_controller);
   }

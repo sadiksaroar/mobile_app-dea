@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_dea/core/gen/assets.gen.dart';
+import 'package:mobile_app_dea/screen/Onboarding/gender_page.dart';
+import 'package:mobile_app_dea/screen/Onboarding/name_page.dart' show NamePage;
 
 class OnboardingFlow extends StatefulWidget {
   const OnboardingFlow({Key? key}) : super(key: key);
@@ -79,25 +82,25 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
                 children: [
                   IconButton(
                     onPressed: previousPage,
-                    icon: const Icon(Icons.arrow_back_ios, size: 20),
+                    icon: Assets.svgIcons.signUnBackScrren.svg(height: 60),
                   ),
                   Expanded(
                     child: Stack(
                       children: [
                         Container(
-                          height: 4,
+                          height: 12,
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.5),
-                            borderRadius: BorderRadius.circular(2),
+                            color: Color(0xFFC3DBFF),
+                            borderRadius: BorderRadius.circular(999),
                           ),
                         ),
                         FractionallySizedBox(
                           widthFactor: (currentPage + 1) / 5,
                           child: Container(
-                            height: 4,
+                            height: 14,
                             decoration: BoxDecoration(
-                              color: const Color(0xFF4E5FFF),
-                              borderRadius: BorderRadius.circular(2),
+                              color: const Color(0xFF3D87F5),
+                              borderRadius: BorderRadius.circular(999),
                             ),
                           ),
                         ),
@@ -121,16 +124,17 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
                 controller: _pageController,
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
-                  // NamePage(
-                  //   onContinue: nextPage,
-                  //   onNameChanged: updateName,
-                  //   initialName: userName,
-                  // ),
-                  // GenderPage(
-                  //   userName: userName,
-                  //   selectedGender: selectedGender,
-                  //   onGenderSelected: selectGender,
-                  // ),
+                  NamePage(
+                    onContinue: nextPage,
+                    onNameChanged: updateName,
+                    initialName: userName,
+                  ),
+                  GenderPage(
+                    userName: userName,
+                    selectedGender: selectedGender,
+                    onGenderSelected: selectGender,
+                  ),
+
                   // GenderPageVariant(
                   //   userName: userName,
                   //   selectedGender: selectedGender,

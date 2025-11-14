@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
+import 'package:mobile_app_dea/screen/Onboarding/nowli_how_to_use.dart';
+import 'package:mobile_app_dea/screen/Onboarding/onboarding_features/onbording_fetures.dart';
 import 'package:mobile_app_dea/screen/Onboarding/onbording_flow_file/onboarding_flow.dart';
 import 'package:mobile_app_dea/screen/auth/enter_new_password.dart';
 import 'package:mobile_app_dea/screen/auth/resent_password_page.dart';
@@ -37,9 +39,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: OnboardingFlow(), // Your EntryScreen widget
-        builder: DevicePreview
-            .appBuilder, // Use DevicePreview for all screens in development
+        home: NowliHowToUse(), // Your EntryScreen widget
+        builder: DevicePreview.appBuilder,
       ),
     );
   }

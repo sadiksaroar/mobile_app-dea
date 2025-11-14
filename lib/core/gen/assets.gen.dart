@@ -58,8 +58,24 @@ class $AssetsSvgIconsGen {
   SvgGenImage get appleIcon =>
       const SvgGenImage('assets/svg_icons/AppleIcon.svg');
 
-  /// File path: assets/svg_icons/Untitled.zip
-  String get untitled => 'assets/svg_icons/Untitled.zip';
+  /// File path: assets/svg_icons/DAILY MOMENTS Png.png
+  AssetGenImage get dAILYMOMENTSPng =>
+      const AssetGenImage('assets/svg_icons/DAILY MOMENTS Png.png');
+
+  /// File path: assets/svg_icons/DAILY MOMENTS.svg
+  SvgGenImage get dailyMoments =>
+      const SvgGenImage('assets/svg_icons/DAILY MOMENTS.svg');
+
+  /// File path: assets/svg_icons/EMOTIONAL SUPPORT.svg
+  SvgGenImage get emotionalSupport =>
+      const SvgGenImage('assets/svg_icons/EMOTIONAL SUPPORT.svg');
+
+  /// File path: assets/svg_icons/REAL COMPANY.svg
+  SvgGenImage get realCompany =>
+      const SvgGenImage('assets/svg_icons/REAL COMPANY.svg');
+
+  /// File path: assets/svg_icons/Untitled (Copy).zip
+  String get untitledCopy => 'assets/svg_icons/Untitled (Copy).zip';
 
   /// File path: assets/svg_icons/apple icon sign in.svg
   SvgGenImage get appleIconSignIn =>
@@ -68,6 +84,10 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/back_icon.svg
   SvgGenImage get backIcon =>
       const SvgGenImage('assets/svg_icons/back_icon.svg');
+
+  /// File path: assets/svg_icons/check-circle-01-passwprd update.svg
+  SvgGenImage get checkCircle01PasswprdUpdate =>
+      const SvgGenImage('assets/svg_icons/check-circle-01-passwprd update.svg');
 
   /// File path: assets/svg_icons/google icons blue .svg
   SvgGenImage get googleIconsBlue =>
@@ -80,6 +100,10 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/never_back.png
   AssetGenImage get neverBack =>
       const AssetGenImage('assets/svg_icons/never_back.png');
+
+  /// File path: assets/svg_icons/nowli_how_to_use.svg
+  SvgGenImage get nowliHowToUse =>
+      const SvgGenImage('assets/svg_icons/nowli_how_to_use.svg');
 
   /// File path: assets/svg_icons/nowln_logo.svg
   SvgGenImage get nowlnLogo =>
@@ -97,22 +121,33 @@ class $AssetsSvgIconsGen {
   SvgGenImage get signUnBackScrren =>
       const SvgGenImage('assets/svg_icons/sign_un_back_scrren..svg');
 
+  /// File path: assets/svg_icons/start_lets_go.svg
+  SvgGenImage get startLetsGo =>
+      const SvgGenImage('assets/svg_icons/start_lets_go.svg');
+
   /// List of all assets
   List<dynamic> get values => [
     appStoreAppIconPng,
     appStoreAppIconSvg,
     appleIconsBlue,
     appleIcon,
-    untitled,
+    dAILYMOMENTSPng,
+    dailyMoments,
+    emotionalSupport,
+    realCompany,
+    untitledCopy,
     appleIconSignIn,
     backIcon,
+    checkCircle01PasswprdUpdate,
     googleIconsBlue,
     googleIcon,
     neverBack,
+    nowliHowToUse,
     nowlnLogo,
     signInGoole,
     signInPageIcon,
     signUnBackScrren,
+    startLetsGo,
   ];
 }
 
