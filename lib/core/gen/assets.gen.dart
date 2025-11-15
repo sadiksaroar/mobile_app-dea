@@ -20,6 +20,13 @@ class $AssetsLottieAnimationsGen {
   /// File path: assets/lottie_animations/A fitness cow.json
   String get aFitnessCow => 'assets/lottie_animations/A fitness cow.json';
 
+  /// File path: assets/lottie_animations/Dancing llama.json
+  String get dancingLlama => 'assets/lottie_animations/Dancing llama.json';
+
+  /// File path: assets/lottie_animations/Easter Bunny Boy waving.json
+  String get easterBunnyBoyWaving =>
+      'assets/lottie_animations/Easter Bunny Boy waving.json';
+
   /// File path: assets/lottie_animations/Food loading.json
   String get foodLoading => 'assets/lottie_animations/Food loading.json';
 
@@ -33,6 +40,8 @@ class $AssetsLottieAnimationsGen {
   /// List of all assets
   List<String> get values => [
     aFitnessCow,
+    dancingLlama,
+    easterBunnyBoyWaving,
     foodLoading,
     sandyLoading,
     watermelonFixing,
@@ -73,9 +82,6 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/REAL COMPANY.svg
   SvgGenImage get realCompany =>
       const SvgGenImage('assets/svg_icons/REAL COMPANY.svg');
-
-  /// File path: assets/svg_icons/Untitled (Copy).zip
-  String get untitledCopy => 'assets/svg_icons/Untitled (Copy).zip';
 
   /// File path: assets/svg_icons/apple icon sign in.svg
   SvgGenImage get appleIconSignIn =>
@@ -135,7 +141,6 @@ class $AssetsSvgIconsGen {
     dailyMoments,
     emotionalSupport,
     realCompany,
-    untitledCopy,
     appleIconSignIn,
     backIcon,
     checkCircle01PasswprdUpdate,
@@ -158,6 +163,10 @@ class $AssetsSvgImagesGen {
   SvgGenImage get appIcon =>
       const SvgGenImage('assets/svg_images/App Icon.svg');
 
+  /// File path: assets/svg_images/Popup_Speaking.png
+  AssetGenImage get popupSpeaking =>
+      const AssetGenImage('assets/svg_images/Popup_Speaking.png');
+
   /// File path: assets/svg_images/enttry_two_screnn.png
   AssetGenImage get enttryTwoScrenn =>
       const AssetGenImage('assets/svg_images/enttry_two_screnn.png');
@@ -177,6 +186,7 @@ class $AssetsSvgImagesGen {
   /// List of all assets
   List<dynamic> get values => [
     appIcon,
+    popupSpeaking,
     enttryTwoScrenn,
     onboarding,
     readyToStart,

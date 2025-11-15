@@ -49,7 +49,7 @@ class NowliHowToUse extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: Colors.green[50],
+                      color: Color(0xFFA0E871),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Row(
@@ -61,7 +61,10 @@ class NowliHowToUse extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: Assets.svgIcons.nowliHowToUse.svg(),
+                          child: Assets.svgIcons.nowliHowToUse.svg(
+                            height: 40,
+                            width: 40,
+                          ),
                         ),
                         const SizedBox(width: 16),
                         Expanded(

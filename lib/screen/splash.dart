@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
-class PulsingEntryScreen extends StatefulWidget {
+class Splash extends StatefulWidget {
+  const Splash({super.key});
+
   @override
-  _PulsingEntryScreenState createState() => _PulsingEntryScreenState();
+  // ignore: library_private_types_in_public_api
+  _SplashState createState() => _SplashState();
 }
 
-class _PulsingEntryScreenState extends State<PulsingEntryScreen>
-    with SingleTickerProviderStateMixin {
+class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
 
@@ -22,6 +25,13 @@ class _PulsingEntryScreenState extends State<PulsingEntryScreen>
     )..repeat(reverse: true);
 
     _scaleAnimation = Tween<double>(begin: 0.8, end: 1.2).animate(_controller);
+
+    Future.delayed(Duration(seconds: 5), () {
+      // Navigate to the next screen after the splash duration
+      if (mounted) {
+        context.go('/entryScreen');
+      }
+    });
   }
 
   @override
