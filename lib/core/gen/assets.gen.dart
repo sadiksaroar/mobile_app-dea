@@ -115,6 +115,10 @@ class $AssetsSvgIconsGen {
   SvgGenImage get nowlnLogo =>
       const SvgGenImage('assets/svg_icons/nowln_logo.svg');
 
+  /// File path: assets/svg_icons/popup_spwaking_cross.svg
+  SvgGenImage get popupSpwakingCross =>
+      const SvgGenImage('assets/svg_icons/popup_spwaking_cross.svg');
+
   /// File path: assets/svg_icons/sign in goole.svg
   SvgGenImage get signInGoole =>
       const SvgGenImage('assets/svg_icons/sign in goole.svg');
@@ -149,6 +153,7 @@ class $AssetsSvgIconsGen {
     neverBack,
     nowliHowToUse,
     nowlnLogo,
+    popupSpwakingCross,
     signInGoole,
     signInPageIcon,
     signUnBackScrren,
@@ -163,9 +168,17 @@ class $AssetsSvgImagesGen {
   SvgGenImage get appIcon =>
       const SvgGenImage('assets/svg_images/App Icon.svg');
 
+  /// File path: assets/svg_images/Popup_Choose mood updates.png
+  AssetGenImage get popupChooseMoodUpdates =>
+      const AssetGenImage('assets/svg_images/Popup_Choose mood updates.png');
+
   /// File path: assets/svg_images/Popup_Speaking.png
   AssetGenImage get popupSpeaking =>
       const AssetGenImage('assets/svg_images/Popup_Speaking.png');
+
+  /// File path: assets/svg_images/Subscription Popup.png
+  AssetGenImage get subscriptionPopup =>
+      const AssetGenImage('assets/svg_images/Subscription Popup.png');
 
   /// File path: assets/svg_images/enttry_two_screnn.png
   AssetGenImage get enttryTwoScrenn =>
@@ -175,9 +188,37 @@ class $AssetsSvgImagesGen {
   SvgGenImage get onboarding =>
       const SvgGenImage('assets/svg_images/onboarding.svg');
 
+  /// File path: assets/svg_images/popUpSpekingTwoCarton.png
+  AssetGenImage get popUpSpekingTwoCarton =>
+      const AssetGenImage('assets/svg_images/popUpSpekingTwoCarton.png');
+
+  /// File path: assets/svg_images/popupSpeking.png
+  AssetGenImage get popupSpeking =>
+      const AssetGenImage('assets/svg_images/popupSpeking.png');
+
+  /// File path: assets/svg_images/popupSpekingeacond.png
+  AssetGenImage get popupSpekingeacond =>
+      const AssetGenImage('assets/svg_images/popupSpekingeacond.png');
+
+  /// File path: assets/svg_images/popup_chosse mood updates.png
+  AssetGenImage get popupChosseMoodUpdates =>
+      const AssetGenImage('assets/svg_images/popup_chosse mood updates.png');
+
+  /// File path: assets/svg_images/popup_scree_liner.png
+  AssetGenImage get popupScreeLiner =>
+      const AssetGenImage('assets/svg_images/popup_scree_liner.png');
+
+  /// File path: assets/svg_images/popup_screen_carton.png
+  AssetGenImage get popupScreenCarton =>
+      const AssetGenImage('assets/svg_images/popup_screen_carton.png');
+
   /// File path: assets/svg_images/ready_to_start.svg
   SvgGenImage get readyToStart =>
       const SvgGenImage('assets/svg_images/ready_to_start.svg');
+
+  /// File path: assets/svg_images/twoColorPopupSpkeing.png
+  AssetGenImage get twoColorPopupSpkeing =>
+      const AssetGenImage('assets/svg_images/twoColorPopupSpkeing.png');
 
   /// File path: assets/svg_images/welcome_back.svg
   SvgGenImage get welcomeBack =>
@@ -186,10 +227,19 @@ class $AssetsSvgImagesGen {
   /// List of all assets
   List<dynamic> get values => [
     appIcon,
+    popupChooseMoodUpdates,
     popupSpeaking,
+    subscriptionPopup,
     enttryTwoScrenn,
     onboarding,
+    popUpSpekingTwoCarton,
+    popupSpeking,
+    popupSpekingeacond,
+    popupChosseMoodUpdates,
+    popupScreeLiner,
+    popupScreenCarton,
     readyToStart,
+    twoColorPopupSpkeing,
     welcomeBack,
   ];
 }

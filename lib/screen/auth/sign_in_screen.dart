@@ -297,6 +297,7 @@
 import 'package:flutter/gestures.dart' show TapGestureRecognizer;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart' show Assets;
 import 'package:mobile_app_dea/themes/text_styles.dart' show AppsTextStyles;
@@ -534,12 +535,17 @@ class _SignInScreenState extends State<SignInScreen> {
               Center(
                 child: RichText(
                   text: TextSpan(
-                    text: "Already have an account? → ",
+                    text: "Don't have an account? → ",
                     style: AppsTextStyles.workSansSemiBold16,
                     children: [
                       TextSpan(
-                        text: "Sign in",
+                        text: "Sign up",
                         style: AppsTextStyles.workSansSemiBold16SignInAlread,
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            // Navigate to the Sign-Up page
+                            context.push("/signUpScreen");
+                          },
                       ),
                     ],
                   ),

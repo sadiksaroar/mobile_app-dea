@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
@@ -30,7 +31,9 @@ class ReadyToStartScreen extends StatelessWidget {
                         color: Colors.black87,
                         size: 34,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        context.pop();
+                      },
                     ),
                   ),
                 ),
@@ -87,14 +90,6 @@ class ReadyToStartScreen extends StatelessWidget {
 
               const SizedBox(height: 24),
 
-              // Privacy Policy Text
-              // Center(
-              //   child: Text(
-              //     'By signing up, you agree to Nowlii’s Privacy Policy & Terms of Service.',
-              //     style: AppsTextStyles.readyToStart.copyWith(),
-              //     textAlign: TextAlign.center,
-              //   ),
-              // ),
               RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(

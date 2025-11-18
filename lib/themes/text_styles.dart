@@ -50,7 +50,7 @@ class AppsTextStyles {
   static TextStyle signupText = GoogleFonts.alfaSlabOne(
     fontWeight: FontWeight.w400, // Regular (400)
     fontStyle: FontStyle.normal,
-    fontSize: 40.sp, // 50px responsive
+    fontSize: 20.sp, // 50px responsive
 
     textStyle: const TextStyle(
       color: Color(0xFF011F54), // Default color (can override)

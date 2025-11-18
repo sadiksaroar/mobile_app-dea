@@ -134,6 +134,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
@@ -204,7 +205,9 @@ class EntryScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(50),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            context.push("/welcomeScreen");
+                          },
                           child: Text(
                             "Get Started",
                             style: AppsTextStyles.getStarted,
@@ -227,7 +230,9 @@ class EntryScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(50),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            context.push("/signInScreen");
+                          },
                           child: Text(
                             "Have an account?",
                             style: AppsTextStyles.haveAnAccount,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
@@ -29,7 +30,9 @@ class WelcomeScreen extends StatelessWidget {
                         color: Colors.black87,
                         size: 34,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        context.pop();
+                      },
                     ),
                   ),
                 ),
@@ -58,7 +61,9 @@ class WelcomeScreen extends StatelessWidget {
                     'Continue with Google',
                     style: AppsTextStyles.haveAnAccount,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    context.push("/readyToStartScreen");
+                  },
                 ),
               ),
 
@@ -80,24 +85,25 @@ class WelcomeScreen extends StatelessWidget {
                     'Continue with Apple',
                     style: AppsTextStyles.appleAndGoogleText,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    context.push("/readyToStartScreen");
+                  },
                 ),
               ),
 
               const SizedBox(height: 24),
 
               // Privacy Policy Text
-              Center(
-                child: Text(
-                  'By signing up, you agree to Nowlii’s Privacy Policy & Terms of Service.',
-                  style: AppsTextStyles.haveAnAccount.copyWith(
-                    fontSize: 14,
-                    color: Colors.black54,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-
+              // Center(
+              //   child: Text(
+              //     'By signing up, you agree to Nowlii’s Privacy Policy & Terms of Service.',
+              //     style: AppsTextStyles.haveAnAccount.copyWith(
+              //       fontSize: 14,
+              //       color: Colors.black54,
+              //     ),
+              //     textAlign: TextAlign.center,
+              //   ),
+              // ),
               const SizedBox(height: 16),
             ],
           ),
