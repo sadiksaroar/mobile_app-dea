@@ -119,6 +119,10 @@ class $AssetsSvgIconsGen {
   SvgGenImage get popupSpwakingCross =>
       const SvgGenImage('assets/svg_icons/popup_spwaking_cross.svg');
 
+  /// File path: assets/svg_icons/pro_cross_icon.svg
+  SvgGenImage get proCrossIcon =>
+      const SvgGenImage('assets/svg_icons/pro_cross_icon.svg');
+
   /// File path: assets/svg_icons/sign in goole.svg
   SvgGenImage get signInGoole =>
       const SvgGenImage('assets/svg_icons/sign in goole.svg');
@@ -154,6 +158,7 @@ class $AssetsSvgIconsGen {
     nowliHowToUse,
     nowlnLogo,
     popupSpwakingCross,
+    proCrossIcon,
     signInGoole,
     signInPageIcon,
     signUnBackScrren,
@@ -164,12 +169,28 @@ class $AssetsSvgIconsGen {
 class $AssetsSvgImagesGen {
   const $AssetsSvgImagesGen();
 
+  /// File path: assets/svg_images/Android App Icon - Squircle.png
+  AssetGenImage get androidAppIconSquircle =>
+      const AssetGenImage('assets/svg_images/Android App Icon - Squircle.png');
+
   /// File path: assets/svg_images/App Icon.svg
   SvgGenImage get appIcon =>
       const SvgGenImage('assets/svg_images/App Icon.svg');
 
+  /// File path: assets/svg_images/Frame 2147228547.png
+  AssetGenImage get frame2147228547Png =>
+      const AssetGenImage('assets/svg_images/Frame 2147228547.png');
+
+  /// File path: assets/svg_images/Frame 2147228547.svg
+  SvgGenImage get frame2147228547Svg =>
+      const SvgGenImage('assets/svg_images/Frame 2147228547.svg');
+
+  /// File path: assets/svg_images/Popup_Choose mood updates .png
+  AssetGenImage get popupChooseMoodUpdatesPng =>
+      const AssetGenImage('assets/svg_images/Popup_Choose mood updates .png');
+
   /// File path: assets/svg_images/Popup_Choose mood updates.png
-  AssetGenImage get popupChooseMoodUpdates =>
+  AssetGenImage get popupChooseMoodUpdatesPng_ =>
       const AssetGenImage('assets/svg_images/Popup_Choose mood updates.png');
 
   /// File path: assets/svg_images/Popup_Speaking.png
@@ -177,8 +198,12 @@ class $AssetsSvgImagesGen {
       const AssetGenImage('assets/svg_images/Popup_Speaking.png');
 
   /// File path: assets/svg_images/Subscription Popup.png
-  AssetGenImage get subscriptionPopup =>
+  AssetGenImage get subscriptionPopupPng =>
       const AssetGenImage('assets/svg_images/Subscription Popup.png');
+
+  /// File path: assets/svg_images/Subscription Popup.svg
+  SvgGenImage get subscriptionPopupSvg =>
+      const SvgGenImage('assets/svg_images/Subscription Popup.svg');
 
   /// File path: assets/svg_images/enttry_two_screnn.png
   AssetGenImage get enttryTwoScrenn =>
@@ -200,10 +225,6 @@ class $AssetsSvgImagesGen {
   AssetGenImage get popupSpekingeacond =>
       const AssetGenImage('assets/svg_images/popupSpekingeacond.png');
 
-  /// File path: assets/svg_images/popup_chosse mood updates.png
-  AssetGenImage get popupChosseMoodUpdates =>
-      const AssetGenImage('assets/svg_images/popup_chosse mood updates.png');
-
   /// File path: assets/svg_images/popup_scree_liner.png
   AssetGenImage get popupScreeLiner =>
       const AssetGenImage('assets/svg_images/popup_scree_liner.png');
@@ -211,6 +232,10 @@ class $AssetsSvgImagesGen {
   /// File path: assets/svg_images/popup_screen_carton.png
   AssetGenImage get popupScreenCarton =>
       const AssetGenImage('assets/svg_images/popup_screen_carton.png');
+
+  /// File path: assets/svg_images/pro_icon.svg
+  SvgGenImage get proIcon =>
+      const SvgGenImage('assets/svg_images/pro_icon.svg');
 
   /// File path: assets/svg_images/ready_to_start.svg
   SvgGenImage get readyToStart =>
@@ -226,18 +251,23 @@ class $AssetsSvgImagesGen {
 
   /// List of all assets
   List<dynamic> get values => [
+    androidAppIconSquircle,
     appIcon,
-    popupChooseMoodUpdates,
+    frame2147228547Png,
+    frame2147228547Svg,
+    popupChooseMoodUpdatesPng,
+    popupChooseMoodUpdatesPng_,
     popupSpeaking,
-    subscriptionPopup,
+    subscriptionPopupPng,
+    subscriptionPopupSvg,
     enttryTwoScrenn,
     onboarding,
     popUpSpekingTwoCarton,
     popupSpeking,
     popupSpekingeacond,
-    popupChosseMoodUpdates,
     popupScreeLiner,
     popupScreenCarton,
+    proIcon,
     readyToStart,
     twoColorPopupSpkeing,
     welcomeBack,

@@ -2,8 +2,11 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mobile_app_dea/screen/home/contextual_onboarding/contextual_onboarding.dart';
+import 'package:mobile_app_dea/screen/welcome_activetion_flow/popup_choose_mood_updates.dart';
 import 'package:mobile_app_dea/screen/welcome_activetion_flow/procrastination_screen.dart'
     show ProcrastinationScreen;
+import 'package:mobile_app_dea/screen/welcome_activetion_flow/subscription_popup%20.dart';
 
 void main() {
   runApp(
@@ -29,7 +32,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: ProcrastinationScreen(), // Your EntryScreen widget
+        home: HomeScreen(), // Your EntryScreen widget
         // home: SignInScreen(),
         builder: DevicePreview.appBuilder,
       ),
@@ -88,7 +91,9 @@ class MyApp extends StatelessWidget {
 
 
 */
+
 /*
+
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart' show kReleaseMode;
 import 'package:flutter/material.dart';

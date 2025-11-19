@@ -1,237 +1,138 @@
-// import 'package:flutter/material.dart';
-// import 'package:mobile_app_dea/core/gen/assets.gen.dart';
-
-// class ProcrastinationScreen extends StatelessWidget {
-//   const ProcrastinationScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Container(
-//         width: double.infinity,
-//         height: double.infinity,
-//         decoration: BoxDecoration(
-//           // remove 'const' here
-//           image: DecorationImage(
-//             image: Assets.svgImages.popupScreeLiner.image().image,
-//             fit: BoxFit.cover,
-//           ),
-//         ),
-//         child: SafeArea(
-//           child: Column(
-//             children: [
-//               Align(
-//                 alignment: Alignment.topLeft,
-//                 child: Padding(
-//                   padding: const EdgeInsets.all(16.0),
-//                   child: GestureDetector(
-//                     onTap: () {
-//                       Navigator.pop(context);
-//                     },
-//                     child: const CircleAvatar(
-//                       backgroundColor: Colors.white,
-//                       child: Icon(Icons.close, color: Colors.blue),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//               const Spacer(),
-//               Column(
-//                 children: [
-//                   const Padding(
-//                     padding: EdgeInsets.symmetric(horizontal: 24.0),
-//                     child: Text(
-//                       'In one line, how does the procrastination show up to you?',
-//                       textAlign: TextAlign.center,
-//                       style: TextStyle(
-//                         fontSize: 18,
-//                         fontWeight: FontWeight.bold,
-//                         color: Color(0xFF4542EB),
-//                       ),
-//                     ),
-//                   ),
-//                   const SizedBox(height: 40),
-
-//                   Stack(
-//                     alignment: Alignment.center,
-//                     children: [
-//                       Container(
-//                         width: 270,
-//                         height: 270,
-//                         decoration: BoxDecoration(
-//                           // remove 'const' here
-//                           image: DecorationImage(
-//                             image: Assets.svgImages.twoColorPopupSpkeing
-//                                 .image()
-//                                 .image,
-//                             fit: BoxFit.cover,
-//                           ),
-//                         ),
-//                       ),
-//                       Container(
-//                         width: 180,
-//                         height: 180,
-//                         decoration: BoxDecoration(
-//                           // remove 'const' here
-//                           image: DecorationImage(
-//                             image: Assets.svgImages.popupSpeking.image().image,
-//                             fit: BoxFit.cover,
-//                           ),
-//                         ),
-//                         child: Center(
-//                           child: ClipOval(
-//                             child: Assets.svgImages.popUpSpekingTwoCarton.image(
-//                               width: 100,
-//                               height: 100,
-//                               fit: BoxFit.cover,
-//                             ),
-//                           ),
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                   const SizedBox(height: 60),
-//                   Row(
-//                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//                     children: [
-//                       OutlinedButton(
-//                         onPressed: () {},
-//                         style: OutlinedButton.styleFrom(
-//                           side: const BorderSide(color: Colors.blue),
-//                           shape: RoundedRectangleBorder(
-//                             borderRadius: BorderRadius.circular(12),
-//                           ),
-//                           padding: const EdgeInsets.symmetric(
-//                             horizontal: 24,
-//                             vertical: 12,
-//                           ),
-//                         ),
-//                         child: const Text(
-//                           'Choose AI voice',
-//                           style: TextStyle(color: Colors.blue),
-//                         ),
-//                       ),
-//                       OutlinedButton(
-//                         onPressed: () {},
-//                         style: OutlinedButton.styleFrom(
-//                           side: const BorderSide(color: Colors.blue),
-//                           shape: RoundedRectangleBorder(
-//                             borderRadius: BorderRadius.circular(12),
-//                           ),
-//                           padding: const EdgeInsets.symmetric(
-//                             horizontal: 24,
-//                             vertical: 12,
-//                           ),
-//                         ),
-//                         child: const Text(
-//                           'Language',
-//                           style: TextStyle(color: Colors.blue),
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                   const SizedBox(height: 40),
-//                 ],
-//               ),
-//               const Spacer(),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 
-class ProcrastinationScreen extends StatelessWidget {
+class ProcrastinationScreen extends StatefulWidget {
   const ProcrastinationScreen({super.key});
 
-  // Language Bottom Sheet
+  @override
+  State<ProcrastinationScreen> createState() => _ProcrastinationScreenState();
+}
+
+class _ProcrastinationScreenState extends State<ProcrastinationScreen> {
+  String selectedLanguage = "";
+  String selectedVoice = "";
+
+  // -------------------------------
+  // LANGUAGE BOTTOM SHEET
+  // -------------------------------
   void _showLanguageSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      backgroundColor: Colors.white,
-      isScrollControlled: true, // allows custom height/padding
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
       builder: (_) {
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 30), // 30px gap from bottom
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const SizedBox(height: 16),
-              const Text(
-                'Select Language',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              const Divider(),
-              ListTile(
-                title: const Text('English'),
-                onTap: () {
-                  Navigator.pop(context);
-                  _showVoiceSheet(context);
-                },
-              ),
-              ListTile(
-                title: const Text('Deutsch'),
-                onTap: () {
-                  Navigator.pop(context);
-                  _showVoiceSheet(context);
-                },
-              ),
-              ListTile(
-                title: const Text('Español'),
-                onTap: () {
-                  Navigator.pop(context);
-                  _showVoiceSheet(context);
-                },
-              ),
-            ],
+        return Transform.translate(
+          offset: const Offset(0, -20), // Move up 20px
+          child: Container(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            ),
+            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SizedBox(height: 16),
+                const Text(
+                  'Select Language',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                const Divider(),
+
+                _languageTile("English"),
+                _languageTile("Deutsch"),
+                _languageTile("Español"),
+              ],
+            ),
           ),
         );
       },
     );
   }
 
-  // Voice Bottom Sheet
+  Widget _languageTile(String title) {
+    return ListTile(
+      title: Text(
+        title,
+        style: TextStyle(
+          fontWeight: selectedLanguage == title
+              ? FontWeight.bold
+              : FontWeight.normal,
+          color: selectedLanguage == title ? Colors.blue : Colors.black,
+        ),
+      ),
+      trailing: selectedLanguage == title
+          ? const Icon(Icons.check, color: Colors.blue)
+          : null,
+      onTap: () {
+        setState(() => selectedLanguage = title);
+        Navigator.pop(context);
+        _showVoiceSheet(context);
+      },
+    );
+  }
+
+  // -------------------------------
+  // VOICE BOTTOM SHEET
+  // -------------------------------
   void _showVoiceSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.transparent,
       isScrollControlled: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
       builder: (_) {
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 30), // 30px gap
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const SizedBox(height: 16),
-              const Text(
-                'Choose Voice',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              const Divider(),
-              ListTile(
-                title: const Text('Male'),
-                onTap: () => Navigator.pop(context),
-              ),
-              ListTile(
-                title: const Text('Female'),
-                onTap: () => Navigator.pop(context),
-              ),
-            ],
+        return Transform.translate(
+          offset: const Offset(0, -20),
+          child: Container(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            ),
+            padding: const EdgeInsets.only(left: 10, right: 10, bottom: 30),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SizedBox(height: 16),
+                const Text(
+                  'Choose Voice',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                const Divider(),
+
+                _voiceTile("Male"),
+                _voiceTile("Female"),
+              ],
+            ),
           ),
         );
       },
     );
   }
 
+  Widget _voiceTile(String title) {
+    return ListTile(
+      title: Text(
+        title,
+        style: TextStyle(
+          fontWeight: selectedVoice == title
+              ? FontWeight.bold
+              : FontWeight.normal,
+          color: selectedVoice == title ? Colors.blue : Colors.black,
+        ),
+      ),
+      trailing: selectedVoice == title
+          ? const Icon(Icons.check, color: Colors.blue)
+          : null,
+      onTap: () {
+        setState(() => selectedVoice = title);
+        Navigator.pop(context);
+      },
+    );
+  }
+
+  // -------------------------------
+  // MAIN SCREEN UI
+  // -------------------------------
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -247,14 +148,13 @@ class ProcrastinationScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
+              // Close Button
               Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
+                    onTap: () => Navigator.pop(context),
                     child: const CircleAvatar(
                       backgroundColor: Colors.white,
                       child: Icon(Icons.close, color: Colors.blue),
@@ -262,7 +162,10 @@ class ProcrastinationScreen extends StatelessWidget {
                   ),
                 ),
               ),
+
               const Spacer(),
+
+              // TITLE + IMAGES + BUTTONS
               Column(
                 children: [
                   const Padding(
@@ -278,6 +181,8 @@ class ProcrastinationScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 40),
+
+                  // IMAGE STACK
                   Stack(
                     alignment: Alignment.center,
                     children: [
@@ -307,20 +212,21 @@ class ProcrastinationScreen extends StatelessWidget {
                             child: Assets.svgImages.popUpSpekingTwoCarton.image(
                               width: 100,
                               height: 100,
-                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
                       ),
                     ],
                   ),
+
                   const SizedBox(height: 60),
+
+                  // BUTTON ROW
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      // Choose AI Voice Button
                       OutlinedButton(
-                        onPressed: () => _showVoiceSheet(context),
+                        onPressed: () {},
                         style: OutlinedButton.styleFrom(
                           side: const BorderSide(color: Colors.blue),
                           shape: RoundedRectangleBorder(
@@ -336,7 +242,6 @@ class ProcrastinationScreen extends StatelessWidget {
                           style: TextStyle(color: Colors.blue),
                         ),
                       ),
-                      // Language Button
                       OutlinedButton(
                         onPressed: () => _showLanguageSheet(context),
                         style: OutlinedButton.styleFrom(
@@ -350,15 +255,17 @@ class ProcrastinationScreen extends StatelessWidget {
                           ),
                         ),
                         child: const Text(
-                          'Language',
+                          'English',
                           style: TextStyle(color: Colors.blue),
                         ),
                       ),
                     ],
                   ),
+
                   const SizedBox(height: 40),
                 ],
               ),
+
               const Spacer(),
             ],
           ),
