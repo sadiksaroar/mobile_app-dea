@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Bubble extends StatelessWidget {
-  const Bubble({super.key});
+class ConversationBubble extends StatelessWidget {
+  const ConversationBubble({super.key});
   @override
   Widget build(BuildContext c) {
     return CustomPaint(
@@ -18,7 +18,7 @@ class Bubble extends StatelessWidget {
           children: [
             const Expanded(
               child: Text(
-                "Start here. A good day begins with rest.",
+                "Swipe left to reschedule or edit quests..",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,

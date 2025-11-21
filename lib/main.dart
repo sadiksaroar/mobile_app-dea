@@ -2,7 +2,10 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mobile_app_dea/screen/home/contextual_onboarding/contextual_onboarding.dart';
+import 'package:mobile_app_dea/screen/home/home_screen.dart';
+import 'package:mobile_app_dea/screen/remiender_notification/choose_your_mood/chooise_your_mood.dart';
+import 'package:mobile_app_dea/screen/remiender_notification/choose_your_mood/loader.dart';
+import 'package:mobile_app_dea/screen/settings/setting.dart';
 import 'package:mobile_app_dea/screen/welcome_activetion_flow/popup_choose_mood_updates.dart';
 import 'package:mobile_app_dea/screen/welcome_activetion_flow/procrastination_screen.dart'
     show ProcrastinationScreen;
@@ -32,13 +35,14 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: HomeScreen(), // Your EntryScreen widget
+        home: SettingsScreen(), // Your EntryScreen widget
         // home: SignInScreen(),
         builder: DevicePreview.appBuilder,
       ),
     );
   }
 }
+
 /*
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
