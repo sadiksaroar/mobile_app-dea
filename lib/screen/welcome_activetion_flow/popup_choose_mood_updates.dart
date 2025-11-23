@@ -17,7 +17,7 @@ class PopupChooseMoodUpdates extends StatelessWidget {
         // 🔥 Background Fix – use .path directly
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(Assets.svgImages.popupChooseMoodUpdatesPng.path),
+            image: AssetImage(Assets.svgImages.popupChooseMoodUpdates.path),
             fit: BoxFit.cover,
           ),
         ),

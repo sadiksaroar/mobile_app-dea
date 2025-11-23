@@ -292,4 +292,21 @@ class AppsTextStyles {
     letterSpacing: -0.5, // -0.5px
     color: const Color(0xFFFFFCF1), // #FFFCF1
   );
+
+  static final TextStyle kSettingsTitleStyle = GoogleFonts.alfaSlabOne(
+    fontSize: 32,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+    height: 0.8, // 80% line height
+    letterSpacing: 0,
+    textStyle: const TextStyle(color: Color(0xFFFFFEF8)),
+  );
+  static final TextStyle textDefaultStyle = GoogleFonts.workSans(
+    fontWeight: FontWeight.w800, // ExtraBold
+    fontStyle: FontStyle.normal,
+    fontSize: 20,
+    height: 1.2, // line-height 120%
+    letterSpacing: -0.5,
+    color: const Color(0xFF1A1A1A), // replace with your desired color
+  );
 }

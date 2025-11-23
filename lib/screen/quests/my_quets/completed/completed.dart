@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:mobile_app_dea/screen/quests/completed/task_card/task_card.dart';
+import 'package:mobile_app_dea/screen/quests/my_quets/completed/task_card/task_card.dart';
 
 class Completed extends StatefulWidget {
   const Completed({super.key});

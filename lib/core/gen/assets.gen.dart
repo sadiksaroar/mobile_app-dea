@@ -51,6 +51,14 @@ class $AssetsLottieAnimationsGen {
 class $AssetsSvgIconsGen {
   const $AssetsSvgIconsGen();
 
+  /// File path: assets/svg_icons/AI Insights & Reflections.png
+  AssetGenImage get aIInsightsReflections =>
+      const AssetGenImage('assets/svg_icons/AI Insights & Reflections.png');
+
+  /// File path: assets/svg_icons/AI Personalization.png
+  AssetGenImage get aIPersonalization =>
+      const AssetGenImage('assets/svg_icons/AI Personalization.png');
+
   /// File path: assets/svg_icons/App store_ App Icon.png
   AssetGenImage get appStoreAppIconPng =>
       const AssetGenImage('assets/svg_icons/App store_ App Icon.png');
@@ -75,13 +83,60 @@ class $AssetsSvgIconsGen {
   SvgGenImage get dailyMoments =>
       const SvgGenImage('assets/svg_icons/DAILY MOMENTS.svg');
 
+  /// File path: assets/svg_icons/Daily Tips.png
+  AssetGenImage get dailyTips =>
+      const AssetGenImage('assets/svg_icons/Daily Tips.png');
+
   /// File path: assets/svg_icons/EMOTIONAL SUPPORT.svg
   SvgGenImage get emotionalSupport =>
       const SvgGenImage('assets/svg_icons/EMOTIONAL SUPPORT.svg');
 
+  /// File path: assets/svg_icons/Help.png
+  AssetGenImage get help => const AssetGenImage('assets/svg_icons/Help.png');
+
+  /// File path: assets/svg_icons/Language.png
+  AssetGenImage get language =>
+      const AssetGenImage('assets/svg_icons/Language.png');
+
+  /// File path: assets/svg_icons/Log out.png
+  AssetGenImage get logOut =>
+      const AssetGenImage('assets/svg_icons/Log out.png');
+
+  /// File path: assets/svg_icons/Notifications.png
+  AssetGenImage get notifications =>
+      const AssetGenImage('assets/svg_icons/Notifications.png');
+
+  /// File path: assets/svg_icons/NowliPro.png
+  AssetGenImage get nowliPro =>
+      const AssetGenImage('assets/svg_icons/NowliPro.png');
+
+  /// File path: assets/svg_icons/Nowlli Check-ins.png
+  AssetGenImage get nowlliCheckIns =>
+      const AssetGenImage('assets/svg_icons/Nowlli Check-ins.png');
+
+  /// File path: assets/svg_icons/Privacy & Data.png
+  AssetGenImage get privacyData =>
+      const AssetGenImage('assets/svg_icons/Privacy & Data.png');
+
   /// File path: assets/svg_icons/REAL COMPANY.svg
   SvgGenImage get realCompany =>
       const SvgGenImage('assets/svg_icons/REAL COMPANY.svg');
+
+  /// File path: assets/svg_icons/RateNowliw.png
+  AssetGenImage get rateNowliw =>
+      const AssetGenImage('assets/svg_icons/RateNowliw.png');
+
+  /// File path: assets/svg_icons/Sounds.png
+  AssetGenImage get sounds =>
+      const AssetGenImage('assets/svg_icons/Sounds.png');
+
+  /// File path: assets/svg_icons/Streak Progress.png
+  AssetGenImage get streakProgress =>
+      const AssetGenImage('assets/svg_icons/Streak Progress.png');
+
+  /// File path: assets/svg_icons/TaslReminders.png
+  AssetGenImage get taslReminders =>
+      const AssetGenImage('assets/svg_icons/TaslReminders.png');
 
   /// File path: assets/svg_icons/apple icon sign in.svg
   SvgGenImage get appleIconSignIn =>
@@ -141,14 +196,28 @@ class $AssetsSvgIconsGen {
 
   /// List of all assets
   List<dynamic> get values => [
+    aIInsightsReflections,
+    aIPersonalization,
     appStoreAppIconPng,
     appStoreAppIconSvg,
     appleIconsBlue,
     appleIcon,
     dAILYMOMENTSPng,
     dailyMoments,
+    dailyTips,
     emotionalSupport,
+    help,
+    language,
+    logOut,
+    notifications,
+    nowliPro,
+    nowlliCheckIns,
+    privacyData,
     realCompany,
+    rateNowliw,
+    sounds,
+    streakProgress,
+    taslReminders,
     appleIconSignIn,
     backIcon,
     checkCircle01PasswprdUpdate,
@@ -177,6 +246,10 @@ class $AssetsSvgImagesGen {
   SvgGenImage get appIcon =>
       const SvgGenImage('assets/svg_images/App Icon.svg');
 
+  /// File path: assets/svg_images/Button Calendar.png
+  AssetGenImage get buttonCalendar =>
+      const AssetGenImage('assets/svg_images/Button Calendar.png');
+
   /// File path: assets/svg_images/Frame 2147228547.png
   AssetGenImage get frame2147228547Png =>
       const AssetGenImage('assets/svg_images/Frame 2147228547.png');
@@ -185,12 +258,12 @@ class $AssetsSvgImagesGen {
   SvgGenImage get frame2147228547Svg =>
       const SvgGenImage('assets/svg_images/Frame 2147228547.svg');
 
-  /// File path: assets/svg_images/Popup_Choose mood updates .png
-  AssetGenImage get popupChooseMoodUpdatesPng =>
-      const AssetGenImage('assets/svg_images/Popup_Choose mood updates .png');
+  /// File path: assets/svg_images/IMG_20251121_153116_1.jpg
+  AssetGenImage get img202511211531161 =>
+      const AssetGenImage('assets/svg_images/IMG_20251121_153116_1.jpg');
 
   /// File path: assets/svg_images/Popup_Choose mood updates.png
-  AssetGenImage get popupChooseMoodUpdatesPng_ =>
+  AssetGenImage get popupChooseMoodUpdates =>
       const AssetGenImage('assets/svg_images/Popup_Choose mood updates.png');
 
   /// File path: assets/svg_images/Popup_Speaking.png
@@ -241,9 +314,16 @@ class $AssetsSvgImagesGen {
   SvgGenImage get readyToStart =>
       const SvgGenImage('assets/svg_images/ready_to_start.svg');
 
+  /// File path: assets/svg_images/three.png
+  AssetGenImage get three => const AssetGenImage('assets/svg_images/three.png');
+
   /// File path: assets/svg_images/twoColorPopupSpkeing.png
   AssetGenImage get twoColorPopupSpkeing =>
       const AssetGenImage('assets/svg_images/twoColorPopupSpkeing.png');
+
+  /// File path: assets/svg_images/upscalemedia-transformed.png
+  AssetGenImage get upscalemediaTransformed =>
+      const AssetGenImage('assets/svg_images/upscalemedia-transformed.png');
 
   /// File path: assets/svg_images/welcome_back.svg
   SvgGenImage get welcomeBack =>
@@ -253,10 +333,11 @@ class $AssetsSvgImagesGen {
   List<dynamic> get values => [
     androidAppIconSquircle,
     appIcon,
+    buttonCalendar,
     frame2147228547Png,
     frame2147228547Svg,
-    popupChooseMoodUpdatesPng,
-    popupChooseMoodUpdatesPng_,
+    img202511211531161,
+    popupChooseMoodUpdates,
     popupSpeaking,
     subscriptionPopupPng,
     subscriptionPopupSvg,
@@ -269,7 +350,9 @@ class $AssetsSvgImagesGen {
     popupScreenCarton,
     proIcon,
     readyToStart,
+    three,
     twoColorPopupSpkeing,
+    upscalemediaTransformed,
     welcomeBack,
   ];
 }

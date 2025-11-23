@@ -3,6 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mobile_app_dea/screen/home/home_screen.dart';
+import 'package:mobile_app_dea/screen/progress/progress.dart';
+import 'package:mobile_app_dea/screen/quests/create_quets/create_quets_default.dart';
 import 'package:mobile_app_dea/screen/quests/quests_my_quests_today_emty_state.dart';
 import 'package:mobile_app_dea/screen/remiender_notification/choose_your_mood/chooise_your_mood.dart';
 import 'package:mobile_app_dea/screen/remiender_notification/choose_your_mood/loader.dart';
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: QuestHomePage(), // Your EntryScreen widget
+        home: SettingsScreen(), // Your EntryScreen widget
         // home: SignInScreen(),
         builder: DevicePreview.appBuilder,
       ),

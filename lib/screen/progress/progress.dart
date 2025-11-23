@@ -1,0 +1,116 @@
+import 'package:flutter/material.dart';
+import 'package:mobile_app_dea/screen/progress/insights/Insights.dart';
+import 'package:mobile_app_dea/screen/progress/my_progress/my_progress.dart';
+
+class Progress extends StatefulWidget {
+  const Progress({super.key});
+
+  @override
+  State<Progress> createState() => _ProgressState();
+}
+
+class _ProgressState extends State<Progress> with TickerProviderStateMixin {
+  late TabController mainTab;
+  late TabController myQuestsTab;
+  late TabController suggestedTab;
+
+  @override
+  void initState() {
+    super.initState();
+    mainTab = TabController(length: 2, vsync: this);
+    myQuestsTab = TabController(length: 4, vsync: this);
+    suggestedTab = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    mainTab.dispose();
+    myQuestsTab.dispose();
+    suggestedTab.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    double w = MediaQuery.of(context).size.width;
+
+    return Scaffold(
+      // ---------------- APP BAR ----------------
+      backgroundColor: const Color(0xFFD6E7FF),
+
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFD6E7FF),
+        elevation: 0,
+        toolbarHeight: 90,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "PROGRESS",
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w800,
+                color: Colors.blue.shade900,
+              ),
+            ),
+            const SizedBox(height: 4),
+            const Text(
+              "Track your growth and reflections",
+              style: TextStyle(color: Colors.black54, fontSize: 14),
+            ),
+          ],
+        ),
+        actions: [
+          Container(
+            margin: const EdgeInsets.only(right: 16),
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.blue.shade700,
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: const Icon(Icons.voice_chat, color: Colors.white),
+          ),
+        ],
+      ),
+
+      // ---------------- BODY ----------------
+      body: Container(
+        decoration: const BoxDecoration(
+          color: Color(0xFFFFFEF8),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(24),
+            topRight: Radius.circular(24),
+          ),
+        ),
+        child: Column(
+          children: [
+            TabBar(
+              controller: mainTab,
+              // Custom indicator with underline
+              indicator: const UnderlineTabIndicator(
+                borderSide: BorderSide(width: 5.0, color: Colors.black),
+                insets: EdgeInsets.symmetric(horizontal: 0.0),
+              ),
+              // REMOVE hover / overlay
+              overlayColor: WidgetStateProperty.all(Colors.transparent),
+              // REMOVE splash effect
+              splashFactory: NoSplash.splashFactory,
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.black45,
+              tabs: const [
+                Tab(text: "My progress"),
+                Tab(text: "Insights"),
+              ],
+            ),
+            Expanded(
+              child: TabBarView(
+                controller: mainTab,
+                children: [StreakScreen(), InsightsScreen()],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
