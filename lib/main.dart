@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: SettingsScreen(), // Your EntryScreen widget
+        home: QuestHomePage(), // Your EntryScreen widget
         // home: SignInScreen(),
         builder: DevicePreview.appBuilder,
       ),
@@ -99,45 +99,42 @@ class MyApp extends StatelessWidget {
 
 */
 
-/*
+// import 'package:device_preview/device_preview.dart';
+// import 'package:flutter/foundation.dart' show kReleaseMode;
+// import 'package:flutter/material.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:google_fonts/google_fonts.dart';
+// import 'package:mobile_app_dea/core%20/app_routes/app_pages.dart';
 
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart' show kReleaseMode;
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mobile_app_dea/core%20/app_routes/app_pages.dart';
+// void main() {
+//   runApp(
+//     DevicePreview(
+//       enabled: !kReleaseMode, // Enable only in development mode
+//       builder: (context) => MyApp(), // Wrap the app in DevicePreview
+//     ),
+//   );
+// }
 
-void main() {
-  runApp(
-    DevicePreview(
-      enabled: !kReleaseMode, // Enable only in development mode
-      builder: (context) => MyApp(), // Wrap the app in DevicePreview
-    ),
-  );
-}
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      minTextAdapt: true,
-      splitScreenMode: true,
-      designSize: const Size(375, 812),
-      builder: (context, child) {
-        return MaterialApp.router(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            textTheme: GoogleFonts.poppinsTextTheme(),
-          ),
-          routerConfig: AppPages.router,
-        );
-      },
-    );
-  }
-}
-*/
+//   @override
+//   Widget build(BuildContext context) {
+//     return ScreenUtilInit(
+//       minTextAdapt: true,
+//       splitScreenMode: true,
+//       designSize: const Size(375, 812),
+//       builder: (context, child) {
+//         return MaterialApp.router(
+//           debugShowCheckedModeBanner: false,
+//           title: 'Flutter Demo',
+//           theme: ThemeData(
+//             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+//             textTheme: GoogleFonts.poppinsTextTheme(),
+//           ),
+//           routerConfig: AppPages.router,
+//         );
+//       },
+//     );
+//   }
+// }

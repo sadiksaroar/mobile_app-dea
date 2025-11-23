@@ -75,6 +75,18 @@ class $AssetsSvgIconsGen {
   SvgGenImage get appleIcon =>
       const SvgGenImage('assets/svg_icons/AppleIcon.svg');
 
+  /// File path: assets/svg_icons/Button Calendar_.png
+  AssetGenImage get buttonCalendar =>
+      const AssetGenImage('assets/svg_icons/Button Calendar_.png');
+
+  /// File path: assets/svg_icons/Clear All AI Memory.png
+  AssetGenImage get clearAllAIMemoryPng =>
+      const AssetGenImage('assets/svg_icons/Clear All AI Memory.png');
+
+  /// File path: assets/svg_icons/Clear All AI Memory?.png
+  AssetGenImage get clearAllAIMemoryPng_ =>
+      const AssetGenImage('assets/svg_icons/Clear All AI Memory?.png');
+
   /// File path: assets/svg_icons/DAILY MOMENTS Png.png
   AssetGenImage get dAILYMOMENTSPng =>
       const AssetGenImage('assets/svg_icons/DAILY MOMENTS Png.png');
@@ -86,6 +98,14 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/Daily Tips.png
   AssetGenImage get dailyTips =>
       const AssetGenImage('assets/svg_icons/Daily Tips.png');
+
+  /// File path: assets/svg_icons/Delete My Account.png
+  AssetGenImage get deleteMyAccount =>
+      const AssetGenImage('assets/svg_icons/Delete My Account.png');
+
+  /// File path: assets/svg_icons/Delete Your Account?.png
+  AssetGenImage get deleteYourAccount =>
+      const AssetGenImage('assets/svg_icons/Delete Your Account?.png');
 
   /// File path: assets/svg_icons/EMOTIONAL SUPPORT.svg
   SvgGenImage get emotionalSupport =>
@@ -118,13 +138,29 @@ class $AssetsSvgIconsGen {
   AssetGenImage get privacyData =>
       const AssetGenImage('assets/svg_icons/Privacy & Data.png');
 
+  /// File path: assets/svg_icons/Privacy Policy.png
+  AssetGenImage get privacyPolicy =>
+      const AssetGenImage('assets/svg_icons/Privacy Policy.png');
+
+  /// File path: assets/svg_icons/Quests.png
+  AssetGenImage get quests =>
+      const AssetGenImage('assets/svg_icons/Quests.png');
+
   /// File path: assets/svg_icons/REAL COMPANY.svg
   SvgGenImage get realCompany =>
       const SvgGenImage('assets/svg_icons/REAL COMPANY.svg');
 
+  /// File path: assets/svg_icons/Rate Nowlli.png
+  AssetGenImage get rateNowlli =>
+      const AssetGenImage('assets/svg_icons/Rate Nowlli.png');
+
   /// File path: assets/svg_icons/RateNowliw.png
   AssetGenImage get rateNowliw =>
       const AssetGenImage('assets/svg_icons/RateNowliw.png');
+
+  /// File path: assets/svg_icons/Restricted Topics.png
+  AssetGenImage get restrictedTopics =>
+      const AssetGenImage('assets/svg_icons/Restricted Topics.png');
 
   /// File path: assets/svg_icons/Sounds.png
   AssetGenImage get sounds =>
@@ -137,6 +173,14 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/TaslReminders.png
   AssetGenImage get taslReminders =>
       const AssetGenImage('assets/svg_icons/TaslReminders.png');
+
+  /// File path: assets/svg_icons/Use My Data to Improve AI.png
+  AssetGenImage get useMyDataToImproveAI =>
+      const AssetGenImage('assets/svg_icons/Use My Data to Improve AI.png');
+
+  /// File path: assets/svg_icons/Voice & Personality.png
+  AssetGenImage get voicePersonality =>
+      const AssetGenImage('assets/svg_icons/Voice & Personality.png');
 
   /// File path: assets/svg_icons/apple icon sign in.svg
   SvgGenImage get appleIconSignIn =>
@@ -178,6 +222,10 @@ class $AssetsSvgIconsGen {
   SvgGenImage get proCrossIcon =>
       const SvgGenImage('assets/svg_icons/pro_cross_icon.svg');
 
+  /// File path: assets/svg_icons/settings_backIcon.png
+  AssetGenImage get settingsBackIcon =>
+      const AssetGenImage('assets/svg_icons/settings_backIcon.png');
+
   /// File path: assets/svg_icons/sign in goole.svg
   SvgGenImage get signInGoole =>
       const SvgGenImage('assets/svg_icons/sign in goole.svg');
@@ -202,9 +250,14 @@ class $AssetsSvgIconsGen {
     appStoreAppIconSvg,
     appleIconsBlue,
     appleIcon,
+    buttonCalendar,
+    clearAllAIMemoryPng,
+    clearAllAIMemoryPng_,
     dAILYMOMENTSPng,
     dailyMoments,
     dailyTips,
+    deleteMyAccount,
+    deleteYourAccount,
     emotionalSupport,
     help,
     language,
@@ -213,11 +266,17 @@ class $AssetsSvgIconsGen {
     nowliPro,
     nowlliCheckIns,
     privacyData,
+    privacyPolicy,
+    quests,
     realCompany,
+    rateNowlli,
     rateNowliw,
+    restrictedTopics,
     sounds,
     streakProgress,
     taslReminders,
+    useMyDataToImproveAI,
+    voicePersonality,
     appleIconSignIn,
     backIcon,
     checkCircle01PasswprdUpdate,
@@ -228,6 +287,7 @@ class $AssetsSvgIconsGen {
     nowlnLogo,
     popupSpwakingCross,
     proCrossIcon,
+    settingsBackIcon,
     signInGoole,
     signInPageIcon,
     signUnBackScrren,

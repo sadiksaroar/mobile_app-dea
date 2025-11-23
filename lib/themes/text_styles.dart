@@ -294,7 +294,7 @@ class AppsTextStyles {
   );
 
   static final TextStyle kSettingsTitleStyle = GoogleFonts.alfaSlabOne(
-    fontSize: 32,
+    fontSize: 24,
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
     height: 0.8, // 80% line height
@@ -308,5 +308,39 @@ class AppsTextStyles {
     height: 1.2, // line-height 120%
     letterSpacing: -0.5,
     color: const Color(0xFF1A1A1A), // replace with your desired color
+  );
+  static final TextStyle myWorkSansStyle = GoogleFonts.workSans(
+    fontWeight: FontWeight.w600, // SemiBold
+    fontSize: 16,
+    height: 1.4, // line-height: 140%
+    letterSpacing: -0.05 * 18, // -5% of font size
+    color: const Color(0xFF011F54),
+  );
+  static final TextStyle workSansRegular16 = GoogleFonts.workSans(
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 16,
+    height: 1.4, // 140%
+    letterSpacing: -0.5, // directly in px
+    color: const Color(0xFF1A1A1A), // replace with your desired color
+  );
+  static final TextStyle workSansRegularF16 = GoogleFonts.workSans(
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 16,
+    height: 1.4, // 140%
+    letterSpacing: -0.5,
+    color: const Color(0xFF595754),
+  );
+  static final TextStyle workSansExtraBold20 = GoogleFonts.workSans(
+    fontWeight: FontWeight.w800, // 800 -> ExtraBold
+    fontSize: 20,
+    height: 1.2, // line-height 120%
+    letterSpacing: -0.5,
+  );
+
+  static final TextStyle workSansy6ExtraBold20 = GoogleFonts.workSans(
+    fontWeight: FontWeight.w800, // ExtraBold
+    fontSize: 20,
+    height: 1.2, // line-height 120%
+    letterSpacing: -0.5,
   );
 }

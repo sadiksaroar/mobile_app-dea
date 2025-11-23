@@ -187,15 +187,7 @@ class NowliHowToUse extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            "Next",
-                            style:
-                                AppsTextStyles.letsStartNext ??
-                                const TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                          ),
+                          Text("Next", style: AppsTextStyles.letsStartNext),
                           const SizedBox(width: 30),
                           SvgPicture.asset(
                             Assets.svgIcons.startLetsGo.path,

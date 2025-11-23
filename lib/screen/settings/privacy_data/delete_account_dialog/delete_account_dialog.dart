@@ -1,5 +1,7 @@
 // Delete Account Confirmation Dialog
 import 'package:flutter/material.dart';
+import 'package:mobile_app_dea/core/gen/assets.gen.dart';
+import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class DeleteAccountDialog extends StatelessWidget {
   const DeleteAccountDialog({Key? key}) : super(key: key);
@@ -16,14 +18,18 @@ class DeleteAccountDialog extends StatelessWidget {
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Drag handle
-            Container(
-              width: 40,
-              height: 4,
-              decoration: BoxDecoration(
-                color: Colors.grey.shade400,
-                borderRadius: BorderRadius.circular(2),
+            Center(
+              child: Container(
+                width: 40,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade400,
+                  borderRadius: BorderRadius.circular(2),
+                ),
               ),
             ),
             const SizedBox(height: 20),
@@ -32,28 +38,26 @@ class DeleteAccountDialog extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: const Color(0xFFE53935),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: const Icon(Icons.close, color: Colors.white, size: 28),
+              child: Image.asset(
+                Assets.svgIcons.deleteYourAccount.path,
+                width: 40,
+                height: 40,
+              ),
             ),
             const SizedBox(height: 20),
 
             // Title
-            const Text(
+            Text(
               'Delete Your Account?',
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.w800,
-                color: Color(0xFF1E3A8A),
-              ),
+              style: AppsTextStyles.textDefaultStyle,
             ),
             const SizedBox(height: 16),
 
             // Description
             const Text(
               'This will erase all your reflections, call history, and AI learning data.',
-              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 14,
                 color: Color(0xFF6B7280),
@@ -64,14 +68,12 @@ class DeleteAccountDialog extends StatelessWidget {
 
             const Text(
               'Nowlli will forget everything it knows about you - and personalization will reset.',
-              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 14,
                 color: Color(0xFF6B7280),
                 height: 1.5,
               ),
             ),
-            const SizedBox(height: 12),
 
             const Text(
               'Are you sure you want to continue?',
@@ -102,13 +104,9 @@ class DeleteAccountDialog extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
-                    child: const Text(
+                    child: Text(
                       'Cancel',
-                      style: TextStyle(
-                        color: Color(0xFF1E3A8A),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: AppsTextStyles.textDefaultStyle,
                     ),
                   ),
                 ),
@@ -127,12 +125,10 @@ class DeleteAccountDialog extends StatelessWidget {
                       ),
                       elevation: 0,
                     ),
-                    child: const Text(
+                    child: Text(
                       'Delete',
-                      style: TextStyle(
+                      style: AppsTextStyles.textDefaultStyle.copyWith(
                         color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),

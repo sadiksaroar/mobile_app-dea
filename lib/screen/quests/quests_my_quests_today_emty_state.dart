@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart' show svg;
+import 'package:flutter_svg/svg.dart';
+import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/screen/quests/my_quets/blocking/blockng.dart';
 import 'package:mobile_app_dea/screen/quests/my_quets/completed/completed.dart';
 import 'package:mobile_app_dea/screen/quests/my_quets/scheduled/scheduled.dart';
 import 'package:mobile_app_dea/screen/quests/my_quets/today/today.dart';
 import 'package:mobile_app_dea/screen/quests/suggested/soft_steps/soft_steps.dart';
+import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class QuestHomePage extends StatefulWidget {
   const QuestHomePage({super.key});
@@ -40,27 +44,21 @@ class _QuestHomePageState extends State<QuestHomePage>
 
     return Scaffold(
       // ---------------- APP BAR ----------------
-      backgroundColor: const Color(0xFFD6E7FF),
+      backgroundColor: const Color(0xFFDFEFFF),
 
       appBar: AppBar(
-        backgroundColor: const Color(0xFFD6E7FF),
+        backgroundColor: const Color(0xFFDFEFFF),
         elevation: 0,
-        toolbarHeight: 90,
+        toolbarHeight: 120,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            Text("QUESTS", style: AppsTextStyles.SaimTitle),
+            const SizedBox(height: 6),
             Text(
-              "QUESTS",
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.w800,
-                color: Colors.blue.shade900,
-              ),
-            ),
-            const SizedBox(height: 4),
-            const Text(
               "Small steps, big progress.",
-              style: TextStyle(color: Colors.black54, fontSize: 14),
+              style: AppsTextStyles.workSansRegularF16,
             ),
           ],
         ),
@@ -68,11 +66,14 @@ class _QuestHomePageState extends State<QuestHomePage>
           Container(
             margin: const EdgeInsets.only(right: 16),
             padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.blue.shade700,
-              borderRadius: BorderRadius.circular(14),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(14)),
+            // child: const Icon(Icons.add, color: Colors.white),
+            // child: Assets.svgIcons.buttonCalendar.path(width: 24, height: 24),
+            child: Image.asset(
+              Assets.svgIcons.buttonCalendar.path,
+              width: 60,
+              height: 60,
             ),
-            child: const Icon(Icons.add, color: Colors.white),
           ),
         ],
       ),
@@ -86,33 +87,37 @@ class _QuestHomePageState extends State<QuestHomePage>
             topRight: Radius.circular(24),
           ),
         ),
-        child: Column(
-          children: [
-            TabBar(
-              controller: mainTab,
-              // Custom indicator with underline
-              indicator: const UnderlineTabIndicator(
-                borderSide: BorderSide(width: 5.0, color: Colors.black),
-                insets: EdgeInsets.symmetric(horizontal: 0.0),
-              ),
-              // REMOVE hover / overlay
-              overlayColor: WidgetStateProperty.all(Colors.transparent),
-              // REMOVE splash effect
-              splashFactory: NoSplash.splashFactory,
-              labelColor: Colors.black,
-              unselectedLabelColor: Colors.black45,
-              tabs: const [
-                Tab(text: "My quests"),
-                Tab(text: "Suggested"),
-              ],
-            ),
-            Expanded(
-              child: TabBarView(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              TabBar(
                 controller: mainTab,
-                children: [_buildMyQuestSection(), _suggests()],
+                indicator: const UnderlineTabIndicator(
+                  borderSide: BorderSide(width: 5.0, color: Color(0xFF4542EB)),
+                  insets: EdgeInsets.symmetric(horizontal: 0.0),
+                ),
+                // REMOVE hover / overlay
+                overlayColor: MaterialStateProperty.all(Colors.transparent),
+                // REMOVE splash effect
+                splashFactory: NoSplash.splashFactory,
+                labelColor: Colors.black,
+                unselectedLabelColor: Color(0xFFADB2BC),
+                labelStyle: AppsTextStyles.workSansExtraBold20,
+                unselectedLabelStyle: AppsTextStyles.workSansy6ExtraBold20,
+                tabs: const [
+                  Tab(text: "My quests"),
+                  Tab(text: "Suggested"),
+                ],
               ),
-            ),
-          ],
+              Expanded(
+                child: TabBarView(
+                  controller: mainTab,
+                  children: [_buildMyQuestSection(), _suggests()],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

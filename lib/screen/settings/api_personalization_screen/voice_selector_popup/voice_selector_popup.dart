@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_dea/screen/remiender_notification/choose_your_mood/chooise_your_mood.dart';
+import 'package:mobile_app_dea/themes/text_styles.dart';
+import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 
 class VoiceSelectorPopup extends StatefulWidget {
   const VoiceSelectorPopup({Key? key}) : super(key: key);
@@ -24,7 +27,7 @@ class _VoiceSelectorPopupState extends State<VoiceSelectorPopup> {
       margin: const EdgeInsets.fromLTRB(16, 0, 16, 30),
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: const Color(0xFFE8E9F3),
+        color: AppColorsApps.skyBlueLight,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
@@ -45,14 +48,7 @@ class _VoiceSelectorPopupState extends State<VoiceSelectorPopup> {
           const SizedBox(height: 20),
 
           // Title
-          const Text(
-            'Choose voice',
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w700,
-              color: Color(0xFF1E3A8A),
-            ),
-          ),
+          Text('Choose voice', style: AppsTextStyles.textDefaultStyle),
           const SizedBox(height: 16),
 
           // Female option
@@ -83,14 +79,7 @@ class _VoiceSelectorPopupState extends State<VoiceSelectorPopup> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              voice,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                color: Color(0xFF1E3A8A),
-              ),
-            ),
+            Text(voice, style: AppsTextStyles.myWorkSansStyle),
             if (isSelected)
               const Icon(Icons.check, color: Color(0xFF4C3EDD), size: 24),
           ],
