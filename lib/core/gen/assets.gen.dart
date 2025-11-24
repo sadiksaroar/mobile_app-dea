@@ -111,6 +111,10 @@ class $AssetsSvgIconsGen {
   SvgGenImage get emotionalSupport =>
       const SvgGenImage('assets/svg_icons/EMOTIONAL SUPPORT.svg');
 
+  /// File path: assets/svg_icons/EditIcon.png
+  AssetGenImage get editIcon =>
+      const AssetGenImage('assets/svg_icons/EditIcon.png');
+
   /// File path: assets/svg_icons/Help.png
   AssetGenImage get help => const AssetGenImage('assets/svg_icons/Help.png');
 
@@ -259,6 +263,7 @@ class $AssetsSvgIconsGen {
     deleteMyAccount,
     deleteYourAccount,
     emotionalSupport,
+    editIcon,
     help,
     language,
     logOut,

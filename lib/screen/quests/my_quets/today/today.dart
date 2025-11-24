@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class Today extends StatefulWidget {
   const Today({super.key});
@@ -15,7 +16,7 @@ class _TodayState extends State<Today> {
       "emoji": "🧹",
       "title": "Clean house",
       "levelText": "Soft steps",
-      "levelColor": const Color(0xFF77D47D),
+      "levelColor": Color(0xFFA0E871),
       "time": "22:00",
       "duration": "10 mins",
     },
@@ -23,7 +24,9 @@ class _TodayState extends State<Today> {
       "emoji": "📘",
       "title": "Do homework",
       "levelText": "Elevated",
-      "levelColor": const Color(0xFFF7A94B),
+      // "levelColor": const Color(0xFFF7A94B),
+      "levelColor": const Color(0xFF3D87F5),
+
       "time": "22:00",
       "duration": "10 mins",
     },
@@ -31,7 +34,7 @@ class _TodayState extends State<Today> {
       "emoji": "🍽️",
       "title": "Do dishes",
       "levelText": "Stretch zone",
-      "levelColor": const Color(0xFF6AA7FF),
+      "levelColor": Color(0xFFFF8F26),
       "time": "22:00",
       "duration": "10 mins",
     },
@@ -39,7 +42,7 @@ class _TodayState extends State<Today> {
       "emoji": "🏋️",
       "title": "Workout",
       "levelText": "Power move",
-      "levelColor": const Color(0xFFFF5A5A),
+      "levelColor": Color(0xFFD53D40),
       "time": "22:00",
       "duration": "10 mins",
     },
@@ -74,34 +77,27 @@ class _TodayState extends State<Today> {
             const SizedBox(height: 24),
 
             // ===== BIG TITLE =====
-            const Text(
+            Text(
               "No quests yet, but your\njourney starts here.",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20,
-                color: Color(0xFF021B4A),
-                fontWeight: FontWeight.w800,
-              ),
+              style: AppsTextStyles.workSansExtraBold20Center,
             ),
 
             const SizedBox(height: 12),
 
             // ===== SUBTEXT =====
-            const Text(
+            Text(
               "Add your first quest and take the smallest\npossible step — we're not chasing\nperfection, just progress.",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 14,
-                color: Color(0xFF4B587C),
-                height: 1.4,
-              ),
+              style: AppsTextStyles.workSansRegularAdd16,
             ),
 
             const SizedBox(height: 24),
 
             // ===== CREATE QUEST BUTTON =====
             SizedBox(
-              width: 180,
+              width: 230,
+              height: 50,
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {
@@ -115,17 +111,14 @@ class _TodayState extends State<Today> {
                   ),
                   padding: const EdgeInsets.symmetric(vertical: 14),
                 ),
-                child: const Row(
+                child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(Icons.add, color: Colors.white),
-                    SizedBox(width: 6),
+                    const Icon(Icons.add, color: Colors.white, size: 24),
+                    const SizedBox(width: 6),
                     Text(
                       "Create quest",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: AppsTextStyles.workSansBlack18Center,
                     ),
                   ],
                 ),
@@ -200,12 +193,13 @@ class QuestCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 180,
       margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Colors.white,
-        border: Border.all(color: Colors.orange.shade300, width: 1),
+        color: Color(0xFFFFFEF8),
+        border: Border.all(color: const Color(0xFFFFCB9B), width: 1),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -213,11 +207,11 @@ class QuestCard extends StatelessWidget {
           // CheckBox
           Container(
             margin: const EdgeInsets.only(right: 12),
-            width: 22,
-            height: 22,
+            width: 25,
+            height: 25,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6),
-              border: Border.all(color: Colors.grey),
+              border: Border.all(color: Color(0xFF4542EB)),
             ),
           ),
 
@@ -228,33 +222,34 @@ class QuestCard extends StatelessWidget {
               children: [
                 Text(
                   "$emoji  $title",
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                  ),
+                  style: AppsTextStyles.regularResponsive(context),
                 ),
-                const SizedBox(height: 6),
+                const SizedBox(height: 30),
 
                 // Time Row
                 Row(
                   children: [
                     const Icon(
                       Icons.calendar_today,
-                      size: 16,
-                      color: Colors.blue,
+                      size: 20,
+                      color: Color(0xFF011F54),
                     ),
-                    const SizedBox(width: 6),
-                    const Text("Today"),
+                    const SizedBox(width: 10),
+                    Text("Today", style: AppsTextStyles.extraBold16),
 
-                    const SizedBox(width: 12),
-                    const Icon(Icons.access_time, size: 16, color: Colors.blue),
-                    const SizedBox(width: 6),
-                    Text(time),
+                    const SizedBox(height: 25),
+                    SizedBox(width: 30),
+                    const Icon(
+                      Icons.access_time,
+                      size: 20,
+                      color: Color(0xFF011F54),
+                    ),
+                    const SizedBox(width: 10),
+                    Text(time, style: AppsTextStyles.extraBold16),
                   ],
                 ),
 
-                const SizedBox(height: 8),
-
+                const SizedBox(height: 25),
                 // Level tag + duration
                 Row(
                   children: [
@@ -269,13 +264,9 @@ class QuestCard extends StatelessWidget {
                       ),
                       child: Text(
                         levelText,
-                        style: TextStyle(
-                          color: levelColor,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: AppsTextStyles.labelworkSansSemiBold18,
                       ),
                     ),
-
                     const SizedBox(width: 12),
 
                     Container(
@@ -284,12 +275,12 @@ class QuestCard extends StatelessWidget {
                         vertical: 4,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.grey.shade200,
+                        color: Color(0xFFFAE3CE),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
                         duration,
-                        style: const TextStyle(fontWeight: FontWeight.w600),
+                        style: const TextStyle(fontWeight: FontWeight.w800),
                       ),
                     ),
                   ],
@@ -300,12 +291,19 @@ class QuestCard extends StatelessWidget {
 
           // ------------ Edit Icon ------------
           Container(
+            height: 48,
+            width: 48,
             padding: const EdgeInsets.all(6),
             decoration: BoxDecoration(
               color: Colors.orange.shade100,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: const Icon(Icons.edit, size: 16, color: Colors.orange),
+            child: const Icon(Icons.edit, size: 24, color: Color(0xFF011F54)),
+            //   child: Image.asset(
+            //     "assets/svg_images/edit_icon.png",
+            //     height: 24,
+            //     width: 24,
+            //   ),
           ),
         ],
       ),

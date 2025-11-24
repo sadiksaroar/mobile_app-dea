@@ -1,6 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:mobile_app_dea/screen/remiender_notification/choose_your_mood/chooise_your_mood.dart';
+import 'package:mobile_app_dea/themes/text_styles.dart';
+import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 
 /////////////////////////////////////////////////////////////////////
 /// QUEST LIST + TASK CARD
@@ -121,7 +124,10 @@ class _TaskCardState extends State<TaskCard> {
               ).animate(curved),
               child: Material(
                 borderRadius: BorderRadius.circular(14),
-                color: Colors.white,
+
+                /*  */
+                // color: Colors.white,
+                color: AppColorsApps.skyBlueLight,
                 elevation: 8,
                 child: Container(
                   padding: const EdgeInsets.all(16),
@@ -161,9 +167,22 @@ class _TaskCardState extends State<TaskCard> {
                           ),
                           const SizedBox(width: 12),
                           Expanded(
-                            child: ElevatedButton(
-                              onPressed: () => Navigator.of(context).pop(),
-                              child: const Text('Yes'),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF4C4CE6), // Blue color
+                                borderRadius: BorderRadius.circular(
+                                  25,
+                                ), // Rounded corners
+                              ),
+                              child: TextButton(
+                                onPressed: () => Navigator.of(context).pop(),
+                                child: const Text(
+                                  'Yes',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ), // White text color
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -240,11 +259,7 @@ class _TaskCardState extends State<TaskCard> {
                 Expanded(
                   child: Text(
                     widget.title,
-                    style: const TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w800,
-                      color: Color(0xFF021A3D),
-                    ),
+                    style: AppsTextStyles.regularResponsive(context),
                   ),
                 ),
               ],
@@ -261,10 +276,8 @@ class _TaskCardState extends State<TaskCard> {
                   color: Color(0xFF223A60),
                 ),
                 const SizedBox(width: 6),
-                const Text(
-                  'Yesterday',
-                  style: TextStyle(color: Color(0xFF223A60)),
-                ),
+                Text('Yesterday', style: AppsTextStyles.extraBold16),
+
                 const SizedBox(width: 16),
                 const Icon(
                   Icons.access_time_outlined,
@@ -272,10 +285,7 @@ class _TaskCardState extends State<TaskCard> {
                   color: Color(0xFF223A60),
                 ),
                 const SizedBox(width: 6),
-                Text(
-                  widget.time,
-                  style: const TextStyle(color: Color(0xFF223A60)),
-                ),
+                Text(widget.time, style: AppsTextStyles.extraBold16),
               ],
             ),
 
@@ -351,18 +361,18 @@ class _TaskCardState extends State<TaskCard> {
                     _showPopup(context);
                   },
                   style: OutlinedButton.styleFrom(
-                    side: const BorderSide(color: Color(0xFF5C4CEA), width: 2),
+                    side: const BorderSide(
+                      color: const Color(0xFF4542EB),
+                      width: 2,
+                    ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),
                     ),
                     padding: const EdgeInsets.symmetric(vertical: 14),
                   ),
-                  child: const Text(
+                  child: Text(
                     'See reflection',
-                    style: TextStyle(
-                      color: Color(0xFF5C4CEA),
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: AppsTextStyles.workSansBlack18CenterBlue,
                   ),
                 ),
               ),

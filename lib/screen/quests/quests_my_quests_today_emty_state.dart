@@ -171,7 +171,12 @@ class _QuestHomePageState extends State<QuestHomePage>
                       width: 2,
                     ),
                   ),
-                  child: const Center(child: Text('Todays(3)')),
+                  child: Center(
+                    child: Text(
+                      'Todays(3)',
+                      style: AppsTextStyles.workSansSemiBold18,
+                    ),
+                  ),
                 ),
               ),
               Tab(
@@ -190,7 +195,12 @@ class _QuestHomePageState extends State<QuestHomePage>
                       width: 2,
                     ),
                   ),
-                  child: const Center(child: Text('Scheduled')),
+                  child: Center(
+                    child: Text(
+                      'Scheduled',
+                      style: AppsTextStyles.workSansSemiBold18,
+                    ),
+                  ),
                 ),
               ),
               Tab(
@@ -209,7 +219,12 @@ class _QuestHomePageState extends State<QuestHomePage>
                       width: 2,
                     ),
                   ),
-                  child: const Center(child: Text('Completed')),
+                  child: Center(
+                    child: Text(
+                      'Completed',
+                      style: AppsTextStyles.workSansSemiBold18,
+                    ),
+                  ),
                 ),
               ),
               Tab(
@@ -292,7 +307,12 @@ class _QuestHomePageState extends State<QuestHomePage>
                       width: 2,
                     ),
                   ),
-                  child: const Center(child: Text('Soft steps')),
+                  child: Center(
+                    child: Text(
+                      'Soft steps',
+                      style: AppsTextStyles.workSansSemiBold18,
+                    ),
+                  ),
                 ),
               ),
               Tab(
@@ -311,7 +331,12 @@ class _QuestHomePageState extends State<QuestHomePage>
                       width: 2,
                     ),
                   ),
-                  child: const Center(child: Text('Stretch zone')),
+                  child: Center(
+                    child: Text(
+                      'Stretch zone',
+                      style: AppsTextStyles.workSansSemiBold18,
+                    ),
+                  ),
                 ),
               ),
               Tab(
@@ -330,7 +355,12 @@ class _QuestHomePageState extends State<QuestHomePage>
                       width: 2,
                     ),
                   ),
-                  child: const Center(child: Text('Elevated')),
+                  child: Center(
+                    child: Text(
+                      'Elevated',
+                      style: AppsTextStyles.workSansSemiBold18,
+                    ),
+                  ),
                 ),
               ),
             ],

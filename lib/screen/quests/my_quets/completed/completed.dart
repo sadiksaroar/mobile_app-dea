@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:mobile_app_dea/screen/quests/my_quets/completed/task_card/task_card.dart';
+import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class Completed extends StatefulWidget {
   const Completed({super.key});
@@ -42,33 +43,25 @@ class _CompletedState extends State<Completed> {
 
             const SizedBox(height: 24),
 
-            const Text(
+            Text(
               "No quests completed yet.",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20,
-                color: Color(0xFF021B4A),
-                fontWeight: FontWeight.w800,
-              ),
+              style: AppsTextStyles.workSansExtraBold20Center,
             ),
 
             const SizedBox(height: 12),
 
-            const Text(
+            Text(
               "Progress comes in small wins — start today and this list will grow.\nYou’ve got this.",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 14,
-                color: Color(0xFF4B587C),
-                height: 1.4,
-              ),
+              style: AppsTextStyles.workSansRegularAdd16,
             ),
 
             const SizedBox(height: 24),
 
             // START QUEST BUTTON
             SizedBox(
-              width: 180,
+              width: 210,
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {
@@ -82,17 +75,14 @@ class _CompletedState extends State<Completed> {
                   ),
                   padding: const EdgeInsets.symmetric(vertical: 14),
                 ),
-                child: const Row(
+                child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(Icons.add, color: Colors.white),
-                    SizedBox(width: 6),
+                    const Icon(Icons.add, color: Colors.white),
+                    const SizedBox(width: 6),
                     Text(
                       "Start quest",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: AppsTextStyles.workSansBlack18Center,
                     ),
                   ],
                 ),

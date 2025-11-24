@@ -343,4 +343,59 @@ class AppsTextStyles {
     height: 1.2, // line-height 120%
     letterSpacing: -0.5,
   );
+
+  static TextStyle workSansSemiBold18 = GoogleFonts.workSans(
+    fontWeight: FontWeight.w600, // SemiBold
+    fontSize: 18,
+    height: 1.4, // line-height 140%
+    letterSpacing: -0.05 * 18, // -5% of font size
+  );
+  static TextStyle workSansRegularAdd16 = GoogleFonts.workSans(
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 16,
+    height: 1.4, // line-height 140%
+    letterSpacing: -0.5,
+    color: const Color(0xFF4C586E), // text color
+  );
+  static TextStyle workSansExtraBold20Center = GoogleFonts.workSans(
+    fontWeight: FontWeight.w800, // ExtraBold
+    fontSize: 20,
+    height: 1.2, // line-height 120%
+    letterSpacing: -0.5,
+    color: const Color(0xFF011F54), // text color
+  );
+  static TextStyle workSansBlack18Center = GoogleFonts.workSans(
+    fontWeight: FontWeight.w900, // Black
+    fontSize: 18,
+    height: 0.8, // line-height 80%
+    letterSpacing: 0,
+    color: const Color(0xFFFFFEF8), // text color
+  );
+  static TextStyle regularResponsive(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize = screenWidth * 0.06; // screen width এর 6% ধরে font size
+
+    return GoogleFonts.alfaSlabOne(
+      fontWeight: FontWeight.w400,
+      fontSize: fontSize,
+      height: 0.8,
+      color: const Color(0xFF011F54),
+    );
+  }
+
+  static TextStyle workSansBlack18CenterBlue = GoogleFonts.workSans(
+    fontWeight: FontWeight.w900, // Black
+    fontSize: 18,
+    height: 0.8, // 80% line-height
+    letterSpacing: 0,
+    color: const Color(0xFF4542EB), // #4542EB
+  );
+
+  static TextStyle labelworkSansSemiBold18 = GoogleFonts.workSans(
+    fontWeight: FontWeight.w600, // SemiBold
+    fontSize: 18,
+    height: 1.4, // 140% line-height
+    letterSpacing: -0.05 * 18, // -5% of font size
+    color: Colors.black, // replace with your desired color
+  );
 }

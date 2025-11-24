@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class Blockng extends StatefulWidget {
   const Blockng({super.key});
@@ -84,34 +85,26 @@ class _BlockngState extends State<Blockng> {
             const SizedBox(height: 24),
 
             // ===== BIG TITLE =====
-            const Text(
+            Text(
               "No quests yet, but your\njourney starts here.",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20,
-                color: Color(0xFF021B4A),
-                fontWeight: FontWeight.w800,
-              ),
+              style: AppsTextStyles.workSansExtraBold20Center,
             ),
 
             const SizedBox(height: 12),
 
             // ===== SUBTEXT =====
-            const Text(
+            Text(
               "Add your first quest and take the smallest\npossible step — we're not chasing\nperfection, just progress.",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 14,
-                color: Color(0xFF4B587C),
-                height: 1.4,
-              ),
+              style: AppsTextStyles.workSansRegularAdd16,
             ),
 
             const SizedBox(height: 24),
 
             // ===== CREATE QUEST BUTTON =====
             SizedBox(
-              width: 180,
+              width: 210,
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {
@@ -125,17 +118,14 @@ class _BlockngState extends State<Blockng> {
                   ),
                   padding: const EdgeInsets.symmetric(vertical: 14),
                 ),
-                child: const Row(
+                child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(Icons.add, color: Colors.white),
-                    SizedBox(width: 6),
+                    const Icon(Icons.add, color: Colors.white, size: 24),
+                    const SizedBox(width: 6),
                     Text(
                       "Create quest",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: AppsTextStyles.workSansBlack18Center,
                     ),
                   ],
                 ),
@@ -245,37 +235,13 @@ class QuestCard extends StatelessWidget {
     required this.duration,
   });
 
-  Color _getLevelBgColor() {
-    if (levelColor.value == const Color(0xFF77D47D).value) {
-      return const Color(0xFFD6F5D4);
-    } else if (levelColor.value == const Color(0xFFF7A94B).value) {
-      return const Color(0xFFFFE8CC);
-    } else if (levelColor.value == const Color(0xFF6AA7FF).value) {
-      return const Color(0xFFD6E8FF);
-    } else {
-      return const Color(0xFFFFD6D6);
-    }
-  }
-
-  Color _getLevelTextColor() {
-    if (levelColor.value == const Color(0xFF77D47D).value) {
-      return const Color(0xFF075E26);
-    } else if (levelColor.value == const Color(0xFFF7A94B).value) {
-      return const Color(0xFF8A5C31);
-    } else if (levelColor.value == const Color(0xFF6AA7FF).value) {
-      return const Color(0xFF003D99);
-    } else {
-      return const Color(0xFF990000);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      // width: ,
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
-        color: const Color(0xFFFFF7ED),
+        color: Color(0xFFFFFEF8),
         borderRadius: BorderRadius.circular(18),
         border: Border.all(color: const Color(0xFFEEDCC5)),
       ),
@@ -331,14 +297,7 @@ class QuestCard extends StatelessWidget {
             children: [
               Text(emoji, style: const TextStyle(fontSize: 22)),
               const SizedBox(width: 8),
-              Text(
-                title,
-                style: const TextStyle(
-                  color: Color(0xFF03145B),
-                  fontSize: 22,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
+              Text(title, style: AppsTextStyles.regularResponsive(context)),
             ],
           ),
 
@@ -353,29 +312,15 @@ class QuestCard extends StatelessWidget {
                 color: Color(0xFF03145B),
               ),
               const SizedBox(width: 6),
-              const Text(
-                "Yesterday",
-                style: TextStyle(
-                  color: Color(0xFF03145B),
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+              Text("Yesterday", style: AppsTextStyles.extraBold16),
               const SizedBox(width: 14),
               const Icon(
                 Icons.check_circle,
-                size: 18,
-                color: Color(0xFF03145B),
+                size: 20,
+                color: Color(0xFF011F54),
               ),
               const SizedBox(width: 6),
-              Text(
-                time,
-                style: const TextStyle(
-                  color: Color(0xFF03145B),
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+              Text(time, style: AppsTextStyles.extraBold16),
             ],
           ),
 
@@ -390,16 +335,12 @@ class QuestCard extends StatelessWidget {
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
-                  color: _getLevelBgColor(),
+                  color: Color(0xFFFFFEF8),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
                   levelText,
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: _getLevelTextColor(),
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: AppsTextStyles.labelworkSansSemiBold18,
                 ),
               ),
               const SizedBox(width: 12),
@@ -435,19 +376,16 @@ class QuestCard extends StatelessWidget {
                     // Mark as completed action
                   },
                   child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    width: double.infinity,
+                    padding: const EdgeInsets.symmetric(vertical: 10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       border: Border.all(color: const Color(0xFF5C3DFF)),
                     ),
                     alignment: Alignment.center,
-                    child: const Text(
+                    child: Text(
                       "Actually, I did this",
-                      style: TextStyle(
-                        color: Color(0xFF5C3DFF),
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                      ),
+                      style: AppsTextStyles.workSansBlack18CenterBlue,
                     ),
                   ),
                 ),
@@ -465,13 +403,9 @@ class QuestCard extends StatelessWidget {
                       border: Border.all(color: const Color(0xFF5C3DFF)),
                     ),
                     alignment: Alignment.center,
-                    child: const Text(
+                    child: Text(
                       "Skip",
-                      style: TextStyle(
-                        color: Color(0xFF5C3DFF),
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                      ),
+                      style: AppsTextStyles.workSansBlack18CenterBlue,
                     ),
                   ),
                 ),
