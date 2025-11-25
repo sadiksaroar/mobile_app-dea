@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_dea/themes/create_qutes.dart';
 
 class InputCardWidget extends StatelessWidget {
   final double scale;
@@ -26,12 +27,8 @@ class InputCardWidget extends StatelessWidget {
       child: TextField(
         controller: controller,
         decoration: InputDecoration(
-          hintText: 'Write down your quest...',
-          hintStyle: TextStyle(
-            fontSize: 16 * scale,
-            color: Colors.grey[600],
-            fontWeight: FontWeight.w600,
-          ),
+          hintText: 'Write down your \n quest...',
+          hintStyle: AppTextStylesQutes.workSansExtraBold32,
           border: InputBorder.none,
         ),
       ),

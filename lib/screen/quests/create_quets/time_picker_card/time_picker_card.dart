@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:mobile_app_dea/themes/create_qutes.dart';
+import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class TimePickerCard extends StatefulWidget {
   final double scale;
@@ -67,7 +69,7 @@ class _TimePickerCardState extends State<TimePickerCard> {
       width: double.infinity,
       padding: EdgeInsets.all(16 * s),
       decoration: BoxDecoration(
-        color: const Color(0xFFEFF6FF),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(12 * s),
       ),
       child: Column(
@@ -94,13 +96,10 @@ class _TimePickerCardState extends State<TimePickerCard> {
                   ),
                 ),
                 SizedBox(width: 8 * s),
+                //  AppTextStylesQutes.workSansExtraBold32
                 Text(
                   'What time?',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16 * s,
-                    color: const Color(0xFF64748B),
-                  ),
+                  style: AppTextStylesQutes.workSansExtraBold32,
                 ),
               ],
             ),

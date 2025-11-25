@@ -51,6 +51,10 @@ class $AssetsLottieAnimationsGen {
 class $AssetsSvgIconsGen {
   const $AssetsSvgIconsGen();
 
+  /// File path: assets/svg_icons/120Days.png
+  AssetGenImage get a120Days =>
+      const AssetGenImage('assets/svg_icons/120Days.png');
+
   /// File path: assets/svg_icons/AI Insights & Reflections.png
   AssetGenImage get aIInsightsReflections =>
       const AssetGenImage('assets/svg_icons/AI Insights & Reflections.png');
@@ -75,9 +79,27 @@ class $AssetsSvgIconsGen {
   SvgGenImage get appleIcon =>
       const SvgGenImage('assets/svg_icons/AppleIcon.svg');
 
+  /// File path: assets/svg_icons/Arrow.png
+  AssetGenImage get arrow => const AssetGenImage('assets/svg_icons/Arrow.png');
+
+  /// File path: assets/svg_icons/Book.png
+  AssetGenImage get book => const AssetGenImage('assets/svg_icons/Book.png');
+
+  /// File path: assets/svg_icons/Button Calendar.png
+  AssetGenImage get buttonCalendarPng =>
+      const AssetGenImage('assets/svg_icons/Button Calendar.png');
+
   /// File path: assets/svg_icons/Button Calendar_.png
-  AssetGenImage get buttonCalendar =>
+  AssetGenImage get buttonCalendarPng_ =>
       const AssetGenImage('assets/svg_icons/Button Calendar_.png');
+
+  /// File path: assets/svg_icons/Button CalendarComplate.png
+  AssetGenImage get buttonCalendarComplate =>
+      const AssetGenImage('assets/svg_icons/Button CalendarComplate.png');
+
+  /// File path: assets/svg_icons/CalendarBlank.png
+  AssetGenImage get calendarBlank =>
+      const AssetGenImage('assets/svg_icons/CalendarBlank.png');
 
   /// File path: assets/svg_icons/Clear All AI Memory.png
   AssetGenImage get clearAllAIMemoryPng =>
@@ -86,6 +108,9 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/Clear All AI Memory?.png
   AssetGenImage get clearAllAIMemoryPng_ =>
       const AssetGenImage('assets/svg_icons/Clear All AI Memory?.png');
+
+  /// File path: assets/svg_icons/Clock.png
+  AssetGenImage get clock => const AssetGenImage('assets/svg_icons/Clock.png');
 
   /// File path: assets/svg_icons/DAILY MOMENTS Png.png
   AssetGenImage get dAILYMOMENTSPng =>
@@ -115,6 +140,21 @@ class $AssetsSvgIconsGen {
   AssetGenImage get editIcon =>
       const AssetGenImage('assets/svg_icons/EditIcon.png');
 
+  /// File path: assets/svg_icons/Fire.png
+  AssetGenImage get fire => const AssetGenImage('assets/svg_icons/Fire.png');
+
+  /// File path: assets/svg_icons/Frame 2147228668.png
+  AssetGenImage get frame2147228668 =>
+      const AssetGenImage('assets/svg_icons/Frame 2147228668.png');
+
+  /// File path: assets/svg_icons/Frame 2147228670.png
+  AssetGenImage get frame2147228670 =>
+      const AssetGenImage('assets/svg_icons/Frame 2147228670.png');
+
+  /// File path: assets/svg_icons/Frame 2147228671.png
+  AssetGenImage get frame2147228671 =>
+      const AssetGenImage('assets/svg_icons/Frame 2147228671.png');
+
   /// File path: assets/svg_icons/Help.png
   AssetGenImage get help => const AssetGenImage('assets/svg_icons/Help.png');
 
@@ -137,6 +177,10 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/Nowlli Check-ins.png
   AssetGenImage get nowlliCheckIns =>
       const AssetGenImage('assets/svg_icons/Nowlli Check-ins.png');
+
+  /// File path: assets/svg_icons/Plush Cleander .png
+  AssetGenImage get plushCleander =>
+      const AssetGenImage('assets/svg_icons/Plush Cleander .png');
 
   /// File path: assets/svg_icons/Privacy & Data.png
   AssetGenImage get privacyData =>
@@ -178,6 +222,26 @@ class $AssetsSvgIconsGen {
   AssetGenImage get taslReminders =>
       const AssetGenImage('assets/svg_icons/TaslReminders.png');
 
+  /// File path: assets/svg_icons/To sleep.png
+  AssetGenImage get toSleep =>
+      const AssetGenImage('assets/svg_icons/To sleep.png');
+
+  /// File path: assets/svg_icons/To study.png
+  AssetGenImage get toStudy =>
+      const AssetGenImage('assets/svg_icons/To study.png');
+
+  /// File path: assets/svg_icons/To train.png
+  AssetGenImage get toTrain =>
+      const AssetGenImage('assets/svg_icons/To train.png');
+
+  /// File path: assets/svg_icons/To wake up.png
+  AssetGenImage get toWakeUp =>
+      const AssetGenImage('assets/svg_icons/To wake up.png');
+
+  /// File path: assets/svg_icons/Today Calender .png
+  AssetGenImage get todayCalender =>
+      const AssetGenImage('assets/svg_icons/Today Calender .png');
+
   /// File path: assets/svg_icons/Use My Data to Improve AI.png
   AssetGenImage get useMyDataToImproveAI =>
       const AssetGenImage('assets/svg_icons/Use My Data to Improve AI.png');
@@ -186,17 +250,35 @@ class $AssetsSvgIconsGen {
   AssetGenImage get voicePersonality =>
       const AssetGenImage('assets/svg_icons/Voice & Personality.png');
 
+  /// File path: assets/svg_icons/When.png
+  AssetGenImage get whenPng => const AssetGenImage('assets/svg_icons/When.png');
+
   /// File path: assets/svg_icons/apple icon sign in.svg
   SvgGenImage get appleIconSignIn =>
       const SvgGenImage('assets/svg_icons/apple icon sign in.svg');
+
+  /// File path: assets/svg_icons/arrowback.png
+  AssetGenImage get arrowback =>
+      const AssetGenImage('assets/svg_icons/arrowback.png');
 
   /// File path: assets/svg_icons/back_icon.svg
   SvgGenImage get backIcon =>
       const SvgGenImage('assets/svg_icons/back_icon.svg');
 
+  /// File path: assets/svg_icons/blue.png
+  AssetGenImage get blue => const AssetGenImage('assets/svg_icons/blue.png');
+
+  /// File path: assets/svg_icons/calende.png
+  AssetGenImage get calende =>
+      const AssetGenImage('assets/svg_icons/calende.png');
+
   /// File path: assets/svg_icons/check-circle-01-passwprd update.svg
   SvgGenImage get checkCircle01PasswprdUpdate =>
       const SvgGenImage('assets/svg_icons/check-circle-01-passwprd update.svg');
+
+  /// File path: assets/svg_icons/exlometory.png
+  AssetGenImage get exlometory =>
+      const AssetGenImage('assets/svg_icons/exlometory.png');
 
   /// File path: assets/svg_icons/google icons blue .svg
   SvgGenImage get googleIconsBlue =>
@@ -205,6 +287,15 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/google_icon.svg
   SvgGenImage get googleIcon =>
       const SvgGenImage('assets/svg_icons/google_icon.svg');
+
+  /// File path: assets/svg_icons/graph.png
+  AssetGenImage get graph => const AssetGenImage('assets/svg_icons/graph.png');
+
+  /// File path: assets/svg_icons/mean.png
+  AssetGenImage get mean => const AssetGenImage('assets/svg_icons/mean.png');
+
+  /// File path: assets/svg_icons/moon.png
+  AssetGenImage get moon => const AssetGenImage('assets/svg_icons/moon.png');
 
   /// File path: assets/svg_icons/never_back.png
   AssetGenImage get neverBack =>
@@ -226,9 +317,16 @@ class $AssetsSvgIconsGen {
   SvgGenImage get proCrossIcon =>
       const SvgGenImage('assets/svg_icons/pro_cross_icon.svg');
 
+  /// File path: assets/svg_icons/push.png
+  AssetGenImage get push => const AssetGenImage('assets/svg_icons/push.png');
+
   /// File path: assets/svg_icons/settings_backIcon.png
   AssetGenImage get settingsBackIcon =>
       const AssetGenImage('assets/svg_icons/settings_backIcon.png');
+
+  /// File path: assets/svg_icons/shuffle.png
+  AssetGenImage get shuffle =>
+      const AssetGenImage('assets/svg_icons/shuffle.png');
 
   /// File path: assets/svg_icons/sign in goole.svg
   SvgGenImage get signInGoole =>
@@ -242,21 +340,42 @@ class $AssetsSvgIconsGen {
   SvgGenImage get signUnBackScrren =>
       const SvgGenImage('assets/svg_icons/sign_un_back_scrren..svg');
 
+  /// File path: assets/svg_icons/star.png
+  AssetGenImage get star => const AssetGenImage('assets/svg_icons/star.png');
+
   /// File path: assets/svg_icons/start_lets_go.svg
   SvgGenImage get startLetsGo =>
       const SvgGenImage('assets/svg_icons/start_lets_go.svg');
 
+  /// File path: assets/svg_icons/sunButton.png
+  AssetGenImage get sunButton =>
+      const AssetGenImage('assets/svg_icons/sunButton.png');
+
+  /// File path: assets/svg_icons/to liner.png
+  AssetGenImage get toLiner =>
+      const AssetGenImage('assets/svg_icons/to liner.png');
+
+  /// File path: assets/svg_icons/voice.png
+  AssetGenImage get voice => const AssetGenImage('assets/svg_icons/voice.png');
+
   /// List of all assets
   List<dynamic> get values => [
+    a120Days,
     aIInsightsReflections,
     aIPersonalization,
     appStoreAppIconPng,
     appStoreAppIconSvg,
     appleIconsBlue,
     appleIcon,
-    buttonCalendar,
+    arrow,
+    book,
+    buttonCalendarPng,
+    buttonCalendarPng_,
+    buttonCalendarComplate,
+    calendarBlank,
     clearAllAIMemoryPng,
     clearAllAIMemoryPng_,
+    clock,
     dAILYMOMENTSPng,
     dailyMoments,
     dailyTips,
@@ -264,12 +383,17 @@ class $AssetsSvgIconsGen {
     deleteYourAccount,
     emotionalSupport,
     editIcon,
+    fire,
+    frame2147228668,
+    frame2147228670,
+    frame2147228671,
     help,
     language,
     logOut,
     notifications,
     nowliPro,
     nowlliCheckIns,
+    plushCleander,
     privacyData,
     privacyPolicy,
     quests,
@@ -280,23 +404,42 @@ class $AssetsSvgIconsGen {
     sounds,
     streakProgress,
     taslReminders,
+    toSleep,
+    toStudy,
+    toTrain,
+    toWakeUp,
+    todayCalender,
     useMyDataToImproveAI,
     voicePersonality,
+    whenPng,
     appleIconSignIn,
+    arrowback,
     backIcon,
+    blue,
+    calende,
     checkCircle01PasswprdUpdate,
+    exlometory,
     googleIconsBlue,
     googleIcon,
+    graph,
+    mean,
+    moon,
     neverBack,
     nowliHowToUse,
     nowlnLogo,
     popupSpwakingCross,
     proCrossIcon,
+    push,
     settingsBackIcon,
+    shuffle,
     signInGoole,
     signInPageIcon,
     signUnBackScrren,
+    star,
     startLetsGo,
+    sunButton,
+    toLiner,
+    voice,
   ];
 }
 

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_dea/themes/create_qutes.dart';
+import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class EnableCallCard extends StatefulWidget {
   final double scale;
@@ -20,7 +22,7 @@ class _EnableCallCardState extends State<EnableCallCard> {
       width: double.infinity,
       padding: EdgeInsets.all(12 * s),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Color(0xFFDFEFFF),
         borderRadius: BorderRadius.circular(12 * s),
       ),
       child: Column(
@@ -29,12 +31,15 @@ class _EnableCallCardState extends State<EnableCallCard> {
           // Header row
           Row(
             children: [
-              Icon(Icons.phone_in_talk, color: Colors.blue[900]),
-              SizedBox(width: 8 * s),
-              Text(
-                'ENABLE CALL',
-                style: TextStyle(fontWeight: FontWeight.bold),
+              Switch(
+                value: isCallEnabled,
+                onChanged: (bool newValue) {
+                  setState(() {
+                    isCallEnabled = newValue;
+                  });
+                },
               ),
+              Text('ENABLE CALL', style: AppTextStylesQutes.workSansBlack24),
             ],
           ),
           SizedBox(height: 10 * s),
@@ -44,19 +49,8 @@ class _EnableCallCardState extends State<EnableCallCard> {
               Expanded(
                 child: Text(
                   'A real-time 10-min support call will help you stay on track.',
-                  style: TextStyle(
-                    fontSize: 12 * s,
-                    color: Colors.blueGrey[700],
-                  ),
+                  style: AppTextStylesQutes.workSansRegular16,
                 ),
-              ),
-              Switch(
-                value: isCallEnabled,
-                onChanged: (value) {
-                  setState(() {
-                    isCallEnabled = value;
-                  });
-                },
               ),
             ],
           ),

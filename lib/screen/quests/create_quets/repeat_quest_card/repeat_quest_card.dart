@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_dea/themes/create_qutes.dart';
 
 class RepeatQuestCard extends StatefulWidget {
   final double scale;
@@ -10,7 +11,7 @@ class RepeatQuestCard extends StatefulWidget {
 }
 
 class _RepeatQuestCardState extends State<RepeatQuestCard> {
-  bool _switchValue = false;
+  bool isCallEnabled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -20,39 +21,37 @@ class _RepeatQuestCardState extends State<RepeatQuestCard> {
       width: double.infinity,
       padding: EdgeInsets.all(12 * s),
       decoration: BoxDecoration(
-        color: const Color(0xFFE6F0FF),
+        color: Color(0xFFDFEFFF),
         borderRadius: BorderRadius.circular(12 * s),
       ),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Text description
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'REPEAT QUEST',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 6 * s),
-                Text(
-                  'Turn this on to repeat the quest daily or weekly.',
-                  style: TextStyle(
-                    fontSize: 12 * s,
-                    color: Colors.blueGrey[700],
-                  ),
-                ),
-              ],
-            ),
+          // Header row
+          Row(
+            children: [
+              Switch(
+                value: isCallEnabled,
+                onChanged: (bool newValue) {
+                  setState(() {
+                    isCallEnabled = newValue;
+                  });
+                },
+              ),
+              Text('REPEAT QUEST', style: AppTextStylesQutes.workSansBlack24),
+            ],
           ),
-          // Switch
-          Switch(
-            value: _switchValue,
-            onChanged: (bool newValue) {
-              setState(() {
-                _switchValue = newValue;
-              });
-            },
+          SizedBox(height: 10 * s),
+          // Description + switch
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  'Turn this on to repeat the quest daily or weekly.',
+                  style: AppTextStylesQutes.workSansRegular16,
+                ),
+              ),
+            ],
           ),
         ],
       ),

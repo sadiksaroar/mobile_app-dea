@@ -16,7 +16,7 @@ class _InsightsScreenState extends State<InsightsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F7FA),
+      backgroundColor: Color(0xFFFFFEF8),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(

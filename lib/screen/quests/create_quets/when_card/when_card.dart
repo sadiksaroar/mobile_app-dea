@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_dea/core/gen/assets.gen.dart';
+import 'package:mobile_app_dea/themes/create_qutes.dart'
+    show AppTextStylesQutes;
+import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class WhenCard extends StatefulWidget {
   final double scale;
@@ -20,7 +24,7 @@ class _WhenCardState extends State<WhenCard> {
       width: double.infinity,
       padding: EdgeInsets.all(12 * s),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Color(0xFFDFEFFF),
         borderRadius: BorderRadius.circular(12 * s),
       ),
       child: Column(
@@ -29,12 +33,13 @@ class _WhenCardState extends State<WhenCard> {
           // Header
           Row(
             children: [
-              Icon(Icons.calendar_today, color: Colors.blue[900]),
-              SizedBox(width: 8 * s),
-              Text(
-                'WHEN?',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16 * s),
+              Image.asset(
+                Assets.svgIcons.whenPng.path,
+                height: 24 * s,
+                width: 24 * s,
               ),
+              SizedBox(width: 8 * s),
+              Text('WHEN?', style: AppTextStylesQutes.workSansBlack24),
             ],
           ),
           SizedBox(height: 12 * s),
@@ -67,13 +72,7 @@ class _WhenCardState extends State<WhenCard> {
           color: selected ? Colors.blue[50] : Colors.transparent,
           borderRadius: BorderRadius.circular(8 * s),
         ),
-        child: Text(
-          label,
-          style: TextStyle(
-            color: selected ? Colors.blue[900] : Colors.black54,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        child: Text(label, style: AppTextStylesQutes.workSansBlack24),
       ),
     );
   }
@@ -103,20 +102,7 @@ class _WhenCardState extends State<WhenCard> {
                       selectedDateOption != 'Tomorrow'
                   ? selectedDateOption
                   : 'Select a date',
-              style: TextStyle(
-                color:
-                    selectedDateOption.isNotEmpty &&
-                        selectedDateOption != 'Today' &&
-                        selectedDateOption != 'Tomorrow'
-                    ? Colors.blue[900]
-                    : Colors.black54,
-                fontWeight:
-                    selectedDateOption.isNotEmpty &&
-                        selectedDateOption != 'Today' &&
-                        selectedDateOption != 'Tomorrow'
-                    ? FontWeight.bold
-                    : FontWeight.normal,
-              ),
+              style: AppTextStylesQutes.workSansBlack24,
             ),
           ],
         ),
@@ -178,13 +164,13 @@ class _DateSelectionScreenState extends State<DateSelectionScreen> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        double cardWidth = constraints.maxWidth * 0.85;
+        // double cardWidth = constraints.maxWidth * 0.85;
 
         return Container(
-          width: cardWidth,
+          width: 335,
           padding: const EdgeInsets.all(24),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: const Color(0xFFDFEFFF),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Column(
@@ -194,27 +180,18 @@ class _DateSelectionScreenState extends State<DateSelectionScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Expanded(
+                  Expanded(
                     child: Text(
                       "Select a date",
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0xFF002D72),
-                      ),
+                      style: AppTextStylesQutes.workSansBlack20,
                     ),
-                  ),
-                  IconButton(
-                    onPressed: widget.onClose,
-                    icon: const Icon(Icons.close),
-                    color: Colors.grey[600],
                   ),
                 ],
               ),
               const SizedBox(height: 8),
-              const Text(
+              Text(
                 "Only 7 days ahead – because a week is enough to get moving.",
-                style: TextStyle(fontSize: 14, color: Color(0xFF334155)),
+                style: AppTextStylesQutes.workSansSemiBold18,
               ),
               const SizedBox(height: 24),
               Container(
@@ -226,15 +203,11 @@ class _DateSelectionScreenState extends State<DateSelectionScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Text(
                         "January 2026",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          color: Color(0xFF002D72),
-                        ),
+                        style: AppTextStylesQutes.workSansSemiBosld18,
                       ),
                     ),
                     const SizedBox(height: 12),
@@ -307,16 +280,12 @@ class _DateSelectionScreenState extends State<DateSelectionScreen> {
                     backgroundColor: const Color(0xFFFF8A22),
                     padding: const EdgeInsets.symmetric(vertical: 18),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(25),
                     ),
                   ),
-                  child: const Text(
+                  child: Text(
                     "Choose date",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                    ),
+                    style: AppTextStylesQutes.workSansBlack20,
                   ),
                 ),
               ),

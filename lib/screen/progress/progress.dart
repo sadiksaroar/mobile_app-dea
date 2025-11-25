@@ -36,10 +36,10 @@ class _ProgressState extends State<Progress> with TickerProviderStateMixin {
 
     return Scaffold(
       // ---------------- APP BAR ----------------
-      backgroundColor: const Color(0xFFD6E7FF),
+      backgroundColor: Color(0xFFFFFEF8),
 
       appBar: AppBar(
-        backgroundColor: const Color(0xFFD6E7FF),
+        backgroundColor: Color(0xFFFFFEF8),
         elevation: 0,
         toolbarHeight: 90,
         title: Column(

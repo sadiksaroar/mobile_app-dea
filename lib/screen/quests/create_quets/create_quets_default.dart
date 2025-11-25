@@ -44,7 +44,6 @@ class _CreateQuestPageState extends State<CreateQuestPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  HeaderWidget(),
                   SizedBox(height: 10 * baseScale),
                   TitleWidget(),
                   SizedBox(height: 14 * baseScale),

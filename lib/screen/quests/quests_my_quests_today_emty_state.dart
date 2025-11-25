@@ -70,7 +70,7 @@ class _QuestHomePageState extends State<QuestHomePage>
             // child: const Icon(Icons.add, color: Colors.white),
             // child: Assets.svgIcons.buttonCalendar.path(width: 24, height: 24),
             child: Image.asset(
-              Assets.svgIcons.buttonCalendar.path,
+              Assets.svgIcons.buttonCalendarPng.path,
               width: 60,
               height: 60,
             ),

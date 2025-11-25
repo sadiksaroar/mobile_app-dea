@@ -2,7 +2,10 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mobile_app_dea/screen/quests/create_quets/create_quets_default.dart';
+import 'package:mobile_app_dea/screen/home/home_screen.dart';
+import 'package:mobile_app_dea/screen/progress/progress.dart';
+import 'package:mobile_app_dea/screen/quests/quests_my_quests_today_emty_state.dart'
+    show QuestHomePage;
 
 void main() {
   runApp(
@@ -28,7 +31,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: CreateQuestPage(), // Your EntryScreen widget
+        home: Progress(),
+        // // home: HomeScreen(),
         // home: SignInScreen(),
         builder: DevicePreview.appBuilder,
       ),

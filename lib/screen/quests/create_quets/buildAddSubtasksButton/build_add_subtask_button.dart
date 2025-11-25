@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_dea/core/gen/assets.gen.dart';
+import 'package:mobile_app_dea/themes/create_qutes.dart';
 
 class AddSubtasksButton extends StatefulWidget {
   final double scale;
@@ -30,21 +32,16 @@ class _AddSubtasksButtonState extends State<AddSubtasksButton> {
             padding: EdgeInsets.symmetric(horizontal: 24 * s, vertical: 8 * s),
             child: Row(
               children: [
-                Icon(
-                  Icons.format_list_bulleted,
-                  color: Colors.blue[900],
-                  size: 20 * s,
+                Image.asset(
+                  Assets.svgIcons.arrow.path,
+                  height: 20 * s,
+                  width: 20 * s,
                 ),
                 SizedBox(width: 8 * s),
                 Expanded(
                   child: Text(
                     'ADD SUBTASKS',
-                    style: TextStyle(
-                      color: Colors.blue[900],
-                      fontWeight: FontWeight.w700,
-                      fontSize: 13 * s,
-                      letterSpacing: 0.5,
-                    ),
+                    style: AppTextStylesQutes.workSansBlack24,
                   ),
                 ),
                 GestureDetector(
@@ -60,7 +57,11 @@ class _AddSubtasksButtonState extends State<AddSubtasksButton> {
                       color: Colors.blue[700],
                       borderRadius: BorderRadius.circular(8 * s),
                     ),
-                    child: Icon(Icons.add, color: Colors.white, size: 20 * s),
+                    child: Image.asset(
+                      Assets.svgIcons.quests.path,
+                      height: 20 * s,
+                      width: 20 * s,
+                    ),
                   ),
                 ),
               ],
@@ -78,32 +79,21 @@ class _AddSubtasksButtonState extends State<AddSubtasksButton> {
                 child: Container(
                   padding: EdgeInsets.symmetric(vertical: 14 * s),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF89B6F8),
-                    borderRadius: BorderRadius.circular(12 * s),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        blurRadius: 8,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
+                    border: Border.all(color: Color(0xFFA9A8F6)),
+                    borderRadius: BorderRadius.circular(25 * s),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.auto_awesome,
-                        color: Colors.white,
-                        size: 18 * s,
+                      Image.asset(
+                        Assets.svgIcons.star.path,
+                        height: 20 * s,
+                        width: 20 * s,
                       ),
                       SizedBox(width: 8 * s),
                       Text(
                         "Generate subtasks",
-                        style: TextStyle(
-                          fontSize: 15 * s,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: AppTextStylesQutes.workSansBlack18,
                       ),
                     ],
                   ),
@@ -124,17 +114,12 @@ class _AddSubtasksButtonState extends State<AddSubtasksButton> {
                   maxLines: 3,
                   decoration: InputDecoration(
                     hintText: 'Write subtask...',
-                    hintStyle: TextStyle(
-                      color: Colors.grey[400],
-                      fontSize: 15 * s,
-                      fontWeight: FontWeight.w500,
-                      height: 1.4,
-                    ),
+                    hintStyle: AppTextStylesQutes.workSansExtraBold32,
                     border: InputBorder.none,
                     isDense: true,
                     contentPadding: EdgeInsets.zero,
                   ),
-                  style: TextStyle(fontSize: 15 * s, color: Colors.blue[900]),
+                  style: AppTextStylesQutes.workSansSemiBold18,
                 ),
               ),
             ),
