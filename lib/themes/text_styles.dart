@@ -350,6 +350,13 @@ class AppsTextStyles {
     height: 1.4, // line-height 140%
     letterSpacing: -0.05 * 18, // -5% of font size
   );
+
+  static TextStyle workSansSemiBold15 = GoogleFonts.workSans(
+    fontWeight: FontWeight.w600, // SemiBold
+    fontSize: 18,
+    height: 1.4, // line-height 140%
+    letterSpacing: -0.05 * 18, // -5% of font size
+  );
   static TextStyle workSansRegularAdd16 = GoogleFonts.workSans(
     fontWeight: FontWeight.w400, // Regular
     fontSize: 16,

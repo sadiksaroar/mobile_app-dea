@@ -5,4 +5,8 @@ class AppRoutes {
   static const String readyToStartScreen = '/readyToStartScreen';
   static const String signInScreen = '/signInScreen';
   static const String signUpScreen = '/signUpScreen';
+
+  /* onboarding */
+
+  static const String onboardingFlow = '/onboardingFlow';
 }

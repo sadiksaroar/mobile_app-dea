@@ -1,0 +1,114 @@
+import 'package:flutter/material.dart';
+import 'package:mobile_app_dea/themes/text_styles.dart';
+
+class NamePage extends StatefulWidget {
+  final VoidCallback onContinue;
+  final Function(String) onNameChanged;
+  final String initialName;
+
+  const NamePage({
+    Key? key,
+    required this.onContinue,
+    required this.onNameChanged,
+    required this.initialName,
+  }) : super(key: key);
+
+  @override
+  State<NamePage> createState() => _NamePageState();
+}
+
+class _NamePageState extends State<NamePage> {
+  late TextEditingController _nameController;
+  late FocusNode _focusNode;
+
+  bool _isButtonEnabled = false;
+  bool _isFocused = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _nameController = TextEditingController(text: widget.initialName);
+    _focusNode = FocusNode();
+
+    _focusNode.addListener(() {
+      setState(() {
+        _isFocused = _focusNode.hasFocus;
+      });
+    });
+
+    _nameController.addListener(() {
+      setState(() {
+        _isButtonEnabled = _nameController.text.trim().isNotEmpty;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(24.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Let's get to know each other!",
+            style: AppsTextStyles.PasswordDescription,
+          ),
+          const SizedBox(height: 16),
+          Text('WHAT SHOULD NOWLII CALL YOU?', style: AppsTextStyles.SaimTitle),
+          const SizedBox(height: 32),
+
+          // 🔹 TextField with focus tracking
+          TextField(
+            controller: _nameController,
+            focusNode: _focusNode,
+            onChanged: widget.onNameChanged,
+            style: AppsTextStyles.typeSomeThingHere.copyWith(
+              color: const Color(0xFF4542EB),
+            ),
+            decoration: InputDecoration(
+              hintText: 'Type something here...',
+              hintStyle: AppsTextStyles.typeSomeThingHere.copyWith(),
+              border: InputBorder.none,
+              enabledBorder: InputBorder.none,
+              focusedBorder: InputBorder.none,
+            ),
+          ),
+
+          const Spacer(),
+
+          // 🔹 Continue button
+          SizedBox(
+            width: double.infinity,
+            height: 55,
+            child: ElevatedButton(
+              onPressed: _isButtonEnabled ? widget.onContinue : null,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF4A3AFF),
+                disabledBackgroundColor: const Color(0xFF4A3AFF),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              ),
+              child: Text(
+                "Continue",
+                style: AppsTextStyles.continueButton.copyWith(
+                  color: _isFocused
+                      ? Colors.white
+                      : const Color(0xFFA9A8F6), // 👈 Focus হলে সাদা
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

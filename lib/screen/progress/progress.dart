@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_dea/screen/progress/insights/Insights.dart';
 import 'package:mobile_app_dea/screen/progress/my_progress/my_progress.dart';
+import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class Progress extends StatefulWidget {
   const Progress({super.key});
@@ -45,32 +46,14 @@ class _ProgressState extends State<Progress> with TickerProviderStateMixin {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "PROGRESS",
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.w800,
-                color: Colors.blue.shade900,
-              ),
-            ),
+            Text("PROGRESS", style: AppsTextStyles.SaimTitle),
             const SizedBox(height: 4),
-            const Text(
+            Text(
               "Track your growth and reflections",
-              style: TextStyle(color: Colors.black54, fontSize: 14),
+              style: AppsTextStyles.workSansRegularF16,
             ),
           ],
         ),
-        actions: [
-          Container(
-            margin: const EdgeInsets.only(right: 16),
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.blue.shade700,
-              borderRadius: BorderRadius.circular(14),
-            ),
-            child: const Icon(Icons.voice_chat, color: Colors.white),
-          ),
-        ],
       ),
 
       // ---------------- BODY ----------------
@@ -95,8 +78,8 @@ class _ProgressState extends State<Progress> with TickerProviderStateMixin {
               overlayColor: WidgetStateProperty.all(Colors.transparent),
               // REMOVE splash effect
               splashFactory: NoSplash.splashFactory,
-              labelColor: Colors.black,
-              unselectedLabelColor: Colors.black45,
+              labelStyle: AppsTextStyles.workSansExtraBold20,
+              unselectedLabelStyle: AppsTextStyles.workSansy6ExtraBold20,
               tabs: const [
                 Tab(text: "My progress"),
                 Tab(text: "Insights"),

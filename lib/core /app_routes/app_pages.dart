@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
+import 'package:mobile_app_dea/screen/Onboarding/onbording_flow_file/onboarding_flow.dart';
 import 'package:mobile_app_dea/screen/auth/sign_in_screen.dart';
 import 'package:mobile_app_dea/screen/auth/sign_up.dart';
 import 'package:mobile_app_dea/screen/entry_screen_p2.dart';
@@ -9,6 +10,8 @@ import 'package:mobile_app_dea/screen/welcome_come_screen_p3.dart';
 
 class AppPages {
   static final GoRouter router = GoRouter(
+    initialLocation: AppRoutes.onboardingFlow, // 👈 এখানে add করুন
+
     routes: [
       GoRoute(
         path: AppRoutes.splash, //
@@ -35,6 +38,12 @@ class AppPages {
         path: AppRoutes.signUpScreen,
         builder: (context, state) =>
             const SignUpScreen(), // Placeholder for SignUpScreen
+      ),
+
+      /* onboarding */
+      GoRoute(
+        path: AppRoutes.onboardingFlow,
+        builder: (context, state) => const OnboardingFlow(),
       ),
     ],
   );

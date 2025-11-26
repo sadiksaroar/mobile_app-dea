@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
-import 'package:mobile_app_dea/screen/Onboarding/gender_page.dart';
-import 'package:mobile_app_dea/screen/Onboarding/name_page.dart' show NamePage;
+import 'package:mobile_app_dea/screen/Onboarding/onbording_flow_file/gender_page.dart';
+import 'package:mobile_app_dea/screen/Onboarding/onbording_flow_file/name_page.dart'
+    show NamePage;
 
 class OnboardingFlow extends StatefulWidget {
   const OnboardingFlow({Key? key}) : super(key: key);
@@ -32,13 +33,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeInOut,
       );
-    } else {
-      /*
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const LoadingScreen()),
-      );*/
-    }
+    } else {}
   }
 
   void previousPage() {

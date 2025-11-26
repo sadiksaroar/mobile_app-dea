@@ -44,7 +44,8 @@ class StreakScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(24),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('Daily streak', style: AppsTextStyles.regular32Uppercase),
           const SizedBox(height: 4),
@@ -54,7 +55,7 @@ class StreakScreen extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
             decoration: BoxDecoration(
               color: Color(0xFFFF8F26),
               borderRadius: BorderRadius.circular(50),
@@ -62,9 +63,15 @@ class StreakScreen extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Image.asset(Assets.svgIcons.fire.path, width: 40, height: 40),
-                const SizedBox(width: 12),
-                Text('120 DAYS', style: AppTextStylesQutes.woskerRegular52),
+                Image.asset(Assets.svgIcons.fire.path, width: 32, height: 32),
+                const SizedBox(width: 8),
+                Flexible(
+                  child: Text(
+                    '120 DAYS',
+                    style: AppTextStylesQutes.woskerRegular52,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
               ],
             ),
           ),
@@ -273,7 +280,6 @@ class StreakScreen extends StatelessWidget {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              // Background circle with subtle gradient
               Container(
                 width: 100,
                 height: 100,
@@ -289,7 +295,6 @@ class StreakScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              // Progress indicator
               SizedBox(
                 width: 85,
                 height: 85,
@@ -303,7 +308,6 @@ class StreakScreen extends StatelessWidget {
                   strokeCap: StrokeCap.round,
                 ),
               ),
-              // Center number
               Text(
                 count,
                 style: TextStyle(
@@ -449,7 +453,6 @@ class StreakScreen extends StatelessWidget {
     );
   }
 
-  // ...existing code...
   BarChartGroupData _buildBar(int x, double y) {
     return BarChartGroupData(
       x: x,
@@ -461,15 +464,13 @@ class StreakScreen extends StatelessWidget {
             end: Alignment.topCenter,
             colors: [Color(0xFFDFEFFF), Color(0xFF4542EB)],
           ),
-          width: 34.14, // updated width
+          width: 34.14,
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(4),
             topRight: Radius.circular(4),
-          ), // use explicit top-left/top-right radii
+          ),
         ),
       ],
     );
   }
-
-  // ...existing code...
 }

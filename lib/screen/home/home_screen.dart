@@ -1597,12 +1597,16 @@ class OnboardingStep {
 
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/screen/home/contextual_onboarding/custom_paint/chat_bubble_container.dart';
 import 'package:mobile_app_dea/screen/home/contextual_onboarding/custom_paint/chat_message.dart';
 import 'package:mobile_app_dea/screen/home/contextual_onboarding/custom_paint/conversation_bubble.dart';
 import 'package:mobile_app_dea/screen/home/contextual_onboarding/custom_paint/text_bubble.dart';
 import 'package:mobile_app_dea/screen/home/swipe_on_quest/delete_toast.dart';
 import 'package:mobile_app_dea/screen/home/swipe_on_quest/tomorow_card.dart';
+import 'package:mobile_app_dea/screen/remiender_notification/choose_your_mood/loader.dart';
+import 'package:mobile_app_dea/themes/text_styles.dart';
+import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -1692,19 +1696,11 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Color(0xFFD4E3FF),
           child: Icon(Icons.person_outline, color: Color(0xFF5B7EFF), size: 28),
         ),
-        const Text(
-          'HI JULIE!',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF1A1F36),
-            letterSpacing: 1.2,
-          ),
-        ),
+        Text('HI JULIE!', style: AppsTextStyles.extraBold32Centered),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppColorsApps.skyBlueLight,
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
@@ -1714,22 +1710,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-          child: const Row(
+          child: Row(
             children: [
-              Icon(
-                Icons.local_fire_department,
-                color: Color(0xFFFF6B35),
-                size: 22,
-              ),
+              Image.asset(Assets.svgIcons.fire.path, height: 22, width: 22),
               SizedBox(width: 6),
-              Text(
-                '1',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF1A1F36),
-                ),
-              ),
+              Text('1', style: AppsTextStyles.fullNameAndEmail),
             ],
           ),
         ),
@@ -1765,43 +1750,23 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   'Ready to make\ntoday count?',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF1A1F36),
-                    height: 1.3,
-                  ),
+                  style: AppsTextStyles.sendResetLinkButton,
                 ),
                 const SizedBox(height: 6),
                 Text(
                   'Tiny wins make big shifts.',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey[700],
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: AppsTextStyles.WorkSansRegular14,
                 ),
                 const SizedBox(height: 16),
                 Row(
                   children: [
-                    const Text(
-                      'Today\'s progress',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF1A1F36),
-                      ),
-                    ),
+                    Text('Today\'s progress', style: AppsTextStyles.regular16l),
                     const SizedBox(width: 8),
                     Text(
                       '${(progress * 100).toInt()}%',
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF5B7EFF),
-                      ),
+                      style: AppsTextStyles.regular16l,
                     ),
                   ],
                 ),
@@ -1841,17 +1806,15 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
-              color: const Color(0xFF5B7EFF),
+              color: AppColorsApps.royalBlue,
               borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color(0xFF5B7EFF).withOpacity(0.3),
-                  blurRadius: 15,
-                  offset: const Offset(0, 4),
-                ),
-              ],
             ),
-            child: const Text('🐻', style: TextStyle(fontSize: 44)),
+            // child: const Text('🐻', style: TextStyle(fontSize: 44)),
+            child: Image.asset(
+              Assets.svgIcons.readyToMakeTodayCount.path,
+              height: 44,
+              width: 44,
+            ),
           ),
         ],
       ),
@@ -1863,8 +1826,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Row(
       children: [
         Container(
-          height: 105,
-          width: 105,
+          height: 120,
+          width: 120,
           padding: const EdgeInsets.all(18),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -1880,30 +1843,16 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           child: Column(
             children: [
-              const Text(
-                'Today',
-                style: TextStyle(
-                  fontSize: 10,
-                  color: Color(0xFF1A1F36),
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+              Text('Today', style: AppsTextStyles.regular16l),
               const SizedBox(height: 6),
-              Text(
-                '${now.day}',
-                style: const TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF5B7EFF),
-                ),
-              ),
+              Text('${now.day}', style: AppsTextStyles.extraBold32Centered),
             ],
           ),
         ),
         const SizedBox(width: 12),
         Container(
-          height: 105,
-          width: 105,
+          height: 120,
+          width: 120,
           padding: const EdgeInsets.all(18),
           decoration: BoxDecoration(
             gradient: const LinearGradient(
@@ -1918,19 +1867,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.add_circle_outline, color: Colors.white, size: 24),
-              SizedBox(width: 8),
-              Text(
-                'Plan',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
+              const Icon(
+                Icons.add_circle_outline,
+                color: Colors.white,
+                size: 24,
               ),
+              const SizedBox(width: 8),
+              Text('Plan', style: AppsTextStyles.regular18),
             ],
           ),
         ),

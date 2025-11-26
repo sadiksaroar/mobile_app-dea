@@ -2,10 +2,14 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mobile_app_dea/screen/Onboarding/onboarding_features/onbording_fetures.dart';
+import 'package:mobile_app_dea/screen/Onboarding/onbording_flow_file/onboarding_flow.dart';
 import 'package:mobile_app_dea/screen/home/home_screen.dart';
 import 'package:mobile_app_dea/screen/progress/progress.dart';
 import 'package:mobile_app_dea/screen/quests/quests_my_quests_today_emty_state.dart'
     show QuestHomePage;
+import 'package:mobile_app_dea/screen/remiender_notification/ai_call_remiender/ai_call_remiender.dart';
+import 'package:mobile_app_dea/screen/remiender_notification/choose_your_mood/chooise_your_mood.dart';
 
 void main() {
   runApp(
@@ -31,7 +35,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: Progress(),
+        home: HomeScreen(),
         // // home: HomeScreen(),
         // home: SignInScreen(),
         builder: DevicePreview.appBuilder,
@@ -126,6 +130,7 @@ class MyApp extends StatelessWidget {
 //             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
 //             textTheme: GoogleFonts.poppinsTextTheme(),
 //           ),
+
 //           routerConfig: AppPages.router,
 //         );
 //       },
