@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
@@ -20,9 +21,14 @@ class OnbordingFetures extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CircleAvatar(
-                    backgroundColor: const Color(0xFFFFF1E8),
-                    child: SvgPicture.asset(Assets.svgIcons.backIcon.path),
+                  GestureDetector(
+                    onTap: () {
+                      context.push("/onboardingFlow");
+                    },
+                    child: CircleAvatar(
+                      backgroundColor: const Color(0xFFFFF1E8),
+                      child: SvgPicture.asset(Assets.svgIcons.backIcon.path),
+                    ),
                   ),
                   Expanded(
                     child: Padding(
@@ -88,7 +94,7 @@ class OnbordingFetures extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    // Navigate to next screen
+                    context.push("/nowliHowToUse");
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

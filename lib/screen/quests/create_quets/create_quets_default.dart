@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_dea/custom_code/BottomNav.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/_buildInputCard/input_widget_card.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/buildAddSubtasksButton/build_add_subtask_button.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/buildHeader/header_widget.dart';
@@ -24,6 +25,28 @@ class _CreateQuestPageState extends State<CreateQuestPage> {
   bool isCallEnabled = true;
 
   String selectedDateOption = 'Today';
+  // int _currentIndex = 0;
+
+  // void _onNavTap(int index) {
+  //   setState(() {
+  //     _currentIndex = index;
+  //   });
+
+  //   switch (index) {
+  //     case 0:
+  //       context.go(AppRoutespath.homePage);
+  //       break;
+  //     case 1:
+  //       context.go(AppRoutespath.chatBoot);
+  //       break;
+  //     case 2:
+  //       context.go(AppRoutespath.explor);
+  //       break;
+  //     case 3:
+  //       context.go(AppRoutespath.user);
+  //       break;
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -121,6 +144,12 @@ class _CreateQuestPageState extends State<CreateQuestPage> {
               ),
           ],
         ),
+      ),
+      bottomNavigationBar: CustomNavigationBar(
+        currentIndex: 0,
+        onTap: (index) {
+          // Handle navigation tap
+        },
       ),
     );
   }

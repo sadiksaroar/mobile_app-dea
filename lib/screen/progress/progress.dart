@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_dea/custom_code/BottomNav.dart';
 import 'package:mobile_app_dea/screen/progress/insights/Insights.dart';
 import 'package:mobile_app_dea/screen/progress/my_progress/my_progress.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
@@ -93,6 +94,12 @@ class _ProgressState extends State<Progress> with TickerProviderStateMixin {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: CustomNavigationBar(
+        currentIndex: 0,
+        onTap: (index) {
+          // Handle navigation tap
+        },
       ),
     );
   }

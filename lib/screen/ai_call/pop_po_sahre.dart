@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 
-class ProcrastinationScreen extends StatefulWidget {
-  const ProcrastinationScreen({super.key});
+class PopPoSahre extends StatefulWidget {
+  const PopPoSahre({super.key});
 
   @override
-  State<ProcrastinationScreen> createState() => _ProcrastinationScreenState();
+  State<PopPoSahre> createState() => _PopPoSahreState();
 }
 
-class _ProcrastinationScreenState extends State<ProcrastinationScreen> {
+class _PopPoSahreState extends State<PopPoSahre> {
   String selectedLanguage = "";
   String selectedVoice = "";
 
@@ -227,9 +226,7 @@ class _ProcrastinationScreenState extends State<ProcrastinationScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       OutlinedButton(
-                        onPressed: () {
-                          context.push("/aiVoice");
-                        },
+                        onPressed: () {},
                         style: OutlinedButton.styleFrom(
                           side: const BorderSide(color: Colors.blue),
                           shape: RoundedRectangleBorder(

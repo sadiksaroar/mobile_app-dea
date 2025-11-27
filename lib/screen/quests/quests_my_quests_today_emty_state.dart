@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart' show svg;
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
+import 'package:mobile_app_dea/custom_code/BottomNav.dart';
 import 'package:mobile_app_dea/screen/quests/my_quets/blocking/blockng.dart';
 import 'package:mobile_app_dea/screen/quests/my_quets/completed/completed.dart';
 import 'package:mobile_app_dea/screen/quests/my_quets/scheduled/scheduled.dart';
@@ -38,6 +40,29 @@ class _QuestHomePageState extends State<QuestHomePage>
     super.dispose();
   }
 
+  // int _currentIndex = 0;
+
+  // void _onNavTap(int index) {
+  //   setState(() {
+  //     _currentIndex = index;
+  //   });
+
+  //   switch (index) {
+  //     case 0:
+  //       context.go(AppRoutespath.homePage);
+  //       break;
+  //     case 1:
+  //       context.go(AppRoutespath.chatBoot);
+  //       break;
+  //     case 2:
+  //       context.go(AppRoutespath.explor);
+  //       break;
+  //     case 3:
+  //       context.go(AppRoutespath.user);
+  //       break;
+  //   }
+  // }
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -63,16 +88,24 @@ class _QuestHomePageState extends State<QuestHomePage>
           ],
         ),
         actions: [
-          Container(
-            margin: const EdgeInsets.only(right: 16),
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(14)),
-            // child: const Icon(Icons.add, color: Colors.white),
-            // child: Assets.svgIcons.buttonCalendar.path(width: 24, height: 24),
-            child: Image.asset(
-              Assets.svgIcons.buttonCalendarPng.path,
-              width: 60,
-              height: 60,
+          GestureDetector(
+            onTap: () {
+              // Handle tap event here
+              context.push("/createQuestPage");
+            },
+            child: Container(
+              margin: const EdgeInsets.only(right: 16),
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(14),
+              ),
+              // child: const Icon(Icons.add, color: Colors.white),
+              // child: Assets.svgIcons.buttonCalendar.path(width: 24, height: 24),
+              child: Image.asset(
+                Assets.svgIcons.quests.path,
+                width: 60,
+                height: 60,
+              ),
             ),
           ),
         ],
@@ -119,6 +152,12 @@ class _QuestHomePageState extends State<QuestHomePage>
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: CustomNavigationBar(
+        currentIndex: 0,
+        onTap: (index) {
+          // Handle navigation tap
+        },
       ),
     );
   }

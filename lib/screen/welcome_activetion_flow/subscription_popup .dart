@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
-
 class SubscriptionPage extends StatelessWidget {
   const SubscriptionPage({Key? key}) : super(key: key);
 

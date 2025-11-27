@@ -1,8 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
-class LoadingOnboridngNowli extends StatelessWidget {
+class LoadingOnboridngNowli extends StatefulWidget {
   const LoadingOnboridngNowli({super.key});
+
+  @override
+  State<LoadingOnboridngNowli> createState() => _LoadingOnboridngNowliState();
+}
+
+class _LoadingOnboridngNowliState extends State<LoadingOnboridngNowli> {
+  @override
+  void initState() {
+    super.initState();
+    // Navigate to onboarding features after 3 seconds
+    Future.delayed(const Duration(seconds: 3), () {
+      if (mounted) {
+        context.go(AppRoutespath.onbordingFetures);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

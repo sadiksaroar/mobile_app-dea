@@ -136,9 +136,25 @@ class $AssetsSvgIconsGen {
   SvgGenImage get emotionalSupport =>
       const SvgGenImage('assets/svg_icons/EMOTIONAL SUPPORT.svg');
 
+  /// File path: assets/svg_icons/Edit profilIcon.png
+  AssetGenImage get editProfilIcon =>
+      const AssetGenImage('assets/svg_icons/Edit profilIcon.png');
+
+  /// File path: assets/svg_icons/Edit profile.png
+  AssetGenImage get editProfilePng =>
+      const AssetGenImage('assets/svg_icons/Edit profile.png');
+
+  /// File path: assets/svg_icons/EditProfile.png
+  AssetGenImage get editProfilePng_ =>
+      const AssetGenImage('assets/svg_icons/EditProfile.png');
+
   /// File path: assets/svg_icons/EditIcon.png
   AssetGenImage get editIcon =>
       const AssetGenImage('assets/svg_icons/EditIcon.png');
+
+  /// File path: assets/svg_icons/Fire Tab.png
+  AssetGenImage get fireTab =>
+      const AssetGenImage('assets/svg_icons/Fire Tab.png');
 
   /// File path: assets/svg_icons/Fire.png
   AssetGenImage get fire => const AssetGenImage('assets/svg_icons/Fire.png');
@@ -157,6 +173,10 @@ class $AssetsSvgIconsGen {
 
   /// File path: assets/svg_icons/Help.png
   AssetGenImage get help => const AssetGenImage('assets/svg_icons/Help.png');
+
+  /// File path: assets/svg_icons/HomeTab.png
+  AssetGenImage get homeTab =>
+      const AssetGenImage('assets/svg_icons/HomeTab.png');
 
   /// File path: assets/svg_icons/Language.png
   AssetGenImage get language =>
@@ -181,6 +201,10 @@ class $AssetsSvgIconsGen {
   AssetGenImage get loveBlue =>
       const AssetGenImage('assets/svg_icons/Love Blue.png');
 
+  /// File path: assets/svg_icons/MagicWand.png
+  AssetGenImage get magicWand =>
+      const AssetGenImage('assets/svg_icons/MagicWand.png');
+
   /// File path: assets/svg_icons/MondayBack.png
   AssetGenImage get mondayBack =>
       const AssetGenImage('assets/svg_icons/MondayBack.png');
@@ -188,6 +212,10 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/Notifications.png
   AssetGenImage get notifications =>
       const AssetGenImage('assets/svg_icons/Notifications.png');
+
+  /// File path: assets/svg_icons/NowliJuli.png
+  AssetGenImage get nowliJuli =>
+      const AssetGenImage('assets/svg_icons/NowliJuli.png');
 
   /// File path: assets/svg_icons/NowliPro.png
   AssetGenImage get nowliPro =>
@@ -208,6 +236,11 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/Privacy Policy.png
   AssetGenImage get privacyPolicy =>
       const AssetGenImage('assets/svg_icons/Privacy Policy.png');
+
+  /// File path: assets/svg_icons/Profile menu_with notifications.png
+  AssetGenImage get profileMenuWithNotifications => const AssetGenImage(
+    'assets/svg_icons/Profile menu_with notifications.png',
+  );
 
   /// File path: assets/svg_icons/Quest completed.png
   AssetGenImage get questCompleted =>
@@ -260,6 +293,10 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/To sleep.png
   AssetGenImage get toSleep =>
       const AssetGenImage('assets/svg_icons/To sleep.png');
+
+  /// File path: assets/svg_icons/To sleep.png.png
+  AssetGenImage get toSleepPng =>
+      const AssetGenImage('assets/svg_icons/To sleep.png.png');
 
   /// File path: assets/svg_icons/To study.png
   AssetGenImage get toStudy =>
@@ -360,6 +397,9 @@ class $AssetsSvgIconsGen {
   SvgGenImage get nowlnLogo =>
       const SvgGenImage('assets/svg_icons/nowln_logo.svg');
 
+  /// File path: assets/svg_icons/plush.png
+  AssetGenImage get plush => const AssetGenImage('assets/svg_icons/plush.png');
+
   /// File path: assets/svg_icons/popup_spwaking_cross.svg
   SvgGenImage get popupSpwakingCross =>
       const SvgGenImage('assets/svg_icons/popup_spwaking_cross.svg');
@@ -374,6 +414,10 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/quest comaplted satrt.png
   AssetGenImage get questComapltedSatrt =>
       const AssetGenImage('assets/svg_icons/quest comaplted satrt.png');
+
+  /// File path: assets/svg_icons/questTab.png.png
+  AssetGenImage get questTabPng =>
+      const AssetGenImage('assets/svg_icons/questTab.png.png');
 
   /// File path: assets/svg_icons/settings_backIcon.png
   AssetGenImage get settingsBackIcon =>
@@ -437,25 +481,33 @@ class $AssetsSvgIconsGen {
     deleteMyAccount,
     deleteYourAccount,
     emotionalSupport,
+    editProfilIcon,
+    editProfilePng,
+    editProfilePng_,
     editIcon,
+    fireTab,
     fire,
     frame2147228668,
     frame2147228670,
     frame2147228671,
     help,
+    homeTab,
     language,
     logOut,
     longestStreakFire,
     longestStreak,
     love,
     loveBlue,
+    magicWand,
     mondayBack,
     notifications,
+    nowliJuli,
     nowliPro,
     nowlliCheckIns,
     plushCleander,
     privacyData,
     privacyPolicy,
+    profileMenuWithNotifications,
     questCompleted,
     quests,
     realCompany,
@@ -469,6 +521,7 @@ class $AssetsSvgIconsGen {
     streakProgress,
     taslReminders,
     toSleep,
+    toSleepPng,
     toStudy,
     toTrain,
     toWakeUp,
@@ -495,10 +548,12 @@ class $AssetsSvgIconsGen {
     neverBack,
     nowliHowToUse,
     nowlnLogo,
+    plush,
     popupSpwakingCross,
     proCrossIcon,
     push,
     questComapltedSatrt,
+    questTabPng,
     settingsBackIcon,
     shuffle,
     signInGoole,

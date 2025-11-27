@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/create_qutes.dart';
 
@@ -19,7 +20,9 @@ class TitleWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         GestureDetector(
-          onTap: onBackPressed,
+          onTap: () {
+            context.pop("");
+          },
           child: CircleAvatar(
             radius: 18 * scale,
 

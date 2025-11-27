@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 
@@ -200,15 +201,20 @@ class _PopupSpekingState extends State<PopupSpeking> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // Close button
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Container(
-                          padding: const EdgeInsets.all(6),
-                          decoration: const BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
+                      GestureDetector(
+                        onTap: () {
+                          context.pop("/onboardingScreen");
+                        },
+                        child: Align(
+                          alignment: Alignment.topLeft,
+                          child: Container(
+                            padding: const EdgeInsets.all(6),
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                            child: const Icon(Icons.close, size: 20),
                           ),
-                          child: const Icon(Icons.close, size: 20),
                         ),
                       ),
                       const SizedBox(height: 30),
@@ -283,9 +289,14 @@ class _PopupSpekingState extends State<PopupSpeking> {
                                   ),
                                 ),
                                 child: Center(
-                                  child: Image.asset(
-                                    "assets/svg_images/popup_screen_carton.png",
-                                    height: 120,
+                                  child: GestureDetector(
+                                    onTap: () => {
+                                      context.push("/procrastinationScreen"),
+                                    },
+                                    child: Image.asset(
+                                      "assets/svg_images/popup_screen_carton.png",
+                                      height: 120,
+                                    ),
                                   ),
                                 ),
                               ),

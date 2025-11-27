@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
+import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
@@ -21,9 +22,16 @@ class NowliHowToUse extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CircleAvatar(
-                        backgroundColor: const Color(0xFFFFF1E8),
-                        child: SvgPicture.asset(Assets.svgIcons.backIcon.path),
+                      GestureDetector(
+                        onTap: () {
+                          context.push("/onbordingFetures");
+                        },
+                        child: CircleAvatar(
+                          backgroundColor: const Color(0xFFFFF1E8),
+                          child: SvgPicture.asset(
+                            Assets.svgIcons.backIcon.path,
+                          ),
+                        ),
                       ),
                       Expanded(
                         child: Padding(
@@ -147,30 +155,7 @@ class NowliHowToUse extends StatelessWidget {
                   ),
 
                   const Spacer(),
-                  // ElevatedButton(
-                  //   onPressed: () {},
-                  //   style: ElevatedButton.styleFrom(
-                  //     backgroundColor: Colors.orange,
-                  //     shape: RoundedRectangleBorder(
-                  //       borderRadius: BorderRadius.circular(16),
-                  //     ),
-                  //     minimumSize: const Size(double.infinity, 56),
-                  //   ),
-                  //   child: Row(
-                  //     mainAxisAlignment: MainAxisAlignment.center,
-                  //     children: const [
-                  //       Text(
-                  //         "Next",
-                  //         style: TextStyle(
-                  //           fontSize: 16,
-                  //           fontWeight: FontWeight.bold,
-                  //         ),
-                  //       ),
-                  //       SizedBox(width: 8),
-                  //       Icon(Icons.arrow_forward),
-                  //     ],
-                  //   ),
-                  // ),
+
                   SizedBox(
                     width: double.infinity,
                     height: 104,
@@ -182,7 +167,7 @@ class NowliHowToUse extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        // Navigate to next screen
+                        context.push("/animation");
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
