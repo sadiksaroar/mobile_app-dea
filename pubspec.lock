@@ -77,10 +77,10 @@ packages:
     dependency: "direct dev"
     description:
       name: build_runner
-      sha256: a9461b8e586bf018dd4afd2e13b49b08c6a844a4b226c8d1d10f3a723cdd78c3
+      sha256: "110c56ef29b5eb367b4d17fc79375fa8c18a6cd7acd92c05bb3986c17a079057"
       url: "https://pub.dev"
     source: hosted
-    version: "2.10.1"
+    version: "2.10.4"
   built_collection:
     dependency: transitive
     description:
@@ -271,7 +271,7 @@ packages:
     source: hosted
     version: "5.12.0"
   flutter_gen_runner:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_gen_runner
       sha256: c99b10af9d404e3f46fd1927e7d90099779e935e86022674c4c2a9e6c2a93b29

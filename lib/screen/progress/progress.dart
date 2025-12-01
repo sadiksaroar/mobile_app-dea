@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
 import 'package:mobile_app_dea/custom_code/BottomNav.dart';
 import 'package:mobile_app_dea/screen/progress/insights/Insights.dart';
 import 'package:mobile_app_dea/screen/progress/my_progress/my_progress.dart';
@@ -30,6 +32,26 @@ class _ProgressState extends State<Progress> with TickerProviderStateMixin {
     myQuestsTab.dispose();
     suggestedTab.dispose();
     super.dispose();
+  }
+
+  int _currentIndex = 2;
+
+  void _onNavTap(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+
+    switch (index) {
+      case 0:
+        context.go(AppRoutespath.homeScreen);
+        break;
+      case 1:
+        context.go(AppRoutespath.questHomePage);
+        break;
+      case 2:
+        context.go(AppRoutespath.progress);
+        break;
+    }
   }
 
   @override
@@ -96,7 +118,7 @@ class _ProgressState extends State<Progress> with TickerProviderStateMixin {
         ),
       ),
       bottomNavigationBar: CustomNavigationBar(
-        currentIndex: 0,
+        currentIndex: 2,
         onTap: (index) {
           // Handle navigation tap
         },

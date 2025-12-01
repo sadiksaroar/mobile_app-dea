@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/screen/settings/api_personalization_screen/ai_personalization_screen.dart';
 import 'package:mobile_app_dea/screen/settings/language/languegs_selector_screen.dart';
@@ -67,14 +68,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       height: 40,
                     ),
                     title: 'Nowtli Pro',
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const SubscriptionScreen(
-                          type: SubscriptionType.monthlyActive,
-                        ),
-                      ),
-                    ),
+                    onTap: () => {context.push('/subscriptionPage')},
                   ),
                   const SizedBox(height: 12),
                   _buildSettingsItem(

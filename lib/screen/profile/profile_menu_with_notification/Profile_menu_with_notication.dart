@@ -1,77 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 
 class ProfileNotificationsScreen extends StatelessWidget {
-  const ProfileNotificationsScreen({Key? key}) : super(key: key);
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     body: SafeArea(
-  //       child: SingleChildScrollView(
-  //         child: Column(
-  //           children: [
-  //             _buildProfileSection(),
-  //             const SizedBox(height: 20),
-  //             _buildNotificationsSection(),
-  //           ],
-  //         ),
-  //       ),
-  //     ),
-  //   );
-  // }
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     // body: Container(
-  //     //   decoration: BoxDecoration(
-  //     //     image: DecorationImage(
-  //     //       image: AssetImage(
-  //     //         // 'assets/images/background.jpg',
-  //     //         Assets.svgIcons.profileMenuWithNotifications.path,
-  //     //       ), // আপনার image path
-  //     //       fit: BoxFit.cover, // পুরো screen cover করবে
-  //     //     ),
-  //     //   ),
-  //     //   child: SafeArea(
-  //     //     child: SingleChildScrollView(
-  //     //       child: Column(
-  //     //         children: [
-  //     //           _buildProfileSection(),
-  //     //           const SizedBox(height: 20),
-  //     //           _buildNotificationsSection(),
-  //     //         ],
-  //     //       ),
-  //     //     ),
-  //     //   ),
-  //     // ),
-  //     body: Stack(
-  //       children: [
-  //         // Background Image
-  //         Positioned.fill(
-  //           child: AssetImage(
-  //             // 'assets/images/background.jpg',
-  //             Assets.svgIcons.profileMenuWithNotifications.path,
-  //           ), // আপনার image path
-  //           fit: BoxFit.cover, // পুরো screen cover করবে
-  //         ),
-  //       ),
-
-  //         // Scrollable Content
-  //         SafeArea(
-  //           child: SingleChildScrollView(
-  //             child: Column(
-  //               children: [
-  //                 _buildProfileSection(),
-  //                 const SizedBox(height: 20),
-  //                 _buildNotificationsSection(),
-  //               ],
-  //             ),
-  //           ),
-  //         ),
-  //       ],
-  //     ),
-  //   );
+  const ProfileNotificationsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +22,7 @@ class ProfileNotificationsScreen extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  _buildProfileSection(),
+                  _buildProfileSection(context),
                   const SizedBox(height: 20),
                   _buildNotificationsSection(),
                 ],
@@ -103,14 +35,14 @@ class ProfileNotificationsScreen extends StatelessWidget {
   }
 }
 
-Widget _buildProfileSection() {
+Widget _buildProfileSection(BuildContext context) {
   return Container(
     padding: const EdgeInsets.all(16),
 
-    // 🔥 Background Image Added Here
+    // Background Image for the profile section
     decoration: BoxDecoration(
       image: DecorationImage(
-        image: AssetImage("assets/bg.jpg"), // <-- your background image
+        image: const AssetImage("assets/bg.jpg"),
         fit: BoxFit.cover,
       ),
     ),
@@ -121,8 +53,12 @@ Widget _buildProfileSection() {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            _buildIconButton(Icons.arrow_back_ios, () {}),
-            _buildIconButton(Icons.settings_outlined, () {}),
+            _buildIconButton(Icons.arrow_back_ios, () {
+              Navigator.pop(context);
+            }),
+            _buildIconButton(Icons.settings_outlined, () {
+              context.push('/settingsScreen');
+            }),
           ],
         ),
         const SizedBox(height: 20),
@@ -146,7 +82,7 @@ Widget _buildProfileSection() {
         Container(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.9), // slight transparency
+            color: Colors.white.withOpacity(0.9),
             borderRadius: BorderRadius.circular(20),
           ),
           child: Column(
@@ -238,7 +174,10 @@ Widget _buildProfileSection() {
         ),
         const SizedBox(height: 16),
 
-        _buildActionButton('Edit Profile', Icons.edit_outlined, () {}),
+        _buildActionButton('Edit Profile', Icons.edit_outlined, () {
+          // Navigator.pushNamed(context, "/editProfileScreen");
+          context.push('/editProfileScreen');
+        }),
         const SizedBox(height: 12),
         _buildActionButton('Contact support', Icons.info_outline, () {}),
       ],

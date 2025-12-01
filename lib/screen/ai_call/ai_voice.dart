@@ -364,6 +364,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+import 'package:go_router/go_router.dart';
+
 class AiVoice extends StatefulWidget {
   const AiVoice({super.key});
 
@@ -564,7 +566,7 @@ class _AiVoiceState extends State<AiVoice> {
                     ),
                     child: IconButton(
                       onPressed: () {
-                        Navigator.pop(context);
+                        context.push("/homeScreen");
                       },
                       icon: const Icon(Icons.check),
                       color: const Color(0xFF3949AB),

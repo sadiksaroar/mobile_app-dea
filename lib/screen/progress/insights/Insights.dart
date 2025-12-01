@@ -1365,7 +1365,7 @@
 //     );
 //   }
 // }
-
+// ...existing code...
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
@@ -1427,7 +1427,7 @@ class _InsightsScreenState extends State<InsightsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFFEF8),
+      backgroundColor: const Color(0xFFFFFEF8),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -1519,7 +1519,7 @@ class _InsightsScreenState extends State<InsightsScreen> {
         width: double.infinity,
         padding: const EdgeInsets.all(10),
         child: Container(
-          width: 3,
+          width: double.infinity,
           padding: const EdgeInsets.all(25),
           decoration: BoxDecoration(
             border: Border.all(color: const Color(0xFFFFCB9B), width: 1),
@@ -1634,7 +1634,7 @@ class _InsightsScreenState extends State<InsightsScreen> {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(color: const Color(0xFFF5E6D3)),
+      decoration: const BoxDecoration(color: Color(0xFFF5E6D3)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -1771,7 +1771,7 @@ class _InsightsScreenState extends State<InsightsScreen> {
               ],
             ),
           ),
-          SizedBox(height: 24),
+          const SizedBox(height: 24),
           _buildPreferredQuestTypes(),
         ],
       ),
@@ -1784,7 +1784,7 @@ class _InsightsScreenState extends State<InsightsScreen> {
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Color(0xFFFFCB9B)),
+        border: Border.all(color: const Color(0xFFFFCB9B)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2264,18 +2264,29 @@ class _InsightsScreenState extends State<InsightsScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Monthly Overview', style: AppsTextStyles.extraBold32Centered),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Container(
-              width: 100,
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
                 color: AppColorsApps.babyBlue,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Row(
-                children: [Text("This month"), Icon(Icons.keyboard_arrow_down)],
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Flexible(
+                    child: Text(
+                      selectedMonth,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppsTextStyles.workSansSemiBold15,
+                    ),
+                  ),
+                  const SizedBox(width: 6),
+                  const Icon(Icons.keyboard_arrow_down),
+                ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Center(
               child: Container(
                 width: 346,
@@ -2341,7 +2352,7 @@ class _InsightsScreenState extends State<InsightsScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Container(
@@ -2388,7 +2399,7 @@ class _InsightsScreenState extends State<InsightsScreen> {
                 color: Color(0xFF1A2B4F),
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Container(
               width: 346,
               height: 87,
@@ -2398,13 +2409,12 @@ class _InsightsScreenState extends State<InsightsScreen> {
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: const Color(0xFFE8E8FF), width: 1),
               ),
-              child: Column(
-                children: [
-                  const Text(
-                    'Write short note to yourself for this month...',
-                    style: TextStyle(fontSize: 14, color: Color(0xFF9CA3AF)),
-                  ),
-                ],
+              child: const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Write short note to yourself for this month...',
+                  style: TextStyle(fontSize: 14, color: Color(0xFF9CA3AF)),
+                ),
               ),
             ),
           ],
@@ -2698,7 +2708,6 @@ class _InsightsScreenState extends State<InsightsScreen> {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(Assets.svgIcons.loveBlue.path),
-              // fit: BoxFit.cover,
             ),
             borderRadius: BorderRadius.circular(12),
           ),

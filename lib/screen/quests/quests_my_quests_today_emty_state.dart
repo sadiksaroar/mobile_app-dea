@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart' show svg;
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/custom_code/BottomNav.dart';
 import 'package:mobile_app_dea/screen/quests/my_quets/blocking/blockng.dart';
@@ -40,28 +41,25 @@ class _QuestHomePageState extends State<QuestHomePage>
     super.dispose();
   }
 
-  // int _currentIndex = 0;
+  int _currentIndex = 0;
 
-  // void _onNavTap(int index) {
-  //   setState(() {
-  //     _currentIndex = index;
-  //   });
+  void _onNavTap(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
 
-  //   switch (index) {
-  //     case 0:
-  //       context.go(AppRoutespath.homePage);
-  //       break;
-  //     case 1:
-  //       context.go(AppRoutespath.chatBoot);
-  //       break;
-  //     case 2:
-  //       context.go(AppRoutespath.explor);
-  //       break;
-  //     case 3:
-  //       context.go(AppRoutespath.user);
-  //       break;
-  //   }
-  // }
+    switch (index) {
+      case 0:
+        context.go(AppRoutespath.homeScreen);
+        break;
+      case 1:
+        context.go(AppRoutespath.questHomePage);
+        break;
+      case 2:
+        context.go(AppRoutespath.progress);
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -154,7 +152,7 @@ class _QuestHomePageState extends State<QuestHomePage>
         ),
       ),
       bottomNavigationBar: CustomNavigationBar(
-        currentIndex: 0,
+        currentIndex: 1,
         onTap: (index) {
           // Handle navigation tap
         },

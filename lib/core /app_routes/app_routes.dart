@@ -19,12 +19,23 @@ class AppRoutespath {
   static const String aiVoice = "/aiVoice";
   static const String popPoSahre = "/popPoSahre";
 
-  // statio
+  /*   on boarding */
 
-  /*  create a quets start here  */
+  /*  home page start  */
+  static const String homeScreen = '/homeScreen';
+  static const String profileNotificationsScreen =
+      '/profileNotificationsScreen';
+  static const String editProfileScreen = '/editProfileScreen';
+  /*  quest page end  */
   static const String questHomePage = '/questHomePage';
   static const String createQuestPage = '/createQuestPage';
-  /*   on boarding */
+  /*  progress page end  */
+  static const String progress = '/progress';
+
+  /*  settings page e start */
+
+  static const String settingsScreen = '/settingsScreen';
+  static const String subscriptionPage = '/subscriptionPage';
 }
 
 // cl

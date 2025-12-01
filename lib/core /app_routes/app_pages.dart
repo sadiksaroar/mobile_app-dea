@@ -11,13 +11,18 @@ import 'package:mobile_app_dea/screen/ai_call/pop_po_sahre.dart';
 import 'package:mobile_app_dea/screen/auth/sign_in_screen.dart';
 import 'package:mobile_app_dea/screen/auth/sign_up.dart';
 import 'package:mobile_app_dea/screen/entry_screen_p2.dart';
+import 'package:mobile_app_dea/screen/home/home_screen.dart';
+import 'package:mobile_app_dea/screen/profile/Edit_profile/edit_profile.dart';
+import 'package:mobile_app_dea/screen/profile/profile_menu_with_notification/Profile_menu_with_notication.dart';
+import 'package:mobile_app_dea/screen/progress/progress.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/create_quets_default.dart';
 import 'package:mobile_app_dea/screen/quests/quests_my_quests_today_emty_state.dart';
 import 'package:mobile_app_dea/screen/reday_to_start_screen_p4.dart';
+import 'package:mobile_app_dea/screen/settings/setting.dart';
 import 'package:mobile_app_dea/screen/splash.dart';
-import 'package:mobile_app_dea/screen/test_file/test_file.dart';
 import 'package:mobile_app_dea/screen/welcome_activetion_flow/popup_speking.dart';
 import 'package:mobile_app_dea/screen/welcome_activetion_flow/procrastination_screen.dart';
+import 'package:mobile_app_dea/screen/welcome_activetion_flow/subscription_popup%20.dart';
 import 'package:mobile_app_dea/screen/welcome_come_screen_p3.dart';
 
 class AppPages {
@@ -114,6 +119,50 @@ class AppPages {
       ),
 
       /*   on boarding end  */
+
+      /*  home page start  */
+      GoRoute(
+        path: AppRoutespath.homeScreen,
+        builder: (context, state) => const HomeScreen(),
+      ),
+      GoRoute(
+        path: AppRoutespath.profileNotificationsScreen,
+        builder: (context, state) {
+          return const ProfileNotificationsScreen(); // Placeholder for ChatBoot screen
+        },
+      ),
+
+      GoRoute(
+        path: AppRoutespath.editProfileScreen,
+        builder: (context, state) {
+          return const EditProfileScreen(); // Placeholder for EditProfileScreen
+        },
+      ),
+
+      /*  QuestHomePage page end  */
+      GoRoute(
+        path: AppRoutespath.questHomePage,
+        builder: (context, state) => const QuestHomePage(),
+      ),
+
+      /* progress start end  */
+      GoRoute(
+        path: AppRoutespath.progress,
+        builder: (context, state) => const Progress(),
+      ),
+
+      GoRoute(
+        path: AppRoutespath.settingsScreen,
+        builder: (context, state) {
+          return const SettingsScreen(); // Placeholder for SettingsScreen
+        },
+      ),
+      GoRoute(
+        path: AppRoutespath.subscriptionPage,
+        builder: (context, state) {
+          return const SubscriptionPage(); // Placeholder for SubscriptionPage
+        },
+      ),
     ],
   );
 }
