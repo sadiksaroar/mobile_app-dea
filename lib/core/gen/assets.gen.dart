@@ -341,8 +341,12 @@ class $AssetsSvgIconsGen {
   AssetGenImage get arrowback =>
       const AssetGenImage('assets/svg_icons/arrowback.png');
 
+  /// File path: assets/svg_icons/back_icon.png
+  AssetGenImage get backIconPng =>
+      const AssetGenImage('assets/svg_icons/back_icon.png');
+
   /// File path: assets/svg_icons/back_icon.svg
-  SvgGenImage get backIcon =>
+  SvgGenImage get backIconSvg =>
       const SvgGenImage('assets/svg_icons/back_icon.svg');
 
   /// File path: assets/svg_icons/blue.png
@@ -533,7 +537,8 @@ class $AssetsSvgIconsGen {
     yesterdayBack,
     appleIconSignIn,
     arrowback,
-    backIcon,
+    backIconPng,
+    backIconSvg,
     blue,
     calende,
     checkCircle01PasswprdUpdate,
@@ -582,17 +587,9 @@ class $AssetsSvgImagesGen {
   AssetGenImage get buttonCalendar =>
       const AssetGenImage('assets/svg_images/Button Calendar.png');
 
-  /// File path: assets/svg_images/Frame 2147228547.png
-  AssetGenImage get frame2147228547Png =>
-      const AssetGenImage('assets/svg_images/Frame 2147228547.png');
-
   /// File path: assets/svg_images/Frame 2147228547.svg
-  SvgGenImage get frame2147228547Svg =>
+  SvgGenImage get frame2147228547 =>
       const SvgGenImage('assets/svg_images/Frame 2147228547.svg');
-
-  /// File path: assets/svg_images/IMG_20251121_153116_1.jpg
-  AssetGenImage get img202511211531161 =>
-      const AssetGenImage('assets/svg_images/IMG_20251121_153116_1.jpg');
 
   /// File path: assets/svg_images/Popup_Choose mood updates.png
   AssetGenImage get popupChooseMoodUpdates =>
@@ -610,6 +607,10 @@ class $AssetsSvgImagesGen {
   SvgGenImage get subscriptionPopupSvg =>
       const SvgGenImage('assets/svg_images/Subscription Popup.svg');
 
+  /// File path: assets/svg_images/callStarted.png
+  AssetGenImage get callStarted =>
+      const AssetGenImage('assets/svg_images/callStarted.png');
+
   /// File path: assets/svg_images/enttry_two_screnn.png
   AssetGenImage get enttryTwoScrenn =>
       const AssetGenImage('assets/svg_images/enttry_two_screnn.png');
@@ -617,6 +618,9 @@ class $AssetsSvgImagesGen {
   /// File path: assets/svg_images/onboarding.svg
   SvgGenImage get onboarding =>
       const SvgGenImage('assets/svg_images/onboarding.svg');
+
+  /// File path: assets/svg_images/pop.png
+  AssetGenImage get pop => const AssetGenImage('assets/svg_images/pop.png');
 
   /// File path: assets/svg_images/popUpSpekingTwoCarton.png
   AssetGenImage get popUpSpekingTwoCarton =>
@@ -630,6 +634,10 @@ class $AssetsSvgImagesGen {
   AssetGenImage get popupSpekingeacond =>
       const AssetGenImage('assets/svg_images/popupSpekingeacond.png');
 
+  /// File path: assets/svg_images/popup_pro_icon.png
+  AssetGenImage get popupProIcon =>
+      const AssetGenImage('assets/svg_images/popup_pro_icon.png');
+
   /// File path: assets/svg_images/popup_scree_liner.png
   AssetGenImage get popupScreeLiner =>
       const AssetGenImage('assets/svg_images/popup_scree_liner.png');
@@ -637,10 +645,6 @@ class $AssetsSvgImagesGen {
   /// File path: assets/svg_images/popup_screen_carton.png
   AssetGenImage get popupScreenCarton =>
       const AssetGenImage('assets/svg_images/popup_screen_carton.png');
-
-  /// File path: assets/svg_images/pro_icon.svg
-  SvgGenImage get proIcon =>
-      const SvgGenImage('assets/svg_images/pro_icon.svg');
 
   /// File path: assets/svg_images/ready_to_start.svg
   SvgGenImage get readyToStart =>
@@ -666,21 +670,21 @@ class $AssetsSvgImagesGen {
     androidAppIconSquircle,
     appIcon,
     buttonCalendar,
-    frame2147228547Png,
-    frame2147228547Svg,
-    img202511211531161,
+    frame2147228547,
     popupChooseMoodUpdates,
     popupSpeaking,
     subscriptionPopupPng,
     subscriptionPopupSvg,
+    callStarted,
     enttryTwoScrenn,
     onboarding,
+    pop,
     popUpSpekingTwoCarton,
     popupSpeking,
     popupSpekingeacond,
+    popupProIcon,
     popupScreeLiner,
     popupScreenCarton,
-    proIcon,
     readyToStart,
     three,
     twoColorPopupSpkeing,

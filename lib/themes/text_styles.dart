@@ -215,6 +215,21 @@ class AppsTextStyles {
     letterSpacing: 0,
     color: const Color(0xFF011F54),
   );
+  static final TextStyle SaimTitle44 = GoogleFonts.alfaSlabOne(
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 44,
+    height: 0.8, // 80%
+    letterSpacing: 0,
+    color: const Color(0xFF011F54),
+  );
+  static final TextStyle alphaTitle = GoogleFonts.alfaSlabOne(
+    // fontFamily: 'AlfaSlabOne',
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 44,
+    height: 0.8, // line-height: 80%
+    letterSpacing: 0, // 0%
+    color: Color(0xFFA9A8F6), // #A9A8F6
+  );
   static final TextStyle typeSomeThingHere = GoogleFonts.alfaSlabOne(
     fontWeight: FontWeight.w400, // Regular
     fontSize: 32,

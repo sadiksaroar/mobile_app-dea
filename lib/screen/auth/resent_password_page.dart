@@ -112,7 +112,10 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
-                    child: Assets.svgIcons.backIcon.svg(height: 60, width: 60),
+                    child: Assets.svgIcons.backIconPng.image(
+                      height: 60,
+                      width: 60,
+                    ),
                   ),
                   const SizedBox(width: 12),
                   Assets.svgIcons.signInPageIcon.svg(height: 80, width: 80),

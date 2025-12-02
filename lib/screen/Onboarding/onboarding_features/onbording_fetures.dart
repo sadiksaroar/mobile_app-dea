@@ -27,7 +27,10 @@ class OnbordingFetures extends StatelessWidget {
                     },
                     child: CircleAvatar(
                       backgroundColor: const Color(0xFFFFF1E8),
-                      child: SvgPicture.asset(Assets.svgIcons.backIcon.path),
+                      child: Assets.svgIcons.backIconPng.image(
+                        height: 24,
+                        width: 24,
+                      ),
                     ),
                   ),
                   Expanded(
