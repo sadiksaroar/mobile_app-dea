@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 
 class AppsTextStyles {
   static TextStyle alfaSlabTitleEntryScreen = GoogleFonts.alfaSlabOne(
@@ -323,6 +324,15 @@ class AppsTextStyles {
     height: 1.4, // line-height: 140%
     letterSpacing: -0.5, // -0.5px
     color: const Color(0xFFFFFCF1), // #FFFCF1
+  );
+
+  static final TextStyle workSansBlack20 = GoogleFonts.workSans(
+    fontWeight: FontWeight.w900, // Black = 900
+    fontSize: 20,
+    height: 0.8, // line-height: 80% = 0.8 in Flutter
+    letterSpacing: 0, // letter-spacing: 0px
+    decoration: TextDecoration.none,
+    color: AppColorsApps.lightBlueBackground,
   );
 
   static final TextStyle kSettingsTitleStyle = GoogleFonts.alfaSlabOne(

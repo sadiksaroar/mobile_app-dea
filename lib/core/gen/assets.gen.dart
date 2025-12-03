@@ -152,6 +152,10 @@ class $AssetsSvgIconsGen {
   AssetGenImage get editProfilePng_ =>
       const AssetGenImage('assets/svg_icons/EditProfile.png');
 
+  /// File path: assets/svg_icons/editProfile.png
+  AssetGenImage get editProfilePng__ =>
+      const AssetGenImage('assets/svg_icons/editProfile.png');
+
   /// File path: assets/svg_icons/EditIcon.png
   AssetGenImage get editIcon =>
       const AssetGenImage('assets/svg_icons/EditIcon.png');
@@ -205,6 +209,10 @@ class $AssetsSvgIconsGen {
   AssetGenImage get loveBlue =>
       const AssetGenImage('assets/svg_icons/Love Blue.png');
 
+  /// File path: assets/svg_icons/Love_profile.png
+  AssetGenImage get loveProfile =>
+      const AssetGenImage('assets/svg_icons/Love_profile.png');
+
   /// File path: assets/svg_icons/MagicWand.png
   AssetGenImage get magicWand =>
       const AssetGenImage('assets/svg_icons/MagicWand.png');
@@ -249,6 +257,10 @@ class $AssetsSvgIconsGen {
     'assets/svg_icons/Profile menu_with notifications.png',
   );
 
+  /// File path: assets/svg_icons/ProfileBack.png
+  AssetGenImage get profileBack =>
+      const AssetGenImage('assets/svg_icons/ProfileBack.png');
+
   /// File path: assets/svg_icons/Quest completed.png
   AssetGenImage get questCompleted =>
       const AssetGenImage('assets/svg_icons/Quest completed.png');
@@ -276,6 +288,10 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/Restricted Topics.png
   AssetGenImage get restrictedTopics =>
       const AssetGenImage('assets/svg_icons/Restricted Topics.png');
+
+  /// File path: assets/svg_icons/SettingProfile.png
+  AssetGenImage get settingProfile =>
+      const AssetGenImage('assets/svg_icons/SettingProfile.png');
 
   /// File path: assets/svg_icons/Share my success.png
   AssetGenImage get shareMySuccess =>
@@ -374,6 +390,10 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/clean house.png
   AssetGenImage get cleanHouse =>
       const AssetGenImage('assets/svg_icons/clean house.png');
+
+  /// File path: assets/svg_icons/contactSupport.png
+  AssetGenImage get contactSupport =>
+      const AssetGenImage('assets/svg_icons/contactSupport.png');
 
   /// File path: assets/svg_icons/exlometory.png
   AssetGenImage get exlometory =>
@@ -508,6 +528,7 @@ class $AssetsSvgIconsGen {
     editProfilIcon,
     editProfilePng,
     editProfilePng_,
+    editProfilePng__,
     editIcon,
     fireTab,
     fire,
@@ -522,6 +543,7 @@ class $AssetsSvgIconsGen {
     longestStreak,
     love,
     loveBlue,
+    loveProfile,
     magicWand,
     mondayBack,
     notifications,
@@ -533,6 +555,7 @@ class $AssetsSvgIconsGen {
     privacyData,
     privacyPolicy,
     profileMenuWithNotifications,
+    profileBack,
     questCompleted,
     quests,
     realCompany,
@@ -540,6 +563,7 @@ class $AssetsSvgIconsGen {
     rateNowliw,
     readyToMakeTodayCount,
     restrictedTopics,
+    settingProfile,
     shareMySuccess,
     sounds,
     starBlue,
@@ -565,6 +589,7 @@ class $AssetsSvgIconsGen {
     checkCircle01PasswprdUpdate,
     chevronBackward,
     cleanHouse,
+    contactSupport,
     exlometory,
     googleIconsBlue,
     googleIcon,

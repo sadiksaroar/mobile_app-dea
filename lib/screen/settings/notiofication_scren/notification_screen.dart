@@ -193,8 +193,8 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                     onPressed: () => Navigator.pop(context),
                     icon: Image.asset(
                       Assets.svgIcons.settingsBackIcon.path,
-                      width: 24,
-                      height: 24,
+                      width: 32,
+                      height: 32,
                     ),
                     padding: EdgeInsets.zero,
                     constraints: const BoxConstraints(),

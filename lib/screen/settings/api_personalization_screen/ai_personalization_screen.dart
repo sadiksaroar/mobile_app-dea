@@ -3,6 +3,7 @@
 // import 'package:mobile_app_dea/screen/settings/api_personalization_screen/restricted_topiccs_popup/restricted_topiccs_popup.dart';
 // import 'package:mobile_app_dea/screen/settings/api_personalization_screen/voice_selector_popup/voice_selector_popup.dart';
 // import 'package:mobile_app_dea/themes/text_styles.dart';
+// import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 
 // class AIPersonalizationScreen extends StatefulWidget {
 //   const AIPersonalizationScreen({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@
 
 // class _AIPersonalizationScreenState extends State<AIPersonalizationScreen> {
 //   bool _useDataToImproveAI = true;
+
 //   void _showClearMemoryDialog(BuildContext context) async {
 //     final confirmed = await ClearMemoryPopup.show(context);
 //     if (confirmed == true) {
@@ -49,7 +51,12 @@
 //                 children: [
 //                   IconButton(
 //                     onPressed: () => Navigator.pop(context),
-//                     icon: const Icon(Icons.arrow_back, color: Colors.white),
+//                     icon: Image.asset(
+//                       Assets.svgIcons.settingsBackIcon.path,
+//                       width: 32,
+//                       height: 32,
+//                       // color: Colors.white,
+//                     ),
 //                     padding: EdgeInsets.zero,
 //                     constraints: const BoxConstraints(),
 //                   ),
@@ -77,19 +84,9 @@
 //               ),
 //               child: ListView(
 //                 children: [
-//                   /*
-
-// _buildNotificationTile(
-//                     iconWidget: Image.asset(
-//                       Assets.svgIcons.nowlliCheckIns.path,
-//                       width: 40,
-//                       height: 40,
-//                     )
-//                   */
-//                   // ...existing code...
 //                   _buildMenuItem(
 //                     iconWidget: Image.asset(
-//                       Assets.svgIcons.nowlliCheckIns.path,
+//                       Assets.svgIcons.voicePersonality.path,
 //                       width: 40,
 //                       height: 40,
 //                     ),
@@ -106,17 +103,13 @@
 //                     },
 //                     hasArrow: true,
 //                   ),
-
-//                   // ...existing code...
 //                   const SizedBox(height: 12),
-//                   // _buildMenuItem(
-//                   //   icon: Icons.block,
-//                   //   title: 'Restricted Topics',
-//                   //   onTap: () => _navigateTo(context, 'Restricted Topics'),
-//                   //   hasArrow: true,
-//                   // ),
 //                   _buildMenuItem(
-//                     icon: Icons.block,
+//                     iconWidget: Image.asset(
+//                       Assets.svgIcons.restrictedTopics.path,
+//                       width: 40,
+//                       height: 40,
+//                     ),
 //                     title: 'Restricted Topics',
 //                     onTap: () async {
 //                       final selectedTopics = await RestrictedTopicsPopup.show(
@@ -136,7 +129,11 @@
 //                   ),
 //                   const SizedBox(height: 12),
 //                   _buildMenuItem(
-//                     icon: Icons.psychology,
+//                     iconWidget: Image.asset(
+//                       Assets.svgIcons.useMyDataToImproveAI.path,
+//                       width: 40,
+//                       height: 40,
+//                     ),
 //                     title: 'Use My Data to\nImprove AI',
 //                     hasSwitch: true,
 //                     switchValue: _useDataToImproveAI,
@@ -148,11 +145,13 @@
 //                   ),
 //                   const SizedBox(height: 12),
 //                   _buildMenuItem(
-//                     icon: Icons.cleaning_services,
+//                     iconWidget: Image.asset(
+//                       Assets.svgIcons.clearAllAIMemoryPng.path,
+//                       width: 40,
+//                       height: 40,
+//                     ),
 //                     title: 'Clear All AI Memory',
 //                     onTap: () => _showClearMemoryDialog(context),
-//                     iconColor: const Color(0xFFE53935),
-//                     titleColor: const Color(0xFFE53935),
 //                   ),
 //                 ],
 //               ),
@@ -164,7 +163,8 @@
 //   }
 
 //   Widget _buildMenuItem({
-//     required IconData icon,
+//     IconData? icon,
+//     Widget? iconWidget,
 //     required String title,
 //     VoidCallback? onTap,
 //     bool hasArrow = false,
@@ -173,7 +173,6 @@
 //     ValueChanged<bool>? onSwitchChanged,
 //     Color? iconColor,
 //     Color? titleColor,
-//     required Image iconWidget,
 //   }) {
 //     final defaultColor = const Color(0xFF1E3A8A);
 //     final effectiveIconColor = iconColor ?? defaultColor;
@@ -197,22 +196,13 @@
 //                   : const Color(0xFFE8E9F3),
 //               borderRadius: BorderRadius.circular(10),
 //             ),
-//             child: Icon(icon, color: effectiveIconColor, size: 22),
+//             child:
+//                 iconWidget ?? Icon(icon!, color: effectiveIconColor, size: 22),
 //           ),
 //           const SizedBox(width: 12),
 
 //           // Title
-//           Expanded(
-//             child: Text(
-//               title,
-//               style: TextStyle(
-//                 fontSize: 16,
-//                 fontWeight: FontWeight.w700,
-//                 color: effectiveTitleColor,
-//                 height: 1.2,
-//               ),
-//             ),
-//           ),
+//           Expanded(child: Text(title, style: AppsTextStyles.textDefaultStyle)),
 
 //           // Trailing widget
 //           if (hasArrow)
@@ -284,14 +274,6 @@ class _AIPersonalizationScreenState extends State<AIPersonalizationScreen> {
     }
   }
 
-  static void show(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      builder: (context) => const VoiceSelectorPopup(),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -309,17 +291,20 @@ class _AIPersonalizationScreenState extends State<AIPersonalizationScreen> {
                     onPressed: () => Navigator.pop(context),
                     icon: Image.asset(
                       Assets.svgIcons.settingsBackIcon.path,
-                      width: 24,
-                      height: 24,
-                      // color: Colors.white,
+                      width: 32,
+                      height: 32,
                     ),
                     padding: EdgeInsets.zero,
                     constraints: const BoxConstraints(),
                   ),
                   const SizedBox(width: 12),
-                  Text(
-                    'AI PERSONALIZATION',
-                    style: AppsTextStyles.kSettingsTitleStyle,
+                  Expanded(
+                    child: Text(
+                      'AI PERSONALIZATION',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppsTextStyles.kSettingsTitleStyle,
+                    ),
                   ),
                 ],
               ),
@@ -328,7 +313,7 @@ class _AIPersonalizationScreenState extends State<AIPersonalizationScreen> {
           const SizedBox(height: 16),
 
           // White card container
-          Flexible(
+          Expanded(
             child: Container(
               padding: const EdgeInsets.all(20),
               decoration: const BoxDecoration(
@@ -394,6 +379,7 @@ class _AIPersonalizationScreenState extends State<AIPersonalizationScreen> {
                     hasSwitch: true,
                     switchValue: _useDataToImproveAI,
                     onSwitchChanged: (value) {
+                      if (!mounted) return;
                       setState(() {
                         _useDataToImproveAI = value;
                       });
@@ -492,11 +478,5 @@ class _AIPersonalizationScreenState extends State<AIPersonalizationScreen> {
     }
 
     return content;
-  }
-
-  void _navigateTo(BuildContext context, String page) {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text('Opening $page')));
   }
 }

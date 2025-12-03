@@ -198,10 +198,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
       child: Row(
         children: [
           IconButton(
+            // color: Colors.black,
             icon: Image.asset(
               Assets.svgIcons.settingsBackIcon.path,
-              width: 24,
-              height: 24,
+              width: 32,
+              height: 32,
             ),
             onPressed: () => Navigator.pop(context),
           ),

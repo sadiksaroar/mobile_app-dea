@@ -126,7 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
         GestureDetector(
           onTap: () {
             // Handle avatar tap
-            context.push(AppRoutespath.editProfileScreen);
+            context.push(AppRoutespath.profileNotificationsScreen);
           },
           child: const CircleAvatar(
             radius: 24,
