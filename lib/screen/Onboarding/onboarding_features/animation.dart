@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
+import 'package:mobile_app_dea/core/gen/assets.gen.dart';
+import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class Animation extends StatelessWidget {
   const Animation({super.key});
@@ -13,34 +16,35 @@ class Animation extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: Colors.black87),
+          icon: SvgPicture.asset(
+            Assets.svgIcons.backIconSvg.path,
+            height: 54,
+            width: 54,
+          ),
           onPressed: () {
             // Navigator.pop(context);
             context.pop("/nowliHowToUse");
           },
         ),
-        title: Row(
-          children: [
-            Expanded(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: LinearProgressIndicator(
-                  value: 5 / 6,
-                  backgroundColor: Colors.grey[300],
-                  color: const Color(0xFF4B9EFF),
-                  minHeight: 6,
+        title: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Expanded(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(5),
+                  child: LinearProgressIndicator(
+                    value: 5 / 6,
+                    backgroundColor: Colors.grey[300],
+                    color: const Color(0xFF4B9EFF),
+                    minHeight: 6,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(width: 10),
-            const Text(
-              "Skip",
-              style: TextStyle(
-                color: Colors.black87,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
+              const SizedBox(width: 0),
+              Text("Skip", style: AppsTextStyles.letsStartNext),
+            ],
+          ),
         ),
         titleSpacing: 0,
       ),
@@ -50,18 +54,14 @@ class Animation extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 10),
-            const Text(
+            Text(
               "LET'S SHAPE YOUR NOWLII",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w800,
-                color: Color(0xFF0D1C2E),
-              ),
+              style: AppsTextStyles.black24Uppercase,
             ),
             const SizedBox(height: 6),
-            const Text(
+            Text(
               "Give it a form so we can face it, instead of chase it!",
-              style: TextStyle(fontSize: 14, color: Colors.black54),
+              style: AppsTextStyles.PasswordUpdateSub,
             ),
             const SizedBox(height: 20),
             // 6 Lottie items (Grid layout)
@@ -99,38 +99,31 @@ class Animation extends StatelessWidget {
                 ],
               ),
             ),
-            // Next button
-            GestureDetector(
-              onTap: () {
-                context.push("/onboardingScreen");
-              },
-              child: Container(
-                margin: const EdgeInsets.only(top: 15),
-                padding: const EdgeInsets.symmetric(vertical: 14),
-                decoration: BoxDecoration(
-                  color: const Color(0xFFFFA34E),
-                  borderRadius: BorderRadius.circular(25),
+
+            SizedBox(
+              width: double.infinity,
+              height: 104,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange[400],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
                 ),
+                onPressed: () {
+                  context.push("/onboardingScreen");
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
-                      "Next",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
+                  children: [
+                    Center(
+                      child: Text("Next", style: AppsTextStyles.letsStartNext),
                     ),
-                    SizedBox(width: 8),
-                    CircleAvatar(
-                      radius: 13,
-                      backgroundColor: Colors.black,
-                      child: Icon(
-                        Icons.arrow_forward,
-                        color: Colors.white,
-                        size: 18,
-                      ),
+                    const SizedBox(width: 60),
+                    SvgPicture.asset(
+                      Assets.svgIcons.startLetsGo.path,
+                      width: 90,
+                      height: 90,
                     ),
                   ],
                 ),

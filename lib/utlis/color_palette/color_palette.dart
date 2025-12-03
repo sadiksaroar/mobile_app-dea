@@ -9,5 +9,7 @@ class AppColorsApps {
   static const Color softCream = Color(0xFFFFFCF1);
   static const Color peachGlow = Color(0xFFFFCB9B);
   static const Color iceBlue = Color(0xFFDFEFFF);
+  static const Color myColor = const Color(0xFFDFEFFF);
+
   static const Color softIvory = Color(0xFFFFFCF1);
 }

@@ -348,7 +348,6 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class SubscriptionPage extends StatelessWidget {

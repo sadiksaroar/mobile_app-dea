@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 class AppsTextStyles {
   static TextStyle alfaSlabTitleEntryScreen = GoogleFonts.alfaSlabOne(
     color: Colors.white,
-    fontSize: 28.sp,
+    fontSize: 22.sp,
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
   );
@@ -50,7 +50,16 @@ class AppsTextStyles {
   static TextStyle signupText = GoogleFonts.alfaSlabOne(
     fontWeight: FontWeight.w400, // Regular (400)
     fontStyle: FontStyle.normal,
-    fontSize: 20.sp, // 50px responsive
+    fontSize: 40, // 50px responsive
+
+    textStyle: const TextStyle(
+      color: Color(0xFF011F54), // Default color (can override)
+    ),
+  );
+  static TextStyle signupText28 = GoogleFonts.alfaSlabOne(
+    fontWeight: FontWeight.w400, // Regular (400)
+    fontStyle: FontStyle.normal,
+    fontSize: 38, // 50px responsive
 
     textStyle: const TextStyle(
       color: Color(0xFF011F54), // Default color (can override)

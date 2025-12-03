@@ -182,7 +182,7 @@ class EntryScreen extends StatelessWidget {
                     children: [
                       /// Heading
                       Text(
-                        "LET’S GET\nTHINGS DONE.",
+                        "LET’S GET THINGS DONE.",
                         style: AppsTextStyles.alfaSlabTitleEntryScreen,
                       ),
                       SizedBox(height: 10.h),

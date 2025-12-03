@@ -44,31 +44,18 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF4542EB),
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              'assets/svg_images/Entry screen.svg',
-            ), // Add your background image path here
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Center(
-          child: AnimatedBuilder(
-            animation: _scaleAnimation,
-            builder: (context, child) {
-              return Transform.scale(
-                scale: _scaleAnimation.value,
-                child: child,
-              );
-            },
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(25), // Rounded border radius
-              child: SvgPicture.asset(
-                'assets/svg_images/App Icon.svg', // Your SVG image
-                width: 102, // Adjust the width as needed
-                height: 77, // Adjust the height as needed
-              ),
+      body: Center(
+        child: AnimatedBuilder(
+          animation: _scaleAnimation,
+          builder: (context, child) {
+            return Transform.scale(scale: _scaleAnimation.value, child: child);
+          },
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(25), // Rounded border radius
+            child: SvgPicture.asset(
+              'assets/svg_images/App Icon.svg', // Your SVG image
+              width: 102, // Adjust the width as needed
+              height: 77, // Adjust the height as needed
             ),
           ),
         ),

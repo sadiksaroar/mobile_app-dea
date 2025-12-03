@@ -135,6 +135,7 @@ class OnbordingFetures extends StatelessWidget {
     required String description,
   }) {
     return Container(
+      // height: double.infinity,
       margin: const EdgeInsets.symmetric(vertical: 8),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(

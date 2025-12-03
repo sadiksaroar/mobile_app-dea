@@ -9,6 +9,8 @@ class NowliHowToUse extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -19,6 +21,7 @@ class NowliHowToUse extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // Top Row: Back, Progress, Skip
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -44,11 +47,16 @@ class NowliHowToUse extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Text(
-                        "Skip",
-                        style: const TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
+                      GestureDetector(
+                        onTap: () {
+                          context.push("/animation"); // Skip action
+                        },
+                        child: Text(
+                          "Skip",
+                          style: const TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ],
@@ -58,7 +66,7 @@ class NowliHowToUse extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: Color(0xFFA0E871),
+                      color: const Color(0xFFA0E871),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Row(
@@ -71,8 +79,8 @@ class NowliHowToUse extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Assets.svgIcons.nowliHowToUse.svg(
-                            height: 40,
-                            width: 40,
+                            height: 80,
+                            width: 80,
                           ),
                         ),
                         const SizedBox(width: 16),
@@ -106,19 +114,22 @@ class NowliHowToUse extends StatelessWidget {
                     style: AppsTextStyles.extraBold22,
                   ),
                   const SizedBox(height: 24),
-                  // Spacer so the Stack positioned container can overlay
+                  // Spacer to push content up
                   const Expanded(child: SizedBox()),
                 ],
               ),
             ),
           ),
-          // Positioned bottom container
+          // Bottom Sheet
           Positioned(
-            top: 403, // adjust as needed
             left: 0,
             right: 0,
             bottom: 0,
             child: Container(
+              constraints: BoxConstraints(
+                // Ensures container doesn't exceed 60% of screen height
+                maxHeight: screenHeight * 0.6,
+              ),
               padding: const EdgeInsets.all(24),
               decoration: const BoxDecoration(
                 color: Color(0xFF4542EB),
@@ -127,64 +138,68 @@ class NowliHowToUse extends StatelessWidget {
                   topRight: Radius.circular(25),
                 ),
               ),
-              child: Column(
-                children: [
-                  Text(
-                    "SOME OF OUR TIPS AND TRICKS HOW TO USE NOWLII 📖",
-                    style: AppsTextStyles.black24UppercaseSome,
-                  ),
-                  const SizedBox(height: 16),
-                  RichText(
-                    text: TextSpan(
-                      style: AppsTextStyles.regular18,
-                      children: [
-                        const TextSpan(
-                          text:
-                              "We recommend booking the call with Nowlii when you are putting an alarm at night, ",
-                        ),
-                        TextSpan(
-                          text: "10 minutes after the alarm",
-                          style:
-                              AppsTextStyles.semiBold18, // << Your custom style
-                        ),
-                        const TextSpan(
-                          text:
-                              " so Nowlii will be there to start the day with you ✨",
-                        ),
-                      ],
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      "SOME OF OUR TIPS AND TRICKS HOW TO USE NOWLII 📖",
+                      style: AppsTextStyles.black24UppercaseSome,
                     ),
-                  ),
-
-                  const Spacer(),
-
-                  SizedBox(
-                    width: double.infinity,
-                    height: 104,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.orange[400],
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50),
+                    const SizedBox(height: 16),
+                    RichText(
+                      text: TextSpan(
+                        style: AppsTextStyles.regular18.copyWith(
+                          color: Colors.white,
                         ),
-                      ),
-                      onPressed: () {
-                        context.push("/animation");
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Next", style: AppsTextStyles.letsStartNext),
-                          const SizedBox(width: 30),
-                          SvgPicture.asset(
-                            Assets.svgIcons.startLetsGo.path,
-                            width: 60,
-                            height: 60,
+                          const TextSpan(
+                            text:
+                                "We recommend booking the call with Nowlii when you are putting an alarm at night, ",
+                          ),
+                          TextSpan(
+                            text: "10 minutes after the alarm",
+                            style: AppsTextStyles.semiBold18.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
+                          const TextSpan(
+                            text:
+                                " so Nowlii will be there to start the day with you ✨",
                           ),
                         ],
                       ),
                     ),
-                  ),
-                ],
+                    const SizedBox(height: 24),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 104,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange[400],
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        onPressed: () {
+                          context.push("/animation");
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Next", style: AppsTextStyles.letsStartNext),
+                            const SizedBox(width: 30),
+                            SvgPicture.asset(
+                              Assets.svgIcons.startLetsGo.path,
+                              width: 60,
+                              height: 60,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

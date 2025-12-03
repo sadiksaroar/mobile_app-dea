@@ -97,6 +97,10 @@ class $AssetsSvgIconsGen {
   AssetGenImage get buttonCalendarComplate =>
       const AssetGenImage('assets/svg_icons/Button CalendarComplate.png');
 
+  /// File path: assets/svg_icons/Button Regular.png
+  AssetGenImage get buttonRegular =>
+      const AssetGenImage('assets/svg_icons/Button Regular.png');
+
   /// File path: assets/svg_icons/CalendarBlank.png
   AssetGenImage get calendarBlank =>
       const AssetGenImage('assets/svg_icons/CalendarBlank.png');
@@ -224,6 +228,9 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/Nowlli Check-ins.png
   AssetGenImage get nowlliCheckIns =>
       const AssetGenImage('assets/svg_icons/Nowlli Check-ins.png');
+
+  /// File path: assets/svg_icons/Plus.png
+  AssetGenImage get plus => const AssetGenImage('assets/svg_icons/Plus.png');
 
   /// File path: assets/svg_icons/Plush Cleander .png
   AssetGenImage get plushCleander =>
@@ -360,6 +367,10 @@ class $AssetsSvgIconsGen {
   SvgGenImage get checkCircle01PasswprdUpdate =>
       const SvgGenImage('assets/svg_icons/check-circle-01-passwprd update.svg');
 
+  /// File path: assets/svg_icons/chevron_backward.png
+  AssetGenImage get chevronBackward =>
+      const AssetGenImage('assets/svg_icons/chevron_backward.png');
+
   /// File path: assets/svg_icons/clean house.png
   AssetGenImage get cleanHouse =>
       const AssetGenImage('assets/svg_icons/clean house.png');
@@ -401,6 +412,10 @@ class $AssetsSvgIconsGen {
   SvgGenImage get nowlnLogo =>
       const SvgGenImage('assets/svg_icons/nowln_logo.svg');
 
+  /// File path: assets/svg_icons/on_bording_Plus.png
+  AssetGenImage get onBordingPlus =>
+      const AssetGenImage('assets/svg_icons/on_bording_Plus.png');
+
   /// File path: assets/svg_icons/plush.png
   AssetGenImage get plush => const AssetGenImage('assets/svg_icons/plush.png');
 
@@ -422,6 +437,10 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/questTab.png.png
   AssetGenImage get questTabPng =>
       const AssetGenImage('assets/svg_icons/questTab.png.png');
+
+  /// File path: assets/svg_icons/seeting.png
+  AssetGenImage get seeting =>
+      const AssetGenImage('assets/svg_icons/seeting.png');
 
   /// File path: assets/svg_icons/settings_backIcon.png
   AssetGenImage get settingsBackIcon =>
@@ -475,6 +494,7 @@ class $AssetsSvgIconsGen {
     buttonCalendarPng,
     buttonCalendarPng_,
     buttonCalendarComplate,
+    buttonRegular,
     calendarBlank,
     clearAllAIMemoryPng,
     clearAllAIMemoryPng_,
@@ -508,6 +528,7 @@ class $AssetsSvgIconsGen {
     nowliJuli,
     nowliPro,
     nowlliCheckIns,
+    plus,
     plushCleander,
     privacyData,
     privacyPolicy,
@@ -542,6 +563,7 @@ class $AssetsSvgIconsGen {
     blue,
     calende,
     checkCircle01PasswprdUpdate,
+    chevronBackward,
     cleanHouse,
     exlometory,
     googleIconsBlue,
@@ -553,12 +575,14 @@ class $AssetsSvgIconsGen {
     neverBack,
     nowliHowToUse,
     nowlnLogo,
+    onBordingPlus,
     plush,
     popupSpwakingCross,
     proCrossIcon,
     push,
     questComapltedSatrt,
     questTabPng,
+    seeting,
     settingsBackIcon,
     shuffle,
     signInGoole,
@@ -646,6 +670,10 @@ class $AssetsSvgImagesGen {
   AssetGenImage get popupScreenCarton =>
       const AssetGenImage('assets/svg_images/popup_screen_carton.png');
 
+  /// File path: assets/svg_images/profile.png
+  AssetGenImage get profile =>
+      const AssetGenImage('assets/svg_images/profile.png');
+
   /// File path: assets/svg_images/ready_to_start.svg
   SvgGenImage get readyToStart =>
       const SvgGenImage('assets/svg_images/ready_to_start.svg');
@@ -685,6 +713,7 @@ class $AssetsSvgImagesGen {
     popupProIcon,
     popupScreeLiner,
     popupScreenCarton,
+    profile,
     readyToStart,
     three,
     twoColorPopupSpkeing,

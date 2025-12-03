@@ -117,7 +117,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
-                    child: Assets.svgIcons.backIconPng.image(
+                    child: Assets.svgIcons.backIconSvg.svg(
                       height: 60,
                       width: 60,
                     ),
@@ -240,8 +240,10 @@ class _SignInScreenState extends State<SignInScreen> {
                 icon: Assets.svgIcons.appleIconSignIn.path,
                 text: "Continue with Apple",
               ),
-              const SizedBox(height: 30),
-
+              // const SizedBox(height: 30),
+              // Divider(),
+              // Spacer(),
+              SizedBox(height: 200),
               // Sign In Text
               Center(
                 child: RichText(
