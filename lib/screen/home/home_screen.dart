@@ -1,3 +1,809 @@
+// import 'package:flutter/material.dart';
+// import 'package:flutter_slidable/flutter_slidable.dart';
+// import 'package:go_router/go_router.dart';
+// import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
+// import 'package:mobile_app_dea/core/gen/assets.gen.dart';
+// import 'package:mobile_app_dea/custom_code/BottomNav.dart';
+// import 'package:mobile_app_dea/screen/home/contextual_onboarding/custom_paint/chat_bubble_container.dart';
+// import 'package:mobile_app_dea/screen/home/contextual_onboarding/custom_paint/chat_message.dart';
+// import 'package:mobile_app_dea/screen/home/contextual_onboarding/custom_paint/conversation_bubble.dart';
+// import 'package:mobile_app_dea/screen/home/contextual_onboarding/custom_paint/text_bubble.dart';
+// import 'package:mobile_app_dea/screen/home/swipe_on_quest/delete_toast.dart';
+// import 'package:mobile_app_dea/screen/home/swipe_on_quest/tomorow_card.dart';
+// import 'package:mobile_app_dea/themes/create_qutes.dart';
+// import 'package:mobile_app_dea/themes/text_styles.dart';
+// import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
+
+// class HomeScreen extends StatefulWidget {
+//   const HomeScreen({Key? key}) : super(key: key);
+
+//   @override
+//   State<HomeScreen> createState() => _HomeScreenState();
+// }
+
+// class _HomeScreenState extends State<HomeScreen> {
+//   final ScrollController _scrollController = ScrollController();
+//   final List<TaskItem> _tasks = [
+//     TaskItem('To wake up ☀️', '10:00', false),
+//     TaskItem('To walk 🚶', '10:30', false),
+//     TaskItem('To study 📚', '12:00', false),
+//     TaskItem('To train 💪', '16:00', false),
+//     TaskItem('To Sleep 🌙', '22:00', false, isSpecial: true),
+//   ];
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     WidgetsBinding.instance.addPostFrameCallback((_) {
+//       OnboardingOverlay.show(context);
+//     });
+//   }
+
+//   @override
+//   void dispose() {
+//     _scrollController.dispose();
+//     super.dispose();
+//   }
+
+//   int _currentIndex = 0;
+
+//   void _onNavTap(int index) {
+//     setState(() {
+//       _currentIndex = index;
+//     });
+
+//     switch (index) {
+//       case 0:
+//         context.go(AppRoutespath.homeScreen);
+//         break;
+//       case 1:
+//         context.go(AppRoutespath.questHomePage);
+//         break;
+//       case 2:
+//         context.go(AppRoutespath.progress);
+//         break;
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: const Color(0xFFF5F7FA),
+//       body: Stack(
+//         children: [
+//           SingleChildScrollView(
+//             controller: _scrollController,
+//             child: Container(
+//               decoration: const BoxDecoration(
+//                 image: DecorationImage(
+//                   image: AssetImage(
+//                     'assets/svg_images/upscalemedia-transformed.png',
+//                   ),
+//                   fit: BoxFit.cover,
+//                   alignment: Alignment.center,
+//                 ),
+//               ),
+//               child: SafeArea(
+//                 child: Padding(
+//                   padding: const EdgeInsets.all(22.0),
+//                   child: Column(
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: [
+//                       const SizedBox(height: 20),
+//                       _buildHeader(),
+//                       const SizedBox(height: 24),
+//                       _buildProgressCard(),
+//                       const SizedBox(height: 24),
+//                       _buildDateSection(),
+//                       const SizedBox(height: 24),
+//                       _buildTodaysPlanHeader(),
+//                       const SizedBox(height: 16),
+//                       _buildTaskList(),
+//                       const SizedBox(height: 24),
+//                       _buildSwipeButton(),
+//                       const SizedBox(height: 40),
+//                     ],
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//       bottomNavigationBar: CustomNavigationBar(
+//         currentIndex: 0,
+//         onTap: (index) {
+//           // Handle navigation tap
+//         },
+//       ),
+//     );
+//   }
+
+//   Widget _buildHeader() {
+//     return Row(
+//       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//       children: [
+//         GestureDetector(
+//           onTap: () {
+//             // Handle avatar tap
+//             context.push(AppRoutespath.profileNotificationsScreen);
+//           },
+//           child: const CircleAvatar(
+//             radius: 24,
+//             backgroundColor: Color(0xFFD4E3FF),
+//             child: Icon(
+//               Icons.person_outline,
+//               color: Color(0xFF5B7EFF),
+//               size: 28,
+//             ),
+//           ),
+//         ),
+//         Text('HI JULIE!', style: AppsTextStyles.extraBold32Centered),
+//         Container(
+//           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+//           decoration: BoxDecoration(
+//             color: AppColorsApps.skyBlueLight,
+//             borderRadius: BorderRadius.circular(20),
+//             boxShadow: [
+//               BoxShadow(
+//                 color: Colors.black.withOpacity(0.05),
+//                 blurRadius: 10,
+//                 offset: const Offset(0, 2),
+//               ),
+//             ],
+//           ),
+//           child: Row(
+//             children: [
+//               Image.asset(Assets.svgIcons.fire.path, height: 22, width: 22),
+//               SizedBox(width: 6),
+//               Text('1', style: AppsTextStyles.fullNameAndEmail),
+//             ],
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+
+//   Widget _buildProgressCard() {
+//     final completedTasks = _tasks.where((task) => task.isCompleted).length;
+//     final totalTasks = _tasks.length;
+//     final progress = totalTasks > 0 ? completedTasks / totalTasks : 0.0;
+
+//     return Container(
+//       padding: const EdgeInsets.all(24),
+//       decoration: BoxDecoration(
+//         gradient: const LinearGradient(
+//           colors: [Color(0xFFD4E3FF), Color(0xFFE8F0FF)],
+//           begin: Alignment.topLeft,
+//           end: Alignment.bottomRight,
+//         ),
+//         borderRadius: BorderRadius.circular(24),
+//         boxShadow: [
+//           BoxShadow(
+//             color: const Color(0xFF5B7EFF).withOpacity(0.1),
+//             blurRadius: 20,
+//             offset: const Offset(0, 4),
+//           ),
+//         ],
+//       ),
+//       child: Row(
+//         children: [
+//           Expanded(
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(
+//                   'Ready to make\ntoday count?',
+//                   style: AppsTextStyles.sendResetLinkButton,
+//                 ),
+//                 const SizedBox(height: 6),
+//                 Text(
+//                   'Tiny wins make big shifts.',
+//                   style: AppsTextStyles.WorkSansRegular14,
+//                 ),
+//                 const SizedBox(height: 16),
+//                 Row(
+//                   children: [
+//                     Text('Today\'s progress', style: AppsTextStyles.regular16l),
+//                     const SizedBox(width: 8),
+//                     Text(
+//                       '${(progress * 100).toInt()}%',
+//                       style: AppsTextStyles.regular16l,
+//                     ),
+//                   ],
+//                 ),
+//                 const SizedBox(height: 10),
+//                 Container(
+//                   height: 24,
+//                   width: double.infinity,
+//                   decoration: BoxDecoration(
+//                     color: const Color(0xFFC3DBFF),
+//                     borderRadius: BorderRadius.circular(25),
+//                   ),
+//                   child: Stack(
+//                     children: [
+//                       LayoutBuilder(
+//                         builder: (context, constraints) {
+//                           return AnimatedContainer(
+//                             duration: const Duration(milliseconds: 500),
+//                             width: constraints.maxWidth * progress,
+//                             decoration: BoxDecoration(
+//                               gradient: const LinearGradient(
+//                                 begin: Alignment.centerLeft,
+//                                 end: Alignment.centerRight,
+//                                 colors: [Color(0xFFDFEFFF), Color(0xFF4542EB)],
+//                               ),
+//                               borderRadius: BorderRadius.circular(25),
+//                             ),
+//                           );
+//                         },
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//           const SizedBox(width: 20),
+//           Container(
+//             padding: const EdgeInsets.all(24),
+//             decoration: BoxDecoration(
+//               color: AppColorsApps.royalBlue,
+//               borderRadius: BorderRadius.circular(20),
+//             ),
+//             child: Image.asset(
+//               Assets.svgIcons.readyToMakeTodayCount.path,
+//               height: 44,
+//               width: 44,
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+
+//   Widget _buildDateSection() {
+//     final now = DateTime.now();
+//     return Row(
+//       children: [
+//         Container(
+//           height: 120,
+//           width: 120,
+//           padding: const EdgeInsets.all(18),
+//           decoration: BoxDecoration(
+//             color: Colors.white,
+//             borderRadius: BorderRadius.circular(18),
+//             border: Border.all(color: const Color(0xFF5B7EFF), width: 2.5),
+//             boxShadow: [
+//               BoxShadow(
+//                 color: const Color(0xFF5B7EFF).withOpacity(0.1),
+//                 blurRadius: 10,
+//                 offset: const Offset(0, 2),
+//               ),
+//             ],
+//           ),
+//           child: Column(
+//             children: [
+//               Text('Today', style: AppsTextStyles.regular16l),
+//               const SizedBox(height: 6),
+//               Text('${now.day}', style: AppsTextStyles.extraBold32Centered),
+//             ],
+//           ),
+//         ),
+//         const SizedBox(width: 12),
+//         Container(
+//           height: 120,
+//           width: 120,
+//           padding: const EdgeInsets.all(18),
+//           decoration: BoxDecoration(
+//             gradient: const LinearGradient(
+//               colors: [Color(0xFF5B7EFF), Color(0xFF4542EB)],
+//             ),
+//             borderRadius: BorderRadius.circular(18),
+//             boxShadow: [
+//               BoxShadow(
+//                 color: const Color(0xFF5B7EFF).withOpacity(0.3),
+//                 blurRadius: 10,
+//                 offset: const Offset(0, 2),
+//               ),
+//             ],
+//           ),
+//           child: Row(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               const Icon(
+//                 Icons.add_circle_outline,
+//                 color: Colors.white,
+//                 size: 24,
+//               ),
+//               const SizedBox(width: 8),
+//               Text('Plan', style: AppsTextStyles.regular18),
+//             ],
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+
+//   Widget _buildTodaysPlanHeader() {
+//     return Row(
+//       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//       children: [
+//         const Text(
+//           'Today\'s plan',
+//           style: TextStyle(
+//             fontSize: 24,
+//             fontWeight: FontWeight.bold,
+//             color: Color(0xFF1A1F36),
+//           ),
+//         ),
+//         Material(
+//           color: Colors.white,
+//           borderRadius: BorderRadius.circular(24),
+//           child: InkWell(
+//             borderRadius: BorderRadius.circular(24),
+//             onTap: () {},
+//             child: Container(
+//               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+//               decoration: BoxDecoration(
+//                 border: Border.all(color: const Color(0xFF5B7EFF), width: 2),
+//                 borderRadius: BorderRadius.circular(24),
+//               ),
+//               child: const Row(
+//                 children: [
+//                   Icon(Icons.add, color: Color(0xFF5B7EFF), size: 20),
+//                   SizedBox(width: 4),
+//                   Text(
+//                     'Add quest',
+//                     style: TextStyle(
+//                       color: Color(0xFF5B7EFF),
+//                       fontWeight: FontWeight.bold,
+//                       fontSize: 14,
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+
+//   Widget _buildTaskList() {
+//     return Column(
+//       children: _tasks.asMap().entries.map((entry) {
+//         final index = entry.key;
+//         final task = entry.value;
+//         return AnimatedTaskItem(
+//           key: ValueKey('${task.title}_$index'),
+//           task: task,
+//           onEdit: () => (index),
+//           onDelete: () => _deleteTask(index),
+//           onTomorrow: () => _moveToTomorrow(index),
+//           onToggle: () => setState(() {
+//             task.isCompleted = !task.isCompleted;
+//           }),
+//         );
+//       }).toList(),
+//     );
+//   }
+
+//   Widget _buildSwipeButton() {
+//     return Material(
+//       color: Colors.transparent,
+//       child: InkWell(
+//         onTap: () {},
+//         borderRadius: BorderRadius.circular(32),
+//         child: Ink(
+//           decoration: BoxDecoration(
+//             gradient: const LinearGradient(
+//               colors: [Color(0xFFFF6B35), Color(0xFFFF8C42)],
+//             ),
+//             borderRadius: BorderRadius.circular(32),
+//             boxShadow: [
+//               BoxShadow(
+//                 color: const Color(0xFFFF6B35).withOpacity(0.4),
+//                 blurRadius: 20,
+//                 offset: const Offset(0, 6),
+//               ),
+//             ],
+//           ),
+//           child: Container(
+//             padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 18),
+//             child: const Row(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 Icon(Icons.auto_awesome, color: Colors.white, size: 24),
+//                 SizedBox(width: 12),
+//                 Text(
+//                   'Swipe to talk to Fuzzy',
+//                   style: TextStyle(
+//                     fontSize: 17,
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.white,
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+
+//   void _deleteTask(int index) {
+//     final removed = _tasks[index];
+//     setState(() => _tasks.removeAt(index));
+
+//     _showCustomToast(
+//       context,
+//       child: DeleteToast(
+//         onUndo: () {
+//           setState(() => _tasks.insert(index, removed));
+//         },
+//       ),
+//     );
+//   }
+
+//   void _moveToTomorrow(int index) {
+//     final task = _tasks[index];
+//     setState(() => _tasks.removeAt(index));
+
+//     _showCustomToast(context, child: const TomorrowCard());
+//   }
+
+//   void _showCustomToast(BuildContext context, {required Widget child}) {
+//     final overlay = Overlay.of(context);
+//     late OverlayEntry overlayEntry;
+
+//     overlayEntry = OverlayEntry(
+//       builder: (context) => Positioned(
+//         top: 100,
+//         left: MediaQuery.of(context).size.width / 2 - 170,
+//         child: Material(
+//           color: Colors.transparent,
+//           child: TweenAnimationBuilder<double>(
+//             tween: Tween(begin: 0.0, end: 1.0),
+//             duration: const Duration(milliseconds: 300),
+//             builder: (context, value, child) {
+//               return Transform.scale(
+//                 scale: value,
+//                 child: Opacity(opacity: value, child: child),
+//               );
+//             },
+//             child: child,
+//           ),
+//         ),
+//       ),
+//     );
+
+//     overlay.insert(overlayEntry);
+
+//     Future.delayed(const Duration(seconds: 3), () {
+//       overlayEntry.remove();
+//     });
+//   }
+// }
+
+// // Task Model
+// class TaskItem {
+//   String title;
+//   String time;
+//   bool isCompleted;
+//   String? reminder;
+//   final bool isSpecial;
+
+//   TaskItem(
+//     this.title,
+//     this.time,
+//     this.isCompleted, {
+//     this.isSpecial = false,
+//     this.reminder,
+//   });
+// }
+
+// // Animated Task Item Widget with flutter_slidable
+// class AnimatedTaskItem extends StatefulWidget {
+//   final TaskItem task;
+//   final VoidCallback onEdit;
+//   final VoidCallback onDelete;
+//   final VoidCallback onTomorrow;
+//   final VoidCallback onToggle;
+
+//   const AnimatedTaskItem({
+//     Key? key,
+//     required this.task,
+//     required this.onEdit,
+//     required this.onDelete,
+//     required this.onTomorrow,
+//     required this.onToggle,
+//   }) : super(key: key);
+
+//   @override
+//   State<AnimatedTaskItem> createState() => _AnimatedTaskItemState();
+// }
+
+// class _AnimatedTaskItemState extends State<AnimatedTaskItem>
+//     with SingleTickerProviderStateMixin {
+//   late AnimationController _controller;
+//   late Animation<Offset> _slideAnimation;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     _controller = AnimationController(
+//       vsync: this,
+//       duration: const Duration(milliseconds: 500),
+//     );
+//     _slideAnimation = Tween<Offset>(
+//       begin: const Offset(-1, 0),
+//       end: Offset.zero,
+//     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic));
+//     _controller.forward();
+//   }
+
+//   @override
+//   void dispose() {
+//     _controller.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return SlideTransition(
+//       position: _slideAnimation,
+//       child: Slidable(
+//         key: ValueKey(widget.task),
+//         endActionPane: ActionPane(
+//           motion: const StretchMotion(),
+//           extentRatio: 0.75,
+//           children: [
+//             SlidableAction(
+//               onPressed: (_) => widget.onEdit(),
+//               backgroundColor: const Color(0xFF5B7EFF),
+//               foregroundColor: Colors.white,
+//               icon: Icons.edit,
+//               label: 'Edit',
+//               borderRadius: const BorderRadius.only(
+//                 topLeft: Radius.circular(16),
+//                 bottomLeft: Radius.circular(16),
+//               ),
+//             ),
+//             SlidableAction(
+//               onPressed: (_) => widget.onDelete(),
+//               backgroundColor: const Color(0xFFFF6B35),
+//               foregroundColor: Colors.white,
+//               icon: Icons.delete,
+//               label: 'Delete',
+//             ),
+//             SlidableAction(
+//               onPressed: (_) => widget.onTomorrow(),
+//               backgroundColor: const Color(0xFF4ECDC4),
+//               foregroundColor: Colors.white,
+//               icon: Icons.today,
+//               label: 'Tomorrow',
+//               borderRadius: const BorderRadius.only(
+//                 topRight: Radius.circular(16),
+//                 bottomRight: Radius.circular(16),
+//               ),
+//             ),
+//           ],
+//         ),
+//         child: _buildTaskCard(),
+//       ),
+//     );
+//   }
+
+//   Widget _buildTaskCard() {
+//     return Container(
+//       margin: const EdgeInsets.only(bottom: 14),
+//       padding: const EdgeInsets.all(18),
+//       decoration: BoxDecoration(
+//         border: widget.task.isSpecial
+//             ? null
+//             : Border.all(color: AppColorsApps.peachGlow),
+//         color: widget.task.isSpecial ? null : AppColorsApps.softCream,
+//         image: widget.task.isSpecial
+//             ? const DecorationImage(
+//                 image: AssetImage('assets/svg_icons/To sleep.png'),
+//                 fit: BoxFit.cover,
+//               )
+//             : null,
+//         borderRadius: BorderRadius.circular(18),
+//         boxShadow: [
+//           BoxShadow(
+//             color: widget.task.isSpecial
+//                 ? const Color(0xFF5B7EFF).withOpacity(0.2)
+//                 : Colors.black.withOpacity(0.06),
+//             blurRadius: 12,
+//             offset: const Offset(0, 3),
+//           ),
+//         ],
+//       ),
+//       child: Row(
+//         children: [
+//           GestureDetector(
+//             onTap: widget.onToggle,
+//             child: AnimatedContainer(
+//               duration: const Duration(milliseconds: 200),
+//               width: 28,
+//               height: 28,
+//               decoration: BoxDecoration(
+//                 color: widget.task.isCompleted
+//                     ? (widget.task.isSpecial
+//                           ? Colors.white
+//                           : const Color(0xFF5B7EFF))
+//                     : Colors.transparent,
+//                 border: Border.all(
+//                   color: widget.task.isSpecial
+//                       ? Colors.white
+//                       : const Color(0xFF5B7EFF),
+//                   width: 2.5,
+//                 ),
+//                 borderRadius: BorderRadius.circular(8),
+//               ),
+//               child: widget.task.isCompleted
+//                   ? Icon(
+//                       Icons.check_rounded,
+//                       size: 18,
+//                       color: widget.task.isSpecial
+//                           ? const Color(0xFF5B7EFF)
+//                           : Colors.white,
+//                     )
+//                   : null,
+//             ),
+//           ),
+//           const SizedBox(width: 14),
+//           Expanded(
+//             child: Text(
+//               widget.task.title,
+//               style: AppTextStylesQutes.workSansSemiBosld18.copyWith(
+//                 fontSize: 18,
+//                 fontWeight: FontWeight.w600,
+//                 color: widget.task.isSpecial
+//                     ? Colors.white
+//                     : const Color(0xFF1A1F36),
+//                 decoration: widget.task.isCompleted
+//                     ? TextDecoration.lineThrough
+//                     : null,
+//                 decorationThickness: 2,
+//               ),
+//             ),
+//           ),
+//           const SizedBox(width: 8),
+//           Container(
+//             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+//             decoration: BoxDecoration(
+//               color: widget.task.isSpecial
+//                   ? Colors.white.withOpacity(0.2)
+//                   : const Color(0xFFF5F7FA),
+//               borderRadius: BorderRadius.circular(12),
+//             ),
+//             child: Text(
+//               widget.task.time,
+//               style: AppTextStylesQutes.workSansSemiBold18.copyWith(
+//                 fontSize: 14,
+//                 fontWeight: FontWeight.w600,
+//                 color: widget.task.isSpecial
+//                     ? Colors.white
+//                     : AppColorsApps.royalBlue,
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// // Onboarding System
+// class OnboardingOverlay {
+//   static void show(BuildContext context) {
+//     showDialog(
+//       context: context,
+//       barrierDismissible: false,
+//       barrierColor: Colors.black.withOpacity(0.75),
+//       builder: (context) => const OnboardingDialog(),
+//     );
+//   }
+// }
+
+// class OnboardingDialog extends StatefulWidget {
+//   const OnboardingDialog({Key? key}) : super(key: key);
+
+//   @override
+//   State<OnboardingDialog> createState() => _OnboardingDialogState();
+// }
+
+// class _OnboardingDialogState extends State<OnboardingDialog>
+//     with SingleTickerProviderStateMixin {
+//   int _step = 0;
+//   late AnimationController _fadeController;
+//   late Animation<double> _fadeAnimation;
+
+//   final List<OnboardingStep> _steps = [
+//     OnboardingStep(
+//       widget: const ChatBubbleContainer(),
+//       position: const Alignment(0, -0.3),
+//     ),
+//     OnboardingStep(
+//       widget: const ChatMessage(),
+//       position: const Alignment(0.5, 0),
+//     ),
+//     OnboardingStep(
+//       widget: const ConversationBubble(),
+//       position: const Alignment(-0.5, 0.4),
+//     ),
+//     OnboardingStep(
+//       widget: const TextBubble(),
+//       position: const Alignment(0, 0.6),
+//     ),
+//   ];
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     _fadeController = AnimationController(
+//       duration: const Duration(milliseconds: 300),
+//       vsync: this,
+//     );
+//     _fadeAnimation = Tween<double>(
+//       begin: 0.0,
+//       end: 1.0,
+//     ).animate(CurvedAnimation(parent: _fadeController, curve: Curves.easeIn));
+//     _fadeController.forward();
+//   }
+
+//   @override
+//   void dispose() {
+//     _fadeController.dispose();
+//     super.dispose();
+//   }
+
+//   void _next() async {
+//     await _fadeController.reverse();
+//     if (_step < _steps.length - 1) {
+//       setState(() => _step++);
+//       _fadeController.forward();
+//     } else {
+//       if (mounted) Navigator.of(context).pop();
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return GestureDetector(
+//       onTap: _next,
+//       child: Material(
+//         color: Colors.transparent,
+//         child: Stack(
+//           children: [
+//             AnimatedAlign(
+//               duration: const Duration(milliseconds: 600),
+//               curve: Curves.easeInOutCubic,
+//               alignment: _steps[_step].position,
+//               child: FadeTransition(
+//                 opacity: _fadeAnimation,
+//                 child: Container(
+//                   key: ValueKey(_step),
+//                   child: _steps[_step].widget,
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class OnboardingStep {
+//   final Widget widget;
+//   final Alignment position;
+
+//   OnboardingStep({required this.widget, required this.position});
+// }
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:go_router/go_router.dart';
@@ -35,7 +841,9 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      OnboardingOverlay.show(context);
+      if (mounted) {
+        OnboardingOverlay.show(context);
+      }
     });
   }
 
@@ -48,6 +856,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
   void _onNavTap(int index) {
+    if (!mounted) return;
+
     setState(() {
       _currentIndex = index;
     });
@@ -155,7 +965,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Row(
             children: [
               Image.asset(Assets.svgIcons.fire.path, height: 22, width: 22),
-              SizedBox(width: 6),
+              const SizedBox(width: 6),
               Text('1', style: AppsTextStyles.fullNameAndEmail),
             ],
           ),
@@ -191,6 +1001,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   'Ready to make\ntoday count?',
@@ -204,7 +1015,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(height: 16),
                 Row(
                   children: [
-                    Text('Today\'s progress', style: AppsTextStyles.regular16l),
+                    Flexible(
+                      child: Text(
+                        'Today\'s progress',
+                        style: AppsTextStyles.regular16l,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
                     const SizedBox(width: 8),
                     Text(
                       '${(progress * 100).toInt()}%',
@@ -381,9 +1198,13 @@ class _HomeScreenState extends State<HomeScreen> {
           onEdit: () => (index),
           onDelete: () => _deleteTask(index),
           onTomorrow: () => _moveToTomorrow(index),
-          onToggle: () => setState(() {
-            task.isCompleted = !task.isCompleted;
-          }),
+          onToggle: () {
+            if (mounted) {
+              setState(() {
+                task.isCompleted = !task.isCompleted;
+              });
+            }
+          },
         );
       }).toList(),
     );
@@ -433,6 +1254,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _deleteTask(int index) {
+    if (!mounted) return;
+
     final removed = _tasks[index];
     setState(() => _tasks.removeAt(index));
 
@@ -440,13 +1263,17 @@ class _HomeScreenState extends State<HomeScreen> {
       context,
       child: DeleteToast(
         onUndo: () {
-          setState(() => _tasks.insert(index, removed));
+          if (mounted) {
+            setState(() => _tasks.insert(index, removed));
+          }
         },
       ),
     );
   }
 
   void _moveToTomorrow(int index) {
+    if (!mounted) return;
+
     final task = _tasks[index];
     setState(() => _tasks.removeAt(index));
 
@@ -454,6 +1281,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _showCustomToast(BuildContext context, {required Widget child}) {
+    if (!mounted) return;
+
     final overlay = Overlay.of(context);
     late OverlayEntry overlayEntry;
 
@@ -764,8 +1593,10 @@ class _OnboardingDialogState extends State<OnboardingDialog>
   void _next() async {
     await _fadeController.reverse();
     if (_step < _steps.length - 1) {
-      setState(() => _step++);
-      _fadeController.forward();
+      if (mounted) {
+        setState(() => _step++);
+        _fadeController.forward();
+      }
     } else {
       if (mounted) Navigator.of(context).pop();
     }

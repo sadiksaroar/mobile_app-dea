@@ -2,20 +2,12 @@
 // import 'package:flutter/foundation.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-// import 'package:mobile_app_dea/screen/profile/profile_menu_with_notification/Profile_menu_with_notication.dart';
+// import 'package:mobile_app_dea/screen/welcome_activetion_flow/popup_speking.dart';
+// import 'package:mobile_app_dea/screen/welcome_activetion_flow/subscription_popup%20.dart';
 
 // void main() {
-//   runApp(
-//     DevicePreview(
-//       enabled: !kReleaseMode, // Enable only in development mode
-//       builder: (context) => MyApp(), // Wrap the app in DevicePreview
-//     ),
-//   );
+//   runApp(DevicePreview(enabled: !kReleaseMode, builder: (context) => MyApp()));
 // }
-// // void main() {
-// //   runApp(MyApp());
-// // }
 
 // class MyApp extends StatelessWidget {
 //   const MyApp({super.key});
@@ -23,16 +15,17 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return ScreenUtilInit(
-//       designSize: Size(375, 812), // Design size used for ScreenUtil
+//       designSize: const Size(375, 812),
 //       builder: (context, child) => MaterialApp(
 //         debugShowCheckedModeBanner: false,
-//         useInheritedMediaQuery:
-//             true, // Ensure device preview works with media queries
+//         useInheritedMediaQuery: true,
 //         title: 'Flutter Demo',
 //         theme: ThemeData(
 //           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
 //         ),
-//         home: ProfileNotificationsScreen(),
+
+//         // 🔥 FIXED HERE — choose any enum value
+//         home: SubscriptionPage(),
 
 //         builder: DevicePreview.appBuilder,
 //       ),

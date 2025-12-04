@@ -1,6 +1,4 @@
 // import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart' show svg;
-// import 'package:flutter_svg/svg.dart';
 // import 'package:go_router/go_router.dart';
 // import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
 // import 'package:mobile_app_dea/core/gen/assets.gen.dart';
@@ -63,12 +61,8 @@
 
 //   @override
 //   Widget build(BuildContext context) {
-//     double w = MediaQuery.of(context).size.width;
-
 //     return Scaffold(
-//       // ---------------- APP BAR ----------------
 //       backgroundColor: const Color(0xFFDFEFFF),
-
 //       appBar: AppBar(
 //         backgroundColor: const Color(0xFFDFEFFF),
 //         elevation: 0,
@@ -88,7 +82,6 @@
 //         actions: [
 //           GestureDetector(
 //             onTap: () {
-//               // Handle tap event here
 //               context.push("/createQuestPage");
 //             },
 //             child: Container(
@@ -97,8 +90,6 @@
 //               decoration: BoxDecoration(
 //                 borderRadius: BorderRadius.circular(14),
 //               ),
-//               // child: const Icon(Icons.add, color: Colors.white),
-//               // child: Assets.svgIcons.buttonCalendar.path(width: 24, height: 24),
 //               child: Image.asset(
 //                 Assets.svgIcons.quests.path,
 //                 width: 60,
@@ -108,8 +99,6 @@
 //           ),
 //         ],
 //       ),
-
-//       // ---------------- BODY ----------------
 //       body: Container(
 //         decoration: const BoxDecoration(
 //           color: Color(0xFFFFFEF8),
@@ -128,9 +117,7 @@
 //                   borderSide: BorderSide(width: 5.0, color: Color(0xFF4542EB)),
 //                   insets: EdgeInsets.symmetric(horizontal: 0.0),
 //                 ),
-//                 // REMOVE hover / overlay
 //                 overlayColor: MaterialStateProperty.all(Colors.transparent),
-//                 // REMOVE splash effect
 //                 splashFactory: NoSplash.splashFactory,
 //                 labelColor: Colors.black,
 //                 unselectedLabelColor: Color(0xFFADB2BC),
@@ -141,7 +128,7 @@
 //                   Tab(text: "Suggested"),
 //                 ],
 //               ),
-//               Expanded(
+//               Flexible(
 //                 child: TabBarView(
 //                   controller: mainTab,
 //                   children: [_buildMyQuestSection(), _suggests()],
@@ -152,16 +139,13 @@
 //         ),
 //       ),
 //       bottomNavigationBar: CustomNavigationBar(
-//         currentIndex: 1,
-//         onTap: (index) {
-//           // Handle navigation tap
-//         },
+//         currentIndex: _currentIndex,
+//         onTap: _onNavTap,
 //       ),
 //     );
 //   }
 
 //   // ---------------- QUESTS PAGE ---------------- my quests section
-
 //   Widget _buildMyQuestSection() {
 //     return Column(
 //       children: [
@@ -173,9 +157,9 @@
 //             isScrollable: true,
 //             tabAlignment: TabAlignment.start,
 //             indicator: BoxDecoration(
-//               color: Color(0xFFC3DBFF),
+//               color: const Color(0xFFC3DBFF),
 //               borderRadius: BorderRadius.circular(999),
-//               border: Border.all(color: Color(0xFFC3DBFF), width: 2),
+//               border: Border.all(color: const Color(0xFFC3DBFF), width: 2),
 //             ),
 //             labelColor: Colors.white,
 //             unselectedLabelColor: Colors.grey[600],
@@ -191,18 +175,25 @@
 //             dividerColor: Colors.transparent,
 //             overlayColor: MaterialStateProperty.all(Colors.transparent),
 //             labelPadding: const EdgeInsets.symmetric(horizontal: 4),
-//             tabs: [
-//               Tab(
+//             tabs: List.generate(4, (index) {
+//               final titles = [
+//                 'Todays(3)',
+//                 'Scheduled',
+//                 'Completed',
+//                 'Blocking',
+//               ];
+//               bool isSelected = myQuestsTab.index == index;
+//               return Tab(
 //                 child: Container(
 //                   padding: const EdgeInsets.symmetric(horizontal: 16),
 //                   height: 45,
 //                   decoration: BoxDecoration(
-//                     color: myQuestsTab.index == 0
+//                     color: isSelected
 //                         ? const Color(0xFFC3DBFF)
 //                         : Colors.transparent,
 //                     borderRadius: BorderRadius.circular(50),
 //                     border: Border.all(
-//                       color: myQuestsTab.index == 0
+//                       color: isSelected
 //                           ? const Color(0xFFC3DBFF)
 //                           : Colors.grey.shade300,
 //                       width: 2,
@@ -210,85 +201,16 @@
 //                   ),
 //                   child: Center(
 //                     child: Text(
-//                       'Todays(3)',
+//                       titles[index],
 //                       style: AppsTextStyles.workSansSemiBold18,
 //                     ),
 //                   ),
 //                 ),
-//               ),
-//               Tab(
-//                 child: Container(
-//                   padding: const EdgeInsets.symmetric(horizontal: 16),
-//                   height: 45,
-//                   decoration: BoxDecoration(
-//                     color: myQuestsTab.index == 1
-//                         ? const Color(0xFFC3DBFF)
-//                         : Colors.transparent,
-//                     borderRadius: BorderRadius.circular(90),
-//                     border: Border.all(
-//                       color: myQuestsTab.index == 1
-//                           ? const Color(0xFFC3DBFF)
-//                           : Colors.grey.shade300,
-//                       width: 2,
-//                     ),
-//                   ),
-//                   child: Center(
-//                     child: Text(
-//                       'Scheduled',
-//                       style: AppsTextStyles.workSansSemiBold18,
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//               Tab(
-//                 child: Container(
-//                   padding: const EdgeInsets.symmetric(horizontal: 16),
-//                   height: 45,
-//                   decoration: BoxDecoration(
-//                     color: myQuestsTab.index == 2
-//                         ? const Color(0xFFC3DBFF)
-//                         : Colors.transparent,
-//                     borderRadius: BorderRadius.circular(90),
-//                     border: Border.all(
-//                       color: myQuestsTab.index == 2
-//                           ? const Color(0xFFC3DBFF)
-//                           : Colors.grey.shade300,
-//                       width: 2,
-//                     ),
-//                   ),
-//                   child: Center(
-//                     child: Text(
-//                       'Completed',
-//                       style: AppsTextStyles.workSansSemiBold18,
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//               Tab(
-//                 child: Container(
-//                   padding: const EdgeInsets.symmetric(horizontal: 16),
-//                   height: 45,
-//                   decoration: BoxDecoration(
-//                     color: myQuestsTab.index == 3
-//                         ? const Color(0xFFC3DBFF)
-//                         : Colors.transparent,
-//                     borderRadius: BorderRadius.circular(90),
-//                     border: Border.all(
-//                       color: myQuestsTab.index == 3
-//                           ? const Color(0xFFC3DBFF)
-//                           : Colors.grey.shade300,
-//                       width: 2,
-//                     ),
-//                   ),
-//                   child: const Center(child: Text('Blocking')),
-//                 ),
-//               ),
-//             ],
+//               );
+//             }),
 //           ),
 //         ),
-
-//         // ------ Body ------
-//         Expanded(
+//         Flexible(
 //           child: TabBarView(
 //             controller: myQuestsTab,
 //             children: [Today(), Scheduled(), Completed(), Blockng()],
@@ -298,6 +220,7 @@
 //     );
 //   }
 
+//   // ---------------- SUGGESTED PAGE ----------------
 //   Widget _suggests() {
 //     return Column(
 //       children: [
@@ -309,9 +232,9 @@
 //             isScrollable: true,
 //             tabAlignment: TabAlignment.start,
 //             indicator: BoxDecoration(
-//               color: Color(0xFFC3DBFF),
+//               color: const Color(0xFFC3DBFF),
 //               borderRadius: BorderRadius.circular(999),
-//               border: Border.all(color: Color(0xFFC3DBFF), width: 2),
+//               border: Border.all(color: const Color(0xFFC3DBFF), width: 2),
 //             ),
 //             labelColor: Colors.white,
 //             unselectedLabelColor: Colors.grey[600],
@@ -327,18 +250,20 @@
 //             dividerColor: Colors.transparent,
 //             overlayColor: MaterialStateProperty.all(Colors.transparent),
 //             labelPadding: const EdgeInsets.symmetric(horizontal: 4),
-//             tabs: [
-//               Tab(
+//             tabs: List.generate(3, (index) {
+//               final titles = ['Soft steps', 'Stretch zone', 'Elevated'];
+//               bool isSelected = suggestedTab.index == index;
+//               return Tab(
 //                 child: Container(
 //                   padding: const EdgeInsets.symmetric(horizontal: 16),
 //                   height: 45,
 //                   decoration: BoxDecoration(
-//                     color: suggestedTab.index == 0
+//                     color: isSelected
 //                         ? const Color(0xFFC3DBFF)
 //                         : Colors.transparent,
 //                     borderRadius: BorderRadius.circular(50),
 //                     border: Border.all(
-//                       color: suggestedTab.index == 0
+//                       color: isSelected
 //                           ? const Color(0xFFC3DBFF)
 //                           : Colors.grey.shade300,
 //                       width: 2,
@@ -346,66 +271,16 @@
 //                   ),
 //                   child: Center(
 //                     child: Text(
-//                       'Soft steps',
+//                       titles[index],
 //                       style: AppsTextStyles.workSansSemiBold18,
 //                     ),
 //                   ),
 //                 ),
-//               ),
-//               Tab(
-//                 child: Container(
-//                   padding: const EdgeInsets.symmetric(horizontal: 16),
-//                   height: 45,
-//                   decoration: BoxDecoration(
-//                     color: suggestedTab.index == 1
-//                         ? const Color(0xFFC3DBFF)
-//                         : Colors.transparent,
-//                     borderRadius: BorderRadius.circular(90),
-//                     border: Border.all(
-//                       color: suggestedTab.index == 1
-//                           ? const Color(0xFFC3DBFF)
-//                           : Colors.grey.shade300,
-//                       width: 2,
-//                     ),
-//                   ),
-//                   child: Center(
-//                     child: Text(
-//                       'Stretch zone',
-//                       style: AppsTextStyles.workSansSemiBold18,
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//               Tab(
-//                 child: Container(
-//                   padding: const EdgeInsets.symmetric(horizontal: 16),
-//                   height: 45,
-//                   decoration: BoxDecoration(
-//                     color: suggestedTab.index == 2
-//                         ? const Color(0xFFC3DBFF)
-//                         : Colors.transparent,
-//                     borderRadius: BorderRadius.circular(90),
-//                     border: Border.all(
-//                       color: suggestedTab.index == 2
-//                           ? const Color(0xFFC3DBFF)
-//                           : Colors.grey.shade300,
-//                       width: 2,
-//                     ),
-//                   ),
-//                   child: Center(
-//                     child: Text(
-//                       'Elevated',
-//                       style: AppsTextStyles.workSansSemiBold18,
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//             ],
+//               );
+//             }),
 //           ),
 //         ),
-
-//         // ------ Body ------
-//         Expanded(
+//         Flexible(
 //           child: TabBarView(
 //             controller: suggestedTab,
 //             children: [
@@ -549,7 +424,7 @@ class _QuestHomePageState extends State<QuestHomePage>
                   Tab(text: "Suggested"),
                 ],
               ),
-              Flexible(
+              Expanded(
                 child: TabBarView(
                   controller: mainTab,
                   children: [_buildMyQuestSection(), _suggests()],
@@ -631,7 +506,7 @@ class _QuestHomePageState extends State<QuestHomePage>
             }),
           ),
         ),
-        Flexible(
+        Expanded(
           child: TabBarView(
             controller: myQuestsTab,
             children: [Today(), Scheduled(), Completed(), Blockng()],
@@ -701,7 +576,7 @@ class _QuestHomePageState extends State<QuestHomePage>
             }),
           ),
         ),
-        Flexible(
+        Expanded(
           child: TabBarView(
             controller: suggestedTab,
             children: [

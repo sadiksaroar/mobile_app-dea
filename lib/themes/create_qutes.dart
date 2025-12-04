@@ -9,6 +9,13 @@ class AppTextStylesQutes {
     letterSpacing: 0, // letter-spacing: 0%
     color: const Color(0xFF011F54), // Text-text-default
   );
+  static TextStyle alfaSlabOneTitle42 = GoogleFonts.alfaSlabOne(
+    fontWeight: FontWeight.w400, // font-weight: 400
+    fontSize: 42, // font-size: 42px
+    height: 0.8, // line-height: 80%
+    letterSpacing: 0, // letter-spacing: 0%
+    color: const Color(0xFF011F54), // Text-text-default
+  );
 
   static TextStyle workSansBody18 = GoogleFonts.workSans(
     fontWeight: FontWeight.w400, // font-weight: 400

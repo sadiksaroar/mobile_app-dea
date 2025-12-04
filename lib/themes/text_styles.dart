@@ -124,6 +124,14 @@ class AppsTextStyles {
     letterSpacing: 0, // 0px
     color: const Color(0xFF4542EB), // Hex color #4542EB
   );
+  static TextStyle googleContinueButton52 = GoogleFonts.alfaSlabOne(
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+    fontSize: 52,
+    height: 0.8, // Line-height 80%
+    letterSpacing: 0, // 0px
+    color: const Color(0xFF4542EB), // Hex color #4542EB
+  );
   static final TextStyle workSansSemiBold16 = GoogleFonts.workSans(
     fontWeight: FontWeight.w700, // SemiBold
     fontStyle: FontStyle.normal, // Regular style
