@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
+import 'package:mobile_app_dea/widget/custom_button.dart';
 
 class Animation extends StatelessWidget {
   const Animation({super.key});
@@ -100,34 +101,43 @@ class Animation extends StatelessWidget {
               ),
             ),
 
-            SizedBox(
-              width: double.infinity,
-              height: 104,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orange[400],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                ),
-                onPressed: () {
-                  context.push("/onboardingScreen");
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Center(
-                      child: Text("Next", style: AppsTextStyles.letsStartNext),
-                    ),
-                    const SizedBox(width: 60),
-                    SvgPicture.asset(
-                      Assets.svgIcons.startLetsGo.path,
-                      width: 90,
-                      height: 90,
-                    ),
-                  ],
-                ),
-              ),
+            // SizedBox(
+            //   width: double.infinity,
+            //   height: 104,
+            //   child: ElevatedButton(
+            //     style: ElevatedButton.styleFrom(
+            //       backgroundColor: Colors.orange[400],
+            //       shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(50),
+            //       ),
+            //     ),
+            //     onPressed: () {
+            //       context.push("/onboardingScreen");
+            //     },
+            //     child: Row(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //         Center(
+            //           child: Text("Next", style: AppsTextStyles.letsStartNext),
+            //         ),
+            //         const SizedBox(width: 60),
+            //         SvgPicture.asset(
+            //           Assets.svgIcons.startLetsGo.path,
+            //           width: 90,
+            //           height: 90,
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
+            CustomNextButton(
+              isEnabled: true,
+              onTap: () {
+                context.push("/onboardingScreen");
+              },
+              buttonText: "Next",
+              iconPath: Assets.svgIcons.startLetsGo.path,
+              textStyle: AppsTextStyles.letsStartNext,
             ),
           ],
         ),

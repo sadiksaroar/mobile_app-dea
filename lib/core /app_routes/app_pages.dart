@@ -8,6 +8,7 @@ import 'package:mobile_app_dea/screen/Onboarding/onboarding_features/onbording_f
 import 'package:mobile_app_dea/screen/Onboarding/onbording_flow_file/onboarding_flow.dart';
 import 'package:mobile_app_dea/screen/ai_call/ai_voice.dart';
 import 'package:mobile_app_dea/screen/ai_call/pop_po_sahre.dart';
+import 'package:mobile_app_dea/screen/auth/resent_password_page.dart';
 import 'package:mobile_app_dea/screen/auth/sign_in_screen.dart';
 import 'package:mobile_app_dea/screen/auth/sign_up.dart';
 import 'package:mobile_app_dea/screen/entry_screen_p2.dart';
@@ -55,7 +56,10 @@ class AppPages {
         builder: (context, state) =>
             const SignUpScreen(), // Placeholder for SignUpScreen
       ),
-
+      GoRoute(
+        path: AppRoutespath.resentPasswordPage,
+        builder: (context, state) => const ResentPasswordPage(),
+      ),
       /* onboarding */
       GoRoute(
         path: AppRoutespath.onboardingFlow,

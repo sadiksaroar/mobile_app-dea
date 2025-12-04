@@ -266,6 +266,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
         ),
         // 🔘 Continue Button
+        SizedBox(height: 20),
         SizedBox(
           width: double.infinity,
           height: 55,

@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
+import 'package:mobile_app_dea/widget/custom_button.dart';
 
 class OnbordingFetures extends StatelessWidget {
   const OnbordingFetures({super.key});
@@ -86,40 +87,49 @@ class OnbordingFetures extends StatelessWidget {
               ),
 
               // Bottom button
-              SizedBox(
-                width: double.infinity,
-                height: 104,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orange[400],
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                  ),
-                  onPressed: () {
-                    context.push("/nowliHowToUse");
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Let's start",
-                        style:
-                            AppsTextStyles.letsStartNext ??
-                            const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                      ),
-                      const SizedBox(width: 30),
-                      SvgPicture.asset(
-                        Assets.svgIcons.startLetsGo.path,
-                        width: 60,
-                        height: 60,
-                      ),
-                    ],
-                  ),
-                ),
+              // SizedBox(
+              //   width: double.infinity,
+              //   height: 104,
+              //   child: ElevatedButton(
+              //     style: ElevatedButton.styleFrom(
+              //       backgroundColor: Colors.orange[400],
+              //       shape: RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(50),
+              //       ),
+              //     ),
+              //     onPressed: () {
+              //       context.push("/nowliHowToUse");
+              //     },
+              //     child: Row(
+              //       mainAxisAlignment: MainAxisAlignment.center,
+              //       children: [
+              //         Text(
+              //           "Let's start",
+              //           style:
+              //               AppsTextStyles.letsStartNext ??
+              //               const TextStyle(
+              //                 fontSize: 18,
+              //                 fontWeight: FontWeight.bold,
+              //               ),
+              //         ),
+              //         const SizedBox(width: 30),
+              //         SvgPicture.asset(
+              //           Assets.svgIcons.startLetsGo.path,
+              //           width: 60,
+              //           height: 60,
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
+              CustomNextButton(
+                isEnabled: true,
+                onTap: () {
+                  context.push("/nowliHowToUse");
+                },
+                buttonText: "Let's start",
+                iconPath: Assets.svgIcons.startLetsGo.path,
+                textStyle: AppsTextStyles.letsStartNext,
               ),
             ],
           ),

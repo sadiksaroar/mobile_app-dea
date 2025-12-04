@@ -2,8 +2,7 @@
 // import 'package:flutter/foundation.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:mobile_app_dea/screen/welcome_activetion_flow/popup_speking.dart';
-// import 'package:mobile_app_dea/screen/welcome_activetion_flow/subscription_popup%20.dart';
+// import 'package:mobile_app_dea/screen/Onboarding/onboarding_features/onboarding_screen.dart';
 
 // void main() {
 //   runApp(DevicePreview(enabled: !kReleaseMode, builder: (context) => MyApp()));
@@ -25,7 +24,7 @@
 //         ),
 
 //         // 🔥 FIXED HERE — choose any enum value
-//         home: SubscriptionPage(),
+//         home: OnboardingScreen(),
 
 //         builder: DevicePreview.appBuilder,
 //       ),

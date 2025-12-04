@@ -171,6 +171,10 @@ class $AssetsSvgIconsGen {
   AssetGenImage get frame2147228668 =>
       const AssetGenImage('assets/svg_icons/Frame 2147228668.png');
 
+  /// File path: assets/svg_icons/Frame 2147228669.png
+  AssetGenImage get frame2147228669 =>
+      const AssetGenImage('assets/svg_icons/Frame 2147228669.png');
+
   /// File path: assets/svg_icons/Frame 2147228670.png
   AssetGenImage get frame2147228670 =>
       const AssetGenImage('assets/svg_icons/Frame 2147228670.png');
@@ -533,6 +537,7 @@ class $AssetsSvgIconsGen {
     fireTab,
     fire,
     frame2147228668,
+    frame2147228669,
     frame2147228670,
     frame2147228671,
     help,
@@ -648,6 +653,11 @@ class $AssetsSvgImagesGen {
   AssetGenImage get popupSpeaking =>
       const AssetGenImage('assets/svg_images/Popup_Speaking.png');
 
+  /// File path: assets/svg_images/Screenshot from 2025-12-04 05-46-10.png
+  AssetGenImage get screenshotFrom20251204054610 => const AssetGenImage(
+    'assets/svg_images/Screenshot from 2025-12-04 05-46-10.png',
+  );
+
   /// File path: assets/svg_images/Subscription Popup.png
   AssetGenImage get subscriptionPopupPng =>
       const AssetGenImage('assets/svg_images/Subscription Popup.png');
@@ -726,6 +736,7 @@ class $AssetsSvgImagesGen {
     frame2147228547,
     popupChooseMoodUpdates,
     popupSpeaking,
+    screenshotFrom20251204054610,
     subscriptionPopupPng,
     subscriptionPopupSvg,
     callStarted,

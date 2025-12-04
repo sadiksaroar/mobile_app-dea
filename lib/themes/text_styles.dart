@@ -38,7 +38,7 @@ class AppsTextStyles {
   );
 
   static final TextStyle normalText = TextStyle(
-    fontSize: 14.sp,
+    fontSize: 14,
     color: Colors.black87,
     height: 1.4,
   );
