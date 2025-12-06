@@ -1,6 +1,6 @@
 // import 'package:flutter/material.dart';
+// import 'package:google_fonts/google_fonts.dart';
 // import 'package:mobile_app_dea/core/gen/assets.gen.dart';
-// import 'package:mobile_app_dea/themes/text_styles.dart';
 
 // class ShuffleScreen extends StatelessWidget {
 //   const ShuffleScreen({super.key});
@@ -8,96 +8,69 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return Container(
-//       color: Colors.white10, // Background
+//       decoration: BoxDecoration(borderRadius: BorderRadius.circular(25)),
 //       child: SafeArea(
 //         child: Column(
 //           children: [
-//             // ---------------- CUSTOM APP BAR ----------------
-//             Container(
-//               height: 56,
-//               padding: const EdgeInsets.symmetric(horizontal: 16),
-//               color: Colors.white,
-//               alignment: Alignment.center,
-//               child: Container(
-//                 padding: const EdgeInsets.symmetric(
-//                   horizontal: 16,
-//                   vertical: 8,
-//                 ),
-//                 decoration: BoxDecoration(
-//                   color: Colors.grey[100],
-//                   borderRadius: BorderRadius.circular(20),
-//                 ),
-//                 child: Row(
-//                   mainAxisSize: MainAxisSize.min,
-//                   children: [
-//                     Icon(Icons.shuffle, size: 16, color: Colors.grey[700]),
-//                     const SizedBox(width: 8),
-//                     Text(
-//                       'Shuffle',
-//                       style: TextStyle(
-//                         fontSize: 14,
-//                         color: Colors.grey[700],
-//                         fontWeight: FontWeight.w500,
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//             ),
-
-//             // ---------------- BODY ----------------
+//             _buildHeader(),
 //             Expanded(
 //               child: ListView(
 //                 padding: const EdgeInsets.all(16),
-//                 children: const [
-//                   ActivityCard(
+//                 children: [
+//                   // Special "To sleep" card with different design
+//                   SleepRoutineCard(
 //                     title: 'To sleep',
 //                     description:
 //                         'Wind down, unplug, and prep your mind for rest.',
-//                     gradientColors: [Color(0xFF4A5FE8), Color(0xFF7B94F5)],
-//                     emoji: '🌙',
-//                     duration: '10 mins',
-//                     difficulty: 'Get sleepy',
+//                     time: '22:00',
+//                     softSteps: 'Soft steps',
+//                     hardSteps: '10 Hard',
+//                     imagePath: Assets.svgIcons.moon4.path,
+//                     emoji: Assets.svgIcons.moonPng_.path,
 //                   ),
-//                   SizedBox(height: 16),
-//                   ActivityCard(
+//                   const SizedBox(height: 8),
+//                   RoutineCard(
 //                     title: 'To wake up',
 //                     description:
-//                         'Start fresh. No scrolling — just light, breath, and you.',
-//                     gradientColors: [Color(0xFFFFB347), Color(0xFFFFCC99)],
-//                     emoji: '☀️',
-//                     duration: '10 mins',
-//                     difficulty: 'Soft snaps',
+//                         'Rise fresh. Stretch, breathe — just light, breath, and presence.',
+//                     time: '22:00',
+//                     softSteps: 'Soft steps',
+//                     hardSteps: '10 mins',
+//                     imagePath: Assets.svgIcons.toWakeUp.path,
+//                     emoji: Assets.svgIcons.sun.path,
 //                   ),
-//                   SizedBox(height: 16),
-//                   ActivityCard(
+//                   const SizedBox(height: 8),
+//                   RoutineCard(
 //                     title: 'To walk',
 //                     description:
-//                         'Move your body, clear your mind. Even for ten counts.',
-//                     gradientColors: [Color(0xFF90EE90), Color(0xFFB4F0B4)],
-//                     emoji: '🚶',
-//                     duration: '10 mins',
-//                     difficulty: 'Soft steps',
+//                         'Move your body, clear your mind. Even for a little bit counts.',
+//                     time: '22:00',
+//                     softSteps: 'Soft steps',
+//                     hardSteps: '10 mins',
+//                     imagePath: Assets.svgIcons.toWalk.path,
+//                     emoji: Assets.svgIcons.toWalkIcon.path,
 //                   ),
-//                   SizedBox(height: 16),
-//                   ActivityCard(
+//                   const SizedBox(height: 8),
+//                   RoutineCard(
 //                     title: 'To study',
 //                     description:
-//                         'Focus mode: on. Zero reflection — just in-gear.',
-//                     gradientColors: [Color(0xFFE6E6FA), Color(0xFFF0E6FA)],
-//                     emoji: '📚',
-//                     duration: '10 mins',
-//                     difficulty: 'Soft steps',
+//                         'Focus, learn, retain. Deep in reflection — just progress.',
+//                     time: '22:00',
+//                     softSteps: 'Soft steps',
+//                     hardSteps: '10 mins',
+//                     imagePath: Assets.svgIcons.toStudy.path,
+//                     emoji: Assets.svgIcons.book.path,
 //                   ),
-//                   SizedBox(height: 16),
-//                   ActivityCard(
+//                   const SizedBox(height: 8),
+//                   RoutineCard(
 //                     title: 'To train',
 //                     description:
-//                         'Release stress, boost energy. Show up for yourself.',
-//                     gradientColors: [Color(0xFFFFF8DC), Color(0xFFFFE4B5)],
-//                     emoji: '💪',
-//                     duration: '10 mins',
-//                     difficulty: 'Soft steps',
+//                         'Sweat, strengthen, boost energy. Show up for yourself.',
+//                     time: '22:00',
+//                     softSteps: 'Soft steps',
+//                     hardSteps: '10 mins',
+//                     imagePath: Assets.svgIcons.toTrain.path,
+//                     emoji: Assets.svgIcons.push.path,
 //                   ),
 //                 ],
 //               ),
@@ -107,200 +80,41 @@
 //       ),
 //     );
 //   }
-// }
 
-// class ActivityCard extends StatelessWidget {
-//   final String title;
-//   final String description;
-//   final List<Color> gradientColors;
-//   final String emoji;
-//   final String duration;
-//   final String difficulty;
-
-//   const ActivityCard({
-//     super.key,
-//     required this.title,
-//     required this.description,
-//     required this.gradientColors,
-//     required this.emoji,
-//     required this.duration,
-//     required this.difficulty,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
+//   Widget _buildHeader() {
 //     return Container(
-//       decoration: BoxDecoration(
-//         gradient: LinearGradient(
-//           colors: gradientColors,
-//           begin: Alignment.topLeft,
-//           end: Alignment.bottomRight,
-//         ),
-//         borderRadius: BorderRadius.circular(20),
-//         boxShadow: [
-//           BoxShadow(
-//             color: gradientColors[0].withOpacity(0.3),
-//             blurRadius: 12,
-//             offset: const Offset(0, 4),
-//           ),
-//         ],
-//       ),
-//       child: Padding(
-//         padding: const EdgeInsets.all(20),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             // Header Row
-//             Row(
-//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Expanded(
-//                   child: Column(
-//                     crossAxisAlignment: CrossAxisAlignment.start,
-//                     children: [
-//                       Text(
-//                         title,
-//                         style: AppsTextStyles.regularResponsive(context),
-//                       ),
-//                       const SizedBox(height: 8),
-//                       Row(
-//                         children: [
-//                           // Today Tag
-//                           Container(
-//                             padding: const EdgeInsets.symmetric(
-//                               horizontal: 8,
-//                               vertical: 4,
-//                             ),
-//                             decoration: BoxDecoration(
-//                               borderRadius: BorderRadius.circular(4),
-//                             ),
-//                             child: Row(
-//                               mainAxisSize: MainAxisSize.min,
-//                               children: [
-//                                 Image.asset(
-//                                   Assets.svgIcons.calende.path,
-//                                   width: 16,
-//                                   height: 16,
-//                                   // color: Colors.white,
-//                                 ),
-//                                 const SizedBox(width: 4),
-//                                 Text(
-//                                   'Today',
-//                                   style: AppsTextStyles.extraBold16,
-//                                 ),
-//                               ],
-//                             ),
-//                           ),
-//                           const SizedBox(width: 8),
-
-//                           // Time Tag
-//                           // Time Tag
-//                           Container(
-//                             padding: const EdgeInsets.symmetric(
-//                               horizontal: 8,
-//                               vertical: 4,
-//                             ),
-//                             decoration: BoxDecoration(
-//                               borderRadius: BorderRadius.circular(4),
-//                             ),
-//                             child: Row(
-//                               // Remove 'const' here
-//                               mainAxisSize: MainAxisSize.min,
-//                               children: [
-//                                 Image.asset(
-//                                   Assets.svgIcons.clock.path,
-//                                   width: 16,
-//                                   height: 16,
-//                                 ),
-//                                 const SizedBox(width: 4),
-//                                 Text(
-//                                   '22:00',
-//                                   style: AppsTextStyles.extraBold16,
-//                                 ),
-//                               ],
-//                             ),
-//                           ),
-//                         ],
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-
-//                 // Add Button
-//                 Container(
-//                   width: 40,
-//                   height: 40,
-//                   decoration: BoxDecoration(
-//                     color: Colors.white30,
-//                     shape: BoxShape.circle,
-//                   ),
-//                   child: const Icon(Icons.add, color: Colors.white, size: 24),
-//                 ),
-//               ],
+//       padding: const EdgeInsets.all(16),
+//       child: Container(
+//         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+//         decoration: ShapeDecoration(
+//           shape: RoundedRectangleBorder(
+//             side: BorderSide(
+//               width: 2,
+//               color: const Color(0xFF011F54) /* Border-border-dark */,
 //             ),
-
-//             const SizedBox(height: 16),
-
-//             // Description
+//             borderRadius: BorderRadius.circular(999),
+//           ),
+//         ),
+//         child: Row(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             // Icon(Icons.shuffle, size: 20, color: Color(0xFF333333)),
+//             Image.asset(
+//               Assets.svgIcons.shuffle.path,
+//               width: 20,
+//               height: 20,
+//               color: const Color(0xFF011F54), // Icon color
+//             ),
+//             SizedBox(width: 8),
 //             Text(
-//               description,
-//               style: TextStyle(
-//                 fontSize: 14,
-//                 color: Colors.white.withOpacity(0.9),
-//                 height: 1.4,
+//               'Shuffle',
+//               style: GoogleFonts.workSans(
+//                 color: const Color(0xFF011F54), // Text color
+//                 fontSize: 18,
+//                 fontWeight: FontWeight.w900,
+//                 height: 0.8,
 //               ),
 //             ),
-
-//             const SizedBox(height: 16),
-
-//             // Duration + Difficulty
-//             Row(
-//               children: [
-//                 Container(
-//                   padding: const EdgeInsets.symmetric(
-//                     horizontal: 12,
-//                     vertical: 6,
-//                   ),
-//                   decoration: BoxDecoration(
-//                     color: const Color(0xFFFFE5B4),
-//                     borderRadius: BorderRadius.circular(12),
-//                   ),
-//                   child: Text(
-//                     duration,
-//                     style: const TextStyle(
-//                       fontSize: 12,
-//                       fontWeight: FontWeight.w600,
-//                       color: Color(0xFF5D4E37),
-//                     ),
-//                   ),
-//                 ),
-//                 const SizedBox(width: 8),
-//                 Container(
-//                   padding: const EdgeInsets.symmetric(
-//                     horizontal: 12,
-//                     vertical: 6,
-//                   ),
-//                   decoration: BoxDecoration(
-//                     color: const Color(0xFFD4F4DD),
-//                     borderRadius: BorderRadius.circular(12),
-//                   ),
-//                   child: Text(
-//                     difficulty,
-//                     style: const TextStyle(
-//                       fontSize: 12,
-//                       fontWeight: FontWeight.w600,
-//                       color: Color(0xFF2D5F3F),
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-
-//             const SizedBox(height: 12),
-
-//             // Emoji
-//             Text(emoji, style: const TextStyle(fontSize: 32)),
 //           ],
 //         ),
 //       ),
@@ -308,9 +122,431 @@
 //   }
 // }
 
+// // Special card for "To sleep" routine
+// class SleepRoutineCard extends StatelessWidget {
+//   final String title;
+//   final String description;
+//   final String time;
+//   final String softSteps;
+//   final String hardSteps;
+//   final String imagePath;
+//   final String emoji;
+
+//   const SleepRoutineCard({
+//     Key? key,
+//     required this.title,
+//     required this.description,
+//     required this.time,
+//     required this.softSteps,
+//     required this.hardSteps,
+//     required this.imagePath,
+//     required this.emoji,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       height: 295,
+//       padding: const EdgeInsets.all(20),
+//       decoration: BoxDecoration(
+//         image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.cover),
+//         borderRadius: BorderRadius.circular(25),
+//       ),
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: [
+//           Row(
+//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//             children: [
+//               // Emoji image display
+//               Image.asset(
+//                 emoji,
+//                 width: 40,
+//                 height: 40,
+//                 errorBuilder: (context, error, stackTrace) {
+//                   return const Text('🌙', style: TextStyle(fontSize: 24));
+//                 },
+//               ),
+//               Container(
+//                 padding: const EdgeInsets.all(8),
+//                 decoration: BoxDecoration(
+//                   borderRadius: BorderRadius.circular(8),
+//                 ),
+//                 child: Image.asset(
+//                   Assets.svgIcons.toMoonPlus.path,
+//                   width: 48,
+//                   height: 48,
+//                 ),
+//               ),
+//             ],
+//           ),
+//           const SizedBox(height: 16),
+//           Text(
+//             title,
+//             style: GoogleFonts.workSans(
+//               color: Colors.white,
+//               fontSize: 32,
+//               fontWeight: FontWeight.w800,
+//               height: 1.2,
+//               letterSpacing: -1,
+//             ),
+//           ),
+//           const SizedBox(height: 8),
+//           Row(
+//             children: [
+//               Flexible(
+//                 child: Container(
+//                   padding: const EdgeInsets.symmetric(
+//                     horizontal: 6,
+//                     vertical: 2,
+//                   ),
+//                   decoration: BoxDecoration(
+//                     color: Colors.white.withOpacity(0.3),
+//                     borderRadius: BorderRadius.circular(4),
+//                   ),
+//                   child: Row(
+//                     mainAxisSize: MainAxisSize.min,
+//                     children: [
+//                       Image.asset(
+//                         Assets.svgIcons.calendarBlank.path,
+//                         width: 12,
+//                         height: 12,
+//                         color: Colors.white,
+//                       ),
+//                       const SizedBox(width: 4),
+//                       const Flexible(
+//                         child: Text(
+//                           'Today',
+//                           style: TextStyle(
+//                             fontSize: 12,
+//                             color: Colors.white,
+//                             fontWeight: FontWeight.w500,
+//                           ),
+//                           overflow: TextOverflow.ellipsis,
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ),
+//               const SizedBox(width: 8),
+//               Flexible(
+//                 child: Container(
+//                   padding: const EdgeInsets.symmetric(
+//                     horizontal: 6,
+//                     vertical: 2,
+//                   ),
+//                   decoration: BoxDecoration(
+//                     color: Colors.white.withOpacity(0.3),
+//                     borderRadius: BorderRadius.circular(4),
+//                   ),
+//                   child: Row(
+//                     mainAxisSize: MainAxisSize.min,
+//                     children: [
+//                       Image.asset(
+//                         Assets.svgIcons.clockBlack.path,
+//                         width: 12,
+//                         height: 12,
+//                         color: Colors.white,
+//                       ),
+//                       const SizedBox(width: 4),
+//                       Flexible(
+//                         child: Text(
+//                           time,
+//                           style: const TextStyle(
+//                             fontSize: 12,
+//                             // color: Colors.white,
+//                             fontWeight: FontWeight.w500,
+//                           ),
+//                           overflow: TextOverflow.ellipsis,
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ),
+//             ],
+//           ),
+//           const SizedBox(height: 12),
+//           Text(
+//             description,
+//             style: GoogleFonts.workSans(
+//               color: const Color(0xFFFFFEF8),
+//               fontSize: 18,
+//               fontWeight: FontWeight.w600,
+//               height: 1.4,
+//               letterSpacing: -0.9,
+//             ),
+//             maxLines: 2,
+//             overflow: TextOverflow.ellipsis,
+//           ),
+//           const Spacer(),
+//           Row(
+//             children: [
+//               Flexible(
+//                 child: Container(
+//                   padding: const EdgeInsets.symmetric(
+//                     horizontal: 12,
+//                     vertical: 6,
+//                   ),
+//                   decoration: BoxDecoration(
+//                     color: const Color(0xFF8BC34A),
+//                     borderRadius: BorderRadius.circular(12),
+//                   ),
+//                   child: Text(
+//                     hardSteps,
+//                     style: const TextStyle(
+//                       fontSize: 12,
+//                       color: Colors.white,
+//                       fontWeight: FontWeight.w600,
+//                     ),
+//                     overflow: TextOverflow.ellipsis,
+//                   ),
+//                 ),
+//               ),
+//               const SizedBox(width: 8),
+//               Flexible(
+//                 child: Container(
+//                   padding: const EdgeInsets.symmetric(
+//                     horizontal: 12,
+//                     vertical: 6,
+//                   ),
+//                   decoration: BoxDecoration(
+//                     color: const Color(
+//                       0xFF8BC34A,
+//                     ), // Changed from Colors.white.withOpacity(0.3)
+//                     borderRadius: BorderRadius.circular(12),
+//                   ),
+//                   child: Text(
+//                     softSteps,
+//                     style: const TextStyle(
+//                       fontSize: 12,
+//                       color: Colors.white,
+//                       fontWeight: FontWeight.w600,
+//                     ),
+//                     overflow: TextOverflow.ellipsis,
+//                   ),
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// // Regular routine card for other routines
+// class RoutineCard extends StatelessWidget {
+//   final String title;
+//   final String description;
+//   final String time;
+//   final String softSteps;
+//   final String hardSteps;
+//   final String imagePath;
+//   final String emoji;
+
+//   const RoutineCard({
+//     Key? key,
+//     required this.title,
+//     required this.description,
+//     required this.time,
+//     required this.softSteps,
+//     required this.hardSteps,
+//     required this.imagePath,
+//     required this.emoji,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       height: 295,
+//       padding: const EdgeInsets.all(20),
+//       decoration: BoxDecoration(
+//         image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.cover),
+//         borderRadius: BorderRadius.circular(25),
+//       ),
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: [
+//           Row(
+//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//             children: [
+//               // Emoji check - image or text
+//               emoji.contains('.')
+//                   ? Image.asset(
+//                       emoji,
+//                       width: 40,
+//                       height: 40,
+//                       errorBuilder: (context, error, stackTrace) {
+//                         return const Text('📱', style: TextStyle(fontSize: 48));
+//                       },
+//                     )
+//                   : Text(emoji, style: const TextStyle(fontSize: 48)),
+//               Container(
+//                 padding: const EdgeInsets.all(8),
+//                 child: Image.asset(
+//                   Assets.svgIcons.buttonCalendar.path,
+//                   width: 48,
+//                   height: 48,
+//                 ),
+//               ),
+//             ],
+//           ),
+//           const SizedBox(height: 16),
+//           Text(
+//             title,
+//             style: GoogleFonts.workSans(
+//               color: const Color(0xFF011F54),
+//               fontSize: 32,
+//               fontWeight: FontWeight.w800,
+//               height: 1.2,
+//               letterSpacing: -1,
+//             ),
+//           ),
+//           const SizedBox(height: 8),
+//           Row(
+//             children: [
+//               Flexible(
+//                 child: Container(
+//                   padding: const EdgeInsets.symmetric(
+//                     horizontal: 6,
+//                     vertical: 2,
+//                   ),
+//                   child: Row(
+//                     mainAxisSize: MainAxisSize.min,
+//                     children: [
+//                       Image.asset(
+//                         Assets.svgIcons.calendarBlank.path,
+//                         width: 12,
+//                         height: 12,
+//                         color: const Color(0xFF011F54),
+//                       ),
+//                       const SizedBox(width: 4),
+//                       Flexible(
+//                         child: Text(
+//                           'Today',
+//                           style: GoogleFonts.workSans(
+//                             color: const Color(0xFF011F54),
+//                             fontSize: 18,
+//                             fontWeight: FontWeight.w600,
+//                             height: 1.4,
+//                             letterSpacing: -0.9,
+//                           ),
+//                           overflow: TextOverflow.ellipsis,
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ),
+//               const SizedBox(width: 8),
+//               Flexible(
+//                 child: Container(
+//                   padding: const EdgeInsets.symmetric(
+//                     horizontal: 6,
+//                     vertical: 2,
+//                   ),
+//                   child: Row(
+//                     mainAxisSize: MainAxisSize.min,
+//                     children: [
+//                       Image.asset(
+//                         Assets.svgIcons.clockBlack.path,
+//                         width: 12,
+//                         height: 12,
+//                         color: const Color(0xFF011F54),
+//                       ),
+//                       const SizedBox(width: 4),
+//                       Flexible(
+//                         child: Text(
+//                           time,
+//                           style: GoogleFonts.workSans(
+//                             color: const Color(0xFF011F54),
+//                             fontSize: 18,
+//                             fontWeight: FontWeight.w600,
+//                             height: 1.4,
+//                             letterSpacing: -0.9,
+//                           ),
+//                           overflow: TextOverflow.ellipsis,
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ),
+//             ],
+//           ),
+//           const SizedBox(height: 12),
+//           Text(
+//             description,
+//             style: GoogleFonts.workSans(
+//               color: const Color(0xFF4C586E),
+//               fontSize: 18,
+//               fontWeight: FontWeight.w400,
+//               height: 1.4,
+//               letterSpacing: -0.5,
+//             ),
+//             maxLines: 2,
+//             overflow: TextOverflow.ellipsis,
+//           ),
+//           const Spacer(),
+//           Row(
+//             children: [
+//               Flexible(
+//                 child: Container(
+//                   padding: const EdgeInsets.symmetric(
+//                     horizontal: 12,
+//                     vertical: 6,
+//                   ),
+//                   decoration: BoxDecoration(
+//                     color: const Color(0xFF8BC34A),
+//                     borderRadius: BorderRadius.circular(12),
+//                   ),
+//                   child: Text(
+//                     hardSteps,
+//                     style: const TextStyle(
+//                       fontSize: 12,
+//                       color: Colors.white,
+//                       fontWeight: FontWeight.w600,
+//                     ),
+//                     overflow: TextOverflow.ellipsis,
+//                   ),
+//                 ),
+//               ),
+//               const SizedBox(width: 8),
+//               Flexible(
+//                 child: Container(
+//                   padding: const EdgeInsets.symmetric(
+//                     horizontal: 12,
+//                     vertical: 6,
+//                   ),
+//                   decoration: BoxDecoration(
+//                     color: const Color(
+//                       0xFF8BC34A,
+//                     ), // Changed from Colors.white.withOpacity(0.3)
+//                     borderRadius: BorderRadius.circular(12),
+//                   ),
+//                   child: Text(
+//                     softSteps,
+//                     style: const TextStyle(
+//                       fontSize: 12,
+//                       color: Colors.white,
+//                       fontWeight: FontWeight.w600,
+//                     ),
+//                     overflow: TextOverflow.ellipsis,
+//                   ),
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
-import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class ShuffleScreen extends StatelessWidget {
   const ShuffleScreen({super.key});
@@ -318,100 +554,79 @@ class ShuffleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white10,
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(25)),
       child: SafeArea(
         child: Column(
           children: [
-            // ---------------- CUSTOM APP BAR ----------------
-            Container(
-              height: 56,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              color: Colors.white,
-              alignment: Alignment.center,
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 8,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(Icons.shuffle, size: 16, color: Colors.grey[700]),
-                    const SizedBox(width: 8),
-                    Text(
-                      'Shuffle',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.grey[700],
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            // ---------------- BODY ----------------
+            _buildHeader(),
             Expanded(
               child: ListView(
                 padding: const EdgeInsets.all(16),
                 children: [
-                  ActivityCard(
+                  // Special "To sleep" card with different design
+                  SleepRoutineCard(
                     title: 'To sleep',
                     description:
                         'Wind down, unplug, and prep your mind for rest.',
-                    backgroundImage: Assets.svgIcons.toTrain.path,
-                    emoji: '🌙',
-                    duration: '10 mins',
-                    difficulty: 'Get sleepy',
+                    time: '22:00',
+                    softSteps: 'Soft steps',
+                    hardSteps: '10 Hard',
+                    imagePath: Assets.svgIcons.moon4.path,
+                    emoji: Assets.svgIcons.moonPng_.path,
+                    hardStepsColor: const Color(0xFF8BC34A), // Green
+                    softStepsColor: const Color(0xFF64B5F6), // Blue
                   ),
-                  const SizedBox(height: 16),
-
-                  ActivityCard(
+                  const SizedBox(height: 8),
+                  RoutineCard(
                     title: 'To wake up',
                     description:
-                        'Start fresh. No scrolling — just light, breath, and you.',
-                    backgroundImage: Assets.svgIcons.toTrain.path,
-                    emoji: '☀️',
-                    duration: '10 mins',
-                    difficulty: 'Soft snaps',
+                        'Rise fresh. Stretch, breathe — just light, breath, and presence.',
+                    time: '22:00',
+                    softSteps: 'Soft steps',
+                    hardSteps: '10 mins',
+                    imagePath: Assets.svgIcons.toWakeUp.path,
+                    emoji: Assets.svgIcons.sun.path,
+                    hardStepsColor: const Color(0xFFFFB74D), // Orange
+                    softStepsColor: const Color(0xFFBA68C8), // Purple
                   ),
-                  const SizedBox(height: 16),
-
-                  ActivityCard(
+                  const SizedBox(height: 8),
+                  RoutineCard(
                     title: 'To walk',
                     description:
-                        'Move your body, clear your mind. Even for ten counts.',
-                    backgroundImage: Assets.svgIcons.toTrain.path,
-                    emoji: '🚶',
-                    duration: '10 mins',
-                    difficulty: 'Soft steps',
+                        'Move your body, clear your mind. Even for a little bit counts.',
+                    time: '22:00',
+                    softSteps: 'Soft steps',
+                    hardSteps: '10 mins',
+                    imagePath: Assets.svgIcons.toWalk.path,
+                    emoji: Assets.svgIcons.toWalkIcon.path,
+                    hardStepsColor: const Color(0xFF4FC3F7), // Light Blue
+                    softStepsColor: const Color(0xFFFFD54F), // Amber
                   ),
-                  const SizedBox(height: 16),
-
-                  ActivityCard(
+                  const SizedBox(height: 8),
+                  RoutineCard(
                     title: 'To study',
                     description:
-                        'Focus mode: on. Zero reflection — just in-gear.',
-                    backgroundImage: Assets.svgIcons.toTrain.path,
-                    emoji: '📚',
-                    duration: '10 mins',
-                    difficulty: 'Deep focus',
+                        'Focus, learn, retain. Deep in reflection — just progress.',
+                    time: '22:00',
+                    softSteps: 'Soft steps',
+                    hardSteps: '10 mins',
+                    imagePath: Assets.svgIcons.toStudy.path,
+                    emoji: Assets.svgIcons.book.path,
+                    hardStepsColor: const Color(0xFF9575CD), // Deep Purple
+                    softStepsColor: const Color(0xFF81C784), // Light Green
                   ),
-                  const SizedBox(height: 16),
-
-                  ActivityCard(
+                  const SizedBox(height: 8),
+                  RoutineCard(
                     title: 'To train',
                     description:
-                        'Release stress, boost energy. Show up for yourself.',
-                    backgroundImage: Assets.svgIcons.toTrain.path,
-                    emoji: '💪',
-                    duration: '10 mins',
-                    difficulty: 'Soft steps',
+                        'Sweat, strengthen, boost energy. Show up for yourself.',
+                    time: '22:00',
+                    softSteps: 'Soft steps',
+                    hardSteps: '10 mins',
+                    imagePath: Assets.svgIcons.toTrain.path,
+                    emoji: Assets.svgIcons.push.path,
+                    hardStepsColor: const Color(0xFFE57373), // Red
+                    softStepsColor: const Color(0xFF4DB6AC), // Teal
                   ),
                 ],
               ),
@@ -421,135 +636,454 @@ class ShuffleScreen extends StatelessWidget {
       ),
     );
   }
+
+  Widget _buildHeader() {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        decoration: ShapeDecoration(
+          shape: RoundedRectangleBorder(
+            side: BorderSide(
+              width: 2,
+              color: const Color(0xFF011F54) /* Border-border-dark */,
+            ),
+            borderRadius: BorderRadius.circular(999),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              Assets.svgIcons.shuffle.path,
+              width: 20,
+              height: 20,
+              color: const Color(0xFF011F54),
+            ),
+            SizedBox(width: 8),
+            Text(
+              'Shuffle',
+              style: GoogleFonts.workSans(
+                color: const Color(0xFF011F54),
+                fontSize: 18,
+                fontWeight: FontWeight.w900,
+                height: 0.8,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
-class ActivityCard extends StatelessWidget {
+// Special card for "To sleep" routine
+class SleepRoutineCard extends StatelessWidget {
   final String title;
   final String description;
+  final String time;
+  final String softSteps;
+  final String hardSteps;
+  final String imagePath;
   final String emoji;
-  final String duration;
-  final String difficulty;
-  final String backgroundImage;
+  final Color hardStepsColor;
+  final Color softStepsColor;
 
-  const ActivityCard({
-    super.key,
+  const SleepRoutineCard({
+    Key? key,
     required this.title,
     required this.description,
+    required this.time,
+    required this.softSteps,
+    required this.hardSteps,
+    required this.imagePath,
     required this.emoji,
-    required this.duration,
-    required this.difficulty,
-    required this.backgroundImage,
-  });
+    required this.hardStepsColor,
+    required this.softStepsColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 220,
+      height: 295,
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        image: DecorationImage(
-          image: AssetImage(backgroundImage),
-          fit: BoxFit.cover,
-        ),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.black26,
-            blurRadius: 12,
-            offset: Offset(0, 4),
+        image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.cover),
+        borderRadius: BorderRadius.circular(25),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Emoji image display - 64px
+              Image.asset(emoji, width: 64, height: 64),
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Image.asset(
+                  Assets.svgIcons.toMoonPlus.path,
+                  width: 48,
+                  height: 48,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Text(
+            title,
+            style: GoogleFonts.workSans(
+              color: Colors.white,
+              fontSize: 32,
+              fontWeight: FontWeight.w800,
+              height: 1.2,
+              letterSpacing: -1,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              Flexible(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 6,
+                    vertical: 2,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        Assets.svgIcons.calendarBlank.path,
+                        width: 12,
+                        height: 12,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(width: 4),
+                      const Flexible(
+                        child: Text(
+                          'Today',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Flexible(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 6,
+                    vertical: 2,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        Assets.svgIcons.clockBlack.path,
+                        width: 12,
+                        height: 12,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(width: 4),
+                      Flexible(
+                        child: Text(
+                          time,
+                          style: const TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Text(
+            description,
+            style: GoogleFonts.workSans(
+              color: const Color(0xFFFFFEF8),
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              height: 1.4,
+              letterSpacing: -0.9,
+            ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+          const Spacer(),
+          Row(
+            children: [
+              Flexible(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
+                  decoration: BoxDecoration(
+                    color: hardStepsColor,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Text(
+                    hardSteps,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Flexible(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
+                  decoration: BoxDecoration(
+                    color: softStepsColor,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Text(
+                    softSteps,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.35),
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // ---------------- HEADER ----------------
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Text(
-                    title,
-                    style: AppsTextStyles.regularResponsive(
-                      context,
-                    ).copyWith(color: Colors.white),
-                  ),
-                ),
-                Container(
-                  width: 40,
-                  height: 40,
-                  decoration: const BoxDecoration(
-                    color: Colors.white38,
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Icon(Icons.add, color: Colors.white),
-                ),
-              ],
-            ),
+    );
+  }
+}
 
-            const SizedBox(height: 10),
+// Regular routine card for other routines
+class RoutineCard extends StatelessWidget {
+  final String title;
+  final String description;
+  final String time;
+  final String softSteps;
+  final String hardSteps;
+  final String imagePath;
+  final String emoji;
+  final Color hardStepsColor;
+  final Color softStepsColor;
 
-            Text(
-              description,
-              style: const TextStyle(
-                fontSize: 14,
-                color: Colors.white,
-                height: 1.4,
+  const RoutineCard({
+    Key? key,
+    required this.title,
+    required this.description,
+    required this.time,
+    required this.softSteps,
+    required this.hardSteps,
+    required this.imagePath,
+    required this.emoji,
+    required this.hardStepsColor,
+    required this.softStepsColor,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 295,
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.cover),
+        borderRadius: BorderRadius.circular(25),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Emoji check - image or text - 64px
+              emoji.contains('.')
+                  ? Image.asset(emoji, width: 64, height: 64)
+                  : Text(emoji, style: const TextStyle(fontSize: 64)),
+              Container(
+                padding: const EdgeInsets.all(8),
+                child: Image.asset(
+                  Assets.svgIcons.buttonCalendar.path,
+                  width: 48,
+                  height: 48,
+                ),
               ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Text(
+            title,
+            style: GoogleFonts.workSans(
+              color: const Color(0xFF011F54),
+              fontSize: 32,
+              fontWeight: FontWeight.w800,
+              height: 1.2,
+              letterSpacing: -1,
             ),
-
-            const Spacer(),
-
-            Row(
-              children: [
-                Container(
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              Flexible(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 6,
+                    vertical: 2,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        Assets.svgIcons.calendarBlank.path,
+                        width: 12,
+                        height: 12,
+                        color: const Color(0xFF011F54),
+                      ),
+                      const SizedBox(width: 4),
+                      Flexible(
+                        child: Text(
+                          'Today',
+                          style: GoogleFonts.workSans(
+                            color: const Color(0xFF011F54),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            height: 1.4,
+                            letterSpacing: -0.9,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Flexible(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 6,
+                    vertical: 2,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        Assets.svgIcons.clockBlack.path,
+                        width: 12,
+                        height: 12,
+                        color: const Color(0xFF011F54),
+                      ),
+                      const SizedBox(width: 4),
+                      Flexible(
+                        child: Text(
+                          time,
+                          style: GoogleFonts.workSans(
+                            color: const Color(0xFF011F54),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            height: 1.4,
+                            letterSpacing: -0.9,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Text(
+            description,
+            style: GoogleFonts.workSans(
+              color: const Color(0xFF4C586E),
+              fontSize: 18,
+              fontWeight: FontWeight.w400,
+              height: 1.4,
+              letterSpacing: -0.5,
+            ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+          const Spacer(),
+          Row(
+            children: [
+              Flexible(
+                child: Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 12,
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.9),
+                    color: hardStepsColor,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
-                    duration,
+                    hardSteps,
                     style: const TextStyle(
                       fontSize: 12,
-                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
                     ),
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                const SizedBox(width: 8),
-                Container(
+              ),
+              const SizedBox(width: 8),
+              Flexible(
+                child: Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 12,
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.9),
+                    color: softStepsColor,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
-                    difficulty,
+                    softSteps,
                     style: const TextStyle(
                       fontSize: 12,
-                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
                     ),
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
-              ],
-            ),
-
-            const SizedBox(height: 10),
-
-            Text(emoji, style: const TextStyle(fontSize: 32)),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

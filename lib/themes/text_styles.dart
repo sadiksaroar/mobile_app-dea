@@ -6,25 +6,28 @@ import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 class AppsTextStyles {
   static TextStyle alfaSlabTitleEntryScreen = GoogleFonts.alfaSlabOne(
     color: Colors.white,
-    fontSize: 22.sp,
+    fontSize: 32,
     fontWeight: FontWeight.w400,
+    height: 0.90,
     fontStyle: FontStyle.normal,
   );
 
   static TextStyle workSansBodyEntryScreen = GoogleFonts.workSans(
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
-    fontSize: 15.sp,
+    fontSize: 18,
     height: 1.4,
     color: Colors.white,
   );
 
   static TextStyle getStarted = GoogleFonts.alfaSlabOne(
-    fontSize: 18.sp,
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
     color: const Color(0xFF011F54),
   );
   static TextStyle haveAnAccount = GoogleFonts.alfaSlabOne(
-    fontSize: 16.sp,
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
     color: const Color(0xFFFFFEF8),
   );
   static TextStyle appleAndGoogleText = GoogleFonts.alfaSlabOne(

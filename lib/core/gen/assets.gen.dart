@@ -82,20 +82,20 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/Arrow.png
   AssetGenImage get arrow => const AssetGenImage('assets/svg_icons/Arrow.png');
 
+  /// File path: assets/svg_icons/BlackCleander.png
+  AssetGenImage get blackCleander =>
+      const AssetGenImage('assets/svg_icons/BlackCleander.png');
+
   /// File path: assets/svg_icons/Book.png
   AssetGenImage get book => const AssetGenImage('assets/svg_icons/Book.png');
-
-  /// File path: assets/svg_icons/Button Calendar.png
-  AssetGenImage get buttonCalendarPng =>
-      const AssetGenImage('assets/svg_icons/Button Calendar.png');
-
-  /// File path: assets/svg_icons/Button Calendar_.png
-  AssetGenImage get buttonCalendarPng_ =>
-      const AssetGenImage('assets/svg_icons/Button Calendar_.png');
 
   /// File path: assets/svg_icons/Button CalendarComplate.png
   AssetGenImage get buttonCalendarComplate =>
       const AssetGenImage('assets/svg_icons/Button CalendarComplate.png');
+
+  /// File path: assets/svg_icons/Button Calendar_.png
+  AssetGenImage get buttonCalendar =>
+      const AssetGenImage('assets/svg_icons/Button Calendar_.png');
 
   /// File path: assets/svg_icons/Button Regular.png
   AssetGenImage get buttonRegular =>
@@ -116,6 +116,10 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/Clock.png
   AssetGenImage get clock => const AssetGenImage('assets/svg_icons/Clock.png');
 
+  /// File path: assets/svg_icons/Clock_black.png
+  AssetGenImage get clockBlack =>
+      const AssetGenImage('assets/svg_icons/Clock_black.png');
+
   /// File path: assets/svg_icons/DAILY MOMENTS Png.png
   AssetGenImage get dAILYMOMENTSPng =>
       const AssetGenImage('assets/svg_icons/DAILY MOMENTS Png.png');
@@ -127,6 +131,10 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/Daily Tips.png
   AssetGenImage get dailyTips =>
       const AssetGenImage('assets/svg_icons/Daily Tips.png');
+
+  /// File path: assets/svg_icons/Daily talks with Fuzzy.png
+  AssetGenImage get dailyTalksWithFuzzy =>
+      const AssetGenImage('assets/svg_icons/Daily talks with Fuzzy.png');
 
   /// File path: assets/svg_icons/Delete My Account.png
   AssetGenImage get deleteMyAccount =>
@@ -167,21 +175,9 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/Fire.png
   AssetGenImage get fire => const AssetGenImage('assets/svg_icons/Fire.png');
 
-  /// File path: assets/svg_icons/Frame 2147228668.png
-  AssetGenImage get frame2147228668 =>
-      const AssetGenImage('assets/svg_icons/Frame 2147228668.png');
-
-  /// File path: assets/svg_icons/Frame 2147228669.png
-  AssetGenImage get frame2147228669 =>
-      const AssetGenImage('assets/svg_icons/Frame 2147228669.png');
-
-  /// File path: assets/svg_icons/Frame 2147228670.png
-  AssetGenImage get frame2147228670 =>
-      const AssetGenImage('assets/svg_icons/Frame 2147228670.png');
-
-  /// File path: assets/svg_icons/Frame 2147228671.png
-  AssetGenImage get frame2147228671 =>
-      const AssetGenImage('assets/svg_icons/Frame 2147228671.png');
+  /// File path: assets/svg_icons/Focus sessions.png
+  AssetGenImage get focusSessions =>
+      const AssetGenImage('assets/svg_icons/Focus sessions.png');
 
   /// File path: assets/svg_icons/Help.png
   AssetGenImage get help => const AssetGenImage('assets/svg_icons/Help.png');
@@ -225,6 +221,16 @@ class $AssetsSvgIconsGen {
   AssetGenImage get mondayBack =>
       const AssetGenImage('assets/svg_icons/MondayBack.png');
 
+  /// File path: assets/svg_icons/Moon.png
+  AssetGenImage get moonPng => const AssetGenImage('assets/svg_icons/Moon.png');
+
+  /// File path: assets/svg_icons/moon.png
+  AssetGenImage get moonPng_ =>
+      const AssetGenImage('assets/svg_icons/moon.png');
+
+  /// File path: assets/svg_icons/Moon4.png
+  AssetGenImage get moon4 => const AssetGenImage('assets/svg_icons/Moon4.png');
+
   /// File path: assets/svg_icons/Notifications.png
   AssetGenImage get notifications =>
       const AssetGenImage('assets/svg_icons/Notifications.png');
@@ -264,6 +270,10 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/ProfileBack.png
   AssetGenImage get profileBack =>
       const AssetGenImage('assets/svg_icons/ProfileBack.png');
+
+  /// File path: assets/svg_icons/Progress insights.png
+  AssetGenImage get progressInsights =>
+      const AssetGenImage('assets/svg_icons/Progress insights.png');
 
   /// File path: assets/svg_icons/Quest completed.png
   AssetGenImage get questCompleted =>
@@ -317,6 +327,10 @@ class $AssetsSvgIconsGen {
   AssetGenImage get taslReminders =>
       const AssetGenImage('assets/svg_icons/TaslReminders.png');
 
+  /// File path: assets/svg_icons/To Moon Plus .png
+  AssetGenImage get toMoonPlus =>
+      const AssetGenImage('assets/svg_icons/To Moon Plus .png');
+
   /// File path: assets/svg_icons/To sleep.png
   AssetGenImage get toSleep =>
       const AssetGenImage('assets/svg_icons/To sleep.png');
@@ -333,9 +347,21 @@ class $AssetsSvgIconsGen {
   AssetGenImage get toTrain =>
       const AssetGenImage('assets/svg_icons/To train.png');
 
+  /// File path: assets/svg_icons/To wake up plus.png
+  AssetGenImage get toWakeUpPlus =>
+      const AssetGenImage('assets/svg_icons/To wake up plus.png');
+
   /// File path: assets/svg_icons/To wake up.png
   AssetGenImage get toWakeUp =>
       const AssetGenImage('assets/svg_icons/To wake up.png');
+
+  /// File path: assets/svg_icons/To walk icon .png
+  AssetGenImage get toWalkIcon =>
+      const AssetGenImage('assets/svg_icons/To walk icon .png');
+
+  /// File path: assets/svg_icons/To walk.png
+  AssetGenImage get toWalk =>
+      const AssetGenImage('assets/svg_icons/To walk.png');
 
   /// File path: assets/svg_icons/Today Calender .png
   AssetGenImage get todayCalender =>
@@ -421,9 +447,6 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/mean.png
   AssetGenImage get mean => const AssetGenImage('assets/svg_icons/mean.png');
 
-  /// File path: assets/svg_icons/moon.png
-  AssetGenImage get moon => const AssetGenImage('assets/svg_icons/moon.png');
-
   /// File path: assets/svg_icons/never_back.png
   AssetGenImage get neverBack =>
       const AssetGenImage('assets/svg_icons/never_back.png');
@@ -493,13 +516,12 @@ class $AssetsSvgIconsGen {
   SvgGenImage get startLetsGo =>
       const SvgGenImage('assets/svg_icons/start_lets_go.svg');
 
+  /// File path: assets/svg_icons/sun.png
+  AssetGenImage get sun => const AssetGenImage('assets/svg_icons/sun.png');
+
   /// File path: assets/svg_icons/sunButton.png
   AssetGenImage get sunButton =>
       const AssetGenImage('assets/svg_icons/sunButton.png');
-
-  /// File path: assets/svg_icons/to liner.png
-  AssetGenImage get toLiner =>
-      const AssetGenImage('assets/svg_icons/to liner.png');
 
   /// File path: assets/svg_icons/voice.png
   AssetGenImage get voice => const AssetGenImage('assets/svg_icons/voice.png');
@@ -514,18 +536,20 @@ class $AssetsSvgIconsGen {
     appleIconsBlue,
     appleIcon,
     arrow,
+    blackCleander,
     book,
-    buttonCalendarPng,
-    buttonCalendarPng_,
     buttonCalendarComplate,
+    buttonCalendar,
     buttonRegular,
     calendarBlank,
     clearAllAIMemoryPng,
     clearAllAIMemoryPng_,
     clock,
+    clockBlack,
     dAILYMOMENTSPng,
     dailyMoments,
     dailyTips,
+    dailyTalksWithFuzzy,
     deleteMyAccount,
     deleteYourAccount,
     emotionalSupport,
@@ -536,10 +560,7 @@ class $AssetsSvgIconsGen {
     editIcon,
     fireTab,
     fire,
-    frame2147228668,
-    frame2147228669,
-    frame2147228670,
-    frame2147228671,
+    focusSessions,
     help,
     homeTab,
     language,
@@ -551,6 +572,9 @@ class $AssetsSvgIconsGen {
     loveProfile,
     magicWand,
     mondayBack,
+    moonPng,
+    moonPng_,
+    moon4,
     notifications,
     nowliJuli,
     nowliPro,
@@ -561,6 +585,7 @@ class $AssetsSvgIconsGen {
     privacyPolicy,
     profileMenuWithNotifications,
     profileBack,
+    progressInsights,
     questCompleted,
     quests,
     realCompany,
@@ -574,11 +599,15 @@ class $AssetsSvgIconsGen {
     starBlue,
     streakProgress,
     taslReminders,
+    toMoonPlus,
     toSleep,
     toSleepPng,
     toStudy,
     toTrain,
+    toWakeUpPlus,
     toWakeUp,
+    toWalkIcon,
+    toWalk,
     todayCalender,
     todayBack,
     useMyDataToImproveAI,
@@ -601,7 +630,6 @@ class $AssetsSvgIconsGen {
     graph,
     insightCheckBox,
     mean,
-    moon,
     neverBack,
     nowliHowToUse,
     nowlnLogo,
@@ -620,8 +648,8 @@ class $AssetsSvgIconsGen {
     signUnBackScrren,
     star,
     startLetsGo,
+    sun,
     sunButton,
-    toLiner,
     voice,
   ];
 }
@@ -669,6 +697,10 @@ class $AssetsSvgImagesGen {
   /// File path: assets/svg_images/callStarted.png
   AssetGenImage get callStarted =>
       const AssetGenImage('assets/svg_images/callStarted.png');
+
+  /// File path: assets/svg_images/deaMagi.png
+  AssetGenImage get deaMagi =>
+      const AssetGenImage('assets/svg_images/deaMagi.png');
 
   /// File path: assets/svg_images/enttry_two_screnn.png
   AssetGenImage get enttryTwoScrenn =>
@@ -740,6 +772,7 @@ class $AssetsSvgImagesGen {
     subscriptionPopupPng,
     subscriptionPopupSvg,
     callStarted,
+    deaMagi,
     enttryTwoScrenn,
     onboarding,
     pop,
