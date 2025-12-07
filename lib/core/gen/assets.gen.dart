@@ -82,6 +82,10 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/Arrow.png
   AssetGenImage get arrow => const AssetGenImage('assets/svg_icons/Arrow.png');
 
+  /// File path: assets/svg_icons/Avatar.png
+  AssetGenImage get avatar =>
+      const AssetGenImage('assets/svg_icons/Avatar.png');
+
   /// File path: assets/svg_icons/BlackCleander.png
   AssetGenImage get blackCleander =>
       const AssetGenImage('assets/svg_icons/BlackCleander.png');
@@ -556,6 +560,7 @@ class $AssetsSvgIconsGen {
     appleIconsBlue,
     appleIcon,
     arrow,
+    avatar,
     blackCleander,
     book,
     buttonCalendarComplate,

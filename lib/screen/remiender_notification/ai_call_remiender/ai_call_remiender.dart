@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:mobile_app_dea/screen/home/contextual_onboarding/custom_paint/chat_bubble_container.dart';
-import 'package:mobile_app_dea/screen/home/contextual_onboarding/custom_paint/chat_message.dart';
-import 'package:mobile_app_dea/screen/home/contextual_onboarding/custom_paint/conversation_bubble.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
+import 'package:mobile_app_dea/core/gen/assets.gen.dart';
+import 'package:mobile_app_dea/custom_code/BottomNav.dart';
+
 import 'package:mobile_app_dea/screen/home/contextual_onboarding/custom_paint/text_bubble.dart';
 import 'package:mobile_app_dea/screen/home/swipe_on_quest/delete_toast.dart';
 import 'package:mobile_app_dea/screen/home/swipe_on_quest/tomorow_card.dart';
+import 'package:mobile_app_dea/screen/remiender_notification/ai_call_remiender/default-yellow/default-yellow.dart';
+import 'package:mobile_app_dea/screen/remiender_notification/ai_call_remiender/error_tueast/error_tueast.dart';
+import 'package:mobile_app_dea/screen/remiender_notification/ai_call_remiender/quest_suggestion_purple/quest_suggestion_purple.dart';
+import 'package:mobile_app_dea/screen/remiender_notification/ai_call_remiender/success_tueast/success_tueast.dart';
+import 'package:mobile_app_dea/themes/create_qutes.dart';
+import 'package:mobile_app_dea/themes/text_styles.dart';
+import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 
 class AiCallRemiender extends StatefulWidget {
   const AiCallRemiender({Key? key}) : super(key: key);
@@ -28,7 +38,9 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      OnboardingOverlay.show(context);
+      if (mounted) {
+        OnboardingOverlay.show(context);
+      }
     });
   }
 
@@ -36,6 +48,28 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
   void dispose() {
     _scrollController.dispose();
     super.dispose();
+  }
+
+  int _currentIndex = 0;
+
+  void _onNavTap(int index) {
+    if (!mounted) return;
+
+    setState(() {
+      _currentIndex = index;
+    });
+
+    switch (index) {
+      case 0:
+        context.go(AppRoutespath.homeScreen);
+        break;
+      case 1:
+        context.go(AppRoutespath.questHomePage);
+        break;
+      case 2:
+        context.go(AppRoutespath.progress);
+        break;
+    }
   }
 
   @override
@@ -83,6 +117,12 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
           ),
         ],
       ),
+      bottomNavigationBar: CustomNavigationBar(
+        currentIndex: 0,
+        onTap: (index) {
+          // Handle navigation tap
+        },
+      ),
     );
   }
 
@@ -90,24 +130,30 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const CircleAvatar(
-          radius: 24,
-          backgroundColor: Color(0xFFD4E3FF),
-          child: Icon(Icons.person_outline, color: Color(0xFF5B7EFF), size: 28),
-        ),
-        const Text(
-          'HI JULIE!',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF1A1F36),
-            letterSpacing: 1.2,
+        GestureDetector(
+          onTap: () {
+            // Handle avatar tap
+            context.push(AppRoutespath.profileNotificationsScreen);
+          },
+          child: CircleAvatar(
+            radius: 24,
+            // child: Icon(
+            //   Icons.person_outline,
+            //   color: Color(0xFF5B7EFF),
+            //   size: 28,
+            // ),
+            child: Image.asset(
+              Assets.svgIcons.avatar.path,
+              height: 28,
+              width: 28,
+            ),
           ),
         ),
+        Text('HI JULIE!', style: AppsTextStyles.extraBold32Centered),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppColorsApps.skyBlueLight,
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
@@ -117,22 +163,11 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
               ),
             ],
           ),
-          child: const Row(
+          child: Row(
             children: [
-              Icon(
-                Icons.local_fire_department,
-                color: Color(0xFFFF6B35),
-                size: 22,
-              ),
-              SizedBox(width: 6),
-              Text(
-                '1',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF1A1F36),
-                ),
-              ),
+              Image.asset(Assets.svgIcons.fire.path, height: 22, width: 22),
+              const SizedBox(width: 6),
+              Text('1', style: AppsTextStyles.fullNameAndEmail),
             ],
           ),
         ),
@@ -167,44 +202,31 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
-                const Text(
+                Text(
                   'Ready to make\ntoday count?',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF1A1F36),
-                    height: 1.3,
-                  ),
+                  style: AppsTextStyles.sendResetLinkButton,
                 ),
                 const SizedBox(height: 6),
                 Text(
                   'Tiny wins make big shifts.',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey[700],
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: AppsTextStyles.WorkSansRegular14,
                 ),
                 const SizedBox(height: 16),
                 Row(
                   children: [
-                    const Text(
-                      'Today\'s progress',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF1A1F36),
+                    Flexible(
+                      child: Text(
+                        'Today\'s progress',
+                        style: AppsTextStyles.regular16l,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     const SizedBox(width: 8),
                     Text(
                       '${(progress * 100).toInt()}%',
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF5B7EFF),
-                      ),
+                      style: AppsTextStyles.regular16l,
                     ),
                   ],
                 ),
@@ -244,17 +266,14 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
           Container(
             padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
-              color: const Color(0xFF5B7EFF),
+              color: AppColorsApps.royalBlue,
               borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color(0xFF5B7EFF).withOpacity(0.3),
-                  blurRadius: 15,
-                  offset: const Offset(0, 4),
-                ),
-              ],
             ),
-            child: const Text('🐻', style: TextStyle(fontSize: 44)),
+            child: Image.asset(
+              Assets.svgIcons.readyToMakeTodayCount.path,
+              height: 44,
+              width: 44,
+            ),
           ),
         ],
       ),
@@ -266,8 +285,8 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
     return Row(
       children: [
         Container(
-          height: 105,
-          width: 105,
+          height: 120,
+          width: 120,
           padding: const EdgeInsets.all(18),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -283,30 +302,25 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
           ),
           child: Column(
             children: [
-              const Text(
+              Text(
                 'Today',
-                style: TextStyle(
-                  fontSize: 10,
-                  color: Color(0xFF1A1F36),
+                style: GoogleFonts.workSans(
+                  color: const Color(0xFF011F54),
+                  fontSize: 16,
                   fontWeight: FontWeight.w600,
+                  height: 1,
+                  letterSpacing: -0.5,
                 ),
               ),
               const SizedBox(height: 6),
-              Text(
-                '${now.day}',
-                style: const TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF5B7EFF),
-                ),
-              ),
+              Text('${now.day}', style: AppsTextStyles.extraBold32Centered),
             ],
           ),
         ),
         const SizedBox(width: 12),
         Container(
-          height: 105,
-          width: 105,
+          height: 120,
+          width: 120,
           padding: const EdgeInsets.all(18),
           decoration: BoxDecoration(
             gradient: const LinearGradient(
@@ -321,17 +335,23 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
               ),
             ],
           ),
-          child: const Row(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.add_circle_outline, color: Colors.white, size: 24),
-              SizedBox(width: 8),
+              const Icon(
+                Icons.add_circle_outline,
+                color: Colors.white,
+                size: 24,
+              ),
+              const SizedBox(height: 8),
               Text(
                 'Plan',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.workSans(
+                  color: const Color(0xFFFFFDF7), // Text-text-light
+                  fontSize: 18,
+                  fontWeight: FontWeight.w900,
+                  height: 0.80,
                 ),
               ),
             ],
@@ -345,12 +365,15 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
-          'Today\'s plan',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF1A1F36),
+        Text(
+          'Todays plan',
+          textAlign: TextAlign.center,
+          style: GoogleFonts.workSans(
+            color: const Color(0xFF011F54), // Text-text-default
+            fontSize: 32,
+            fontWeight: FontWeight.w800,
+            height: 1.2,
+            letterSpacing: -1,
           ),
         ),
         Material(
@@ -365,16 +388,19 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
                 border: Border.all(color: const Color(0xFF5B7EFF), width: 2),
                 borderRadius: BorderRadius.circular(24),
               ),
-              child: const Row(
+              child: Row(
                 children: [
                   Icon(Icons.add, color: Color(0xFF5B7EFF), size: 20),
                   SizedBox(width: 4),
                   Text(
                     'Add quest',
-                    style: TextStyle(
-                      color: Color(0xFF5B7EFF),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFF4542EB) /* Text-text-primary */,
+                      fontSize: 18,
+
+                      fontWeight: FontWeight.w900,
+                      height: 0.80,
                     ),
                   ),
                 ],
@@ -397,58 +423,126 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
           onEdit: () => (index),
           onDelete: () => _deleteTask(index),
           onTomorrow: () => _moveToTomorrow(index),
-          onToggle: () => setState(() {
-            task.isCompleted = !task.isCompleted;
-          }),
+          onToggle: () {
+            if (mounted) {
+              setState(() {
+                task.isCompleted = !task.isCompleted;
+              });
+            }
+          },
         );
       }).toList(),
     );
   }
 
   Widget _buildSwipeButton() {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: () {},
-        borderRadius: BorderRadius.circular(32),
-        child: Ink(
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [Color(0xFFFF6B35), Color(0xFFFF8C42)],
+    return GestureDetector(
+      onTap: () {},
+      // child: Container(
+      //   padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 18),
+      //   decoration: BoxDecoration(
+      //     color: Colors.,
+
+      //   ),
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Image.asset(
+      //         Assets.svgIcons.swipeToTalkToFuzzy.path,
+      //         height: 24,
+      //         width: 24,
+      //       ),
+      //       const SizedBox(width: 12),
+      //       Text(
+      //         'Swipe to talk to Fuzzy',
+      //         textAlign: TextAlign.center,
+      //         style: GoogleFonts.workSans(
+      //           color: const Color(0xFF011F54),
+      //           fontSize: 20,
+      //           fontWeight: FontWeight.w900,
+      //           height: 0.8,
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+      child: Container(
+        height: 80,
+        width: double.infinity,
+        padding: const EdgeInsets.only(top: 8, left: 8, right: 24, bottom: 8),
+        decoration: ShapeDecoration(
+          color: const Color(0xFFFF8F26),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(999),
+          ),
+          shadows: [
+            BoxShadow(
+              color: Color(0x19011F54),
+              blurRadius: 18,
+              offset: Offset(2, 10),
+              spreadRadius: 0,
             ),
-            borderRadius: BorderRadius.circular(32),
-            boxShadow: [
-              BoxShadow(
-                color: const Color(0xFFFF6B35).withOpacity(0.4),
-                blurRadius: 20,
-                offset: const Offset(0, 6),
+          ],
+        ),
+        child: Row(
+          // mainAxisSize: MainAxisSize.min,
+          // mainAxisAlignment: MainAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          spacing: 12,
+          children: [
+            // Container(
+            //   width: 56,
+            //   height: 56,
+            //   padding: const EdgeInsets.all(16),
+            //   decoration: ShapeDecoration(
+            //     // color: const Color(0xFF4542EB),
+            //     shape: RoundedRectangleBorder(
+            //       borderRadius: BorderRadius.circular(999),
+            //     ),
+            //     shadows: [
+            //       BoxShadow(
+            //         color: Color(0x19011F54),
+            //         blurRadius: 18,
+            //         offset: Offset(2, 10),
+            //         spreadRadius: 0,
+            //       ),
+            //     ],
+            //   ),
+            //   child: Row(
+            //     mainAxisSize: MainAxisSize.min,
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     crossAxisAlignment: CrossAxisAlignment.center,
+            //     spacing: 10,
+            //     children: [Container(width: 24, height: 24, child: Stack())],
+            //   ),
+            // ),
+            Center(
+              child: Image.asset(
+                Assets.svgIcons.swipeToTalkToFuzzy.path,
+                height: 70,
+                width: 70,
               ),
-            ],
-          ),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 18),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.auto_awesome, color: Colors.white, size: 24),
-                SizedBox(width: 12),
-                Text(
-                  'Swipe to talk to Fuzzy',
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
             ),
-          ),
+            Text(
+              'Swipe to talk to Fuzzy',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.workSans(
+                color: const Color(0xFF011F54),
+                fontSize: 20,
+
+                fontWeight: FontWeight.w900,
+                // height: 0.80,
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 
   void _deleteTask(int index) {
+    if (!mounted) return;
+
     final removed = _tasks[index];
     setState(() => _tasks.removeAt(index));
 
@@ -456,13 +550,17 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
       context,
       child: DeleteToast(
         onUndo: () {
-          setState(() => _tasks.insert(index, removed));
+          if (mounted) {
+            setState(() => _tasks.insert(index, removed));
+          }
         },
       ),
     );
   }
 
   void _moveToTomorrow(int index) {
+    if (!mounted) return;
+
     final task = _tasks[index];
     setState(() => _tasks.removeAt(index));
 
@@ -470,6 +568,8 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
   }
 
   void _showCustomToast(BuildContext context, {required Widget child}) {
+    if (!mounted) return;
+
     final overlay = Overlay.of(context);
     late OverlayEntry overlayEntry;
 
@@ -616,7 +716,16 @@ class _AnimatedTaskItemState extends State<AnimatedTaskItem>
       margin: const EdgeInsets.only(bottom: 14),
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
-        color: widget.task.isSpecial ? const Color(0xFF5B7EFF) : Colors.white,
+        border: widget.task.isSpecial
+            ? null
+            : Border.all(color: AppColorsApps.peachGlow),
+        color: widget.task.isSpecial ? null : AppColorsApps.softCream,
+        image: widget.task.isSpecial
+            ? const DecorationImage(
+                image: AssetImage('assets/svg_icons/To sleep.png'),
+                fit: BoxFit.cover,
+              )
+            : null,
         borderRadius: BorderRadius.circular(18),
         boxShadow: [
           BoxShadow(
@@ -665,8 +774,8 @@ class _AnimatedTaskItemState extends State<AnimatedTaskItem>
           Expanded(
             child: Text(
               widget.task.title,
-              style: TextStyle(
-                fontSize: 17,
+              style: AppTextStylesQutes.workSansSemiBosld18.copyWith(
+                fontSize: 18,
                 fontWeight: FontWeight.w600,
                 color: widget.task.isSpecial
                     ? Colors.white
@@ -689,12 +798,12 @@ class _AnimatedTaskItemState extends State<AnimatedTaskItem>
             ),
             child: Text(
               widget.task.time,
-              style: TextStyle(
+              style: AppTextStylesQutes.workSansSemiBold18.copyWith(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
                 color: widget.task.isSpecial
                     ? Colors.white
-                    : const Color(0xFF5B7EFF),
+                    : AppColorsApps.royalBlue,
               ),
             ),
           ),
@@ -731,19 +840,19 @@ class _OnboardingDialogState extends State<OnboardingDialog>
 
   final List<OnboardingStep> _steps = [
     OnboardingStep(
-      widget: const ChatBubbleContainer(),
+      widget: const DefaultYellow(),
       position: const Alignment(0, -0.3),
     ),
     OnboardingStep(
-      widget: const ChatMessage(),
+      widget: const SuccessTueast(),
       position: const Alignment(0.5, 0),
     ),
     OnboardingStep(
-      widget: const ConversationBubble(),
+      widget: const ErrorTueast(),
       position: const Alignment(-0.5, 0.4),
     ),
     OnboardingStep(
-      widget: const TextBubble(),
+      widget: const QuestSuggestionPurple(),
       position: const Alignment(0, 0.6),
     ),
   ];
@@ -771,8 +880,10 @@ class _OnboardingDialogState extends State<OnboardingDialog>
   void _next() async {
     await _fadeController.reverse();
     if (_step < _steps.length - 1) {
-      setState(() => _step++);
-      _fadeController.forward();
+      if (mounted) {
+        setState(() => _step++);
+        _fadeController.forward();
+      }
     } else {
       if (mounted) Navigator.of(context).pop();
     }
