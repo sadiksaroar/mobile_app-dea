@@ -323,6 +323,10 @@ class $AssetsSvgIconsGen {
   AssetGenImage get streakProgress =>
       const AssetGenImage('assets/svg_icons/Streak Progress.png');
 
+  /// File path: assets/svg_icons/Swipe to talk to Fuzzy.png
+  AssetGenImage get swipeToTalkToFuzzy =>
+      const AssetGenImage('assets/svg_icons/Swipe to talk to Fuzzy.png');
+
   /// File path: assets/svg_icons/TaslReminders.png
   AssetGenImage get taslReminders =>
       const AssetGenImage('assets/svg_icons/TaslReminders.png');
@@ -334,10 +338,6 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/To sleep.png
   AssetGenImage get toSleep =>
       const AssetGenImage('assets/svg_icons/To sleep.png');
-
-  /// File path: assets/svg_icons/To sleep.png.png
-  AssetGenImage get toSleepPng =>
-      const AssetGenImage('assets/svg_icons/To sleep.png.png');
 
   /// File path: assets/svg_icons/To study.png
   AssetGenImage get toStudy =>
@@ -409,6 +409,10 @@ class $AssetsSvgIconsGen {
   AssetGenImage get calende =>
       const AssetGenImage('assets/svg_icons/calende.png');
 
+  /// File path: assets/svg_icons/chatbot.png
+  AssetGenImage get chatbot =>
+      const AssetGenImage('assets/svg_icons/chatbot.png');
+
   /// File path: assets/svg_icons/check-circle-01-passwprd update.svg
   SvgGenImage get checkCircle01PasswprdUpdate =>
       const SvgGenImage('assets/svg_icons/check-circle-01-passwprd update.svg');
@@ -429,6 +433,10 @@ class $AssetsSvgIconsGen {
   AssetGenImage get exlometory =>
       const AssetGenImage('assets/svg_icons/exlometory.png');
 
+  /// File path: assets/svg_icons/fire love.png
+  AssetGenImage get fireLove =>
+      const AssetGenImage('assets/svg_icons/fire love.png');
+
   /// File path: assets/svg_icons/google icons blue .svg
   SvgGenImage get googleIconsBlue =>
       const SvgGenImage('assets/svg_icons/google icons blue .svg');
@@ -446,6 +454,10 @@ class $AssetsSvgIconsGen {
 
   /// File path: assets/svg_icons/mean.png
   AssetGenImage get mean => const AssetGenImage('assets/svg_icons/mean.png');
+
+  /// File path: assets/svg_icons/messages.png
+  AssetGenImage get messages =>
+      const AssetGenImage('assets/svg_icons/messages.png');
 
   /// File path: assets/svg_icons/never_back.png
   AssetGenImage get neverBack =>
@@ -473,6 +485,10 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/pro_cross_icon.svg
   SvgGenImage get proCrossIcon =>
       const SvgGenImage('assets/svg_icons/pro_cross_icon.svg');
+
+  /// File path: assets/svg_icons/profileNotificationLove.png
+  AssetGenImage get profileNotificationLove =>
+      const AssetGenImage('assets/svg_icons/profileNotificationLove.png');
 
   /// File path: assets/svg_icons/push.png
   AssetGenImage get push => const AssetGenImage('assets/svg_icons/push.png');
@@ -525,6 +541,10 @@ class $AssetsSvgIconsGen {
 
   /// File path: assets/svg_icons/voice.png
   AssetGenImage get voice => const AssetGenImage('assets/svg_icons/voice.png');
+
+  /// File path: assets/svg_icons/yoyy rese.png
+  AssetGenImage get yoyyRese =>
+      const AssetGenImage('assets/svg_icons/yoyy rese.png');
 
   /// List of all assets
   List<dynamic> get values => [
@@ -598,10 +618,10 @@ class $AssetsSvgIconsGen {
     sounds,
     starBlue,
     streakProgress,
+    swipeToTalkToFuzzy,
     taslReminders,
     toMoonPlus,
     toSleep,
-    toSleepPng,
     toStudy,
     toTrain,
     toWakeUpPlus,
@@ -620,16 +640,19 @@ class $AssetsSvgIconsGen {
     backIconSvg,
     blue,
     calende,
+    chatbot,
     checkCircle01PasswprdUpdate,
     chevronBackward,
     cleanHouse,
     contactSupport,
     exlometory,
+    fireLove,
     googleIconsBlue,
     googleIcon,
     graph,
     insightCheckBox,
     mean,
+    messages,
     neverBack,
     nowliHowToUse,
     nowlnLogo,
@@ -637,6 +660,7 @@ class $AssetsSvgIconsGen {
     plush,
     popupSpwakingCross,
     proCrossIcon,
+    profileNotificationLove,
     push,
     questComapltedSatrt,
     questTabPng,
@@ -651,6 +675,7 @@ class $AssetsSvgIconsGen {
     sun,
     sunButton,
     voice,
+    yoyyRese,
   ];
 }
 

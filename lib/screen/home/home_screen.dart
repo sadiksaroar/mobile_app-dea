@@ -1,6 +1,7 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_slidable/flutter_slidable.dart';
 // import 'package:go_router/go_router.dart';
+// import 'package:google_fonts/google_fonts.dart';
 // import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
 // import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 // import 'package:mobile_app_dea/custom_code/BottomNav.dart';
@@ -35,7 +36,9 @@
 //   void initState() {
 //     super.initState();
 //     WidgetsBinding.instance.addPostFrameCallback((_) {
-//       OnboardingOverlay.show(context);
+//       if (mounted) {
+//         OnboardingOverlay.show(context);
+//       }
 //     });
 //   }
 
@@ -48,6 +51,8 @@
 //   int _currentIndex = 0;
 
 //   void _onNavTap(int index) {
+//     if (!mounted) return;
+
 //     setState(() {
 //       _currentIndex = index;
 //     });
@@ -155,7 +160,7 @@
 //           child: Row(
 //             children: [
 //               Image.asset(Assets.svgIcons.fire.path, height: 22, width: 22),
-//               SizedBox(width: 6),
+//               const SizedBox(width: 6),
 //               Text('1', style: AppsTextStyles.fullNameAndEmail),
 //             ],
 //           ),
@@ -191,6 +196,7 @@
 //           Expanded(
 //             child: Column(
 //               crossAxisAlignment: CrossAxisAlignment.start,
+//               mainAxisSize: MainAxisSize.min,
 //               children: [
 //                 Text(
 //                   'Ready to make\ntoday count?',
@@ -204,7 +210,13 @@
 //                 const SizedBox(height: 16),
 //                 Row(
 //                   children: [
-//                     Text('Today\'s progress', style: AppsTextStyles.regular16l),
+//                     Flexible(
+//                       child: Text(
+//                         'Today\'s progress',
+//                         style: AppsTextStyles.regular16l,
+//                         overflow: TextOverflow.ellipsis,
+//                       ),
+//                     ),
 //                     const SizedBox(width: 8),
 //                     Text(
 //                       '${(progress * 100).toInt()}%',
@@ -329,12 +341,15 @@
 //     return Row(
 //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //       children: [
-//         const Text(
-//           'Today\'s plan',
-//           style: TextStyle(
-//             fontSize: 24,
-//             fontWeight: FontWeight.bold,
-//             color: Color(0xFF1A1F36),
+//         Text(
+//           'Todays plan',
+//           textAlign: TextAlign.center,
+//           style: GoogleFonts.workSans(
+//             color: const Color(0xFF011F54), // Text-text-default
+//             fontSize: 32,
+//             fontWeight: FontWeight.w800,
+//             height: 1.2,
+//             letterSpacing: -1,
 //           ),
 //         ),
 //         Material(
@@ -349,16 +364,19 @@
 //                 border: Border.all(color: const Color(0xFF5B7EFF), width: 2),
 //                 borderRadius: BorderRadius.circular(24),
 //               ),
-//               child: const Row(
+//               child: Row(
 //                 children: [
 //                   Icon(Icons.add, color: Color(0xFF5B7EFF), size: 20),
 //                   SizedBox(width: 4),
 //                   Text(
 //                     'Add quest',
-//                     style: TextStyle(
-//                       color: Color(0xFF5B7EFF),
-//                       fontWeight: FontWeight.bold,
-//                       fontSize: 14,
+//                     textAlign: TextAlign.center,
+//                     style: GoogleFonts.workSans(
+//                       color: const Color(0xFF4542EB) /* Text-text-primary */,
+//                       fontSize: 18,
+
+//                       fontWeight: FontWeight.w900,
+//                       height: 0.80,
 //                     ),
 //                   ),
 //                 ],
@@ -381,58 +399,126 @@
 //           onEdit: () => (index),
 //           onDelete: () => _deleteTask(index),
 //           onTomorrow: () => _moveToTomorrow(index),
-//           onToggle: () => setState(() {
-//             task.isCompleted = !task.isCompleted;
-//           }),
+//           onToggle: () {
+//             if (mounted) {
+//               setState(() {
+//                 task.isCompleted = !task.isCompleted;
+//               });
+//             }
+//           },
 //         );
 //       }).toList(),
 //     );
 //   }
 
 //   Widget _buildSwipeButton() {
-//     return Material(
-//       color: Colors.transparent,
-//       child: InkWell(
-//         onTap: () {},
-//         borderRadius: BorderRadius.circular(32),
-//         child: Ink(
-//           decoration: BoxDecoration(
-//             gradient: const LinearGradient(
-//               colors: [Color(0xFFFF6B35), Color(0xFFFF8C42)],
+//     return GestureDetector(
+//       onTap: () {},
+//       // child: Container(
+//       //   padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 18),
+//       //   decoration: BoxDecoration(
+//       //     color: Colors.,
+
+//       //   ),
+//       //   child: Row(
+//       //     mainAxisAlignment: MainAxisAlignment.center,
+//       //     children: [
+//       //       Image.asset(
+//       //         Assets.svgIcons.swipeToTalkToFuzzy.path,
+//       //         height: 24,
+//       //         width: 24,
+//       //       ),
+//       //       const SizedBox(width: 12),
+//       //       Text(
+//       //         'Swipe to talk to Fuzzy',
+//       //         textAlign: TextAlign.center,
+//       //         style: GoogleFonts.workSans(
+//       //           color: const Color(0xFF011F54),
+//       //           fontSize: 20,
+//       //           fontWeight: FontWeight.w900,
+//       //           height: 0.8,
+//       //         ),
+//       //       ),
+//       //     ],
+//       //   ),
+//       // ),
+//       child: Container(
+//         height: 80,
+//         width: double.infinity,
+//         padding: const EdgeInsets.only(top: 8, left: 8, right: 24, bottom: 8),
+//         decoration: ShapeDecoration(
+//           color: const Color(0xFFFF8F26),
+//           shape: RoundedRectangleBorder(
+//             borderRadius: BorderRadius.circular(999),
+//           ),
+//           shadows: [
+//             BoxShadow(
+//               color: Color(0x19011F54),
+//               blurRadius: 18,
+//               offset: Offset(2, 10),
+//               spreadRadius: 0,
 //             ),
-//             borderRadius: BorderRadius.circular(32),
-//             boxShadow: [
-//               BoxShadow(
-//                 color: const Color(0xFFFF6B35).withOpacity(0.4),
-//                 blurRadius: 20,
-//                 offset: const Offset(0, 6),
+//           ],
+//         ),
+//         child: Row(
+//           // mainAxisSize: MainAxisSize.min,
+//           // mainAxisAlignment: MainAxisAlignment.start,
+//           // crossAxisAlignment: CrossAxisAlignment.center,
+//           spacing: 12,
+//           children: [
+//             // Container(
+//             //   width: 56,
+//             //   height: 56,
+//             //   padding: const EdgeInsets.all(16),
+//             //   decoration: ShapeDecoration(
+//             //     // color: const Color(0xFF4542EB),
+//             //     shape: RoundedRectangleBorder(
+//             //       borderRadius: BorderRadius.circular(999),
+//             //     ),
+//             //     shadows: [
+//             //       BoxShadow(
+//             //         color: Color(0x19011F54),
+//             //         blurRadius: 18,
+//             //         offset: Offset(2, 10),
+//             //         spreadRadius: 0,
+//             //       ),
+//             //     ],
+//             //   ),
+//             //   child: Row(
+//             //     mainAxisSize: MainAxisSize.min,
+//             //     mainAxisAlignment: MainAxisAlignment.center,
+//             //     crossAxisAlignment: CrossAxisAlignment.center,
+//             //     spacing: 10,
+//             //     children: [Container(width: 24, height: 24, child: Stack())],
+//             //   ),
+//             // ),
+//             Center(
+//               child: Image.asset(
+//                 Assets.svgIcons.swipeToTalkToFuzzy.path,
+//                 height: 70,
+//                 width: 70,
 //               ),
-//             ],
-//           ),
-//           child: Container(
-//             padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 18),
-//             child: const Row(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               children: [
-//                 Icon(Icons.auto_awesome, color: Colors.white, size: 24),
-//                 SizedBox(width: 12),
-//                 Text(
-//                   'Swipe to talk to Fuzzy',
-//                   style: TextStyle(
-//                     fontSize: 17,
-//                     fontWeight: FontWeight.bold,
-//                     color: Colors.white,
-//                   ),
-//                 ),
-//               ],
 //             ),
-//           ),
+//             Text(
+//               'Swipe to talk to Fuzzy',
+//               textAlign: TextAlign.center,
+//               style: GoogleFonts.workSans(
+//                 color: const Color(0xFF011F54),
+//                 fontSize: 20,
+
+//                 fontWeight: FontWeight.w900,
+//                 // height: 0.80,
+//               ),
+//             ),
+//           ],
 //         ),
 //       ),
 //     );
 //   }
 
 //   void _deleteTask(int index) {
+//     if (!mounted) return;
+
 //     final removed = _tasks[index];
 //     setState(() => _tasks.removeAt(index));
 
@@ -440,13 +526,17 @@
 //       context,
 //       child: DeleteToast(
 //         onUndo: () {
-//           setState(() => _tasks.insert(index, removed));
+//           if (mounted) {
+//             setState(() => _tasks.insert(index, removed));
+//           }
 //         },
 //       ),
 //     );
 //   }
 
 //   void _moveToTomorrow(int index) {
+//     if (!mounted) return;
+
 //     final task = _tasks[index];
 //     setState(() => _tasks.removeAt(index));
 
@@ -454,6 +544,8 @@
 //   }
 
 //   void _showCustomToast(BuildContext context, {required Widget child}) {
+//     if (!mounted) return;
+
 //     final overlay = Overlay.of(context);
 //     late OverlayEntry overlayEntry;
 
@@ -764,8 +856,10 @@
 //   void _next() async {
 //     await _fadeController.reverse();
 //     if (_step < _steps.length - 1) {
-//       setState(() => _step++);
-//       _fadeController.forward();
+//       if (mounted) {
+//         setState(() => _step++);
+//         _fadeController.forward();
+//       }
 //     } else {
 //       if (mounted) Navigator.of(context).pop();
 //     }
@@ -804,9 +898,11 @@
 
 //   OnboardingStep({required this.widget, required this.position});
 // }
+
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/custom_code/BottomNav.dart';
@@ -1101,7 +1197,16 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           child: Column(
             children: [
-              Text('Today', style: AppsTextStyles.regular16l),
+              Text(
+                'Today',
+                style: GoogleFonts.workSans(
+                  color: const Color(0xFF011F54),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  height: 1,
+                  letterSpacing: -0.5,
+                ),
+              ),
               const SizedBox(height: 6),
               Text('${now.day}', style: AppsTextStyles.extraBold32Centered),
             ],
@@ -1125,7 +1230,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-          child: Row(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Icon(
@@ -1133,8 +1238,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.white,
                 size: 24,
               ),
-              const SizedBox(width: 8),
-              Text('Plan', style: AppsTextStyles.regular18),
+              const SizedBox(height: 8),
+              Text(
+                'Plan',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.workSans(
+                  color: const Color(0xFFFFFDF7), // Text-text-light
+                  fontSize: 18,
+                  fontWeight: FontWeight.w900,
+                  height: 0.80,
+                ),
+              ),
             ],
           ),
         ),
@@ -1146,12 +1260,15 @@ class _HomeScreenState extends State<HomeScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
-          'Today\'s plan',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF1A1F36),
+        Text(
+          'Todays plan',
+          textAlign: TextAlign.center,
+          style: GoogleFonts.workSans(
+            color: const Color(0xFF011F54), // Text-text-default
+            fontSize: 32,
+            fontWeight: FontWeight.w800,
+            height: 1.2,
+            letterSpacing: -1,
           ),
         ),
         Material(
@@ -1166,16 +1283,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 border: Border.all(color: const Color(0xFF5B7EFF), width: 2),
                 borderRadius: BorderRadius.circular(24),
               ),
-              child: const Row(
+              child: Row(
                 children: [
                   Icon(Icons.add, color: Color(0xFF5B7EFF), size: 20),
                   SizedBox(width: 4),
                   Text(
                     'Add quest',
-                    style: TextStyle(
-                      color: Color(0xFF5B7EFF),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFF4542EB) /* Text-text-primary */,
+                      fontSize: 18,
+
+                      fontWeight: FontWeight.w900,
+                      height: 0.80,
                     ),
                   ),
                 ],
@@ -1211,43 +1331,105 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildSwipeButton() {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: () {},
-        borderRadius: BorderRadius.circular(32),
-        child: Ink(
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [Color(0xFFFF6B35), Color(0xFFFF8C42)],
+    return GestureDetector(
+      onTap: () {},
+      // child: Container(
+      //   padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 18),
+      //   decoration: BoxDecoration(
+      //     color: Colors.,
+
+      //   ),
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Image.asset(
+      //         Assets.svgIcons.swipeToTalkToFuzzy.path,
+      //         height: 24,
+      //         width: 24,
+      //       ),
+      //       const SizedBox(width: 12),
+      //       Text(
+      //         'Swipe to talk to Fuzzy',
+      //         textAlign: TextAlign.center,
+      //         style: GoogleFonts.workSans(
+      //           color: const Color(0xFF011F54),
+      //           fontSize: 20,
+      //           fontWeight: FontWeight.w900,
+      //           height: 0.8,
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+      child: Container(
+        height: 80,
+        width: double.infinity,
+        padding: const EdgeInsets.only(top: 8, left: 8, right: 24, bottom: 8),
+        decoration: ShapeDecoration(
+          color: const Color(0xFFFF8F26),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(999),
+          ),
+          shadows: [
+            BoxShadow(
+              color: Color(0x19011F54),
+              blurRadius: 18,
+              offset: Offset(2, 10),
+              spreadRadius: 0,
             ),
-            borderRadius: BorderRadius.circular(32),
-            boxShadow: [
-              BoxShadow(
-                color: const Color(0xFFFF6B35).withOpacity(0.4),
-                blurRadius: 20,
-                offset: const Offset(0, 6),
+          ],
+        ),
+        child: Row(
+          // mainAxisSize: MainAxisSize.min,
+          // mainAxisAlignment: MainAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          spacing: 12,
+          children: [
+            // Container(
+            //   width: 56,
+            //   height: 56,
+            //   padding: const EdgeInsets.all(16),
+            //   decoration: ShapeDecoration(
+            //     // color: const Color(0xFF4542EB),
+            //     shape: RoundedRectangleBorder(
+            //       borderRadius: BorderRadius.circular(999),
+            //     ),
+            //     shadows: [
+            //       BoxShadow(
+            //         color: Color(0x19011F54),
+            //         blurRadius: 18,
+            //         offset: Offset(2, 10),
+            //         spreadRadius: 0,
+            //       ),
+            //     ],
+            //   ),
+            //   child: Row(
+            //     mainAxisSize: MainAxisSize.min,
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     crossAxisAlignment: CrossAxisAlignment.center,
+            //     spacing: 10,
+            //     children: [Container(width: 24, height: 24, child: Stack())],
+            //   ),
+            // ),
+            Center(
+              child: Image.asset(
+                Assets.svgIcons.swipeToTalkToFuzzy.path,
+                height: 70,
+                width: 70,
               ),
-            ],
-          ),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 18),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.auto_awesome, color: Colors.white, size: 24),
-                SizedBox(width: 12),
-                Text(
-                  'Swipe to talk to Fuzzy',
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
             ),
-          ),
+            Text(
+              'Swipe to talk to Fuzzy',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.workSans(
+                color: const Color(0xFF011F54),
+                fontSize: 20,
+
+                fontWeight: FontWeight.w900,
+                // height: 0.80,
+              ),
+            ),
+          ],
         ),
       ),
     );

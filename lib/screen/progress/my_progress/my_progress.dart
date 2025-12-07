@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/create_qutes.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
@@ -55,6 +56,7 @@ class StreakScreen extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           Container(
+            height: 104,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
             decoration: BoxDecoration(
               color: Color(0xFFFF8F26),
@@ -63,7 +65,7 @@ class StreakScreen extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Image.asset(Assets.svgIcons.fire.path, width: 32, height: 32),
+                Image.asset(Assets.svgIcons.fire.path, width: 44, height: 44),
                 const SizedBox(width: 8),
                 Flexible(
                   child: Text(
@@ -78,15 +80,23 @@ class StreakScreen extends StatelessWidget {
           const SizedBox(height: 20),
           SizedBox(
             width: double.infinity,
+            height: 80,
             child: ElevatedButton.icon(
               onPressed: () {},
-              icon: const Icon(Icons.share, color: Colors.white),
-              label: const Text(
+              // icon: const Icon(Icons.share, color: Colors.white),
+              icon: Image.asset(
+                Assets.svgIcons.shareMySuccess.path,
+                width: 24,
+                height: 24,
+              ),
+              label: Text(
                 'Share',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.workSans(
+                  color: const Color(0xFFFFFDF7) /* Text-text-light */,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w900,
+                  height: 0.80,
                 ),
               ),
               style: ElevatedButton.styleFrom(

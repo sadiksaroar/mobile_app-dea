@@ -27,7 +27,7 @@ class AppsTextStyles {
   );
   static TextStyle haveAnAccount = GoogleFonts.alfaSlabOne(
     fontSize: 20,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w600,
     color: const Color(0xFFFFFEF8),
   );
   static TextStyle appleAndGoogleText = GoogleFonts.alfaSlabOne(
@@ -54,7 +54,7 @@ class AppsTextStyles {
   static TextStyle signupText = GoogleFonts.alfaSlabOne(
     fontWeight: FontWeight.w400, // Regular (400)
     fontStyle: FontStyle.normal,
-    fontSize: 40, // 50px responsive
+    fontSize: 52, // 50px responsive
 
     textStyle: const TextStyle(
       color: Color(0xFF011F54), // Default color (can override)
@@ -64,6 +64,15 @@ class AppsTextStyles {
     fontWeight: FontWeight.w400, // Regular (400)
     fontStyle: FontStyle.normal,
     fontSize: 38, // 50px responsive
+
+    textStyle: const TextStyle(
+      color: Color(0xFF011F54), // Default color (can override)
+    ),
+  );
+  static TextStyle signupText32 = GoogleFonts.alfaSlabOne(
+    fontWeight: FontWeight.w400, // Regular (400)
+    fontStyle: FontStyle.normal,
+    fontSize: 24, // 50px responsive
 
     textStyle: const TextStyle(
       color: Color(0xFF011F54), // Default color (can override)
@@ -176,12 +185,11 @@ class AppsTextStyles {
     color: const Color(0xFF4542EB), // Hex color #4542EB
   );
   static TextStyle resetPassword = GoogleFonts.alfaSlabOne(
-    fontWeight: FontWeight.w400, // Regular (400)
-    fontStyle: FontStyle.normal,
-    fontSize: 35.sp, // 50px responsive
-    textStyle: const TextStyle(
-      color: Color(0xFF011F54), // Default color (can override)
-    ),
+    color: const Color(0xFF011F54), // Background-bg-dark
+    fontSize: 58,
+    fontWeight:
+        FontWeight.w400, // AlfaSlabOne only has one weight, but this is fine
+    height: 0.9,
   );
   static TextStyle sendResetLinkButton = GoogleFonts.workSans(
     fontWeight: FontWeight.w900,

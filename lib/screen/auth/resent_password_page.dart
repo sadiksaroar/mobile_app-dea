@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart' show Assets;
 import 'package:mobile_app_dea/themes/text_styles.dart' show AppsTextStyles;
 
@@ -163,21 +164,30 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
               const SizedBox(height: 20),
 
               // Continue Button
-              SizedBox(
-                width: double.infinity,
-                height: 55,
-                child: ElevatedButton(
-                  onPressed: _isButtonEnabled ? () {} : null,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFFF8F26),
-                    disabledBackgroundColor: const Color(0xFFFF8F26),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+              GestureDetector(
+                onTap: () {
+                  context.push('/enterNewPassword');
+                },
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 55,
+                  child: ElevatedButton(
+                    onPressed: _isButtonEnabled
+                        ? () {
+                            // context.push('/enterNewPassword');
+                          }
+                        : null,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFFF8F26),
+                      disabledBackgroundColor: const Color(0xFFFF8F26),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
                     ),
-                  ),
-                  child: Text(
-                    "Send Reset Link",
-                    style: AppsTextStyles.sendResetLinkButton,
+                    child: Text(
+                      "Send Reset Link",
+                      style: AppsTextStyles.sendResetLinkButton,
+                    ),
                   ),
                 ),
               ),

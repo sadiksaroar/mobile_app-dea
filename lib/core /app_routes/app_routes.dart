@@ -6,6 +6,9 @@ class AppRoutespath {
   static const String signInScreen = '/signInScreen';
   static const String signUpScreen = '/signUpScreen';
   static const String resentPasswordPage = '/resentPasswordPage';
+  static const String passwordUpdatedPopupScreen =
+      '/passwordUpdatedPopupScreen';
+  static const String enterNewPassword = '/enterNewPassword';
 
   // /* onboarding */
 
@@ -37,6 +40,8 @@ class AppRoutespath {
 
   static const String settingsScreen = '/settingsScreen';
   static const String subscriptionPage = '/subscriptionPage';
+  static const String supportScreen = '/supportScreen';
+  static const String supportChatScreen = '/supportChatScreen';
 }
 
 // cl

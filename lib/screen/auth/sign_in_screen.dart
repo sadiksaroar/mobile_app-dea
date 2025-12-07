@@ -512,55 +512,59 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
-
+              const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      "Forgot password?",
-                      style: TextStyle(color: Colors.black87, fontSize: 14),
+                    const Flexible(
+                      child: Text(
+                        "Forgot password?",
+                        style: TextStyle(color: Colors.black87, fontSize: 12),
+                      ),
                     ),
 
                     const SizedBox(width: 10),
 
-                    RichText(
-                      text: TextSpan(
-                        children: [
-                          const TextSpan(
-                            text: "It happens! ",
-                            style: TextStyle(
-                              color: Colors.black87,
-                              fontSize: 14,
-                              decoration: TextDecoration.none, // No underline
+                    Flexible(
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            const TextSpan(
+                              text: "It happens! ",
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 11,
+                                decoration: TextDecoration.none, // No underline
+                              ),
                             ),
-                          ),
-                          WidgetSpan(
-                            alignment: PlaceholderAlignment.middle,
-                            child: GestureDetector(
-                              onTap: () {
-                                context.push("/resentPasswordPage");
-                              },
-                              child: const Text(
-                                "Reset it here.",
-                                style: TextStyle(
-                                  color: Color(0xFF0A214D),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                  decoration: TextDecoration.underline,
+                            WidgetSpan(
+                              alignment: PlaceholderAlignment.middle,
+                              child: GestureDetector(
+                                onTap: () {
+                                  context.push("/resentPasswordPage");
+                                },
+                                child: const Text(
+                                  "Reset it here.",
+                                  style: TextStyle(
+                                    color: Color(0xFF0A214D),
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.bold,
+                                    decoration: TextDecoration.underline,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 30),
+
+              const SizedBox(height: 10),
 
               // Continue Button
               SizedBox(
@@ -611,7 +615,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 text: "Continue with Apple",
               ),
 
-              const SizedBox(height: 140),
+              const SizedBox(height: 100),
 
               // Sign In Text
               Center(

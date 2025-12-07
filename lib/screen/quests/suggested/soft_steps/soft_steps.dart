@@ -547,6 +547,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
+import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 
 class ShuffleScreen extends StatelessWidget {
   const ShuffleScreen({super.key});
@@ -573,8 +574,8 @@ class ShuffleScreen extends StatelessWidget {
                     hardSteps: '10 Hard',
                     imagePath: Assets.svgIcons.moon4.path,
                     emoji: Assets.svgIcons.moonPng_.path,
-                    hardStepsColor: const Color(0xFF8BC34A), // Green
-                    softStepsColor: const Color(0xFF64B5F6), // Blue
+                    hardStepsColor: const Color(0xFF89B6F8), // Green
+                    softStepsColor: AppColorsApps.freshGreen, // Light Green
                   ),
                   const SizedBox(height: 8),
                   RoutineCard(
@@ -586,8 +587,8 @@ class ShuffleScreen extends StatelessWidget {
                     hardSteps: '10 mins',
                     imagePath: Assets.svgIcons.toWakeUp.path,
                     emoji: Assets.svgIcons.sun.path,
-                    hardStepsColor: const Color(0xFFFFB74D), // Orange
-                    softStepsColor: const Color(0xFFBA68C8), // Purple
+                    hardStepsColor: Color(0xFFFFB46E), // Orange
+                    softStepsColor: AppColorsApps.freshGreen, // Purple
                   ),
                   const SizedBox(height: 8),
                   RoutineCard(
@@ -599,8 +600,8 @@ class ShuffleScreen extends StatelessWidget {
                     hardSteps: '10 mins',
                     imagePath: Assets.svgIcons.toWalk.path,
                     emoji: Assets.svgIcons.toWalkIcon.path,
-                    hardStepsColor: const Color(0xFF4FC3F7), // Light Blue
-                    softStepsColor: const Color(0xFFFFD54F), // Amber
+                    hardStepsColor: const Color(0xFFA0E871), // Light Blue
+                    softStepsColor: AppColorsApps.freshGreen, // Amber
                   ),
                   const SizedBox(height: 8),
                   RoutineCard(
@@ -612,8 +613,8 @@ class ShuffleScreen extends StatelessWidget {
                     hardSteps: '10 mins',
                     imagePath: Assets.svgIcons.toStudy.path,
                     emoji: Assets.svgIcons.book.path,
-                    hardStepsColor: const Color(0xFF9575CD), // Deep Purple
-                    softStepsColor: const Color(0xFF81C784), // Light Green
+                    hardStepsColor: const Color(0xFFA9A8F6), // Deep Purple
+                    softStepsColor: AppColorsApps.freshGreen, // Light Green
                   ),
                   const SizedBox(height: 8),
                   RoutineCard(
@@ -625,8 +626,8 @@ class ShuffleScreen extends StatelessWidget {
                     hardSteps: '10 mins',
                     imagePath: Assets.svgIcons.toTrain.path,
                     emoji: Assets.svgIcons.push.path,
-                    hardStepsColor: const Color(0xFFE57373), // Red
-                    softStepsColor: const Color(0xFF4DB6AC), // Teal
+                    hardStepsColor: const Color(0xFFFFCE73), // Red
+                    softStepsColor: AppColorsApps.freshGreen, // Teal
                   ),
                 ],
               ),
@@ -868,10 +869,12 @@ class SleepRoutineCard extends StatelessWidget {
                   ),
                   child: Text(
                     softSteps,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: Colors.white,
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFF011F54), // Text color
+                      fontSize: 18,
                       fontWeight: FontWeight.w600,
+                      height: 1.4,
+                      letterSpacing: -0.9,
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -926,9 +929,11 @@ class RoutineCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // Emoji check - image or text - 64px
-              emoji.contains('.')
-                  ? Image.asset(emoji, width: 64, height: 64)
-                  : Text(emoji, style: const TextStyle(fontSize: 64)),
+              // emoji.contains('.')
+              //     ? Image.asset(emoji, width: 64, height: 64)
+              //     : Text(emoji, style: const TextStyle(fontSize: 64)),
+              Image.asset(emoji, width: 64, height: 64),
+
               Container(
                 padding: const EdgeInsets.all(8),
                 child: Image.asset(
@@ -1050,11 +1055,14 @@ class RoutineCard extends StatelessWidget {
                   ),
                   child: Text(
                     hardSteps,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: Colors.white,
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFF011F54), // Text color
+                      fontSize: 18,
                       fontWeight: FontWeight.w600,
+                      height: 1.4,
+                      letterSpacing: -0.9,
                     ),
+
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
@@ -1072,10 +1080,12 @@ class RoutineCard extends StatelessWidget {
                   ),
                   child: Text(
                     softSteps,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: Colors.white,
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFF011F54), // Text color
+                      fontSize: 18,
                       fontWeight: FontWeight.w600,
+                      height: 1.4,
+                      letterSpacing: -0.9,
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),

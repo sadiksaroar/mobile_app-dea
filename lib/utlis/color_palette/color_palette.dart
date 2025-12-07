@@ -13,4 +13,5 @@ class AppColorsApps {
   static const Color softCream1 = Color(0xFFFFFEF8);
   static const Color skyBlue2 = Color(0xFF599CFE);
   static const Color softIvory = Color(0xFFFFFCF1);
+  static const Color freshGreen = Color(0xFFA0E871);
 }

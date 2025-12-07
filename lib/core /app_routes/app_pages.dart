@@ -8,6 +8,8 @@ import 'package:mobile_app_dea/screen/Onboarding/onboarding_features/onbording_f
 import 'package:mobile_app_dea/screen/Onboarding/onbording_flow_file/onboarding_flow.dart';
 import 'package:mobile_app_dea/screen/ai_call/ai_voice.dart';
 import 'package:mobile_app_dea/screen/ai_call/pop_po_sahre.dart';
+import 'package:mobile_app_dea/screen/auth/enter_new_password.dart';
+import 'package:mobile_app_dea/screen/auth/password_updated_popup_screen.dart';
 import 'package:mobile_app_dea/screen/auth/resent_password_page.dart';
 import 'package:mobile_app_dea/screen/auth/sign_in_screen.dart';
 import 'package:mobile_app_dea/screen/auth/sign_up.dart';
@@ -19,6 +21,8 @@ import 'package:mobile_app_dea/screen/progress/progress.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/create_quets_default.dart';
 import 'package:mobile_app_dea/screen/quests/quests_my_quests_today_emty_state.dart';
 import 'package:mobile_app_dea/screen/reday_to_start_screen_p4.dart';
+import 'package:mobile_app_dea/screen/settings/contact_support/chat_boot/SupportChatScreen.dart';
+import 'package:mobile_app_dea/screen/settings/contact_support/sopprt/support.dart';
 import 'package:mobile_app_dea/screen/settings/setting.dart';
 import 'package:mobile_app_dea/screen/splash.dart';
 import 'package:mobile_app_dea/screen/welcome_activetion_flow/popup_speking.dart';
@@ -60,6 +64,15 @@ class AppPages {
         path: AppRoutespath.resentPasswordPage,
         builder: (context, state) => const ResentPasswordPage(),
       ),
+      GoRoute(
+        path: AppRoutespath.passwordUpdatedPopupScreen,
+        builder: (context, state) => const PasswordUpdatedPopupScreen(),
+      ),
+      GoRoute(
+        path: AppRoutespath.enterNewPassword,
+        builder: (context, state) => const EnterNewPassword(),
+      ),
+
       /* onboarding */
       GoRoute(
         path: AppRoutespath.onboardingFlow,
@@ -165,6 +178,18 @@ class AppPages {
         path: AppRoutespath.subscriptionPage,
         builder: (context, state) {
           return const SubscriptionPage(); // Placeholder for SubscriptionPage
+        },
+      ),
+      GoRoute(
+        path: AppRoutespath.supportScreen,
+        builder: (context, state) {
+          return const SupportScreen(); // Placeholder for SupportScreen
+        },
+      ),
+      GoRoute(
+        path: AppRoutespath.supportChatScreen,
+        builder: (context, state) {
+          return const SupportChatScreen(); // Placeholder for SupportChatScreen
         },
       ),
     ],

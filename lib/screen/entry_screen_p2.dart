@@ -546,6 +546,7 @@ class EntryScreen extends StatelessWidget {
 */
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
@@ -671,8 +672,14 @@ class EntryScreen extends StatelessWidget {
                             context.push("/signInScreen");
                           },
                           child: Text(
-                            "Have an account?",
-                            style: AppsTextStyles.haveAnAccount,
+                            'Have an account?',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.workSans(
+                              color: const Color(0xFFFFFDF7), // Text-text-light
+                              fontSize: 24,
+                              fontWeight: FontWeight.w900,
+                              height: 0.8,
+                            ),
                           ),
                         ),
                       ),
