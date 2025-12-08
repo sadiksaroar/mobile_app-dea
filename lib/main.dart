@@ -1,45 +1,37 @@
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mobile_app_dea/screen/ai_call/ai_voice.dart';
-import 'package:mobile_app_dea/screen/auth/enter_new_password.dart';
-import 'package:mobile_app_dea/screen/home/home_screen.dart';
-import 'package:mobile_app_dea/screen/profile/profile_menu_with_notification/Profile_menu_with_notication.dart';
-import 'package:mobile_app_dea/screen/quests/quests_my_quests_today_emty_state.dart';
-import 'package:mobile_app_dea/screen/remiender_notification/ai_call_remiender/ai_call_remiender.dart';
-import 'package:mobile_app_dea/screen/settings/contact_support/chat_boot/SupportChatScreen.dart';
-import 'package:mobile_app_dea/screen/settings/contact_support/sopprt/support.dart';
+// import 'package:device_preview/device_preview.dart';
+// import 'package:flutter/foundation.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:mobile_app_dea/screen/welcome_activetion_flow/subscription_popup%20.dart';
+// import 'package:mobile_app_dea/screen/remiender_notification/ai_call_remiender/ai_call_remiender.dart';
 
-void main() {
-  runApp(DevicePreview(enabled: !kReleaseMode, builder: (context) => MyApp()));
-}
+// void main() {
+//   runApp(DevicePreview(enabled: !kReleaseMode, builder: (context) => MyApp()));
+// }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      builder: (context, child) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        useInheritedMediaQuery: true,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        ),
+//   @override
+//   Widget build(BuildContext context) {
+//     return ScreenUtilInit(
+//       designSize: const Size(375, 812),
+//       builder: (context, child) => MaterialApp(
+//         debugShowCheckedModeBanner: false,
+//         useInheritedMediaQuery: true,
+//         title: 'Flutter Demo',
+//         theme: ThemeData(
+//           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+//         ),
 
-        // 🔥 FIXED HERE — choose any enum value
-        home: AiCallRemiender(),
+//         // 🔥 FIXED HERE — choose any enum value
+//         home: AiCallRemiender(),
 
-        builder: DevicePreview.appBuilder,
-      ),
-    );
-  }
-}
+//         builder: DevicePreview.appBuilder,
+//       ),
+//     );
+//   }
+// }
 /*
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -76,8 +68,6 @@ class MyApp extends StatelessWidget {
 }
 */
 
-/*
-
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -85,17 +75,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core%20/app_routes/app_pages.dart';
 
-void main() {
-  runApp(
-    DevicePreview(
-      enabled: !kReleaseMode, // Enable only in development mode
-      builder: (context) => MyApp(), // Wrap the app in DevicePreview
-    ),
-  );
-}
 // void main() {
-//   runApp(MyApp());
+//   runApp(
+//     DevicePreview(
+//       enabled: !kReleaseMode, // Enable only in development mode
+//       builder: (context) => MyApp(), // Wrap the app in DevicePreview
+//     ),
+//   );
 // }
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -121,4 +111,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-*/

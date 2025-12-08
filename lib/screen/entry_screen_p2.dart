@@ -558,40 +558,38 @@ class EntryScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Background Image with Zoom Feature
-          Positioned.fill(
-            child: InteractiveViewer(
-              minScale: 0.50,
-              maxScale: 0.50,
-              boundaryMargin: const EdgeInsets.all(0),
-              panEnabled: false,
-              scaleEnabled: false,
-              child: Image.asset(
-                Assets.svgImages.deaMagi.path,
-                fit: BoxFit.cover,
-              ),
+          // Background Image - Fixed to top
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            // height: MediaQuery.of(context).size.height * 0.50,
+            child: Image.asset(
+              Assets.svgImages.enttryTwoScrenn.path,
+              width: double.infinity,
+              fit: BoxFit.cover,
             ),
           ),
 
           // Logo overlay on top
-          Positioned(
-            top: 60,
-            left: 0,
-            right: 0,
-            child: Center(
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 8,
-                ),
-                child: Assets.svgIcons.nowlnLogo.svg(
-                  width: 140,
-                  height: 80,
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-          ),
+          // Positioned(
+          //   top: 30,
+          //   left: 0,
+          //   right: 0,
+          //   child: Center(
+          //     child: Container(
+          //       padding: const EdgeInsets.symmetric(
+          //         horizontal: 20,
+          //         vertical: 8,
+          //       ),
+          //       child: Assets.svgIcons.nowlnLogo.svg(
+          //         width: 140,
+          //         height: 80,
+          //         fit: BoxFit.contain,
+          //       ),
+          //     ),
+          //   ),
+          // ),
 
           // Bottom rounded container with content
           Positioned(
@@ -620,22 +618,22 @@ class EntryScreen extends StatelessWidget {
                     children: [
                       /// Heading
                       Text(
-                        "LET'S GET THINGS DONE.",
+                        "LET'S GET \nTHINGS DONE.",
                         style: AppsTextStyles.alfaSlabTitleEntryScreen,
                       ),
-                      const SizedBox(height: 10.0),
+                      const SizedBox(height: 8.0),
 
                       /// Subtitle
                       Text(
                         "Your daily push to start - with real voice support.",
                         style: AppsTextStyles.workSansBodyEntryScreen,
                       ),
-                      const SizedBox(height: 40.0),
+                      const SizedBox(height: 10.0),
 
                       /// Get Started Button
                       SizedBox(
                         width: double.infinity,
-                        height: 80,
+                        height: 70,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFFFF8A00),
@@ -652,12 +650,12 @@ class EntryScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 20.0),
+                      const SizedBox(height: 8.0),
 
                       /// Have an Account Button
                       SizedBox(
                         width: double.infinity,
-                        height: 80,
+                        height: 70,
                         child: OutlinedButton(
                           style: OutlinedButton.styleFrom(
                             side: const BorderSide(
@@ -675,7 +673,7 @@ class EntryScreen extends StatelessWidget {
                             'Have an account?',
                             textAlign: TextAlign.center,
                             style: GoogleFonts.workSans(
-                              color: const Color(0xFFFFFDF7), // Text-text-light
+                              color: const Color(0xFFFFFDF7),
                               fontSize: 24,
                               fontWeight: FontWeight.w900,
                               height: 0.8,

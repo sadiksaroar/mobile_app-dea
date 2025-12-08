@@ -6,18 +6,18 @@ import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 class AppsTextStyles {
   static TextStyle alfaSlabTitleEntryScreen = GoogleFonts.alfaSlabOne(
     color: Colors.white,
-    fontSize: 32,
-    fontWeight: FontWeight.w400,
-    height: 0.90,
+    fontSize: 35,
+    fontWeight: FontWeight.w700,
+    height: 1,
     fontStyle: FontStyle.normal,
   );
 
   static TextStyle workSansBodyEntryScreen = GoogleFonts.workSans(
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
-    fontSize: 18,
+    fontSize: 16,
     height: 1.4,
-    color: Colors.white,
+    color: const Color(0xFFC8CBD2) /* Text-text-primary-light */,
   );
 
   static TextStyle getStarted = GoogleFonts.alfaSlabOne(
@@ -186,7 +186,7 @@ class AppsTextStyles {
   );
   static TextStyle resetPassword = GoogleFonts.alfaSlabOne(
     color: const Color(0xFF011F54), // Background-bg-dark
-    fontSize: 58,
+    fontSize: 48,
     fontWeight:
         FontWeight.w400, // AlfaSlabOne only has one weight, but this is fine
     height: 0.9,
@@ -281,10 +281,10 @@ class AppsTextStyles {
     color: const Color(0xFF011F54), // #011F54
   );
   static final TextStyle regular32Uppercase = GoogleFonts.alfaSlabOne(
-    fontWeight: FontWeight.w400, // Regular
-    fontSize: 32,
-    height: 0.8, // line-height 80%
-    letterSpacing: 0.02 * 32, // 2% of font size
+    fontWeight: FontWeight.w600, // Regular
+    fontSize: 27,
+    height: 0.95, // line-height 80%
+    letterSpacing: 0.7, // 2% of font size
     // Flutter-এ text-transform নেই, তাই Text widget-এ uppercase ব্যবহার করতে হবে
     color: Color(0xFF011F54), // চাইলে তোমার color বসাও
   );

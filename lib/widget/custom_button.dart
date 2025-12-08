@@ -20,8 +20,8 @@ class CustomNextButton extends StatelessWidget {
     this.iconPath,
     this.textStyle,
     this.gradientColors,
-    this.height = 90,
-    this.borderRadius = 30,
+    this.height = 110,
+    this.borderRadius = 60,
     this.padding = const EdgeInsets.symmetric(horizontal: 24.0),
   }) : super(key: key);
 
@@ -65,7 +65,7 @@ class CustomNextButton extends StatelessWidget {
                         textStyle ??
                         const TextStyle(
                           color: Colors.white,
-                          fontSize: 18,
+                          fontSize: 28,
                           fontWeight: FontWeight.bold,
                         ),
                   ),
@@ -76,13 +76,13 @@ class CustomNextButton extends StatelessWidget {
                     top: 8,
                     bottom: 8,
                     child: Container(
-                      width: 44,
-                      height: 44,
+                      width: 60,
+                      height: 60,
                       decoration: const BoxDecoration(
                         color: Color(0xFF1A1A40),
                         shape: BoxShape.circle,
                       ),
-                      child: SvgPicture.asset(iconPath!, width: 44, height: 44),
+                      child: SvgPicture.asset(iconPath!, width: 60, height: 60),
                     ),
                   ),
               ],

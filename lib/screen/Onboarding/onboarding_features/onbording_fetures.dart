@@ -155,29 +155,15 @@ class OnbordingFetures extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SvgPicture.asset(svgPath, width: 108, height: 108),
+          SvgPicture.asset(svgPath, width: 97, height: 97),
           const SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  title,
-                  style:
-                      AppsTextStyles.regular32Uppercase ??
-                      const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1.2,
-                      ),
-                ),
+                Text(title, style: AppsTextStyles.regular32Uppercase),
                 const SizedBox(height: 4),
-                Text(
-                  description,
-                  style:
-                      AppsTextStyles.regular16l ??
-                      const TextStyle(fontSize: 14, color: Colors.white),
-                ),
+                Text(description, style: AppsTextStyles.regular16l),
               ],
             ),
           ),
