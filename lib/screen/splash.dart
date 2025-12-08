@@ -26,7 +26,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
 
     _scaleAnimation = Tween<double>(begin: 0.8, end: 1.2).animate(_controller);
 
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(Duration(seconds: 4), () {
       // Navigate to the next screen after the splash duration
       if (mounted) {
         context.go('/entryScreen');
@@ -51,11 +51,11 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
             return Transform.scale(scale: _scaleAnimation.value, child: child);
           },
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(25), // Rounded border radius
+            borderRadius: BorderRadius.circular(50), // Rounded border radius
             child: SvgPicture.asset(
               'assets/svg_images/App Icon.svg', // Your SVG image
-              width: 102, // Adjust the width as needed
-              height: 77, // Adjust the height as needed
+              width: 154, // Adjust the width as needed
+              height: 154, // Adjust the height as needed
             ),
           ),
         ),
