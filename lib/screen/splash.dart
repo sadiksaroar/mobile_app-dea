@@ -26,7 +26,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
 
     _scaleAnimation = Tween<double>(begin: 0.8, end: 1.2).animate(_controller);
 
-    Future.delayed(Duration(seconds: 4), () {
+    Future.delayed(Duration(seconds: 15), () {
       // Navigate to the next screen after the splash duration
       if (mounted) {
         context.go('/entryScreen');

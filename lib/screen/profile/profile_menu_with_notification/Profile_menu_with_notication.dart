@@ -605,13 +605,22 @@ Widget _buildProfileSection(BuildContext context) {
                   // Name Badge
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      SizedBox(width: 8),
+                    children: [
+                      Image.asset(
+                        Assets.svgIcons.fireTab.path,
+                        height: 20,
+                        width: 20,
+                      ),
+                      const SizedBox(width: 8),
+
                       Text(
                         '1 day streak',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
+                        style: GoogleFonts.workSans(
+                          color: const Color(0xFF011F54), // Text-text-default
+                          fontSize: 20,
+                          fontWeight: FontWeight.w800,
+                          height: 1.20,
+                          letterSpacing: -0.50,
                         ),
                       ),
                     ],
@@ -621,13 +630,21 @@ Widget _buildProfileSection(BuildContext context) {
                   // Quests Active
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      SizedBox(width: 8),
+                    children: [
+                      Image.asset(
+                        Assets.svgIcons.magicWand.path,
+                        height: 20,
+                        width: 20,
+                      ),
+                      const SizedBox(width: 8),
                       Text(
                         '32 quests active',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
+                        style: GoogleFonts.workSans(
+                          color: const Color(0xFF011F54), // Text-text-default
+                          fontSize: 20,
+                          fontWeight: FontWeight.w800,
+                          height: 1.20,
+                          letterSpacing: -0.50,
                         ),
                       ),
                     ],

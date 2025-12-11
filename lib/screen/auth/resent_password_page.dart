@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart' show Assets;
 import 'package:mobile_app_dea/themes/text_styles.dart' show AppsTextStyles;
 
@@ -123,6 +124,26 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
                 ],
               ),
               Text("Reset Password", style: AppsTextStyles.resetPassword),
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 16,
+                children: [
+                  Text(
+                    'Don’t worry. It happens to the best of us. Enter your email to get back on track.',
+                    style: GoogleFonts.workSans(
+                      color: const Color(
+                        0xFF595754,
+                      ), // Text-text-secondary-default
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      height: 1.40,
+                      letterSpacing: -0.50,
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: 10),
               // 📧 Email Field
               TextFormField(

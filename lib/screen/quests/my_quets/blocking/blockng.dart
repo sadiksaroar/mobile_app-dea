@@ -417,10 +417,10 @@
 //     );
 //   }
 // }
-import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class Blockng extends StatefulWidget {
@@ -572,6 +572,7 @@ class _BlockngState extends State<Blockng> {
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: Container(
+                  decoration: BoxDecoration(),
                   padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: DropdownButtonHideUnderline(
                     child: DropdownButton<String>(
@@ -603,13 +604,21 @@ class _BlockngState extends State<Blockng> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                child: Text(
-                  "Clear all",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.blue.shade700,
-                  ),
+                child: Row(
+                  children: [
+                    Image.asset(Assets.svgIcons.x.path, height: 20, width: 20),
+                    SizedBox(width: 6),
+                    Text(
+                      'Clear all',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF4542EB), // Text-text-primary
+                        fontSize: 18,
+                        fontWeight: FontWeight.w900,
+                        height: 0.80,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -805,8 +814,14 @@ class QuestCard extends StatelessWidget {
                     ),
                     alignment: Alignment.center,
                     child: Text(
-                      "Actually, I did this",
-                      style: AppsTextStyles.workSansBlack18CenterBlue,
+                      'Actually, I did this',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF4542EB), // Text-primary
+                        fontSize: 16,
+                        fontWeight: FontWeight.w900,
+                        height: 0.80,
+                      ),
                     ),
                   ),
                 ),
@@ -825,8 +840,14 @@ class QuestCard extends StatelessWidget {
                     ),
                     alignment: Alignment.center,
                     child: Text(
-                      "Skip",
-                      style: AppsTextStyles.workSansBlack18CenterBlue,
+                      'Skip',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF4542EB), // Text-primary
+                        fontSize: 16,
+                        fontWeight: FontWeight.w900,
+                        height: 0.80,
+                      ),
                     ),
                   ),
                 ),

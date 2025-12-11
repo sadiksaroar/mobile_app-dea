@@ -1726,7 +1726,7 @@ class _InsightsScreenState extends State<InsightsScreen> {
                             Text(
                               'Sunday',
                               style: TextStyle(
-                                fontSize: 28,
+                                fontSize: 24,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
@@ -1757,7 +1757,7 @@ class _InsightsScreenState extends State<InsightsScreen> {
                             Text(
                               '10:00',
                               style: TextStyle(
-                                fontSize: 28,
+                                fontSize: 24,
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xFF5B5FFF),
                               ),

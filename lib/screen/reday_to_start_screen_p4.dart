@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
@@ -60,7 +61,13 @@ class ReadyToStartScreen extends StatelessWidget {
                   icon: Assets.svgIcons.googleIcon.svg(height: 24, width: 24),
                   label: Text(
                     'Continue with Google',
-                    style: AppsTextStyles.haveAnAccount,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFFFFFDF7), // Text-light
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                      height: 0.80,
+                    ),
                   ),
                   onPressed: () {},
                 ),
@@ -81,8 +88,14 @@ class ReadyToStartScreen extends StatelessWidget {
                   ),
                   icon: Assets.svgIcons.appleIcon.svg(height: 24, width: 24),
                   label: Text(
-                    'Continue with Apple',
-                    style: AppsTextStyles.appleAndGoogleText,
+                    'Continue with Google',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFFFFFDF7), // Text-light
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                      height: 0.80,
+                    ),
                   ),
                   onPressed: () {},
                 ),

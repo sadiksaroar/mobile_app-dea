@@ -1,6 +1,7 @@
 // import 'package:flutter/material.dart';
 // import 'package:google_fonts/google_fonts.dart';
 // import 'package:mobile_app_dea/core/gen/assets.gen.dart';
+// import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 
 // class ShuffleScreen extends StatelessWidget {
 //   const ShuffleScreen({super.key});
@@ -27,6 +28,8 @@
 //                     hardSteps: '10 Hard',
 //                     imagePath: Assets.svgIcons.moon4.path,
 //                     emoji: Assets.svgIcons.moonPng_.path,
+//                     hardStepsColor: const Color(0xFF89B6F8), // Green
+//                     softStepsColor: AppColorsApps.freshGreen, // Light Green
 //                   ),
 //                   const SizedBox(height: 8),
 //                   RoutineCard(
@@ -38,6 +41,8 @@
 //                     hardSteps: '10 mins',
 //                     imagePath: Assets.svgIcons.toWakeUp.path,
 //                     emoji: Assets.svgIcons.sun.path,
+//                     hardStepsColor: Color(0xFFFFB46E), // Orange
+//                     softStepsColor: AppColorsApps.freshGreen, // Purple
 //                   ),
 //                   const SizedBox(height: 8),
 //                   RoutineCard(
@@ -49,6 +54,8 @@
 //                     hardSteps: '10 mins',
 //                     imagePath: Assets.svgIcons.toWalk.path,
 //                     emoji: Assets.svgIcons.toWalkIcon.path,
+//                     hardStepsColor: const Color(0xFFA0E871), // Light Blue
+//                     softStepsColor: AppColorsApps.freshGreen, // Amber
 //                   ),
 //                   const SizedBox(height: 8),
 //                   RoutineCard(
@@ -60,6 +67,8 @@
 //                     hardSteps: '10 mins',
 //                     imagePath: Assets.svgIcons.toStudy.path,
 //                     emoji: Assets.svgIcons.book.path,
+//                     hardStepsColor: const Color(0xFFA9A8F6), // Deep Purple
+//                     softStepsColor: AppColorsApps.freshGreen, // Light Green
 //                   ),
 //                   const SizedBox(height: 8),
 //                   RoutineCard(
@@ -71,6 +80,8 @@
 //                     hardSteps: '10 mins',
 //                     imagePath: Assets.svgIcons.toTrain.path,
 //                     emoji: Assets.svgIcons.push.path,
+//                     hardStepsColor: const Color(0xFFFFCE73), // Red
+//                     softStepsColor: AppColorsApps.freshGreen, // Teal
 //                   ),
 //                 ],
 //               ),
@@ -98,18 +109,17 @@
 //         child: Row(
 //           mainAxisAlignment: MainAxisAlignment.center,
 //           children: [
-//             // Icon(Icons.shuffle, size: 20, color: Color(0xFF333333)),
 //             Image.asset(
 //               Assets.svgIcons.shuffle.path,
 //               width: 20,
 //               height: 20,
-//               color: const Color(0xFF011F54), // Icon color
+//               color: const Color(0xFF011F54),
 //             ),
 //             SizedBox(width: 8),
 //             Text(
 //               'Shuffle',
 //               style: GoogleFonts.workSans(
-//                 color: const Color(0xFF011F54), // Text color
+//                 color: const Color(0xFF011F54),
 //                 fontSize: 18,
 //                 fontWeight: FontWeight.w900,
 //                 height: 0.8,
@@ -131,6 +141,8 @@
 //   final String hardSteps;
 //   final String imagePath;
 //   final String emoji;
+//   final Color hardStepsColor;
+//   final Color softStepsColor;
 
 //   const SleepRoutineCard({
 //     Key? key,
@@ -141,6 +153,8 @@
 //     required this.hardSteps,
 //     required this.imagePath,
 //     required this.emoji,
+//     required this.hardStepsColor,
+//     required this.softStepsColor,
 //   }) : super(key: key);
 
 //   @override
@@ -158,15 +172,8 @@
 //           Row(
 //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             children: [
-//               // Emoji image display
-//               Image.asset(
-//                 emoji,
-//                 width: 40,
-//                 height: 40,
-//                 errorBuilder: (context, error, stackTrace) {
-//                   return const Text('🌙', style: TextStyle(fontSize: 24));
-//                 },
-//               ),
+//               // Emoji image display - 64px
+//               Image.asset(emoji, width: 64, height: 64),
 //               Container(
 //                 padding: const EdgeInsets.all(8),
 //                 decoration: BoxDecoration(
@@ -255,7 +262,6 @@
 //                           time,
 //                           style: const TextStyle(
 //                             fontSize: 12,
-//                             // color: Colors.white,
 //                             fontWeight: FontWeight.w500,
 //                           ),
 //                           overflow: TextOverflow.ellipsis,
@@ -290,7 +296,7 @@
 //                     vertical: 6,
 //                   ),
 //                   decoration: BoxDecoration(
-//                     color: const Color(0xFF8BC34A),
+//                     color: hardStepsColor,
 //                     borderRadius: BorderRadius.circular(12),
 //                   ),
 //                   child: Text(
@@ -312,17 +318,17 @@
 //                     vertical: 6,
 //                   ),
 //                   decoration: BoxDecoration(
-//                     color: const Color(
-//                       0xFF8BC34A,
-//                     ), // Changed from Colors.white.withOpacity(0.3)
+//                     color: softStepsColor,
 //                     borderRadius: BorderRadius.circular(12),
 //                   ),
 //                   child: Text(
 //                     softSteps,
-//                     style: const TextStyle(
-//                       fontSize: 12,
-//                       color: Colors.white,
+//                     style: GoogleFonts.workSans(
+//                       color: const Color(0xFF011F54), // Text color
+//                       fontSize: 18,
 //                       fontWeight: FontWeight.w600,
+//                       height: 1.4,
+//                       letterSpacing: -0.9,
 //                     ),
 //                     overflow: TextOverflow.ellipsis,
 //                   ),
@@ -345,6 +351,8 @@
 //   final String hardSteps;
 //   final String imagePath;
 //   final String emoji;
+//   final Color hardStepsColor;
+//   final Color softStepsColor;
 
 //   const RoutineCard({
 //     Key? key,
@@ -355,6 +363,8 @@
 //     required this.hardSteps,
 //     required this.imagePath,
 //     required this.emoji,
+//     required this.hardStepsColor,
+//     required this.softStepsColor,
 //   }) : super(key: key);
 
 //   @override
@@ -372,17 +382,12 @@
 //           Row(
 //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             children: [
-//               // Emoji check - image or text
-//               emoji.contains('.')
-//                   ? Image.asset(
-//                       emoji,
-//                       width: 40,
-//                       height: 40,
-//                       errorBuilder: (context, error, stackTrace) {
-//                         return const Text('📱', style: TextStyle(fontSize: 48));
-//                       },
-//                     )
-//                   : Text(emoji, style: const TextStyle(fontSize: 48)),
+//               // Emoji check - image or text - 64px
+//               // emoji.contains('.')
+//               //     ? Image.asset(emoji, width: 64, height: 64)
+//               //     : Text(emoji, style: const TextStyle(fontSize: 64)),
+//               Image.asset(emoji, width: 64, height: 64),
+
 //               Container(
 //                 padding: const EdgeInsets.all(8),
 //                 child: Image.asset(
@@ -499,16 +504,19 @@
 //                     vertical: 6,
 //                   ),
 //                   decoration: BoxDecoration(
-//                     color: const Color(0xFF8BC34A),
+//                     color: hardStepsColor,
 //                     borderRadius: BorderRadius.circular(12),
 //                   ),
 //                   child: Text(
 //                     hardSteps,
-//                     style: const TextStyle(
-//                       fontSize: 12,
-//                       color: Colors.white,
+//                     style: GoogleFonts.workSans(
+//                       color: const Color(0xFF011F54), // Text color
+//                       fontSize: 18,
 //                       fontWeight: FontWeight.w600,
+//                       height: 1.4,
+//                       letterSpacing: -0.9,
 //                     ),
+
 //                     overflow: TextOverflow.ellipsis,
 //                   ),
 //                 ),
@@ -521,17 +529,17 @@
 //                     vertical: 6,
 //                   ),
 //                   decoration: BoxDecoration(
-//                     color: const Color(
-//                       0xFF8BC34A,
-//                     ), // Changed from Colors.white.withOpacity(0.3)
+//                     color: softStepsColor,
 //                     borderRadius: BorderRadius.circular(12),
 //                   ),
 //                   child: Text(
 //                     softSteps,
-//                     style: const TextStyle(
-//                       fontSize: 12,
-//                       color: Colors.white,
+//                     style: GoogleFonts.workSans(
+//                       color: const Color(0xFF011F54), // Text color
+//                       fontSize: 18,
 //                       fontWeight: FontWeight.w600,
+//                       height: 1.4,
+//                       letterSpacing: -0.9,
 //                     ),
 //                     overflow: TextOverflow.ellipsis,
 //                   ),
@@ -564,7 +572,6 @@ class ShuffleScreen extends StatelessWidget {
               child: ListView(
                 padding: const EdgeInsets.all(16),
                 children: [
-                  // Special "To sleep" card with different design
                   SleepRoutineCard(
                     title: 'To sleep',
                     description:
@@ -574,8 +581,8 @@ class ShuffleScreen extends StatelessWidget {
                     hardSteps: '10 Hard',
                     imagePath: Assets.svgIcons.moon4.path,
                     emoji: Assets.svgIcons.moonPng_.path,
-                    hardStepsColor: const Color(0xFF89B6F8), // Green
-                    softStepsColor: AppColorsApps.freshGreen, // Light Green
+                    hardStepsColor: const Color(0xFF89B6F8),
+                    softStepsColor: AppColorsApps.freshGreen,
                   ),
                   const SizedBox(height: 8),
                   RoutineCard(
@@ -587,8 +594,8 @@ class ShuffleScreen extends StatelessWidget {
                     hardSteps: '10 mins',
                     imagePath: Assets.svgIcons.toWakeUp.path,
                     emoji: Assets.svgIcons.sun.path,
-                    hardStepsColor: Color(0xFFFFB46E), // Orange
-                    softStepsColor: AppColorsApps.freshGreen, // Purple
+                    hardStepsColor: const Color(0xFFFFB46E),
+                    softStepsColor: AppColorsApps.freshGreen,
                   ),
                   const SizedBox(height: 8),
                   RoutineCard(
@@ -600,8 +607,8 @@ class ShuffleScreen extends StatelessWidget {
                     hardSteps: '10 mins',
                     imagePath: Assets.svgIcons.toWalk.path,
                     emoji: Assets.svgIcons.toWalkIcon.path,
-                    hardStepsColor: const Color(0xFFA0E871), // Light Blue
-                    softStepsColor: AppColorsApps.freshGreen, // Amber
+                    hardStepsColor: const Color(0xFFA0E871),
+                    softStepsColor: AppColorsApps.freshGreen,
                   ),
                   const SizedBox(height: 8),
                   RoutineCard(
@@ -613,8 +620,8 @@ class ShuffleScreen extends StatelessWidget {
                     hardSteps: '10 mins',
                     imagePath: Assets.svgIcons.toStudy.path,
                     emoji: Assets.svgIcons.book.path,
-                    hardStepsColor: const Color(0xFFA9A8F6), // Deep Purple
-                    softStepsColor: AppColorsApps.freshGreen, // Light Green
+                    hardStepsColor: const Color(0xFFA9A8F6),
+                    softStepsColor: AppColorsApps.freshGreen,
                   ),
                   const SizedBox(height: 8),
                   RoutineCard(
@@ -626,8 +633,8 @@ class ShuffleScreen extends StatelessWidget {
                     hardSteps: '10 mins',
                     imagePath: Assets.svgIcons.toTrain.path,
                     emoji: Assets.svgIcons.push.path,
-                    hardStepsColor: const Color(0xFFFFCE73), // Red
-                    softStepsColor: AppColorsApps.freshGreen, // Teal
+                    hardStepsColor: const Color(0xFFFFCE73),
+                    softStepsColor: AppColorsApps.freshGreen,
                   ),
                 ],
               ),
@@ -645,10 +652,7 @@ class ShuffleScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
-            side: BorderSide(
-              width: 2,
-              color: const Color(0xFF011F54) /* Border-border-dark */,
-            ),
+            side: const BorderSide(width: 2, color: Color(0xFF011F54)),
             borderRadius: BorderRadius.circular(999),
           ),
         ),
@@ -661,7 +665,7 @@ class ShuffleScreen extends StatelessWidget {
               height: 20,
               color: const Color(0xFF011F54),
             ),
-            SizedBox(width: 8),
+            const SizedBox(width: 8),
             Text(
               'Shuffle',
               style: GoogleFonts.workSans(
@@ -678,7 +682,6 @@ class ShuffleScreen extends StatelessWidget {
   }
 }
 
-// Special card for "To sleep" routine
 class SleepRoutineCard extends StatelessWidget {
   final String title;
   final String description;
@@ -718,7 +721,6 @@ class SleepRoutineCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Emoji image display - 64px
               Image.asset(emoji, width: 64, height: 64),
               Container(
                 padding: const EdgeInsets.all(8),
@@ -808,6 +810,7 @@ class SleepRoutineCard extends StatelessWidget {
                           time,
                           style: const TextStyle(
                             fontSize: 12,
+                            color: Colors.white,
                             fontWeight: FontWeight.w500,
                           ),
                           overflow: TextOverflow.ellipsis,
@@ -870,11 +873,11 @@ class SleepRoutineCard extends StatelessWidget {
                   child: Text(
                     softSteps,
                     style: GoogleFonts.workSans(
-                      color: const Color(0xFF011F54), // Text color
-                      fontSize: 18,
+                      color: const Color(0xFF011F54),
+                      fontSize: 14,
                       fontWeight: FontWeight.w600,
-                      height: 1.4,
-                      letterSpacing: -0.9,
+                      height: 1.2,
+                      letterSpacing: -0.5,
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -888,7 +891,6 @@ class SleepRoutineCard extends StatelessWidget {
   }
 }
 
-// Regular routine card for other routines
 class RoutineCard extends StatelessWidget {
   final String title;
   final String description;
@@ -928,12 +930,7 @@ class RoutineCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Emoji check - image or text - 64px
-              // emoji.contains('.')
-              //     ? Image.asset(emoji, width: 64, height: 64)
-              //     : Text(emoji, style: const TextStyle(fontSize: 64)),
               Image.asset(emoji, width: 64, height: 64),
-
               Container(
                 padding: const EdgeInsets.all(8),
                 child: Image.asset(
@@ -955,7 +952,7 @@ class RoutineCard extends StatelessWidget {
               letterSpacing: -1,
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 6),
           Row(
             children: [
               Flexible(
@@ -979,10 +976,10 @@ class RoutineCard extends StatelessWidget {
                           'Today',
                           style: GoogleFonts.workSans(
                             color: const Color(0xFF011F54),
-                            fontSize: 18,
+                            fontSize: 14,
                             fontWeight: FontWeight.w600,
-                            height: 1.4,
-                            letterSpacing: -0.9,
+                            height: 1.2,
+                            letterSpacing: -0.5,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -1013,10 +1010,10 @@ class RoutineCard extends StatelessWidget {
                           time,
                           style: GoogleFonts.workSans(
                             color: const Color(0xFF011F54),
-                            fontSize: 18,
+                            fontSize: 14,
                             fontWeight: FontWeight.w600,
-                            height: 1.4,
-                            letterSpacing: -0.9,
+                            height: 1.2,
+                            letterSpacing: -0.5,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -1027,14 +1024,14 @@ class RoutineCard extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 10),
           Text(
             description,
             style: GoogleFonts.workSans(
               color: const Color(0xFF4C586E),
-              fontSize: 18,
+              fontSize: 16,
               fontWeight: FontWeight.w400,
-              height: 1.4,
+              height: 1.3,
               letterSpacing: -0.5,
             ),
             maxLines: 2,
@@ -1056,13 +1053,12 @@ class RoutineCard extends StatelessWidget {
                   child: Text(
                     hardSteps,
                     style: GoogleFonts.workSans(
-                      color: const Color(0xFF011F54), // Text color
-                      fontSize: 18,
+                      color: const Color(0xFF011F54),
+                      fontSize: 14,
                       fontWeight: FontWeight.w600,
-                      height: 1.4,
-                      letterSpacing: -0.9,
+                      height: 1.2,
+                      letterSpacing: -0.5,
                     ),
-
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
@@ -1081,11 +1077,11 @@ class RoutineCard extends StatelessWidget {
                   child: Text(
                     softSteps,
                     style: GoogleFonts.workSans(
-                      color: const Color(0xFF011F54), // Text color
-                      fontSize: 18,
+                      color: const Color(0xFF011F54),
+                      fontSize: 14,
                       fontWeight: FontWeight.w600,
-                      height: 1.4,
-                      letterSpacing: -0.9,
+                      height: 1.2,
+                      letterSpacing: -0.5,
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),

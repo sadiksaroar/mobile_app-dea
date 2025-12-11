@@ -101,35 +101,6 @@ class Animation extends StatelessWidget {
               ),
             ),
 
-            // SizedBox(
-            //   width: double.infinity,
-            //   height: 104,
-            //   child: ElevatedButton(
-            //     style: ElevatedButton.styleFrom(
-            //       backgroundColor: Colors.orange[400],
-            //       shape: RoundedRectangleBorder(
-            //         borderRadius: BorderRadius.circular(50),
-            //       ),
-            //     ),
-            //     onPressed: () {
-            //       context.push("/onboardingScreen");
-            //     },
-            //     child: Row(
-            //       mainAxisAlignment: MainAxisAlignment.center,
-            //       children: [
-            //         Center(
-            //           child: Text("Next", style: AppsTextStyles.letsStartNext),
-            //         ),
-            //         const SizedBox(width: 60),
-            //         SvgPicture.asset(
-            //           Assets.svgIcons.startLetsGo.path,
-            //           width: 90,
-            //           height: 90,
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // ),
             CustomNextButton(
               isEnabled: true,
               onTap: () {

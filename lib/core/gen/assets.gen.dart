@@ -386,6 +386,9 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/When.png
   AssetGenImage get whenPng => const AssetGenImage('assets/svg_icons/When.png');
 
+  /// File path: assets/svg_icons/X.png
+  AssetGenImage get x => const AssetGenImage('assets/svg_icons/X.png');
+
   /// File path: assets/svg_icons/YesterdayBack.png
   AssetGenImage get yesterdayBack =>
       const AssetGenImage('assets/svg_icons/YesterdayBack.png');
@@ -638,6 +641,7 @@ class $AssetsSvgIconsGen {
     useMyDataToImproveAI,
     voicePersonality,
     whenPng,
+    x,
     yesterdayBack,
     appleIconSignIn,
     arrowback,

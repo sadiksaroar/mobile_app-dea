@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
@@ -454,7 +455,7 @@ class _NameSelectionPageState extends State<NameSelectionPage>
               Center(
                 child: SizedBox(
                   width: 320,
-                  height: 70,
+                  height: 50,
                   child: OutlinedButton.icon(
                     onPressed: _showCustomNameInput,
                     icon: Image.asset(
@@ -464,7 +465,13 @@ class _NameSelectionPageState extends State<NameSelectionPage>
                     ),
                     label: Text(
                       'Choose your own name',
-                      style: AppsTextStyles.workSansSemiBold16,
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF011F54), // Text-text-default
+                        fontSize: 18,
+                        fontWeight: FontWeight.w900,
+                        height: 0.80,
+                      ),
                     ),
                     style: OutlinedButton.styleFrom(
                       foregroundColor: AppColorsApps.darkBlue,
@@ -473,7 +480,7 @@ class _NameSelectionPageState extends State<NameSelectionPage>
                         width: 2,
                       ),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(24),
+                        borderRadius: BorderRadius.circular(50),
                       ),
                       padding: const EdgeInsets.symmetric(
                         horizontal: 16,
@@ -511,37 +518,11 @@ class _NameSelectionPageState extends State<NameSelectionPage>
                 ),
               ),
               const SizedBox(height: 16),
-              // Center(
-              //   child: OutlinedButton.icon(
-              //     onPressed: () {
-              //       setState(() {
-              //         _showTextField = false;
-              //         if (_nameController.text.trim().isEmpty) {
-              //           widget.onNameSelected(
-              //             avatars[_currentAvatarIndex].name,
-              //           );
-              //         }
-              //       });
-              //     },
-              //     icon: const Icon(Icons.check, size: 18),
-              //     label: const Text('Confirm Name'),
-              //     style: OutlinedButton.styleFrom(
-              //       foregroundColor: const Color(0xFF1E293B),
-              //       side: const BorderSide(color: Color(0xFF1E293B), width: 2),
-              //       shape: RoundedRectangleBorder(
-              //         borderRadius: BorderRadius.circular(24),
-              //       ),
-              //       padding: const EdgeInsets.symmetric(
-              //         horizontal: 20,
-              //         vertical: 12,
-              //       ),
-              //     ),
-              //   ),
-              // ),
+
               Center(
                 child: SizedBox(
                   width: 320,
-                  height: 70,
+                  height: 50,
                   child: OutlinedButton.icon(
                     onPressed: _showCustomNameInput,
                     icon: Image.asset(
@@ -551,7 +532,13 @@ class _NameSelectionPageState extends State<NameSelectionPage>
                     ),
                     label: Text(
                       'Choose your own name',
-                      style: AppsTextStyles.workSansSemiBold16,
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF011F54), // Text-text-default
+                        fontSize: 18,
+                        fontWeight: FontWeight.w900,
+                        height: 0.80,
+                      ),
                     ),
                     style: OutlinedButton.styleFrom(
                       foregroundColor: AppColorsApps.darkBlue,
@@ -560,7 +547,7 @@ class _NameSelectionPageState extends State<NameSelectionPage>
                         width: 2,
                       ),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(24),
+                        borderRadius: BorderRadius.circular(50),
                       ),
                       padding: const EdgeInsets.symmetric(
                         horizontal: 16,

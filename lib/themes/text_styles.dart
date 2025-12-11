@@ -239,8 +239,15 @@ class AppsTextStyles {
   // ignore: non_constant_identifier_names
   static final TextStyle SaimTitle = GoogleFonts.alfaSlabOne(
     fontWeight: FontWeight.w400, // Regular
-    fontSize: 52,
-    height: 0.8, // 80%
+    fontSize: 38,
+    height: 1, // 80%
+    letterSpacing: 0,
+    color: const Color(0xFF011F54),
+  );
+  static final TextStyle SaimTitle28 = GoogleFonts.alfaSlabOne(
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 36,
+    height: 1, // 80%
     letterSpacing: 0,
     color: const Color(0xFF011F54),
   );
