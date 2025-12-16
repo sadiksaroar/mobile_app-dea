@@ -2,8 +2,7 @@
 // import 'package:flutter/foundation.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-// import 'package:mobile_app_dea/screen/remiender_notification/ai_call_remiender/ai_call_remiender.dart';
+// import 'package:mobile_app_dea/screen/Onboarding/onboarding_features/animation.dart';
 
 // void main() {
 //   runApp(DevicePreview(enabled: !kReleaseMode, builder: (context) => MyApp()));
@@ -25,7 +24,7 @@
 //         ),
 
 //         // 🔥 FIXED HERE — choose any enum value
-//         home: AiCallRemiender(),
+//         home: NowliOnboardingScreen(),
 
 //         builder: DevicePreview.appBuilder,
 //       ),

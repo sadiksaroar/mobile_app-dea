@@ -691,6 +691,9 @@ class $AssetsSvgIconsGen {
 class $AssetsSvgImagesGen {
   const $AssetsSvgImagesGen();
 
+  /// File path: assets/svg_images/A.png
+  AssetGenImage get a => const AssetGenImage('assets/svg_images/A.png');
+
   /// File path: assets/svg_images/Android App Icon - Squircle.png
   AssetGenImage get androidAppIconSquircle =>
       const AssetGenImage('assets/svg_images/Android App Icon - Squircle.png');
@@ -699,9 +702,24 @@ class $AssetsSvgImagesGen {
   SvgGenImage get appIcon =>
       const SvgGenImage('assets/svg_images/App Icon.svg');
 
+  /// File path: assets/svg_images/B.png
+  AssetGenImage get b => const AssetGenImage('assets/svg_images/B.png');
+
   /// File path: assets/svg_images/Button Calendar.png
   AssetGenImage get buttonCalendar =>
       const AssetGenImage('assets/svg_images/Button Calendar.png');
+
+  /// File path: assets/svg_images/C.png
+  AssetGenImage get c => const AssetGenImage('assets/svg_images/C.png');
+
+  /// File path: assets/svg_images/D.png
+  AssetGenImage get d => const AssetGenImage('assets/svg_images/D.png');
+
+  /// File path: assets/svg_images/E.png
+  AssetGenImage get e => const AssetGenImage('assets/svg_images/E.png');
+
+  /// File path: assets/svg_images/F.png
+  AssetGenImage get f => const AssetGenImage('assets/svg_images/F.png');
 
   /// File path: assets/svg_images/Frame 2147228547.svg
   SvgGenImage get frame2147228547 =>
@@ -796,9 +814,15 @@ class $AssetsSvgImagesGen {
 
   /// List of all assets
   List<dynamic> get values => [
+    a,
     androidAppIconSquircle,
     appIcon,
+    b,
     buttonCalendar,
+    c,
+    d,
+    e,
+    f,
     frame2147228547,
     popupChooseMoodUpdates,
     popupSpeaking,
