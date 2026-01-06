@@ -20,7 +20,7 @@ class CustomNextButton extends StatelessWidget {
     this.iconPath,
     this.textStyle,
     this.gradientColors,
-    this.height = 110,
+    this.height = 100,
     this.borderRadius = 60,
     this.padding = const EdgeInsets.symmetric(horizontal: 24.0),
   }) : super(key: key);
