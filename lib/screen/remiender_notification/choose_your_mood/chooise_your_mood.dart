@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:mobile_app_dea/screen/remiender_notification/choose_your_mood/loader.dart';
 
@@ -113,7 +112,7 @@ class _ChooiseYourMoodState extends State<ChooiseYourMood> {
                           width: 34 * baseScale,
                           height: 34 * baseScale,
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.8),
+                            color: Colors.white.withValues(alpha: 0.8),
                             shape: BoxShape.circle,
                           ),
                           child: Center(
@@ -320,15 +319,14 @@ class MoodButton extends StatelessWidget {
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.08),
-                    offset: const Offset(0, 6),
+                    color: Colors.black.withValues(alpha: 0.08),
                     blurRadius: 18,
                   ),
                 ]
               : [],
           border: isSelected
               ? Border.all(
-                  color: AppColors.primary.withOpacity(0.95),
+                  color: AppColors.primary.withValues(alpha: 0.95),
                   width: 1.8,
                 )
               : null,

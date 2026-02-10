@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/create_qutes.dart'
     show AppTextStylesQutes;
-import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class WhenCard extends StatefulWidget {
   final double scale;
 
-  const WhenCard({Key? key, this.scale = 1.0}) : super(key: key);
+  const WhenCard({super.key, this.scale = 1.0});
 
   @override
-  _WhenCardState createState() => _WhenCardState();
+  State<WhenCard> createState() => _WhenCardState();
 }
 
 class _WhenCardState extends State<WhenCard> {

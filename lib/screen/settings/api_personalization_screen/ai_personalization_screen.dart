@@ -252,7 +252,7 @@ import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 
 class AIPersonalizationScreen extends StatefulWidget {
-  const AIPersonalizationScreen({Key? key}) : super(key: key);
+  const AIPersonalizationScreen({super.key});
 
   @override
   State<AIPersonalizationScreen> createState() =>
@@ -265,12 +265,14 @@ class _AIPersonalizationScreenState extends State<AIPersonalizationScreen> {
   void _showClearMemoryDialog(BuildContext context) async {
     final confirmed = await ClearMemoryPopup.show(context);
     if (confirmed == true) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('AI Memory cleared successfully'),
-          backgroundColor: Color(0xFFE53935),
-        ),
-      );
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('AI Memory cleared successfully'),
+            backgroundColor: Color(0xFFE53935),
+          ),
+        );
+      }
     }
   }
 
@@ -337,9 +339,11 @@ class _AIPersonalizationScreenState extends State<AIPersonalizationScreen> {
                         context,
                       );
                       if (selectedVoice != null) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Selected: $selectedVoice')),
-                        );
+                        if (context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text('Selected: $selectedVoice')),
+                          );
+                        }
                       }
                     },
                     hasArrow: true,
@@ -357,13 +361,15 @@ class _AIPersonalizationScreenState extends State<AIPersonalizationScreen> {
                         context,
                       );
                       if (selectedTopics != null) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              'Selected ${selectedTopics.length} topics',
+                        if (context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Selected ${selectedTopics.length} topics',
+                              ),
                             ),
-                          ),
-                        );
+                          );
+                        }
                       }
                     },
                     hasArrow: true,
@@ -414,11 +420,9 @@ class _AIPersonalizationScreenState extends State<AIPersonalizationScreen> {
     bool switchValue = false,
     ValueChanged<bool>? onSwitchChanged,
     Color? iconColor,
-    Color? titleColor,
   }) {
     final defaultColor = const Color(0xFF1E3A8A);
     final effectiveIconColor = iconColor ?? defaultColor;
-    final effectiveTitleColor = titleColor ?? defaultColor;
 
     Widget content = Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
@@ -457,8 +461,8 @@ class _AIPersonalizationScreenState extends State<AIPersonalizationScreen> {
             Switch(
               value: switchValue,
               onChanged: onSwitchChanged,
-              activeColor: Colors.white,
               activeTrackColor: const Color(0xFF4C3EDD),
+              activeThumbColor: Colors.white,
               inactiveThumbColor: Colors.white,
               inactiveTrackColor: const Color(0xFFD1D5DB),
             ),

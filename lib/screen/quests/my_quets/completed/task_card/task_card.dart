@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:mobile_app_dea/screen/remiender_notification/choose_your_mood/chooise_your_mood.dart';
+
 import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 
@@ -300,7 +300,7 @@ class _TaskCardState extends State<TaskCard> {
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
-                    color: widget.levelColor.withOpacity(0.2),
+                    color: widget.levelColor.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
@@ -361,10 +361,7 @@ class _TaskCardState extends State<TaskCard> {
                     _showPopup(context);
                   },
                   style: OutlinedButton.styleFrom(
-                    side: const BorderSide(
-                      color: const Color(0xFF4542EB),
-                      width: 2,
-                    ),
+                    side: BorderSide(color: const Color(0xFF4542EB), width: 2),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),
                     ),

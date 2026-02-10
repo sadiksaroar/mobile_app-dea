@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SubscriptionScreen extends StatelessWidget {
   final SubscriptionType type;
 
-  const SubscriptionScreen({Key? key, required this.type}) : super(key: key);
+  const SubscriptionScreen({super.key, required this.type});
 
   @override
   Widget build(BuildContext context) {

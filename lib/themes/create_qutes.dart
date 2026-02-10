@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStylesQutes {
-  static TextStyle alfaSlabOneTitle = GoogleFonts.alfaSlabOne(
+  static TextStyle alfaSlabOneTitle = const TextStyle(
+    fontFamily: 'Wosker',
     fontWeight: FontWeight.w400, // font-weight: 400
     fontSize: 52, // font-size: 52px
     height: 0.8, // line-height: 80%
     letterSpacing: 0, // letter-spacing: 0%
-    color: const Color(0xFF011F54), // Text-text-default
+    color: Color(0xFF011F54), // Text-text-default
   );
-  static TextStyle alfaSlabOneTitle42 = GoogleFonts.alfaSlabOne(
+  static TextStyle alfaSlabOneTitle42 = const TextStyle(
+    fontFamily: 'Wosker',
     fontWeight: FontWeight.w400, // font-weight: 400
     fontSize: 42, // font-size: 42px
     height: 0.8, // line-height: 80%
     letterSpacing: 0, // letter-spacing: 0%
-    color: const Color(0xFF011F54), // Text-text-default
+    color: Color(0xFF011F54), // Text-text-default
   );
 
   static TextStyle workSansBody18 = GoogleFonts.workSans(
@@ -80,8 +82,8 @@ class AppTextStylesQutes {
     letterSpacing: 0, // 0px
     color: const Color(0xFF595754), // #595754
   );
-  static TextStyle woskerRegular52 = GoogleFonts.alfaSlabOne(
-    // fontFamily: 'Wosker', // Custom font
+  static TextStyle woskerRegular52 = const TextStyle(
+    fontFamily: 'Wosker', // Custom font
     fontWeight: FontWeight.w600, // Regular
     fontSize: 42, // 52px
     height: 0.8, // 80%

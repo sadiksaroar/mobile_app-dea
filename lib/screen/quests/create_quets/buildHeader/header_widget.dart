@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 
 class HeaderWidget extends StatelessWidget {
   final double scale;
@@ -7,11 +6,11 @@ class HeaderWidget extends StatelessWidget {
   final VoidCallback? onMicPressed;
 
   const HeaderWidget({
-    Key? key,
+    super.key,
     this.scale = 1.0,
     this.onBackPressed,
     this.onMicPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -121,7 +121,7 @@ import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class ClearMemoryPopup extends StatelessWidget {
-  const ClearMemoryPopup({Key? key}) : super(key: key);
+  const ClearMemoryPopup({super.key});
 
   static Future<bool?> show(BuildContext context) {
     return showModalBottomSheet<bool>(

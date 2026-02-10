@@ -59,10 +59,10 @@
 //         children: [
 //           Text(
 //             "Let's get to know each other!",
-//             style: AppsTextStyles.PasswordDescription,
+//             style: AppsTextStyles.passwordDescription,
 //           ),
 //           const SizedBox(height: 16),
-//           Text('WHAT SHOULD NOWLII CALL YOU?', style: AppsTextStyles.SaimTitle),
+//           Text('WHAT SHOULD NOWLII CALL YOU?', style: AppsTextStyles.saimTitle),
 //           const SizedBox(height: 32),
 
 //           // 🔹 TextField with focus tracking
@@ -121,11 +121,11 @@ class NamePage extends StatefulWidget {
   final String initialName;
 
   const NamePage({
-    Key? key,
+    super.key,
     required this.onContinue,
     required this.onNameChanged,
     required this.initialName,
-  }) : super(key: key);
+  });
 
   @override
   State<NamePage> createState() => _NamePageState();
@@ -180,12 +180,12 @@ class _NamePageState extends State<NamePage> {
           children: [
             Text(
               "Let's get to know each other!",
-              style: AppsTextStyles.PasswordDescription,
+              style: AppsTextStyles.passwordDescription,
             ),
             const SizedBox(height: 16),
             Text(
               'WHAT SHOULD NOWLII CALL YOU?',
-              style: AppsTextStyles.SaimTitle,
+              style: AppsTextStyles.saimTitle,
             ),
             const SizedBox(height: 32),
 

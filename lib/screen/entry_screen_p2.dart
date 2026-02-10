@@ -48,7 +48,8 @@
 //                       /// Heading
 //                       Text(
 //                         "LET’S GET\nTHINGS DONE.",
-//                         // style: GoogleFonts.alfaSlabOne(
+//                         // style: const TextStyle(
+//                         //   fontFamily: 'Wosker',
 //                         //   color: Colors.white,
 //                         //   fontSize: 28.sp,
 //                         //   height: 1.2,
@@ -551,7 +552,7 @@ import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class EntryScreen extends StatelessWidget {
-  const EntryScreen({Key? key}) : super(key: key);
+  const EntryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -617,16 +618,30 @@ class EntryScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       /// Heading
-                      Text(
-                        "LET'S GET \nTHINGS DONE.",
-                        style: AppsTextStyles.alfaSlabTitleEntryScreen,
+                      SizedBox(
+                        width: 335,
+                        child: Text(
+                          'LET’S GET THINGS DONE.',
+                          style: TextStyle(
+                            color: const Color(
+                              0xFFFFFDF7,
+                            ) /* Text-text-light */,
+                            fontSize: 52,
+                            fontFamily: 'Wosker',
+                            fontWeight: FontWeight.w400,
+                            height: 0.80,
+                          ),
+                        ),
                       ),
                       const SizedBox(height: 8.0),
 
                       /// Subtitle
-                      Text(
-                        "Your daily push to start - with real voice support.",
-                        style: AppsTextStyles.workSansBodyEntryScreen,
+                      SizedBox(
+                        width: 335,
+                        child: Text(
+                          "Your daily push to start - with real voice support.",
+                          style: AppsTextStyles.workSansBodyEntryScreen,
+                        ),
                       ),
                       const SizedBox(height: 10.0),
 
@@ -645,8 +660,14 @@ class EntryScreen extends StatelessWidget {
                             context.push("/welcomeScreen");
                           },
                           child: Text(
-                            "Get Started",
-                            style: AppsTextStyles.getStarted,
+                            'Get Started',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.workSans(
+                              color: const Color(0xFF011F54),
+                              fontSize: 24,
+                              fontWeight: FontWeight.w900,
+                              height: 0.8,
+                            ),
                           ),
                         ),
                       ),

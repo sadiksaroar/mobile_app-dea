@@ -48,7 +48,7 @@ class SuccessTueast extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 spacing: 10,
-                children: [Container(width: 24, height: 24, child: Stack())],
+                children: [SizedBox(width: 24, height: 24, child: Stack())],
               ),
             ),
             Expanded(
@@ -102,7 +102,7 @@ class SuccessTueast extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       spacing: 8,
                       children: [
-                        Container(width: 18, height: 18, child: Stack()),
+                        SizedBox(width: 18, height: 18, child: Stack()),
                         Text(
                           'See progress',
                           textAlign: TextAlign.center,

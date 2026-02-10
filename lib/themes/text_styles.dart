@@ -4,14 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 
 class AppsTextStyles {
-  static TextStyle alfaSlabTitleEntryScreen = GoogleFonts.alfaSlabOne(
-    color: Colors.white,
-    fontSize: 35,
-    fontWeight: FontWeight.w700,
-    height: 1,
-    fontStyle: FontStyle.normal,
-  );
-
   static TextStyle workSansBodyEntryScreen = GoogleFonts.workSans(
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
@@ -20,21 +12,25 @@ class AppsTextStyles {
     color: const Color(0xFFC8CBD2) /* Text-text-primary-light */,
   );
 
-  static TextStyle getStarted = GoogleFonts.alfaSlabOne(
+  static TextStyle getStarted = const TextStyle(
+    fontFamily: 'Wosker',
     fontSize: 20,
     fontWeight: FontWeight.w700,
-    color: const Color(0xFF011F54),
+    color: Color(0xFF011F54),
   );
-  static TextStyle haveAnAccount = GoogleFonts.alfaSlabOne(
+  static TextStyle haveAnAccount = const TextStyle(
+    fontFamily: 'Wosker',
     fontSize: 20,
     fontWeight: FontWeight.w600,
-    color: const Color(0xFFFFFEF8),
+    color: Color(0xFFFFFEF8),
   );
-  static TextStyle appleAndGoogleText = GoogleFonts.alfaSlabOne(
+  static TextStyle appleAndGoogleText = TextStyle(
+    fontFamily: 'Wosker',
     fontSize: 12.sp,
     color: const Color(0xFFFFFEF8),
   );
-  static TextStyle readyToStart = GoogleFonts.alfaSlabOne(
+  static TextStyle readyToStart = TextStyle(
+    fontFamily: 'Wosker',
     // fontSize: 10,
     fontSize: 14.sp,
     color: const Color(0xFFFFFEF8),
@@ -51,42 +47,34 @@ class AppsTextStyles {
     decoration: TextDecoration.underline,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle signupText = GoogleFonts.alfaSlabOne(
+  static TextStyle signupText = const TextStyle(
+    fontFamily: 'Wosker',
     fontWeight: FontWeight.w400, // Regular (400)
     fontStyle: FontStyle.normal,
     fontSize: 52, // 50px responsive
-
-    textStyle: const TextStyle(
-      color: Color(0xFF011F54), // Default color (can override)
-    ),
+    color: Color(0xFF011F54), // Default color (can override)
   );
-  static TextStyle signupText28 = GoogleFonts.alfaSlabOne(
+  static TextStyle signupText28 = const TextStyle(
+    fontFamily: 'Wosker',
     fontWeight: FontWeight.w400, // Regular (400)
     fontStyle: FontStyle.normal,
     fontSize: 38, // 50px responsive
-
-    textStyle: const TextStyle(
-      color: Color(0xFF011F54), // Default color (can override)
-    ),
+    color: Color(0xFF011F54), // Default color (can override)
   );
-  static TextStyle signupText32 = GoogleFonts.alfaSlabOne(
+  static TextStyle signupText32 = const TextStyle(
+    fontFamily: 'Wosker',
     fontWeight: FontWeight.w400, // Regular (400)
     fontStyle: FontStyle.normal,
     fontSize: 24, // 50px responsive
-
-    textStyle: const TextStyle(
-      color: Color(0xFF011F54), // Default color (can override)
-    ),
+    color: Color(0xFF011F54), // Default color (can override)
   );
 
-  static TextStyle signInText = GoogleFonts.alfaSlabOne(
+  static TextStyle signInText = TextStyle(
+    fontFamily: 'Wosker',
     fontWeight: FontWeight.w400, // Regular (400)
     fontStyle: FontStyle.normal,
     fontSize: 40.sp, // 50px responsive
-
-    textStyle: const TextStyle(
-      color: Color(0xFF011F54), // Default color (can override)
-    ),
+    color: const Color(0xFF011F54), // Default color (can override)
   );
 
   static TextStyle fullNameAndEmail = GoogleFonts.workSans(
@@ -128,21 +116,23 @@ class AppsTextStyles {
     letterSpacing: 0, // 0px
     color: const Color(0xFF4542EB), // Hex color #4542EB
   );
-  static TextStyle googleContinueButton32 = GoogleFonts.alfaSlabOne(
+  static TextStyle googleContinueButton32 = const TextStyle(
+    fontFamily: 'Wosker',
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
     fontSize: 32,
     height: 0.8, // Line-height 80%
     letterSpacing: 0, // 0px
-    color: const Color(0xFF4542EB), // Hex color #4542EB
+    color: Color(0xFF4542EB), // Hex color #4542EB
   );
-  static TextStyle googleContinueButton52 = GoogleFonts.alfaSlabOne(
+  static TextStyle googleContinueButton52 = const TextStyle(
+    fontFamily: 'Wosker',
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
     fontSize: 52,
     height: 0.8, // Line-height 80%
     letterSpacing: 0, // 0px
-    color: const Color(0xFF4542EB), // Hex color #4542EB
+    color: Color(0xFF4542EB), // Hex color #4542EB
   );
   static final TextStyle workSansSemiBold16 = GoogleFonts.workSans(
     fontWeight: FontWeight.w700, // SemiBold
@@ -184,8 +174,9 @@ class AppsTextStyles {
     letterSpacing: -0.5, // -0.5px
     color: const Color(0xFF4542EB), // Hex color #4542EB
   );
-  static TextStyle resetPassword = GoogleFonts.alfaSlabOne(
-    color: const Color(0xFF011F54), // Background-bg-dark
+  static TextStyle resetPassword = const TextStyle(
+    fontFamily: 'Wosker',
+    color: Color(0xFF011F54), // Background-bg-dark
     fontSize: 48,
     fontWeight:
         FontWeight.w400, // AlfaSlabOne only has one weight, but this is fine
@@ -215,21 +206,21 @@ class AppsTextStyles {
     letterSpacing: -0.5, // -0.5px
     color: const Color(0xFFFF8F26), // #4542EB
   );
-  static final TextStyle PasswordUpdate = GoogleFonts.workSans(
+  static final TextStyle passwordUpdate = GoogleFonts.workSans(
     fontWeight: FontWeight.w800, // ExtraBold
     fontSize: 20,
     height: 1.2, // 120%
     letterSpacing: -0.02 * 20, // -2%
     color: const Color(0xFF011F54),
   );
-  static final TextStyle PasswordUpdateSub = GoogleFonts.workSans(
+  static final TextStyle passwordUpdateSub = GoogleFonts.workSans(
     fontWeight: FontWeight.w400, // Regular
     fontSize: 16,
     height: 1.32, // 132%
     letterSpacing: -0.05 * 16, // -5%
     color: const Color(0xFF4C586E),
   );
-  static final TextStyle PasswordDescription = GoogleFonts.workSans(
+  static final TextStyle passwordDescription = GoogleFonts.workSans(
     fontWeight: FontWeight.w400, // Regular
     fontSize: 16,
     height: 1.4, // 140%
@@ -237,28 +228,32 @@ class AppsTextStyles {
     color: const Color(0xFF4C586E),
   );
   // ignore: non_constant_identifier_names
-  static final TextStyle SaimTitle = GoogleFonts.alfaSlabOne(
+  static const TextStyle saimTitle = TextStyle(
+    fontFamily: 'Wosker',
     fontWeight: FontWeight.w400, // Regular
     fontSize: 38,
     height: 1, // 80%
     letterSpacing: 0,
-    color: const Color(0xFF011F54),
+    color: Color(0xFF011F54),
   );
-  static final TextStyle SaimTitle28 = GoogleFonts.alfaSlabOne(
+  static const TextStyle saimTitle28 = TextStyle(
+    fontFamily: 'Wosker',
     fontWeight: FontWeight.w400, // Regular
     fontSize: 36,
     height: 1, // 80%
     letterSpacing: 0,
-    color: const Color(0xFF011F54),
+    color: Color(0xFF011F54),
   );
-  static final TextStyle SaimTitle44 = GoogleFonts.alfaSlabOne(
+  static const TextStyle saimTitle44 = TextStyle(
+    fontFamily: 'Wosker',
     fontWeight: FontWeight.w400, // Regular
     fontSize: 44,
     height: 0.8, // 80%
     letterSpacing: 0,
-    color: const Color(0xFF011F54),
+    color: Color(0xFF011F54),
   );
-  static final TextStyle alphaTitle = GoogleFonts.alfaSlabOne(
+  static const TextStyle alphaTitle = TextStyle(
+    fontFamily: 'Wosker',
     // fontFamily: 'AlfaSlabOne',
     fontWeight: FontWeight.w400, // Regular
     fontSize: 44,
@@ -266,14 +261,15 @@ class AppsTextStyles {
     letterSpacing: 0, // 0%
     color: Color(0xFFA9A8F6), // #A9A8F6
   );
-  static final TextStyle typeSomeThingHere = GoogleFonts.alfaSlabOne(
+  static const TextStyle typeSomeThingHere = TextStyle(
+    fontFamily: 'Wosker',
     fontWeight: FontWeight.w400, // Regular
     fontSize: 32,
     height: 0.8, // 80%
     letterSpacing: 0, // 0%
-    color: const Color(0xFF869CBB),
+    color: Color(0xFF869CBB),
   );
-  static final TextStyle WorkSansRegular14 = GoogleFonts.workSans(
+  static final TextStyle workSansRegular14 = GoogleFonts.workSans(
     fontWeight: FontWeight.w400, // Regular
     fontSize: 14,
     height: 1.6, // 160%
@@ -287,7 +283,8 @@ class AppsTextStyles {
     letterSpacing: -1,
     color: const Color(0xFF011F54), // #011F54
   );
-  static final TextStyle regular32Uppercase = GoogleFonts.alfaSlabOne(
+  static const TextStyle regular32Uppercase = TextStyle(
+    fontFamily: 'Wosker',
     fontWeight: FontWeight.w600, // Regular
     fontSize: 27,
     height: 0.95, // line-height 80%
@@ -297,17 +294,18 @@ class AppsTextStyles {
   );
   static final TextStyle regular16l = GoogleFonts.workSans(
     fontWeight: FontWeight.w400, // Regular
-    fontSize: 16,
-    height: 1.4, // line-height: 140%
-    letterSpacing: -0.5,
-    color: const Color(0xFF011F54), // #011F54
-  );
-  static final TextStyle letsStartNext = GoogleFonts.alfaSlabOne(
-    fontWeight: FontWeight.w400, // Regular
     fontSize: 20,
     height: 1.4, // line-height: 140%
     letterSpacing: -0.5,
     color: const Color(0xFF011F54), // #011F54
+  );
+  static const TextStyle letsStartNext = TextStyle(
+    fontFamily: 'Wosker',
+    fontWeight: FontWeight.w400, // Regular
+    fontSize: 20,
+    height: 1.4, // line-height: 140%
+    letterSpacing: -0.5,
+    color: Color(0xFF011F54), // #011F54
   );
   static final TextStyle black24Uppercase = GoogleFonts.workSans(
     fontWeight: FontWeight.w900, // Black
@@ -318,7 +316,7 @@ class AppsTextStyles {
   );
   static final TextStyle extraBold16 = GoogleFonts.workSans(
     fontWeight: FontWeight.w800, // ExtraBold
-    fontSize: 16,
+    fontSize: 14,
     height: 1.4, // line-height: 140%
     letterSpacing: -0.5, // -0.5px
     color: const Color(0xFF011F54), // #011F54
@@ -346,7 +344,7 @@ class AppsTextStyles {
   );
   static final TextStyle semiBold18 = GoogleFonts.workSans(
     fontWeight: FontWeight.w600, // SemiBold
-    fontSize: 18,
+    fontSize: 22,
     height: 1.4, // line-height: 140%
     letterSpacing: -0.5, // -0.5px
     color: const Color(0xFFFFFCF1), // #FFFCF1
@@ -361,13 +359,14 @@ class AppsTextStyles {
     color: AppColorsApps.lightBlueBackground,
   );
 
-  static final TextStyle kSettingsTitleStyle = GoogleFonts.alfaSlabOne(
+  static const TextStyle kSettingsTitleStyle = TextStyle(
+    fontFamily: 'Wosker',
     fontSize: 24,
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
     height: 0.8, // 80% line height
     letterSpacing: 0,
-    textStyle: const TextStyle(color: Color(0xFFFFFEF8)),
+    color: Color(0xFFFFFEF8),
   );
   static final TextStyle textDefaultStyle = GoogleFonts.workSans(
     fontWeight: FontWeight.w800, // ExtraBold
@@ -450,7 +449,8 @@ class AppsTextStyles {
     double screenWidth = MediaQuery.of(context).size.width;
     double fontSize = screenWidth * 0.06; // screen width এর 6% ধরে font size
 
-    return GoogleFonts.alfaSlabOne(
+    return TextStyle(
+      fontFamily: 'Wosker',
       fontWeight: FontWeight.w400,
       fontSize: fontSize,
       height: 0.8,

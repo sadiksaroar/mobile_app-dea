@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TomorrowCard extends StatelessWidget {
-  const TomorrowCard({Key? key}) : super(key: key);
+  const TomorrowCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class TomorrowCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 20,
             offset: const Offset(0, 4),
           ),

@@ -5,10 +5,10 @@ import 'package:mobile_app_dea/themes/create_qutes.dart';
 class SelectZoneCard extends StatefulWidget {
   final double scale;
 
-  const SelectZoneCard({Key? key, this.scale = 1.0}) : super(key: key);
+  const SelectZoneCard({super.key, this.scale = 1.0});
 
   @override
-  _SelectZoneCardState createState() => _SelectZoneCardState();
+  State<SelectZoneCard> createState() => _SelectZoneCardState();
 }
 
 class _SelectZoneCardState extends State<SelectZoneCard> {
@@ -133,7 +133,7 @@ class _SelectZoneCardState extends State<SelectZoneCard> {
 }
 
 class DesignScreen extends StatelessWidget {
-  const DesignScreen({Key? key}) : super(key: key);
+  const DesignScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -173,7 +173,7 @@ class DesignScreen extends StatelessWidget {
 
 class BulletText extends StatelessWidget {
   final String text;
-  const BulletText(this.text, {Key? key}) : super(key: key);
+  const BulletText(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {

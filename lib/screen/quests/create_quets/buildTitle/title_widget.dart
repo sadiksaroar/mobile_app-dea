@@ -83,11 +83,11 @@ class TitleWidget extends StatelessWidget {
   final VoidCallback? onBackPressed;
   final VoidCallback? onMicPressed;
   const TitleWidget({
-    Key? key,
+    super.key,
     this.scale = 1.0,
     this.onBackPressed,
     this.onMicPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -107,11 +107,11 @@ class TitleWidget extends StatelessWidget {
                 context.pop("");
               },
               child: CircleAvatar(
-                radius: 18 * scale,
+                // radius: 10 * scale,
                 child: Image.asset(
                   Assets.svgIcons.settingsBackIcon.path,
-                  // height: 32,
-                  // width: 32,
+                  height: 50,
+                  width: 50,
                 ),
               ),
             ),
@@ -144,7 +144,7 @@ class TitleWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10 * scale),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.08),
+                      color: Colors.black.withValues(alpha: 0.08),
                       blurRadius: 6 * scale,
                       offset: Offset(0, 3 * scale),
                     ),

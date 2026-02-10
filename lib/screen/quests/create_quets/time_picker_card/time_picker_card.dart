@@ -2,12 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:mobile_app_dea/themes/create_qutes.dart';
-import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class TimePickerCard extends StatefulWidget {
   final double scale;
 
-  const TimePickerCard({Key? key, this.scale = 1.0}) : super(key: key);
+  const TimePickerCard({super.key, this.scale = 1.0});
 
   @override
   State<TimePickerCard> createState() => _TimePickerCardState();

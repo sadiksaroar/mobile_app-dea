@@ -4,12 +4,11 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
-import 'package:mobile_app_dea/custom_code/BottomNav.dart';
+import 'package:mobile_app_dea/custom_code/bottom_nav.dart';
 
-import 'package:mobile_app_dea/screen/home/contextual_onboarding/custom_paint/text_bubble.dart';
 import 'package:mobile_app_dea/screen/home/swipe_on_quest/delete_toast.dart';
 import 'package:mobile_app_dea/screen/home/swipe_on_quest/tomorow_card.dart';
-import 'package:mobile_app_dea/screen/remiender_notification/ai_call_remiender/default-yellow/default-yellow.dart';
+import 'package:mobile_app_dea/screen/remiender_notification/ai_call_remiender/default-yellow/default_yellow.dart';
 import 'package:mobile_app_dea/screen/remiender_notification/ai_call_remiender/error_tueast/error_tueast.dart';
 import 'package:mobile_app_dea/screen/remiender_notification/ai_call_remiender/quest_suggestion_purple/quest_suggestion_purple.dart';
 import 'package:mobile_app_dea/screen/remiender_notification/ai_call_remiender/success_tueast/success_tueast.dart';
@@ -18,7 +17,7 @@ import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 
 class AiCallRemiender extends StatefulWidget {
-  const AiCallRemiender({Key? key}) : super(key: key);
+  const AiCallRemiender({super.key});
 
   @override
   State<AiCallRemiender> createState() => _AiCallRemienderState();
@@ -48,28 +47,6 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
   void dispose() {
     _scrollController.dispose();
     super.dispose();
-  }
-
-  int _currentIndex = 0;
-
-  void _onNavTap(int index) {
-    if (!mounted) return;
-
-    setState(() {
-      _currentIndex = index;
-    });
-
-    switch (index) {
-      case 0:
-        context.go(AppRoutespath.homeScreen);
-        break;
-      case 1:
-        context.go(AppRoutespath.questHomePage);
-        break;
-      case 2:
-        context.go(AppRoutespath.progress);
-        break;
-    }
   }
 
   @override
@@ -155,13 +132,7 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
           decoration: BoxDecoration(
             color: AppColorsApps.skyBlueLight,
             borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.05),
-                blurRadius: 10,
-                offset: const Offset(0, 2),
-              ),
-            ],
+            boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05))],
           ),
           child: Row(
             children: [
@@ -190,11 +161,7 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
         ),
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
-          BoxShadow(
-            color: const Color(0xFF5B7EFF).withOpacity(0.1),
-            blurRadius: 20,
-            offset: const Offset(0, 4),
-          ),
+          BoxShadow(color: const Color(0xFF5B7EFF).withValues(alpha: 0.1)),
         ],
       ),
       child: Row(
@@ -211,7 +178,7 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
                 const SizedBox(height: 6),
                 Text(
                   'Tiny wins make big shifts.',
-                  style: AppsTextStyles.WorkSansRegular14,
+                  style: AppsTextStyles.workSansRegular14,
                 ),
                 const SizedBox(height: 16),
                 Row(
@@ -293,11 +260,7 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
             borderRadius: BorderRadius.circular(18),
             border: Border.all(color: const Color(0xFF5B7EFF), width: 2.5),
             boxShadow: [
-              BoxShadow(
-                color: const Color(0xFF5B7EFF).withOpacity(0.1),
-                blurRadius: 10,
-                offset: const Offset(0, 2),
-              ),
+              BoxShadow(color: const Color(0xFF5B7EFF).withValues(alpha: 0.1)),
             ],
           ),
           child: Column(
@@ -328,11 +291,7 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
             ),
             borderRadius: BorderRadius.circular(18),
             boxShadow: [
-              BoxShadow(
-                color: const Color(0xFF5B7EFF).withOpacity(0.3),
-                blurRadius: 10,
-                offset: const Offset(0, 2),
-              ),
+              BoxShadow(color: const Color(0xFF5B7EFF).withValues(alpha: 0.3)),
             ],
           ),
           child: Column(
@@ -561,7 +520,6 @@ class _AiCallRemienderState extends State<AiCallRemiender> {
   void _moveToTomorrow(int index) {
     if (!mounted) return;
 
-    final task = _tasks[index];
     setState(() => _tasks.removeAt(index));
 
     _showCustomToast(context, child: const TomorrowCard());
@@ -628,13 +586,13 @@ class AnimatedTaskItem extends StatefulWidget {
   final VoidCallback onToggle;
 
   const AnimatedTaskItem({
-    Key? key,
+    super.key,
     required this.task,
     required this.onEdit,
     required this.onDelete,
     required this.onTomorrow,
     required this.onToggle,
-  }) : super(key: key);
+  });
 
   @override
   State<AnimatedTaskItem> createState() => _AnimatedTaskItemState();
@@ -730,8 +688,8 @@ class _AnimatedTaskItemState extends State<AnimatedTaskItem>
         boxShadow: [
           BoxShadow(
             color: widget.task.isSpecial
-                ? const Color(0xFF5B7EFF).withOpacity(0.2)
-                : Colors.black.withOpacity(0.06),
+                ? const Color(0xFF5B7EFF).withValues(alpha: 0.2)
+                : Colors.black.withValues(alpha: 0.06),
             blurRadius: 12,
             offset: const Offset(0, 3),
           ),
@@ -783,7 +741,7 @@ class _AnimatedTaskItemState extends State<AnimatedTaskItem>
                 decoration: widget.task.isCompleted
                     ? TextDecoration.lineThrough
                     : null,
-                decorationThickness: 2,
+                decorationThickness: widget.task.isCompleted ? 2 : null,
               ),
             ),
           ),
@@ -792,7 +750,7 @@ class _AnimatedTaskItemState extends State<AnimatedTaskItem>
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
               color: widget.task.isSpecial
-                  ? Colors.white.withOpacity(0.2)
+                  ? Colors.white.withValues(alpha: 0.2)
                   : const Color(0xFFF5F7FA),
               borderRadius: BorderRadius.circular(12),
             ),
@@ -819,14 +777,14 @@ class OnboardingOverlay {
     showDialog(
       context: context,
       barrierDismissible: false,
-      barrierColor: Colors.black.withOpacity(0.75),
+      barrierColor: Colors.black.withValues(alpha: 0.75),
       builder: (context) => const OnboardingDialog(),
     );
   }
 }
 
 class OnboardingDialog extends StatefulWidget {
-  const OnboardingDialog({Key? key}) : super(key: key);
+  const OnboardingDialog({super.key});
 
   @override
   State<OnboardingDialog> createState() => _OnboardingDialogState();

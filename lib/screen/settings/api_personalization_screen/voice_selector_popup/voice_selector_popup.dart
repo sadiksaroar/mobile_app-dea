@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app_dea/screen/remiender_notification/choose_your_mood/chooise_your_mood.dart';
+
 import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 
 class VoiceSelectorPopup extends StatefulWidget {
-  const VoiceSelectorPopup({Key? key}) : super(key: key);
+  const VoiceSelectorPopup({super.key});
 
   static Future<String?> show(BuildContext context) {
     return showModalBottomSheet<String>(
@@ -71,7 +71,9 @@ class _VoiceSelectorPopupState extends State<VoiceSelectorPopup> {
         });
         // Close and return selected voice
         Future.delayed(const Duration(milliseconds: 300), () {
-          Navigator.pop(context, voice);
+          if (mounted) {
+            Navigator.pop(context, voice);
+          }
         });
       },
       child: Padding(

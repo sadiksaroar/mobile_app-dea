@@ -24,21 +24,6 @@ class _AiVoiceState extends State<AiVoice> {
     super.dispose();
   }
 
-  void _toggleTimer() {
-    if (isPaused) {
-      _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-        if (currentSeconds > 0) {
-          setState(() => currentSeconds--);
-        } else {
-          timer.cancel();
-        }
-      });
-    } else {
-      _timer?.cancel();
-    }
-    setState(() => isPaused = !isPaused);
-  }
-
   String _formatTime(int seconds) {
     int mins = seconds ~/ 60;
     int secs = seconds % 60;
@@ -91,96 +76,190 @@ class _AiVoiceState extends State<AiVoice> {
 
               // Timer Display
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                spacing: 8,
                 children: [
-                  Icon(
-                    isPaused ? Icons.pause : Icons.play_arrow,
-                    color: const Color(0xFF3949AB),
-                    size: 32,
-                  ),
-                  const SizedBox(width: 12),
-                  RichText(
-                    text: TextSpan(
+                  Container(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      spacing: 10,
                       children: [
-                        TextSpan(
-                          text: _formatTime(currentSeconds),
-                          style: AppsTextStyles.SaimTitle44,
-                        ),
-                        TextSpan(
-                          text: ' / ${_formatTime(totalSeconds)}',
-                          style: AppsTextStyles.alphaTitle,
+                        Container(
+                          width: 48,
+                          height: 48,
+                          child: Image.asset(
+                            'assets/images/puse.png',
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ],
                     ),
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    spacing: 9,
+                    children: [
+                      Text(
+                        '05:43',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: const Color(
+                            0xFF4542EB,
+                          ) /* Text-text-primary */,
+                          fontSize: 52,
+                          fontFamily: 'Wosker',
+                          fontWeight: FontWeight.w400,
+                          height: 0.80,
+                        ),
+                      ),
+                      Text(
+                        '/',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: const Color(
+                            0xFFA9A8F6,
+                          ) /* Text-text-primary-disabled */,
+                          fontSize: 52,
+                          fontFamily: 'Wosker',
+                          fontWeight: FontWeight.w400,
+                          height: 0.80,
+                        ),
+                      ),
+                      Text(
+                        '10:00',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: const Color(
+                            0xFFA9A8F6,
+                          ) /* Text-text-primary-disabled */,
+                          fontSize: 52,
+                          fontFamily: 'Wosker',
+                          fontWeight: FontWeight.w400,
+                          height: 0.80,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
 
               const SizedBox(height: 40),
 
-              // Control Buttons
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // Sound button
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.8),
-                      shape: BoxShape.circle,
-                    ),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.volume_up),
-                      color: const Color(0xFF3949AB),
-                      iconSize: 28,
-                    ),
-                  ),
-                  const SizedBox(width: 20),
+              Container(
+                width: 335,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      spacing: 8,
+                      children: [
+                        Container(
+                          width: 64,
+                          height: 64,
+                          child: Image.asset(
+                            'assets/images/Microphone!.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Container(
+                          width: 64,
+                          height: 64,
+                          child: Image.asset(
+                            'assets/images/soubd_icon.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        // Container(
+                        //   width: 64,
+                        //   height: 64,
+                        //   padding: const EdgeInsets.all(10),
 
-                  // Mute button
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.8),
-                      shape: BoxShape.circle,
+                        //   child: Row(
+                        //     mainAxisSize: MainAxisSize.min,
+                        //     mainAxisAlignment: MainAxisAlignment.center,
+                        //     crossAxisAlignment: CrossAxisAlignment.center,
+                        //     spacing: 10,
+                        //     children: [
+                        //       Container(width: 24, height: 24, child: Stack()),
+                        //     ],
+                        //   ),
+                        // ),
+                      ],
                     ),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.volume_off),
-                      color: const Color(0xFF3949AB),
-                      iconSize: 28,
+                    Container(
+                      // width: 80,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        spacing: 12,
+                        children: [
+                          Container(
+                            width: 64,
+                            height: 64,
+                            // padding: const EdgeInsets.all(10),
+                            // decoration: ShapeDecoration(
+                            //   color: const Color(
+                            //     0xFFC3DBFF,
+                            //   ) /* Background-bg-primary-level-2 */,
+                            //   shape: RoundedRectangleBorder(
+                            //     borderRadius: BorderRadius.circular(999),
+                            //   ),
+                            // ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    // Handle "Mark as done" tap
+                                    context.push("/homeScreen");
+                                  },
+                                  child: Container(
+                                    // width: 64,
+                                    // height: 64,
+                                    child: Image.asset(
+                                      'assets/images/right_sound.png',
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            width: 80,
+                            child: Text(
+                              'Mark as done',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: const Color(
+                                  0xFF011F54,
+                                ) /* Text-text-default */,
+                                fontSize: 12,
+                                fontFamily: 'Work Sans',
+                                fontWeight: FontWeight.w600,
+                                height: 1,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  const SizedBox(width: 60),
-
-                  // Mark as done button
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.8),
-                      shape: BoxShape.circle,
-                    ),
-                    child: IconButton(
-                      onPressed: () {
-                        context.push("/homeScreen");
-                      },
-                      icon: const Icon(Icons.check),
-                      color: const Color(0xFF3949AB),
-                      iconSize: 28,
-                    ),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 12),
-
-              const Text(
-                'Mark as done',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Color(0xFF3949AB),
-                  fontWeight: FontWeight.w500,
+                  ],
                 ),
               ),
-
               const SizedBox(height: 40),
             ],
           ),

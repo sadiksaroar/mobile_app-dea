@@ -6,7 +6,7 @@ import 'package:mobile_app_dea/themes/create_qutes.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class StreakScreen extends StatelessWidget {
-  const StreakScreen({Key? key}) : super(key: key);
+  const StreakScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +115,6 @@ class StreakScreen extends StatelessWidget {
 
   Widget _buildWeeklyStreak() {
     final days = ['Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu'];
-    final completed = [true, true, true, true, true, true, true];
 
     return Container(
       padding: const EdgeInsets.all(16),
@@ -124,7 +123,7 @@ class StreakScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
+            color: Colors.grey.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -138,7 +137,7 @@ class StreakScreen extends StatelessWidget {
               7,
               (index) => Column(
                 children: [
-                  Container(
+                  SizedBox(
                     width: 36,
                     height: 36,
                     child: Center(
@@ -299,8 +298,8 @@ class StreakScreen extends StatelessWidget {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      gradient.colors.first.withOpacity(0.1),
-                      gradient.colors.first.withOpacity(0.05),
+                      gradient.colors.first.withValues(alpha: 0.1),
+                      gradient.colors.first.withValues(alpha: 0.05),
                     ],
                   ),
                 ),
@@ -311,7 +310,7 @@ class StreakScreen extends StatelessWidget {
                 child: CircularProgressIndicator(
                   value: progress,
                   strokeWidth: 8,
-                  backgroundColor: gradient.colors.first.withOpacity(0.2),
+                  backgroundColor: gradient.colors.first.withValues(alpha: 0.2),
                   valueColor: AlwaysStoppedAnimation<Color>(
                     gradient.colors.first,
                   ),

@@ -13,7 +13,7 @@ class CustomNextButton extends StatelessWidget {
   final EdgeInsetsGeometry padding;
 
   const CustomNextButton({
-    Key? key,
+    super.key,
     required this.isEnabled,
     this.onTap,
     this.buttonText = 'NEXT',
@@ -23,7 +23,7 @@ class CustomNextButton extends StatelessWidget {
     this.height = 100,
     this.borderRadius = 60,
     this.padding = const EdgeInsets.symmetric(horizontal: 24.0),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class CustomNextButton extends StatelessWidget {
               boxShadow: isEnabled
                   ? [
                       BoxShadow(
-                        color: Colors.orange.withOpacity(0.3),
+                        color: Colors.orange.withValues(alpha: 0.3),
                         blurRadius: 10,
                         offset: const Offset(0, 5),
                       ),

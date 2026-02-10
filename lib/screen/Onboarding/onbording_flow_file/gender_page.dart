@@ -9,11 +9,11 @@ class GenderPage extends StatelessWidget {
   final Function(String) onGenderSelected;
 
   const GenderPage({
-    Key? key,
+    super.key,
     required this.userName,
     required this.selectedGender,
     required this.onGenderSelected,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +35,11 @@ class GenderPage extends StatelessWidget {
                 children: [
                   Text(
                     'HEY ${userName.toUpperCase()}!',
-                    style: AppsTextStyles.SaimTitle28,
+                    style: AppsTextStyles.saimTitle28,
                   ),
                   Text(
                     'WHICH GENDER DESCRIBES YOU ?',
-                    style: AppsTextStyles.SaimTitle28,
+                    style: AppsTextStyles.saimTitle28,
                   ),
                   const SizedBox(height: 32),
                   GenderButton(
@@ -66,7 +66,7 @@ class GenderPage extends StatelessWidget {
                   Center(
                     child: Text(
                       'You can always update this later. We\'ve got you.',
-                      style: AppsTextStyles.WorkSansRegular14,
+                      style: AppsTextStyles.workSansRegular14,
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -88,12 +88,12 @@ class GenderButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   const GenderButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.value,
     required this.isSelected,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

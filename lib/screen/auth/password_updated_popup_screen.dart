@@ -43,7 +43,7 @@ class PasswordUpdatedPopupScreen extends StatelessWidget {
           const SizedBox(height: 32),
 
           // Text section
-          Text('Password updated!', style: AppsTextStyles.PasswordUpdate),
+          Text('Password updated!', style: AppsTextStyles.passwordUpdate),
           const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -51,7 +51,7 @@ class PasswordUpdatedPopupScreen extends StatelessWidget {
               Center(
                 child: Text(
                   "You’re all set to log in 🔐 ",
-                  style: AppsTextStyles.PasswordUpdateSub,
+                  style: AppsTextStyles.passwordUpdateSub,
                 ),
               ),
             ],

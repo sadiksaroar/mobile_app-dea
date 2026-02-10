@@ -4,13 +4,13 @@ import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/screen/settings/api_personalization_screen/ai_personalization_screen.dart';
 import 'package:mobile_app_dea/screen/settings/language/languegs_selector_screen.dart';
 import 'package:mobile_app_dea/screen/settings/notiofication_scren/notification_screen.dart';
-import 'package:mobile_app_dea/screen/settings/nowli_primum/nowli_primum.dart';
+
 import 'package:mobile_app_dea/screen/settings/privacy_data/privacy_data_screen.dart';
 import 'package:mobile_app_dea/screen/settings/rate_nowli/rate_nowli.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class SettingsScreen extends StatefulWidget {
-  const SettingsScreen({Key? key}) : super(key: key);
+  const SettingsScreen({super.key});
 
   @override
   State<SettingsScreen> createState() => _SettingsScreenState();
@@ -31,14 +31,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
         setState(() => _selectedLanguage = value);
       }
     });
-  }
-
-  static void show(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      builder: (context) => const RatingPopup(),
-    );
   }
 
   @override
@@ -127,7 +119,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           _soundsEnabled = value;
                         });
                       },
-                      activeColor: const Color(0xFF4C3EDD),
+                      activeThumbColor: const Color(0xFF4C3EDD),
+                      activeTrackColor: const Color(
+                        0xFF4C3EDD,
+                      ).withValues(alpha: 0.5),
                     ),
                     onTap: null,
                   ),
@@ -265,7 +260,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   void _handleLogout() {
     showDialog(
       context: context,
-      barrierColor: Colors.black.withOpacity(0.5),
+      barrierColor: Colors.black.withValues(alpha: 0.5),
       builder: (BuildContext context) {
         return Dialog(
           backgroundColor: Colors.transparent,
@@ -277,7 +272,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
+                  color: Colors.black.withValues(alpha: 0.1),
                   blurRadius: 20,
                   offset: const Offset(0, 10),
                 ),

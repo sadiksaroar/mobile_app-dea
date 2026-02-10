@@ -5,10 +5,10 @@ import 'package:mobile_app_dea/themes/create_qutes.dart';
 class AddSubtasksButton extends StatefulWidget {
   final double scale;
 
-  const AddSubtasksButton({Key? key, this.scale = 1.0}) : super(key: key);
+  const AddSubtasksButton({super.key, this.scale = 1.0});
 
   @override
-  _AddSubtasksButtonState createState() => _AddSubtasksButtonState();
+  State<AddSubtasksButton> createState() => _AddSubtasksButtonState();
 }
 
 class _AddSubtasksButtonState extends State<AddSubtasksButton> {

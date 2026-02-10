@@ -4,7 +4,7 @@ import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class DeleteAccountDialog extends StatelessWidget {
-  const DeleteAccountDialog({Key? key}) : super(key: key);
+  const DeleteAccountDialog({super.key});
 
   @override
   Widget build(BuildContext context) {

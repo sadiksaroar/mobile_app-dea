@@ -694,7 +694,7 @@ class SleepRoutineCard extends StatelessWidget {
   final Color softStepsColor;
 
   const SleepRoutineCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.description,
     required this.time,
@@ -704,7 +704,7 @@ class SleepRoutineCard extends StatelessWidget {
     required this.emoji,
     required this.hardStepsColor,
     required this.softStepsColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -756,7 +756,7 @@ class SleepRoutineCard extends StatelessWidget {
                     vertical: 2,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.3),
+                    color: Colors.white.withValues(alpha: 0.3),
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: Row(
@@ -792,7 +792,7 @@ class SleepRoutineCard extends StatelessWidget {
                     vertical: 2,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.3),
+                    color: Colors.white.withValues(alpha: 0.3),
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: Row(
@@ -903,7 +903,7 @@ class RoutineCard extends StatelessWidget {
   final Color softStepsColor;
 
   const RoutineCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.description,
     required this.time,
@@ -913,7 +913,7 @@ class RoutineCard extends StatelessWidget {
     required this.emoji,
     required this.hardStepsColor,
     required this.softStepsColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

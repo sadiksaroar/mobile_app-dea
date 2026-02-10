@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_dea/themes/create_qutes.dart';
-import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class EnableCallCard extends StatefulWidget {
   final double scale;
 
-  const EnableCallCard({Key? key, this.scale = 1.0}) : super(key: key);
+  const EnableCallCard({super.key, this.scale = 1.0});
 
   @override
-  _EnableCallCardState createState() => _EnableCallCardState();
+  State<EnableCallCard> createState() => _EnableCallCardState();
 }
 
 class _EnableCallCardState extends State<EnableCallCard> {

@@ -66,7 +66,7 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
     Widget? suffixIcon,
     required TextStyle labelStyle,
   }) {
-    const borderSide = BorderSide(color: const Color(0xFFC3DBFF), width: 1);
+    const borderSide = BorderSide(color: Color(0xFFC3DBFF), width: 1);
     final borderRadius = BorderRadius.circular(30);
 
     final fixedBorder = OutlineInputBorder(

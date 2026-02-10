@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app_dea/custom_code/BottomNav.dart';
+import 'package:mobile_app_dea/custom_code/bottom_nav.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/_buildInputCard/input_widget_card.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/buildAddSubtasksButton/build_add_subtask_button.dart';
-import 'package:mobile_app_dea/screen/quests/create_quets/buildHeader/header_widget.dart';
+
 import 'package:mobile_app_dea/screen/quests/create_quets/buildTitle/title_widget.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/enabable_card/enabable_card.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/repeat_quest_card/repeat_quest_card.dart';

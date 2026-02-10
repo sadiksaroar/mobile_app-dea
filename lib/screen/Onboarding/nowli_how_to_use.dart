@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart' show SvgPicture;
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/widget/custom_button.dart';
@@ -11,6 +12,11 @@ class NowliHowToUse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    // Define responsive sizes
+    final backIconSize = screenWidth * 0.08;
+    final progressHeight = screenWidth * 0.015;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -25,46 +31,99 @@ class NowliHowToUse extends StatelessWidget {
                   // Top Row: Back, Progress, Skip
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      // Back button
                       GestureDetector(
                         onTap: () {
                           context.push("/onbordingFetures");
                         },
-                        child: CircleAvatar(
-                          backgroundColor: const Color(0xFFFFF1E8),
-                          child: Assets.svgIcons.backIconPng.image(
-                            height: 24,
-                            width: 24,
+                        child: SizedBox(
+                          height: 57,
+                          width: 57,
+                          child: CircleAvatar(
+                            backgroundColor: const Color(0xFFFFF1E8),
+                            child: Assets.svgIcons.backIconPng.image(
+                              height: 24,
+                              width: 24,
+                            ),
                           ),
                         ),
                       ),
+
+                      SizedBox(width: screenWidth * 0.03),
+
+                      // Progress bar
                       Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                          child: LinearProgressIndicator(
-                            value: 3 / 6,
-                            color: Colors.blue,
-                            backgroundColor: Colors.blue[100],
+                        child: Container(
+                          height: progressHeight,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xFFC3DBFF),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(999),
+                            ),
+                          ),
+                          child: FractionallySizedBox(
+                            alignment: Alignment.centerLeft,
+                            widthFactor: 0.5, // 3/6 = 0.5
+                            child: Container(
+                              decoration: ShapeDecoration(
+                                color: const Color(0xFF3D87F5),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(999),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
+
+                      SizedBox(width: screenWidth * 0.015),
+
+                      // Progress text
+                      Text(
+                        '4/6',
+                        style: TextStyle(
+                          color: const Color(0xFF4C586E),
+                          fontSize: 12,
+                          fontFamily: 'Work Sans',
+                          fontWeight: FontWeight.w400,
+                          height: 1.40,
+                        ),
+                      ),
+
+                      SizedBox(width: screenWidth * 0.03),
+
+                      // Skip button - Fixed navigation
                       GestureDetector(
                         onTap: () {
-                          context.push("/animation"); // Skip action
+                          context.push("/animation"); // Skip to next screen
                         },
-                        child: Text(
-                          "Skip",
-                          style: const TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: screenWidth * 0.02,
+                            vertical: screenWidth * 0.015,
+                          ),
+                          child: Text(
+                            'Skip',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: const Color(0xFF011F54),
+                              fontSize: (screenWidth * 0.042).clamp(14.0, 18.0),
+                              fontFamily: 'Work Sans',
+                              fontWeight: FontWeight.w900,
+                              height: 0.80,
+                            ),
                           ),
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 30),
+
                   // Card with icon and text
                   Container(
+                    height: 220,
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: const Color(0xFFA0E871),
@@ -73,26 +132,32 @@ class NowliHowToUse extends StatelessWidget {
                     child: Row(
                       children: [
                         Container(
-                          width: 60,
-                          height: 60,
+                          // width: 100,
+                          // height: 100,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Assets.svgIcons.nowliHowToUse.svg(
-                            height: 80,
-                            width: 80,
+                            height: 220,
+                            width: 140,
                           ),
                         ),
                         const SizedBox(width: 16),
                         Expanded(
                           child: RichText(
                             text: TextSpan(
-                              style: AppsTextStyles.extraBold16,
+                              style: GoogleFonts.workSans(
+                                fontWeight: FontWeight.w800, // ExtraBold
+                                fontSize: 20,
+                                height: 1.4, // line-height: 140%
+                                letterSpacing: -0.5, // -0.5px
+                                color: const Color(0xFF011F54), // #011F54
+                              ),
                               children: const [
                                 TextSpan(
                                   text:
-                                      "Nowlii is like a car, it is your toll that will bring where you are headed to! ",
+                                      "Nowlii is like a car, it is your tool that will bring you where you are headed to! ",
                                 ),
                                 TextSpan(
                                   text: "✨",
@@ -109,28 +174,27 @@ class NowliHowToUse extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 30),
                   Text(
-                    "Our biggest goal is you to stop to use Nowlii after 12 months.",
+                    "Our biggest goal is for you to stop using Nowlii after 12 months.",
                     style: AppsTextStyles.extraBold22,
                   ),
                   const SizedBox(height: 24),
+
                   // Spacer to push content up
                   const Expanded(child: SizedBox()),
                 ],
               ),
             ),
           ),
+
           // Bottom Sheet
           Positioned(
             left: 0,
             right: 0,
             bottom: 0,
             child: Container(
-              constraints: BoxConstraints(
-                // Ensures container doesn't exceed 60% of screen height
-                maxHeight: screenHeight * 0.6,
-              ),
+              constraints: BoxConstraints(maxHeight: screenHeight * 0.5),
               padding: const EdgeInsets.all(24),
               decoration: const BoxDecoration(
                 color: Color(0xFF4542EB),
@@ -156,7 +220,7 @@ class NowliHowToUse extends StatelessWidget {
                         children: [
                           const TextSpan(
                             text:
-                                "We recommend booking the call with Nowlii when you are putting an alarm at night, ",
+                                "We recommend booking the call with Nowlii when you are setting an alarm at night, ",
                           ),
                           TextSpan(
                             text: "10 minutes after the alarm",
@@ -172,33 +236,6 @@ class NowliHowToUse extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 24),
-                    // SizedBox(
-                    //   width: double.infinity,
-                    //   height: 104,
-                    //   child: ElevatedButton(
-                    //     style: ElevatedButton.styleFrom(
-                    //       backgroundColor: Colors.orange[400],
-                    //       shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.circular(50),
-                    //       ),
-                    //     ),
-                    //     onPressed: () {
-                    //       context.push("/animation");
-                    //     },
-                    //     child: Row(
-                    //       mainAxisAlignment: MainAxisAlignment.center,
-                    //       children: [
-                    //         Text("Next", style: AppsTextStyles.letsStartNext),
-                    //         const SizedBox(width: 30),
-                    //         SvgPicture.asset(
-                    //           Assets.svgIcons.startLetsGo.path,
-                    //           width: 60,
-                    //           height: 60,
-                    //         ),
-                    //       ],
-                    //     ),
-                    //   ),
-                    // ),
                     CustomNextButton(
                       isEnabled: true,
                       onTap: () {

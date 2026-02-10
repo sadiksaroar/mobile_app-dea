@@ -146,7 +146,7 @@
 //                 _notifications[key] = value;
 //               });
 //             },
-//             activeColor: Colors.white,
+//             activeThumbColor: Colors.white,
 //             activeTrackColor: const Color(0xFF4F46E5),
 //             inactiveThumbColor: Colors.white,
 //             inactiveTrackColor: const Color(0xFFD1D5DB),
@@ -161,7 +161,7 @@ import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 
 class NotificationsScreen extends StatefulWidget {
-  const NotificationsScreen({Key? key}) : super(key: key);
+  const NotificationsScreen({super.key});
 
   @override
   State<NotificationsScreen> createState() => _NotificationsScreenState();
@@ -318,7 +318,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 _notifications[key] = value;
               });
             },
-            activeColor: Colors.white,
+            activeThumbColor: Colors.white,
             activeTrackColor: const Color(0xFF4F46E5),
             inactiveThumbColor: Colors.white,
             inactiveTrackColor: const Color(0xFFD1D5DB),

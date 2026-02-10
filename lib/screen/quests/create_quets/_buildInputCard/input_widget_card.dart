@@ -5,8 +5,7 @@ class InputCardWidget extends StatelessWidget {
   final double scale;
   final TextEditingController? controller;
 
-  const InputCardWidget({Key? key, this.scale = 1.0, this.controller})
-    : super(key: key);
+  const InputCardWidget({super.key, this.scale = 1.0, this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class InputCardWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(14 * scale),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 8 * scale,
           ),
         ],

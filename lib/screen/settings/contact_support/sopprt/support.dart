@@ -5,7 +5,7 @@ import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class SupportScreen extends StatefulWidget {
-  const SupportScreen({Key? key}) : super(key: key);
+  const SupportScreen({super.key});
 
   @override
   State<SupportScreen> createState() => _SupportScreenState();
@@ -145,7 +145,7 @@ class _SupportScreenState extends State<SupportScreen> {
         padding: const EdgeInsets.all(12),
         decoration: ShapeDecoration(
           color: isSelected
-              ? const Color(0xFF4D4DFF).withOpacity(0.1)
+              ? const Color(0xFF4D4DFF).withValues(alpha: 0.1)
               : const Color(0xFFFFFDF7),
           shape: RoundedRectangleBorder(
             side: BorderSide(

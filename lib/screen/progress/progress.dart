@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
-import 'package:mobile_app_dea/custom_code/BottomNav.dart';
-import 'package:mobile_app_dea/screen/progress/insights/Insights.dart';
+
+import 'package:mobile_app_dea/custom_code/bottom_nav.dart';
+import 'package:mobile_app_dea/screen/progress/insights/insights.dart';
 import 'package:mobile_app_dea/screen/progress/my_progress/my_progress.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
@@ -34,30 +33,8 @@ class _ProgressState extends State<Progress> with TickerProviderStateMixin {
     super.dispose();
   }
 
-  int _currentIndex = 2;
-
-  void _onNavTap(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
-
-    switch (index) {
-      case 0:
-        context.go(AppRoutespath.homeScreen);
-        break;
-      case 1:
-        context.go(AppRoutespath.questHomePage);
-        break;
-      case 2:
-        context.go(AppRoutespath.progress);
-        break;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    double w = MediaQuery.of(context).size.width;
-
     return Scaffold(
       // ---------------- APP BAR ----------------
       backgroundColor: Color(0xFFFFFEF8),
@@ -69,7 +46,7 @@ class _ProgressState extends State<Progress> with TickerProviderStateMixin {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("PROGRESS", style: AppsTextStyles.SaimTitle),
+            Text("PROGRESS", style: AppsTextStyles.saimTitle),
             const SizedBox(height: 4),
             Text(
               "Track your growth and reflections",

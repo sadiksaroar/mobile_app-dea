@@ -5,6 +5,8 @@ class AppColors {
   static const Color headingBlue = Color(0xFF061438);
   static const Color primary = Color(0xFF3A6BFF);
   static const Color orange = Color(0xFFFFA54F);
+
+  static Color? get primaryColor => null;
 }
 
 class Loader extends StatelessWidget {

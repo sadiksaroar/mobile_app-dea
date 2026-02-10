@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RatingPopup extends StatelessWidget {
-  const RatingPopup({Key? key}) : super(key: key);
+  const RatingPopup({super.key});
 
   // static void show(BuildContext context) {
   //   showModalBottomSheet(

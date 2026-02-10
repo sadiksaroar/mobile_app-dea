@@ -6,7 +6,7 @@ import 'package:mobile_app_dea/screen/settings/privacy_data/delete_account_dialo
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class PrivacyDataScreen extends StatelessWidget {
-  const PrivacyDataScreen({Key? key}) : super(key: key);
+  const PrivacyDataScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

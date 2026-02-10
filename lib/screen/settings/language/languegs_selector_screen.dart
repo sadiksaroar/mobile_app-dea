@@ -5,10 +5,10 @@ class LanguageSelector extends StatelessWidget {
   final List<String> languages;
 
   const LanguageSelector({
-    Key? key,
+    super.key,
     required this.currentLanguage,
     this.languages = const ['English', 'Deutsch', 'Español'],
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

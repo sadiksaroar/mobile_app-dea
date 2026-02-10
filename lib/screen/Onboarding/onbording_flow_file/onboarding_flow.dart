@@ -7,7 +7,7 @@ import 'package:mobile_app_dea/screen/Onboarding/onbording_flow_file/name_page.d
     show NamePage;
 
 class OnboardingFlow extends StatefulWidget {
-  const OnboardingFlow({Key? key}) : super(key: key);
+  const OnboardingFlow({super.key});
 
   @override
   State<OnboardingFlow> createState() => _OnboardingFlowState();
@@ -62,7 +62,9 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
       selectedGender = gender;
     });
     Future.delayed(const Duration(milliseconds: 300), () {
-      context.go(AppRoutespath.loadingOnboardingNowli);
+      if (mounted) {
+        context.go(AppRoutespath.loadingOnboardingNowli);
+      }
     });
   }
 

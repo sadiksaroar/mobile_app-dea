@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // Add to HomeScreen's initState or build method:
 // OnboardingOverlay.show(context);
@@ -8,14 +9,14 @@ class OnboardingOverlay {
     showDialog(
       context: context,
       barrierDismissible: false,
-      barrierColor: Colors.black.withOpacity(0.7),
+      barrierColor: Colors.black.withValues(alpha: 0.7),
       builder: (context) => const OnboardingDialog(),
     );
   }
 }
 
 class OnboardingDialog extends StatefulWidget {
-  const OnboardingDialog({Key? key}) : super(key: key);
+  const OnboardingDialog({super.key});
 
   @override
   State<OnboardingDialog> createState() => _OnboardingDialogState();
@@ -87,7 +88,7 @@ class OnboardingStep {
 
 // Bubble Widgets
 class ChatBubbleContainer extends StatelessWidget {
-  const ChatBubbleContainer({Key? key}) : super(key: key);
+  const ChatBubbleContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -103,10 +104,10 @@ class ChatBubbleContainer extends StatelessWidget {
         ),
         child: Column(
           children: [
-            const Expanded(
+            Expanded(
               child: Text(
                 "Start here. A good day begins with rest.",
-                style: TextStyle(
+                style: GoogleFonts.workSans(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.w800,
@@ -115,18 +116,19 @@ class ChatBubbleContainer extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: const [
+              children: [
                 Text(
                   "Next",
-                  style: TextStyle(
-                    color: Color(0xFF184B29),
-                    fontWeight: FontWeight.w700,
+                  style: GoogleFonts.workSans(
+                    color: const Color(0xFF184B29),
+                    fontWeight: FontWeight.w900,
+                    fontSize: 16,
                   ),
                 ),
-                SizedBox(width: 12),
-                Icon(
+                const SizedBox(width: 12),
+                const Icon(
                   Icons.arrow_forward_ios,
-                  size: 14,
+                  size: 16,
                   color: Color(0xFF184B29),
                 ),
               ],
@@ -139,7 +141,7 @@ class ChatBubbleContainer extends StatelessWidget {
 }
 
 class ChatMessage extends StatelessWidget {
-  const ChatMessage({Key? key}) : super(key: key);
+  const ChatMessage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -153,10 +155,10 @@ class ChatMessage extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const Expanded(
+          Expanded(
             child: Text(
               "Swipe left to reschedule or edit quests..",
-              style: TextStyle(
+              style: GoogleFonts.workSans(
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.w800,
@@ -165,16 +167,21 @@ class ChatMessage extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: const [
+            children: [
               Text(
                 "Next",
-                style: TextStyle(
-                  color: Color(0xFF184B29),
-                  fontWeight: FontWeight.w700,
+                style: GoogleFonts.workSans(
+                  color: const Color(0xFF184B29),
+                  fontWeight: FontWeight.w900,
+                  fontSize: 16,
                 ),
               ),
-              SizedBox(width: 12),
-              Icon(Icons.arrow_forward_ios, size: 14, color: Color(0xFF184B29)),
+              const SizedBox(width: 12),
+              const Icon(
+                Icons.arrow_forward_ios,
+                size: 14,
+                color: Color(0xFF184B29),
+              ),
             ],
           ),
         ],
@@ -184,7 +191,7 @@ class ChatMessage extends StatelessWidget {
 }
 
 class ConversationBubble extends StatelessWidget {
-  const ConversationBubble({Key? key}) : super(key: key);
+  const ConversationBubble({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -192,7 +199,7 @@ class ConversationBubble extends StatelessWidget {
       painter: BubbleTail(),
       child: Container(
         width: 282,
-        height: 128,
+        height: 148,
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: const Color(0xFF33B24E),
@@ -200,10 +207,10 @@ class ConversationBubble extends StatelessWidget {
         ),
         child: Column(
           children: [
-            const Expanded(
+            Expanded(
               child: Text(
-                "Tap quest cards to mark complete.",
-                style: TextStyle(
+                "Every streak starts with day one. You've already begun 💫",
+                style: GoogleFonts.workSans(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.w800,
@@ -212,16 +219,17 @@ class ConversationBubble extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: const [
+              children: [
                 Text(
                   "Next",
-                  style: TextStyle(
-                    color: Color(0xFF184B29),
-                    fontWeight: FontWeight.w700,
+                  style: GoogleFonts.workSans(
+                    color: const Color(0xFF184B29),
+                    fontWeight: FontWeight.w900,
+                    fontSize: 16,
                   ),
                 ),
-                SizedBox(width: 12),
-                Icon(
+                const SizedBox(width: 12),
+                const Icon(
                   Icons.arrow_forward_ios,
                   size: 14,
                   color: Color(0xFF184B29),
@@ -236,44 +244,49 @@ class ConversationBubble extends StatelessWidget {
 }
 
 class TextBubble extends StatelessWidget {
-  const TextBubble({Key? key}) : super(key: key);
+  const TextBubble({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 282,
-      height: 128,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: const Color(0xFF33B24E),
-        borderRadius: BorderRadius.circular(18),
-      ),
+    return IntrinsicWidth(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          const Expanded(
-            child: Text(
-              "Let's get started on your journey!",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.w800,
-              ),
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xFF3BB64B),
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset(
+                    "assets/svg_icons/Ready to make today count?.png",
+                    height: 80,
+                    width: 80,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  'Swipe here!\nIm available any time',
+                  style: GoogleFonts.workSans(
+                    color: const Color(0xFFFFFDF7),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w800,
+                    height: 1.2,
+                    letterSpacing: -0.5,
+                  ),
+                ),
+              ],
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: const [
-              Text(
-                "Done",
-                style: TextStyle(
-                  color: Color(0xFF184B29),
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              SizedBox(width: 12),
-              Icon(Icons.check, size: 14, color: Color(0xFF184B29)),
-            ],
-          ),
+          const SizedBox(height: 6),
         ],
       ),
     );

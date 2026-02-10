@@ -1,5 +1,10 @@
 import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
+import 'package:mobile_app_dea/screen/home/swaipe_to_talk/swaipe_to_talk_loding.dart';
+import 'package:mobile_app_dea/screen/home/swaipe_to_talk/voice_cheack/poup_your_share_you.dart';
+import 'package:mobile_app_dea/screen/home/swaipe_to_talk/voice_cheack/poup_spking.dart';
+import 'package:mobile_app_dea/screen/home/swaipe_to_talk/voice_cheack/poup_error.dart';
+import 'package:mobile_app_dea/screen/home/swaipe_to_talk/voice_cheack/poup_prossing.dart';
 import 'package:mobile_app_dea/screen/Onboarding/loading_onboridng_nowli.dart';
 import 'package:mobile_app_dea/screen/Onboarding/nowli_how_to_use.dart';
 import 'package:mobile_app_dea/screen/Onboarding/onboarding_features/animation.dart';
@@ -16,18 +21,18 @@ import 'package:mobile_app_dea/screen/auth/sign_up.dart';
 import 'package:mobile_app_dea/screen/entry_screen_p2.dart';
 import 'package:mobile_app_dea/screen/home/home_screen.dart';
 import 'package:mobile_app_dea/screen/profile/Edit_profile/edit_profile.dart';
-import 'package:mobile_app_dea/screen/profile/profile_menu_with_notification/Profile_menu_with_notication.dart';
+import 'package:mobile_app_dea/screen/profile/profile_menu_with_notification/profile_menu_with_notification.dart';
 import 'package:mobile_app_dea/screen/progress/progress.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/create_quets_default.dart';
 import 'package:mobile_app_dea/screen/quests/quests_my_quests_today_emty_state.dart';
 import 'package:mobile_app_dea/screen/reday_to_start_screen_p4.dart';
-import 'package:mobile_app_dea/screen/settings/contact_support/chat_boot/SupportChatScreen.dart';
+import 'package:mobile_app_dea/screen/settings/contact_support/chat_boot/support_chat_screen.dart';
 import 'package:mobile_app_dea/screen/settings/contact_support/sopprt/support.dart';
 import 'package:mobile_app_dea/screen/settings/setting.dart';
 import 'package:mobile_app_dea/screen/splash.dart';
 import 'package:mobile_app_dea/screen/welcome_activetion_flow/popup_speking.dart';
 import 'package:mobile_app_dea/screen/welcome_activetion_flow/procrastination_screen.dart';
-import 'package:mobile_app_dea/screen/welcome_activetion_flow/subscription_popup%20.dart';
+import 'package:mobile_app_dea/screen/welcome_activetion_flow/subscription_popup.dart';
 import 'package:mobile_app_dea/screen/welcome_come_screen_p3.dart';
 
 class AppPages {
@@ -98,7 +103,7 @@ class AppPages {
 
       GoRoute(
         path: AppRoutespath.onbordingFetures,
-        builder: (context, state) => OnbordingFetures(),
+        builder: (context, state) => OnboardingFeatures(),
       ),
       GoRoute(
         path: AppRoutespath.loadingOnboardingNowli,
@@ -136,6 +141,26 @@ class AppPages {
       ),
 
       /*   on boarding end  */
+      GoRoute(
+        path: AppRoutespath.swipeToTalkLoading,
+        builder: (context, state) => const SwipeToTalkLoading(),
+      ),
+      GoRoute(
+        path: AppRoutespath.poupYourShareYou,
+        builder: (context, state) => const PoupYourShareYou(),
+      ),
+      GoRoute(
+        path: AppRoutespath.poupSpking,
+        builder: (context, state) => const PoupSpking(),
+      ),
+      GoRoute(
+        path: AppRoutespath.poupError,
+        builder: (context, state) => const PoupError(),
+      ),
+      GoRoute(
+        path: AppRoutespath.poupProssing,
+        builder: (context, state) => const PoupProssing(),
+      ),
 
       /*  home page start  */
       GoRoute(

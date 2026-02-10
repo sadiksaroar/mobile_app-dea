@@ -4,10 +4,10 @@ import 'package:mobile_app_dea/themes/create_qutes.dart';
 class RepeatQuestCard extends StatefulWidget {
   final double scale;
 
-  const RepeatQuestCard({Key? key, this.scale = 1.0}) : super(key: key);
+  const RepeatQuestCard({super.key, this.scale = 1.0});
 
   @override
-  _RepeatQuestCardState createState() => _RepeatQuestCardState();
+  State<RepeatQuestCard> createState() => _RepeatQuestCardState();
 }
 
 class _RepeatQuestCardState extends State<RepeatQuestCard> {

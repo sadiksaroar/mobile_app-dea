@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
-import 'package:mobile_app_dea/custom_code/BottomNav.dart';
+import 'package:mobile_app_dea/custom_code/bottom_nav.dart';
 import 'package:mobile_app_dea/screen/quests/my_quets/blocking/blockng.dart';
 import 'package:mobile_app_dea/screen/quests/my_quets/completed/completed.dart';
 import 'package:mobile_app_dea/screen/quests/my_quets/scheduled/scheduled.dart';
@@ -71,7 +71,7 @@ class _QuestHomePageState extends State<QuestHomePage>
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text("QUESTS", style: AppsTextStyles.SaimTitle),
+            Text("QUESTS", style: AppsTextStyles.saimTitle),
             const SizedBox(height: 6),
             Text(
               "Small steps, big progress.",
@@ -117,7 +117,7 @@ class _QuestHomePageState extends State<QuestHomePage>
                   borderSide: BorderSide(width: 5.0, color: Color(0xFF4542EB)),
                   insets: EdgeInsets.symmetric(horizontal: 0.0),
                 ),
-                overlayColor: MaterialStateProperty.all(Colors.transparent),
+                overlayColor: WidgetStateProperty.all(Colors.transparent),
                 splashFactory: NoSplash.splashFactory,
                 labelColor: Colors.black,
                 unselectedLabelColor: const Color(0xFFADB2BC),
@@ -158,7 +158,7 @@ class _QuestHomePageState extends State<QuestHomePage>
             tabAlignment: TabAlignment.start,
             indicator: const BoxDecoration(),
             dividerColor: Colors.transparent,
-            overlayColor: MaterialStateProperty.all(Colors.transparent),
+            overlayColor: WidgetStateProperty.all(Colors.transparent),
             splashFactory: NoSplash.splashFactory,
             labelPadding: const EdgeInsets.symmetric(horizontal: 4),
             tabs: List.generate(4, (index) {
@@ -168,7 +168,7 @@ class _QuestHomePageState extends State<QuestHomePage>
                 'Completed',
                 'Blocking',
               ];
-              bool isSelected = myQuestsTab.index == index;
+
               return Tab(
                 child: AnimatedBuilder(
                   animation: myQuestsTab,
@@ -230,7 +230,7 @@ class _QuestHomePageState extends State<QuestHomePage>
             tabAlignment: TabAlignment.start,
             indicator: const BoxDecoration(),
             dividerColor: Colors.transparent,
-            overlayColor: MaterialStateProperty.all(Colors.transparent),
+            overlayColor: WidgetStateProperty.all(Colors.transparent),
             splashFactory: NoSplash.splashFactory,
             labelPadding: const EdgeInsets.symmetric(horizontal: 6),
             tabs: List.generate(3, (index) {
