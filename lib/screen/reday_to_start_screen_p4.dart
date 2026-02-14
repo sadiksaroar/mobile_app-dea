@@ -69,7 +69,9 @@ class ReadyToStartScreen extends StatelessWidget {
                       height: 0.80,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    context.push('/signInScreen');
+                  },
                 ),
               ),
 
@@ -88,7 +90,7 @@ class ReadyToStartScreen extends StatelessWidget {
                   ),
                   icon: Assets.svgIcons.appleIcon.svg(height: 24, width: 24),
                   label: Text(
-                    'Continue with Google',
+                    'Continue with Apple',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.workSans(
                       color: const Color(0xFFFFFDF7), // Text-light
@@ -97,7 +99,9 @@ class ReadyToStartScreen extends StatelessWidget {
                       height: 0.80,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    context.push('/signInScreen');
+                  },
                 ),
               ),
 

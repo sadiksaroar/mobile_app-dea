@@ -1227,171 +1227,216 @@ class AICallNotification extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-      decoration: ShapeDecoration(
-        image: DecorationImage(
-          image: AssetImage(config.backgroundImagePath),
-          fit: BoxFit.cover,
-        ),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        shadows: const [
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        gradient: config.backgroundGradient,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
           BoxShadow(
-            color: Color(0x070A0C12),
-            blurRadius: 6,
-            offset: Offset(0, 4),
-            spreadRadius: -2,
+            color: Colors.black.withValues(alpha: 0.08),
+            blurRadius: 16,
+            offset: const Offset(0, 8),
+            spreadRadius: 0,
           ),
           BoxShadow(
-            color: Color(0x140A0C12),
-            blurRadius: 16,
-            offset: Offset(0, 12),
-            spreadRadius: -4,
+            color: Colors.black.withValues(alpha: 0.04),
+            blurRadius: 6,
+            offset: const Offset(0, 4),
+            spreadRadius: -2,
           ),
         ],
       ),
-      child: Row(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            padding: const EdgeInsets.all(8),
-            decoration: ShapeDecoration(
-              color: config.iconBackgroundColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(6),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Icon Container
+              Container(
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: config.iconBackgroundColor,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(child: _buildIcon(notification.type, config)),
+              ),
+              const SizedBox(width: 12),
+
+              // Title and Subtitle
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      notification.title,
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF011F54),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w800,
+                        height: 1.25,
+                        letterSpacing: -0.3,
+                      ),
+                    ),
+                    if (notification.subtitle != null) ...[
+                      const SizedBox(height: 6),
+                      Text(
+                        notification.subtitle!,
+                        style: GoogleFonts.workSans(
+                          color: const Color(0xFF6B7280),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          height: 1.5,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            ],
+          ),
+
+          // Button
+          if (notification.buttonText != null) ...[
+            const SizedBox(height: 16),
+            GestureDetector(
+              onTap: notification.onButtonPressed,
+              child: Container(
+                width: double.infinity,
+                height: 48,
+                decoration: BoxDecoration(
+                  color: config.buttonColor,
+                  borderRadius: BorderRadius.circular(24),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    if (config.buttonIcon != null) ...[
+                      Icon(
+                        config.buttonIcon,
+                        color: config.buttonTextColor,
+                        size: 20,
+                      ),
+                      const SizedBox(width: 8),
+                    ],
+                    Text(
+                      notification.buttonText!,
+                      style: GoogleFonts.workSans(
+                        color: config.buttonTextColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                        height: 1,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-            child: Image.asset(
-              notification.iconPath ?? config.defaultIconPath,
-              width: 24,
-              height: 24,
-            ),
-          ),
-          const SizedBox(width: 10),
-
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  notification.title,
-                  style: GoogleFonts.workSans(
-                    color: const Color(0xFF011F54),
-                    fontSize: 20,
-                    fontWeight: FontWeight.w800,
-                    height: 1.20,
-                    letterSpacing: -0.50,
-                  ),
-                ),
-
-                if (notification.subtitle != null) ...[
-                  const SizedBox(height: 8),
-                  Text(
-                    notification.subtitle!,
-                    style: GoogleFonts.workSans(
-                      color: const Color(0xFF595754),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      height: 1.60,
-                    ),
-                  ),
-                ],
-
-                if (notification.buttonText != null) ...[
-                  const SizedBox(height: 16),
-                  GestureDetector(
-                    onTap: notification.onButtonPressed,
-                    child: Container(
-                      width: double.infinity,
-                      height: 44,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 40,
-                        vertical: 14,
-                      ),
-                      decoration: ShapeDecoration(
-                        color: config.buttonColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(999),
-                        ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          notification.buttonText!,
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.workSans(
-                            color: config.buttonTextColor,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w900,
-                            height: 0.80,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ],
-            ),
-          ),
+          ],
         ],
       ),
     );
+  }
+
+  Widget _buildIcon(NotificationType type, _NotificationConfig config) {
+    switch (type) {
+      case NotificationType.error:
+        return const Icon(Icons.favorite, color: Colors.white, size: 24);
+      case NotificationType.questSuggestion:
+        return const Text('☀️', style: TextStyle(fontSize: 22));
+      case NotificationType.defaultYellow:
+        return Image.asset(
+          'assets/images/Microphone.png',
+          width: 24,
+          height: 24,
+          errorBuilder: (context, error, stackTrace) =>
+              const Icon(Icons.mic, color: Colors.white, size: 24),
+        );
+      case NotificationType.success:
+        return const Text('🎉', style: TextStyle(fontSize: 22));
+    }
   }
 
   _NotificationConfig _getNotificationConfig(NotificationType type) {
     switch (type) {
       case NotificationType.error:
         return _NotificationConfig(
-          backgroundImagePath: 'assets/images/reminder_red.png',
-          iconBackgroundColor: const Color(0xFFD53D40),
+          backgroundGradient: const LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xFFFFE4E6), Color(0xFFFECDD3)],
+          ),
+          iconBackgroundColor: const Color(0xFFE11D48),
           iconColor: Colors.white,
-          buttonColor: const Color(0xFFD53D3F),
-          buttonTextColor: const Color(0xFFFFFDF7),
+          buttonColor: const Color(0xFFE11D48),
+          buttonTextColor: Colors.white,
           defaultIconPath: 'assets/images/plush.png',
+          buttonIcon: Icons.add,
         );
       case NotificationType.questSuggestion:
         return _NotificationConfig(
-          backgroundImagePath: 'assets/images/Quest suggestion-purple.png',
-          iconBackgroundColor: const Color(0xFF3F3CD6),
+          backgroundGradient: const LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xFFDBE9FF), Color(0xFFC7D9F7)],
+          ),
+          iconBackgroundColor: const Color(0xFFBFDBFE),
           iconColor: Colors.white,
-          buttonColor: const Color(0xFF4542EB),
-          buttonTextColor: const Color(0xFFFFFDF7),
+          buttonColor: const Color(0xFF6366F1),
+          buttonTextColor: Colors.white,
           defaultIconPath: 'assets/images/plush.png',
+          buttonIcon: Icons.add,
         );
       case NotificationType.defaultYellow:
         return _NotificationConfig(
-          backgroundImagePath: 'assets/images/reminder_yellow.png',
-          iconBackgroundColor: const Color(0xFFFF8F26),
+          backgroundGradient: const LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xFFFFE4B5), Color(0xFFFFD699)],
+          ),
+          iconBackgroundColor: const Color(0xFFFF8C00),
           iconColor: Colors.white,
-          buttonColor: const Color(0xFFFF8F26),
-          buttonTextColor: const Color(0xFF011F54),
+          buttonColor: const Color(0xFFFF8C00),
+          buttonTextColor: Colors.white,
           defaultIconPath: 'assets/images/Microphone.png',
+          buttonIcon: Icons.mic,
         );
       case NotificationType.success:
         return _NotificationConfig(
-          backgroundImagePath: 'assets/images/reminder_green.png',
-          iconBackgroundColor: const Color(0xFFA0E871),
+          backgroundGradient: const LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xFFD1FAE5), Color(0xFFA7F3D0)],
+          ),
+          iconBackgroundColor: const Color(0xFF86EFAC),
           iconColor: Colors.white,
-          buttonColor: const Color(0xFFA0E871),
-          buttonTextColor: const Color(0xFF011F54),
+          buttonColor: const Color(0xFF22C55E),
+          buttonTextColor: Colors.white,
           defaultIconPath: 'assets/images/fire_nave.png',
+          buttonIcon: Icons.emoji_events,
         );
     }
   }
 }
 
 class _NotificationConfig {
-  final String backgroundImagePath;
+  final LinearGradient backgroundGradient;
   final Color iconBackgroundColor;
   final Color iconColor;
   final Color buttonColor;
   final Color buttonTextColor;
   final String defaultIconPath;
+  final IconData? buttonIcon;
 
   _NotificationConfig({
-    required this.backgroundImagePath,
+    required this.backgroundGradient,
     required this.iconBackgroundColor,
     required this.iconColor,
     required this.buttonColor,
     required this.buttonTextColor,
     required this.defaultIconPath,
+    this.buttonIcon,
   });
 }

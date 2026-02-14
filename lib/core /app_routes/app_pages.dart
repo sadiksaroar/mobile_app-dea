@@ -20,7 +20,9 @@ import 'package:mobile_app_dea/screen/auth/sign_in_screen.dart';
 import 'package:mobile_app_dea/screen/auth/sign_up.dart';
 import 'package:mobile_app_dea/screen/entry_screen_p2.dart';
 import 'package:mobile_app_dea/screen/home/home_screen.dart';
+import 'package:mobile_app_dea/screen/profile/Edit_profile/edit_from.dart';
 import 'package:mobile_app_dea/screen/profile/Edit_profile/edit_profile.dart';
+import 'package:mobile_app_dea/screen/profile/Edit_profile/efit_name.dart';
 import 'package:mobile_app_dea/screen/profile/profile_menu_with_notification/profile_menu_with_notification.dart';
 import 'package:mobile_app_dea/screen/progress/progress.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/create_quets_default.dart';
@@ -178,6 +180,20 @@ class AppPages {
         path: AppRoutespath.editProfileScreen,
         builder: (context, state) {
           return const EditProfileScreen(); // Placeholder for EditProfileScreen
+        },
+      ),
+
+      GoRoute(
+        path: AppRoutespath.editFrom,
+        builder: (context, state) {
+          return const EditFrom();
+        },
+      ),
+
+      GoRoute(
+        path: AppRoutespath.editNameScreen,
+        builder: (context, state) {
+          return const EditNameScreen(); // Edit name screen
         },
       ),
 

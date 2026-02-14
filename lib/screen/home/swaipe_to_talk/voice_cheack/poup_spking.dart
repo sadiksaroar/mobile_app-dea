@@ -68,7 +68,7 @@ class _PoupSpkingState extends State<PoupSpking> with ScreenFlowMixin {
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Container(
+                              SizedBox(
                                 width: 24,
                                 height: 24,
                                 child: Image.asset(
@@ -109,8 +109,10 @@ class _PoupSpkingState extends State<PoupSpking> with ScreenFlowMixin {
                       // Hide bottom controls if call ended overlay is shown?
                       // The user request shows "Wrap up" overlay.
                       // For now we keep bottom controls unless blocked.
-                      if (controller.aiCallState.value == AiCallState.callEnded)
+                      if (controller.aiCallState.value ==
+                          AiCallState.callEnded) {
                         return const SizedBox();
+                      }
 
                       return Column(
                         children: [
@@ -385,7 +387,7 @@ class _PoupSpkingState extends State<PoupSpking> with ScreenFlowMixin {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 16,
         children: [
-          Container(
+          SizedBox(
             width: 230.19,
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -437,7 +439,7 @@ class _PoupSpkingState extends State<PoupSpking> with ScreenFlowMixin {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     spacing: 8,
                     children: [
-                      Container(width: 18, height: 18, child: Stack()),
+                      SizedBox(width: 18, height: 18, child: Stack()),
                       Text(
                         'Add 10 minutes',
                         textAlign: TextAlign.center,
@@ -565,7 +567,7 @@ class _PoupSpkingState extends State<PoupSpking> with ScreenFlowMixin {
               crossAxisAlignment: CrossAxisAlignment.center,
               spacing: 8,
               children: [
-                Container(width: 24, height: 24, child: Stack()),
+                SizedBox(width: 24, height: 24, child: Stack()),
                 Text(
                   'You’re muted',
                   style: GoogleFonts.workSans(
@@ -620,7 +622,7 @@ class _PoupSpkingState extends State<PoupSpking> with ScreenFlowMixin {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 8,
               children: [
-                Container(width: 24, height: 24, child: Stack()),
+                SizedBox(width: 24, height: 24, child: Stack()),
                 Expanded(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -724,7 +726,7 @@ class _PoupSpkingState extends State<PoupSpking> with ScreenFlowMixin {
                     ),
                   ),
                 ),
-                Container(
+                SizedBox(
                   width: double.infinity,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,

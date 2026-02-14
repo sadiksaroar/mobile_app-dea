@@ -68,7 +68,7 @@ class _PoupYourShareYouState extends State<PoupYourShareYou>
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Container(
+                              SizedBox(
                                 width: 24,
                                 height: 24,
                                 child: Image.asset(
@@ -248,7 +248,7 @@ class _PoupYourShareYouState extends State<PoupYourShareYou>
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(width: 18, height: 18, child: Stack()),
+                      SizedBox(width: 18, height: 18, child: Stack()),
                       SizedBox(width: 8),
                       Text(
                         'Add 10 minutes',
@@ -367,7 +367,7 @@ class _PoupYourShareYouState extends State<PoupYourShareYou>
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(width: 24, height: 24, child: Stack()),
+                SizedBox(width: 24, height: 24, child: Stack()),
                 SizedBox(width: 8),
                 Text(
                   'Youre muted',
@@ -421,7 +421,7 @@ class _PoupYourShareYouState extends State<PoupYourShareYou>
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(width: 24, height: 24, child: Stack()),
+                SizedBox(width: 24, height: 24, child: Stack()),
                 SizedBox(width: 8),
                 Expanded(
                   child: Column(
@@ -514,7 +514,7 @@ class _PoupYourShareYouState extends State<PoupYourShareYou>
                   ),
                 ),
                 SizedBox(height: 16),
-                Container(
+                SizedBox(
                   width: double.infinity,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,

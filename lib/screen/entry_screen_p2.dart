@@ -626,7 +626,7 @@ class EntryScreen extends StatelessWidget {
                             color: const Color(
                               0xFFFFFDF7,
                             ) /* Text-text-light */,
-                            fontSize: 52,
+                            fontSize: 44,
                             fontFamily: 'Wosker',
                             fontWeight: FontWeight.w400,
                             height: 0.80,

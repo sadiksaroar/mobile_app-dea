@@ -12,6 +12,7 @@ enum AiCallState {
   muted,
   networkError,
   callEnded,
+  questCompleted,
 }
 
 /// Controller for Voice Check Popup / AI Call
@@ -27,6 +28,7 @@ class VoiceCheckController extends GetxController
 
   Timer? _recordingTimer;
   Timer? _silenceTimer;
+  Timer? _callDurationTimer;
   AnimationController? pulseController;
   AnimationController? speakingAnimationController;
 
@@ -43,12 +45,23 @@ class VoiceCheckController extends GetxController
       vsync: this,
       duration: const Duration(milliseconds: 1000),
     )..repeat(reverse: true);
+
+    // Start timer to show "Call ending soon" after 1 minute
+    _callDurationTimer = Timer(const Duration(minutes: 1), () {
+      aiCallState.value = AiCallState.endingSoon;
+    });
+
+    // After 2 minutes, quest is completed
+    Timer(const Duration(minutes: 2), () {
+      aiCallState.value = AiCallState.questCompleted;
+    });
   }
 
   @override
   void onClose() {
     _recordingTimer?.cancel();
     _silenceTimer?.cancel();
+    _callDurationTimer?.cancel();
     pulseController?.dispose();
     speakingAnimationController?.dispose();
     super.onClose();
@@ -63,14 +76,6 @@ class VoiceCheckController extends GetxController
     // Start recording timer
     _recordingTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       recordingDuration.value += const Duration(seconds: 1);
-
-      // Demo logic: Toggle states based on duration for visualization
-      final sec = recordingDuration.value.inSeconds;
-      if (sec == 5) aiCallState.value = AiCallState.endingSoon;
-      if (sec == 10) aiCallState.value = AiCallState.minutesAdded;
-      if (sec == 15) aiCallState.value = AiCallState.muted;
-      if (sec == 20) aiCallState.value = AiCallState.networkError;
-      if (sec == 25) aiCallState.value = AiCallState.callEnded;
     });
 
     // Start silence detection timer (extended for demo)

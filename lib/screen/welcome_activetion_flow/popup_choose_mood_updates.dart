@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
@@ -13,107 +14,143 @@ class PopupChooseMoodUpdates extends StatelessWidget {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-
-        // 🔥 Background Fix – use .path directly
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(Assets.svgImages.popupChooseMoodUpdates.path),
+            image: AssetImage(
+              "assets/images/Popup_Choose mood updates (1).png",
+            ),
             fit: BoxFit.cover,
           ),
         ),
-
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               children: [
                 // 🔴 TOP LEFT CLOSE BUTTON
                 Align(
                   alignment: Alignment.topLeft,
-                  child: IconButton(
-                    icon: SvgPicture.asset(
-                      Assets.svgIcons.popupSpwakingCross.path,
+                  child: GestureDetector(
+                    onTap: () => Navigator.pop(context), // tap korle close hobe
+                    child: Image.asset(
+                      'assets/images/blu_cross.png', // ekhane tomaar image path
+                      width: 28,
+                      height: 28,
                     ),
-                    onPressed: () => Navigator.pop(context),
+                  ),
+                ),
+                Spacer(),
+                SizedBox(height: 30),
+                // 🟢 CENTER EMOJI IMAGES
+                Container(
+                  padding: const EdgeInsets.all(20),
+
+                  child: Image.asset(
+                    'assets/images/emoji.png', // ekhane tomaar image path
+                    width: 231,
+                    height: 171,
+                    fit: BoxFit.cover,
                   ),
                 ),
 
-                const SizedBox(height: 80),
+                const Spacer(flex: 1),
 
-                // 🟢 CENTER IMAGE — FIXED
-                Image.asset(
-                  "assets/svg_images/Popup_Choose mood updates.png",
-                  height: 215,
-                  width: 230,
+                // TEXT
+                SizedBox(
+                  width: 310,
+                  height: 51,
+                  child: Text(
+                    'WANT TO KEEP TRACK OF HOW YOU FEEL?',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: const Color(0xFF011F54) /* Text-text-default */,
+                      fontSize: 32,
+                      fontFamily: 'Wosker',
+                      fontWeight: FontWeight.w400,
+                      height: 0.80,
+                    ),
+                  ),
                 ),
 
                 const SizedBox(height: 20),
-
-                // TEXT
-                const Text(
-                  "Want to keep track of how you feel?",
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.red,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Text(
+                    "Fuzzy can gently check in each day — to help you spot your emotional patterns and celebrate progress. 🌿",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.workSans(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFF424242),
+                      height: 1.5,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
                 ),
-                const Text(
-                  "Fuzzy can gently check in each day — to help you spot your emotional patterns and celebrate progress. 🌿",
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
+                const Spacer(flex: 2),
 
-                const SizedBox(height: 25),
-
-                // 🔵 FIRST BUTTON
+                // 🔵 FIRST BUTTON - "Not now"
                 SizedBox(
                   width: double.infinity,
-                  height: 74,
-                  child: ElevatedButton.icon(
+                  height: 60,
+                  child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFFFFEF8),
+                      backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
-                        side: const BorderSide(color: Color(0xFF4A46FF)),
+                        side: const BorderSide(
+                          color: Color(0xFF4A46FF),
+                          width: 2,
+                        ),
                         borderRadius: BorderRadius.circular(50),
                       ),
-                    ),
-
-                    label: Text(
-                      'Update Mood',
-                      style: AppsTextStyles.haveAnAccount,
-                      selectionColor: Color(0xFF4A46FF),
+                      elevation: 0,
                     ),
                     onPressed: () {
                       context.push("");
                     },
+                    child: Text(
+                      'Not now',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF4542EB), // Text-text-primary
+                        fontSize: 20,
+                        fontWeight: FontWeight.w900,
+                        height: 0.80,
+                      ),
+                    ),
                   ),
                 ),
+
                 const SizedBox(height: 15),
 
-                // 🟣 SECOND BUTTON
+                // 🟣 SECOND BUTTON - "Yes, I'd like that"
                 SizedBox(
                   width: double.infinity,
-                  height: 74,
-                  child: ElevatedButton.icon(
+                  height: 60,
+                  child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF4A46FF),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
                       ),
+                      elevation: 0,
                     ),
-
-                    label: Text('Skip', style: AppsTextStyles.haveAnAccount),
                     onPressed: () {
                       context.push("");
                     },
+                    child: Text(
+                      'Yes, I’d like that',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFFFFFDF7), // Text-text-light
+                        fontSize: 20,
+                        fontWeight: FontWeight.w900,
+                        height: 0.80,
+                      ),
+                    ),
                   ),
                 ),
+
+                const SizedBox(height: 30),
               ],
             ),
           ),

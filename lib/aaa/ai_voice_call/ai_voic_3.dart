@@ -6,12 +6,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/screen/home/swaipe_to_talk/voice_cheack/voice_check_controller.dart';
 
 /// Main Voice Check Popup Widget
-class VoiceCheckPopup extends StatelessWidget {
+class AiVoic3 extends StatelessWidget {
   final String title;
   final String subtitle;
   final Duration totalDuration;
 
-  const VoiceCheckPopup({
+  const AiVoic3({
     super.key,
     this.title = 'Answer emails',
     this.subtitle = "You're doing great — keep it going",
@@ -1168,7 +1168,7 @@ void showVoiceCheckPopup({
           topRight: Radius.circular(24.r),
         ),
       ),
-      child: VoiceCheckPopup(
+      child: AiVoic3(
         title: title,
         subtitle: subtitle,
         totalDuration: totalDuration,

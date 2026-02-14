@@ -408,7 +408,7 @@ class _PoupProssingState extends State<PoupProssing>
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Container(
+                              SizedBox(
                                 width: 24,
                                 height: 24,
                                 child: Image.asset(

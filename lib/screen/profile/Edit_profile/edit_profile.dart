@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
+import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 
@@ -126,17 +129,34 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                               style: AppsTextStyles.extraBold32Centered,
                             ),
                             const SizedBox(height: 4),
-                            Text(
-                              'Pick a new form or customize your current one',
-                              style: AppsTextStyles.regular16l,
+                            SizedBox(
+                              width: 205,
+                              child: Text(
+                                'Pick a new form or customize your current one',
+                                style: TextStyle(
+                                  color: const Color(
+                                    0xFF011F54,
+                                  ) /* Text-text-default */,
+                                  fontSize: 16,
+                                  fontFamily: 'Work Sans',
+                                  fontWeight: FontWeight.w400,
+                                  height: 1.40,
+                                  letterSpacing: -0.50,
+                                ),
+                              ),
                             ),
                           ],
                         ),
                       ),
-                      Image.asset(
-                        Assets.svgIcons.editProfilIcon.path,
-                        height: 24,
-                        width: 24,
+                      GestureDetector(
+                        onTap: () {
+                          context.push("/editNameScreen");
+                        },
+                        child: Image.asset(
+                          Assets.svgIcons.editProfilIcon.path,
+                          height: 24,
+                          width: 24,
+                        ),
                       ),
                     ],
                   ),
@@ -224,24 +244,36 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 const SizedBox(height: 40),
 
                 // Save Button
-                SizedBox(
-                  width: double.infinity,
-                  height: 85,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      // Handle save
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColorsApps.royalBlue,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                Container(
+                  width: 335,
+                  height: 80,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 40,
+                    vertical: 28,
+                  ),
+                  decoration: ShapeDecoration(
+                    color: const Color(0xFF4542EB) /* Background-bg-primary */,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(999),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    spacing: 20,
+                    children: [
+                      Text(
+                        'Save',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.workSans(
+                          color: const Color(0xFFFFFDF7),
+                          fontSize: 24,
+                          fontWeight: FontWeight.w900,
+                          height: 0.80,
+                        ),
                       ),
-                      elevation: 0,
-                    ),
-                    child: Text(
-                      'Save',
-                      style: AppsTextStyles.black24UppercaseSome,
-                    ),
+                    ],
                   ),
                 ),
               ],

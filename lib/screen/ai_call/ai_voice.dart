@@ -88,7 +88,7 @@ class _AiVoiceState extends State<AiVoice> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       spacing: 10,
                       children: [
-                        Container(
+                        SizedBox(
                           width: 48,
                           height: 48,
                           child: Image.asset(
@@ -151,7 +151,7 @@ class _AiVoiceState extends State<AiVoice> {
 
               const SizedBox(height: 40),
 
-              Container(
+              SizedBox(
                 width: 335,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -163,7 +163,7 @@ class _AiVoiceState extends State<AiVoice> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       spacing: 8,
                       children: [
-                        Container(
+                        SizedBox(
                           width: 64,
                           height: 64,
                           child: Image.asset(
@@ -171,7 +171,7 @@ class _AiVoiceState extends State<AiVoice> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           width: 64,
                           height: 64,
                           child: Image.asset(
@@ -204,7 +204,7 @@ class _AiVoiceState extends State<AiVoice> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         spacing: 12,
                         children: [
-                          Container(
+                          SizedBox(
                             width: 64,
                             height: 64,
                             // padding: const EdgeInsets.all(10),

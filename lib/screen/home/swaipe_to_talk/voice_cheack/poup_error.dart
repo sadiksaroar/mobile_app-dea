@@ -174,7 +174,7 @@ class _PoupErrorState extends State<PoupError> with ScreenFlowMixin {
                         Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Container(
+                            SizedBox(
                               width: 24,
                               height: 24,
                               child: Image.asset(
@@ -203,7 +203,7 @@ class _PoupErrorState extends State<PoupError> with ScreenFlowMixin {
                     SizedBox(height: 20),
 
                     SizedBox(height: 40),
-                    Container(
+                    SizedBox(
                       width: 324.39,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,

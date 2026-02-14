@@ -6,12 +6,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/screen/home/swaipe_to_talk/voice_cheack/voice_check_controller.dart';
 
 /// Main Voice Check Popup Widget
-class VoiceCheckPopup extends StatelessWidget {
+class AiTestCall extends StatelessWidget {
   final String title;
   final String subtitle;
   final Duration totalDuration;
 
-  const VoiceCheckPopup({
+  const AiTestCall({
     super.key,
     this.title = 'Answer emails',
     this.subtitle = "You're doing great — keep it going",
@@ -315,7 +315,6 @@ class VoiceCheckPopup extends StatelessWidget {
   Widget _buildCallEndingSoonBanner(VoiceCheckController controller) {
     return Container(
       width: 335,
-      // height: 100,
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
       decoration: ShapeDecoration(
         color: const Color(0xFFFFFCF1) /* Background-bg-secondary-light */,
@@ -341,15 +340,6 @@ class VoiceCheckPopup extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 16,
         children: [
-          // Add icon here
-          SizedBox(
-            width: 40,
-            height: 40,
-            child: Image.asset(
-              'assets/images/call_ending.png',
-              fit: BoxFit.contain,
-            ),
-          ),
           Expanded(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -805,13 +795,13 @@ class VoiceCheckPopup extends StatelessWidget {
           ),
           SizedBox(width: 8.w),
           Text('✉️', style: TextStyle(fontSize: 24.sp)),
-          // SizedBox(width: 8.w),
+          SizedBox(width: 8.w),
           // ekhane image
-          // Image.asset(
-          //   'assets/images/CheckCircle.png', // tomer local image path
-          //   width: 40.w,
-          //   height: 40.h,
-          // ),
+          Image.asset(
+            'assets/images/CheckCircle.png', // tomer local image path
+            width: 40.w,
+            height: 40.h,
+          ),
         ],
       ),
     );
@@ -892,74 +882,86 @@ class VoiceCheckPopup extends StatelessWidget {
         );
       }
 
-      return AnimatedBuilder(
-        animation: controller.speakingAnimationController!,
-        builder: (context, child) {
-          final scale = isSpeaking
-              ? 1.0 + (controller.speakingAnimationController!.value * 0.2)
-              : 1.0;
-          return Transform.scale(
-            scale: scale,
-            child: SizedBox(
-              width: 266,
-              height: 248.79,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  // Outer gradient circle with progress ring
-                  Positioned(
-                    left: 1,
-                    top: 0,
-                    child: SizedBox(
-                      width: 248.77,
-                      height: 248.79,
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          // Background gradient circle
-                          Positioned.fill(
-                            child: isEndingSoon
-                                ? Container(
-                                    decoration: const BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      gradient: RadialGradient(
-                                        colors: [
-                                          Color(0xFFFF8C00), // center orange
-                                          Color(0xFFFFE8B8), // outer warm
-                                        ],
-                                      ),
-                                    ),
-                                  )
-                                : Container(
-                                    decoration: ShapeDecoration(
-                                      gradient: RadialGradient(
-                                        center: Alignment(0.46, 0.46),
-                                        radius: 0.98,
-                                        colors: [
-                                          const Color(0x003F3CD6),
-                                          const Color.fromARGB(
-                                            125,
-                                            30,
-                                            28,
-                                            175,
-                                          ),
-                                        ],
-                                      ),
-                                      shape: OvalBorder(),
+      return Stack(
+        alignment: Alignment.center,
+        children: [
+          AnimatedBuilder(
+            animation: controller.speakingAnimationController!,
+            builder: (context, child) {
+              final scale = isSpeaking
+                  ? 1.0 + (controller.speakingAnimationController!.value * 0.2)
+                  : 1.0;
+              return Transform.scale(
+                scale: scale,
+                child: Container(
+                  width: 210.w,
+                  height: 210.w,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: isEndingSoon
+                        ? const Color(0xFFFFE8B8).withValues(alpha: 0.3)
+                        : const Color(0xFF5B9DFF).withValues(alpha: 0.1),
+                  ),
+                  child: CustomPaint(
+                    size: const Size(300, 300),
+                    painter: isEndingSoon
+                        ? RingPainter(0.25, isEndingSoon: true)
+                        : RingPainter(0.25),
+                  ),
+                ),
+              );
+            },
+          ),
+          SizedBox(
+            width: 266,
+            height: 248.79,
+            child: Stack(
+              children: [
+                // Outer gradient circle
+                Positioned(
+                  left: 1,
+                  top: 0,
+                  child: SizedBox(
+                    width: 248.77,
+                    height: 248.79,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          child: isEndingSoon
+                              ? Container(
+                                  width: 258,
+                                  height: 255,
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    gradient: RadialGradient(
+                                      colors: [
+                                        Color(0xFFFF8C00), // center orange
+                                        Color(0xFFFFE8B8), // outer warm
+                                      ],
                                     ),
                                   ),
-                          ),
-                          // Progress ring on top of gradient
-                          Positioned.fill(
-                            child: CustomPaint(
-                              painter: RingPainter(
-                                0.25,
-                                isEndingSoon: isEndingSoon,
-                              ),
-                            ),
-                          ),
-                          // Inner gradient circle with shadow
-                          Center(
+                                )
+                              : Container(
+                                  width: 255,
+                                  height: 255,
+                                  decoration: ShapeDecoration(
+                                    gradient: RadialGradient(
+                                      center: Alignment(0.46, 0.46),
+                                      radius: 0.98,
+                                      colors: [
+                                        const Color(0x003F3CD6),
+                                        const Color.fromARGB(125, 30, 28, 175),
+                                      ],
+                                    ),
+                                    shape: OvalBorder(),
+                                  ),
+                                ),
+                        ),
+                        // Inner gradient circle with shadow
+                        if (!isEndingSoon)
+                          Positioned(
+                            left: 34,
+                            top: 32,
                             child: Container(
                               width: 182.58,
                               height: 182.58,
@@ -973,59 +975,74 @@ class VoiceCheckPopup extends StatelessWidget {
                                   ],
                                 ),
                                 shape: OvalBorder(),
-                                shadows: isEndingSoon
-                                    ? []
-                                    : [
-                                        BoxShadow(
-                                          color: Color(0x995550FF),
-                                          blurRadius: 19.60,
-                                          offset: Offset(0, 0),
-                                          spreadRadius: 11,
-                                        ),
-                                      ],
+                                shadows: [
+                                  BoxShadow(
+                                    color: Color(0x995550FF),
+                                    blurRadius: 19.60,
+                                    offset: Offset(0, 0),
+                                    spreadRadius: 11,
+                                  ),
+                                ],
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  // Middle layer
-                  Positioned(
-                    left: 0,
-                    top: 48.15,
-                    child: Container(
-                      width: 266,
-                      height: 154.39,
-                      decoration: ShapeDecoration(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(40.13),
-                        ),
-                      ),
-                    ),
-                  ),
-                  // Center image/emoji
-                  Positioned(
-                    left: 67.17,
-                    top: 60.45,
-                    child: Container(
-                      width: 130.63,
-                      height: 129.18,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/dea_png/Popup_Speaking.png",
+                        if (isEndingSoon)
+                          Positioned(
+                            left: 34,
+                            top: 32,
+                            child: Container(
+                              width: 182.58,
+                              height: 182.58,
+                              decoration: ShapeDecoration(
+                                gradient: RadialGradient(
+                                  center: Alignment(0.50, 0.50),
+                                  radius: 0.73,
+                                  colors: [
+                                    const Color(0xFF7270F3),
+                                    const Color(0xFF3F3CD6),
+                                  ],
+                                ),
+                                shape: OvalBorder(),
+                              ),
+                            ),
                           ),
-                          fit: BoxFit.fill,
-                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                // Middle layer
+                Positioned(
+                  left: 0,
+                  top: 48.15,
+                  child: Container(
+                    width: 266,
+                    height: 154.39,
+                    decoration: ShapeDecoration(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40.13),
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+                // Center image/emoji
+                Positioned(
+                  left: 67.17,
+                  top: 60.45,
+                  child: Container(
+                    width: 130.63,
+                    height: 129.18,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/dea_png/Popup_Speaking.png"),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          );
-        },
+          ),
+        ],
       );
     });
   }
@@ -1168,7 +1185,7 @@ void showVoiceCheckPopup({
           topRight: Radius.circular(24.r),
         ),
       ),
-      child: VoiceCheckPopup(
+      child: AiTestCall(
         title: title,
         subtitle: subtitle,
         totalDuration: totalDuration,

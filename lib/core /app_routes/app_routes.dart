@@ -11,8 +11,8 @@ class AppRoutespath {
   static const String enterNewPassword = '/enterNewPassword';
 
   // /* onboarding */
-
   static const String onboardingFlow = '/onboardingFlow';
+
   static const String loadingOnboardingNowli = '/loadingOnboardingNowli';
   static const String onbordingFetures = '/onbordingFetures';
   static const String nowliHowToUse = "/nowliHowToUse";
@@ -35,6 +35,8 @@ class AppRoutespath {
   static const String profileNotificationsScreen =
       '/profileNotificationsScreen';
   static const String editProfileScreen = '/editProfileScreen';
+  static const String editNameScreen = '/editNameScreen';
+  static const String editFrom = '/editFrom';
   /*  quest page end  */
   static const String questHomePage = '/questHomePage';
   static const String createQuestPage = '/createQuestPage';

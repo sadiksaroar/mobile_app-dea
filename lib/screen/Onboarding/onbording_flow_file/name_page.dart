@@ -112,6 +112,7 @@
 //     );
 //   }
 // }
+
 import 'package:flutter/material.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
@@ -209,14 +210,33 @@ class _NamePageState extends State<NamePage> {
             SizedBox(height: MediaQuery.of(context).size.height * 0.3),
 
             // 🔹 Continue button
+            // SizedBox(
+            //   width: double.infinity,
+            //   height: 55,
+            //   child: ElevatedButton(
+            //     onPressed: _isButtonEnabled ? widget.onContinue : null,
+            //     style: ElevatedButton.styleFrom(
+            //       backgroundColor: const Color(0xFF4A3AFF),
+            //       disabledBackgroundColor: const Color(0xFF4A3AFF),
+            //       shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(30),
+            //       ),
+            //     ),
+            //     child: Text(
+            //       "Continue",
+            //       style: AppsTextStyles.continueButton.copyWith(
+            //         color: _isFocused ? Colors.white : const Color(0xFFA9A8F6),
+            //       ),
+            //     ),
+            //   ),
+            // ),
             SizedBox(
               width: double.infinity,
               height: 55,
               child: ElevatedButton(
-                onPressed: _isButtonEnabled ? widget.onContinue : null,
+                onPressed: widget.onContinue,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF4A3AFF),
-                  disabledBackgroundColor: const Color(0xFF4A3AFF),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
@@ -224,11 +244,31 @@ class _NamePageState extends State<NamePage> {
                 child: Text(
                   "Continue",
                   style: AppsTextStyles.continueButton.copyWith(
-                    color: _isFocused ? Colors.white : const Color(0xFFA9A8F6),
+                    color: Colors.white,
                   ),
                 ),
               ),
             ),
+            // SizedBox(
+            //   width: double.infinity,
+            //   height: 55,
+            //   child: ElevatedButton(
+            //     onPressed: _isButtonEnabled ? widget.onContinue : null,
+            //     style: ElevatedButton.styleFrom(
+            //       backgroundColor: const Color(0xFF4A3AFF),
+            //       disabledBackgroundColor: const Color(0xFF4A3AFF),
+            //       shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(30),
+            //       ),
+            //     ),
+            //     child: Text(
+            //       "Continue",
+            //       style: AppsTextStyles.continueButton.copyWith(
+            //         color: _isFocused ? Colors.white : const Color(0xFFA9A8F6),
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

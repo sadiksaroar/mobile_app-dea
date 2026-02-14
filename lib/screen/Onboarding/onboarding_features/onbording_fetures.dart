@@ -197,6 +197,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/widget/custom_button.dart';
@@ -439,7 +440,16 @@ class OnboardingFeatures extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.008),
-                Text(description, style: AppsTextStyles.regular16l),
+                Text(
+                  description,
+                  style: GoogleFonts.workSans(
+                    color: const Color(0xFF011F54), // Background-bg-dark
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400,
+                    height: 1.40,
+                    letterSpacing: -0.50,
+                  ),
+                ),
               ],
             ),
           ),
