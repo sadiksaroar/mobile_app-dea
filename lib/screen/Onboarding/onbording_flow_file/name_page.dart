@@ -179,31 +179,62 @@ class _NamePageState extends State<NamePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              "Let's get to know each other!",
-              style: AppsTextStyles.passwordDescription,
+            // SizedBox(
+            //   width: 343,
+            //   child: Text(
+            //     'WHAT SHOULD NOWLII CALL YOU?',
+            //     style: TextStyle(
+            //       color: const Color(0xFF011F54) /* Background-bg-dark */,
+            //       fontSize: 52,
+            //       fontFamily: 'Wosker',
+            //       fontWeight: FontWeight.w400,
+            //       height: 0.80,
+            //     ),
+            //   ),
+            // ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Let's get to know each other!",
+                style: AppsTextStyles.passwordDescription,
+              ),
             ),
             const SizedBox(height: 16),
-            Text(
-              'WHAT SHOULD NOWLII CALL YOU?',
-              style: AppsTextStyles.saimTitle,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                width: 343,
+                child: Text(
+                  'WHAT SHOULD NOWLII CALL YOU?',
+                  style: TextStyle(
+                    color: const Color(0xFF011F54) /* Background-bg-dark */,
+                    fontSize: 52,
+                    fontFamily: 'Wosker',
+                    fontWeight: FontWeight.w400,
+                    height: 0.80,
+                  ),
+                ),
+              ),
             ),
             const SizedBox(height: 32),
 
             // 🔹 TextField with focus tracking
-            TextField(
-              controller: _nameController,
-              focusNode: _focusNode,
-              onChanged: widget.onNameChanged,
-              style: AppsTextStyles.typeSomeThingHere.copyWith(
-                color: const Color(0xFF4542EB),
-              ),
-              decoration: InputDecoration(
-                hintText: 'Type something here...',
-                hintStyle: AppsTextStyles.typeSomeThingHere.copyWith(),
-                border: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                focusedBorder: InputBorder.none,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: _nameController,
+                focusNode: _focusNode,
+                onChanged: widget.onNameChanged,
+                style: AppsTextStyles.typeSomeThingHere.copyWith(
+                  color: const Color(0xFF4542EB),
+                ),
+                decoration: InputDecoration(
+                  hintText: 'TYPE SOMETHING HERE...',
+                  hintStyle: AppsTextStyles.typeSomeThingHere.copyWith(),
+                  border: InputBorder.none,
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                ),
               ),
             ),
 
@@ -232,7 +263,7 @@ class _NamePageState extends State<NamePage> {
             // ),
             SizedBox(
               width: double.infinity,
-              height: 55,
+              height: 64,
               child: ElevatedButton(
                 onPressed: widget.onContinue,
                 style: ElevatedButton.styleFrom(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart' show Assets;
 import 'package:mobile_app_dea/themes/text_styles.dart' show AppsTextStyles;
 import 'package:mobile_app_dea/screen/auth/password_updated_popup_screen.dart'
@@ -128,24 +129,60 @@ class _EnterNewPasswordState extends State<EnterNewPassword> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Top Icons Row
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: () => Navigator.pop(context),
-                    child: Assets.svgIcons.backIconSvg.svg(
-                      height: 60,
-                      width: 60,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: Assets.svgIcons.backIconSvg.svg(
+                        height: 60,
+                        width: 60,
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Assets.svgIcons.signInPageIcon.svg(height: 80, width: 80),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  width: 335,
+                  child: Text(
+                    'ENTER NEW PASSWOD',
+                    style: TextStyle(
+                      color: const Color(0xFF011F54) /* Background-bg-dark */,
+                      fontSize: 64,
+                      fontFamily: 'Wosker',
+                      fontWeight: FontWeight.w400,
+                      height: 0.80,
                     ),
                   ),
-                  const SizedBox(width: 12),
-                  Assets.svgIcons.signInPageIcon.svg(height: 80, width: 80),
-                ],
+                ),
               ),
-              Text("Reset Password", style: AppsTextStyles.resetPassword),
               SizedBox(height: 10),
+
+              SizedBox(
+                width: 335,
+                child: Text(
+                  'Choose a new password that’s easy for you to remember - you’ve got this!',
+                  style: GoogleFonts.workSans(
+                    color: const Color(
+                      0xFF595754,
+                    ), // Text-text-secondary-default
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    height: 1.40,
+                    letterSpacing: -0.50,
+                  ),
+                ),
+              ),
               // Password Field
+              SizedBox(height: 10),
+
               TextFormField(
                 controller: _newPasswordController,
                 focusNode: _passwordFocus,
@@ -212,7 +249,7 @@ class _EnterNewPasswordState extends State<EnterNewPassword> {
               // Continue Button
               SizedBox(
                 width: double.infinity,
-                height: 55,
+                height: 69,
                 child: ElevatedButton(
                   onPressed: _isButtonEnabled
                       ? () {

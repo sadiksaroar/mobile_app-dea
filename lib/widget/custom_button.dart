@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomNextButton extends StatelessWidget {
@@ -63,9 +64,9 @@ class CustomNextButton extends StatelessWidget {
                     buttonText,
                     style:
                         textStyle ??
-                        const TextStyle(
+                        TextStyle(
                           color: Colors.white,
-                          fontSize: 28,
+                          fontSize: 35.sp,
                           fontWeight: FontWeight.bold,
                         ),
                   ),

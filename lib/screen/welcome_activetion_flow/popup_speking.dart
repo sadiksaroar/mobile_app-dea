@@ -45,52 +45,75 @@ class _PopupSpekingState extends State<PopupSpeking> {
     if (_popupStep == 1) {
       // Microphone permission popup
       return Container(
-        height: 260,
         width: 290,
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
         decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(16),
+          color: const Color(0xFF2C2C2E),
+          borderRadius: BorderRadius.circular(14),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              '"Nowlii" Would Like To Access the Microphone',
+            Text(
+              '"Nowlii" Would Like To\nAccess The Microphone',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+              style: GoogleFonts.poppins(
+                fontSize: 17,
+                fontWeight: FontWeight.w600,
                 color: Colors.white,
+                height: 1.3,
               ),
             ),
-            const SizedBox(height: 12),
-            const Text(
-              'Nowlii will listen once you say something. Your voice stays private. Always.',
+            const SizedBox(height: 8),
+            Text(
+              'Nowlii will listen once you say\nsomething. Your voice stays private.\nAlways.',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 13, color: Colors.white70),
+              style: GoogleFonts.poppins(
+                fontSize: 13,
+                fontWeight: FontWeight.w400,
+                color: Colors.white.withOpacity(0.7),
+                height: 1.4,
+              ),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 20),
+            Container(height: 0.5, color: Colors.white.withOpacity(0.2)),
             Row(
               children: [
                 Expanded(
                   child: TextButton(
                     onPressed: _closePopup,
-                    child: const Text(
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      shape: const RoundedRectangleBorder(),
+                    ),
+                    child: Text(
                       "Don't Allow",
-                      style: TextStyle(color: Colors.white70),
+                      style: GoogleFonts.poppins(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w400,
+                        color: const Color(0xFF0A84FF),
+                      ),
                     ),
                   ),
+                ),
+                Container(
+                  width: 0.5,
+                  height: 44,
+                  color: Colors.white.withOpacity(0.2),
                 ),
                 Expanded(
                   child: TextButton(
                     onPressed: _nextStep,
-                    child: const Text(
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      shape: const RoundedRectangleBorder(),
+                    ),
+                    child: Text(
                       'Allow',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
+                      style: GoogleFonts.poppins(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600,
+                        color: const Color(0xFF0A84FF),
                       ),
                     ),
                   ),
@@ -103,55 +126,83 @@ class _PopupSpekingState extends State<PopupSpeking> {
     } else if (_popupStep == 2) {
       // Speech recognition permission popup
       return Container(
-        height: 380,
-        width: 360,
-        padding: const EdgeInsets.all(16),
+        width: 290,
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
         decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(16),
+          color: const Color(0xFF2C2C2E),
+          borderRadius: BorderRadius.circular(14),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              '"Nowlii" Would Like To Access Speech Recognition',
+            Text(
+              '"Nowlii" Would Like To Access\nSpeech Recognition',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+              style: GoogleFonts.poppins(
+                fontSize: 17,
+                fontWeight: FontWeight.w600,
                 color: Colors.white,
+                height: 1.3,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Nowlii uses your voice to personalize\nsessions and help you stay on track.\nSpeech data may be processed by\nApple to recognize and interpret your\ninput.',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.poppins(
+                fontSize: 13,
+                fontWeight: FontWeight.w400,
+                color: Colors.white.withOpacity(0.7),
+                height: 1.4,
               ),
             ),
             const SizedBox(height: 12),
-            const Text(
-              'Nowlii uses your voice to personalize sessions and help you stay on track. Speech data may be processed by Apple to recognize and interpret your input.',
+            Text(
+              'Your voice stays private and is never\nstored or shared.',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 13, color: Colors.white70),
+              style: GoogleFonts.poppins(
+                fontSize: 13,
+                fontWeight: FontWeight.w400,
+                color: Colors.white.withOpacity(0.7),
+                height: 1.4,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text(
-              'Your voice stays private and is never stored or shared.',
+            Text(
+              'Nowlii listens only to help you - your\nvoice never leaves your device.',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 13, color: Colors.white70),
+              style: GoogleFonts.poppins(
+                fontSize: 13,
+                fontWeight: FontWeight.w400,
+                color: Colors.white.withOpacity(0.7),
+                height: 1.4,
+              ),
             ),
-            const SizedBox(height: 8),
-            const Text(
-              'Nowlii listens only to help you - your voice never leaves your device.',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 13, color: Colors.white70),
-            ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 20),
+            Container(height: 0.5, color: Colors.white.withOpacity(0.2)),
             Row(
               children: [
                 Expanded(
                   child: TextButton(
                     onPressed: _closePopup,
-                    child: const Text(
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      shape: const RoundedRectangleBorder(),
+                    ),
+                    child: Text(
                       "Don't Allow",
-                      style: TextStyle(color: Colors.white70),
+                      style: GoogleFonts.poppins(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w400,
+                        color: const Color(0xFF0A84FF),
+                      ),
                     ),
                   ),
+                ),
+                Container(
+                  width: 0.5,
+                  height: 44,
+                  color: Colors.white.withOpacity(0.2),
                 ),
                 Expanded(
                   child: TextButton(
@@ -160,11 +211,16 @@ class _PopupSpekingState extends State<PopupSpeking> {
                       // Navigate to the next page
                       context.push("/procrastinationScreen");
                     },
-                    child: const Text(
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      shape: const RoundedRectangleBorder(),
+                    ),
+                    child: Text(
                       'Allow',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
+                      style: GoogleFonts.poppins(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600,
+                        color: const Color(0xFF0A84FF),
                       ),
                     ),
                   ),

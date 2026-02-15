@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
-import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 
 class GenderPage extends StatelessWidget {
   final String userName;
@@ -21,7 +21,7 @@ class GenderPage extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: AppColorsApps.myColor,
+      backgroundColor: const Color(0xFFD9E5F5),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24.0),
@@ -35,11 +35,23 @@ class GenderPage extends StatelessWidget {
                 children: [
                   Text(
                     'HEY ${userName.toUpperCase()}!',
-                    style: AppsTextStyles.saimTitle28,
+                    style: TextStyle(
+                      color: const Color(0xFF011F54) /* Background-bg-dark */,
+                      fontSize: 52,
+                      fontFamily: 'Wosker',
+                      fontWeight: FontWeight.w400,
+                      height: 0.80,
+                    ),
                   ),
                   Text(
-                    'WHICH GENDER DESCRIBES YOU ?',
-                    style: AppsTextStyles.saimTitle28,
+                    'WHICH GENDER DESCRIBES YOU?',
+                    style: TextStyle(
+                      color: const Color(0xFF011F54) /* Background-bg-dark */,
+                      fontSize: 52,
+                      fontFamily: 'Wosker',
+                      fontWeight: FontWeight.w400,
+                      height: 0.80,
+                    ),
                   ),
                   const SizedBox(height: 32),
                   GenderButton(
@@ -62,15 +74,19 @@ class GenderPage extends StatelessWidget {
                     isSelected: selectedGender == 'other',
                     onPressed: () => onGenderSelected('other'),
                   ),
-                  const Spacer(),
-                  Center(
-                    child: Text(
-                      'You can always update this later. We\'ve got you.',
-                      style: AppsTextStyles.workSansRegular14,
-                      textAlign: TextAlign.center,
+                  // const Spacer(),
+                  const SizedBox(height: 160),
+
+                  Text(
+                    'You can always update this later. We’ve got you.',
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFF4C586E),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      height: 1.60,
                     ),
                   ),
-                  const SizedBox(height: 24),
+                  // const SizedBox(height: 24),
                 ],
               ),
             ),
@@ -104,9 +120,9 @@ class GenderButton extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 18),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFF4E5FFF) : AppColorsApps.myColor,
-          borderRadius: BorderRadius.circular(30),
-          border: Border.all(color: const Color(0xFF4E5FFF), width: 2),
+          color: isSelected ? const Color(0xFF5865F2) : const Color(0xFFD9E5F5),
+          borderRadius: BorderRadius.circular(35),
+          border: Border.all(color: const Color(0xFF4542EB), width: 2.5),
         ),
         child: Center(
           child: Text(
@@ -114,9 +130,9 @@ class GenderButton extends StatelessWidget {
             textAlign: TextAlign.center,
             style: GoogleFonts.workSans(
               color: isSelected ? Colors.white : const Color(0xFF4542EB),
-              fontSize: 20,
+              fontSize: 22,
               fontWeight: FontWeight.w900,
-              height: 0.80,
+              height: 1.0,
             ),
           ),
         ),

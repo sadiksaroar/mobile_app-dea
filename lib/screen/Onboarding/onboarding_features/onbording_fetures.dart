@@ -1,200 +1,5 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:go_router/go_router.dart';
-// import 'package:mobile_app_dea/core/gen/assets.gen.dart';
-// import 'package:mobile_app_dea/themes/text_styles.dart';
-// import 'package:mobile_app_dea/widget/custom_button.dart';
-
-// class OnboardingFeatures extends StatelessWidget {
-//   const OnboardingFeatures({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.white,
-//       body: SafeArea(
-//         child: Padding(
-//           padding: const EdgeInsets.all(16),
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               /// Top bar with new design
-//               Row(
-//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                 crossAxisAlignment: CrossAxisAlignment.center,
-//                 children: [
-//                   // Back button
-//                   GestureDetector(
-//                     onTap: () => context.push("/onboardingFlow"),
-//                     child: CircleAvatar(
-//                       child: SvgPicture.asset(
-//                         Assets.svgIcons.backIconSvg.path,
-//                         width: 59,
-//                         height: 59,
-//                       ),
-//                     ),
-//                   ),
-//                   const SizedBox(width: 16),
-
-//                   // Progress bar
-//                   Expanded(
-//                     child: Container(
-//                       height: 8,
-//                       decoration: ShapeDecoration(
-//                         color: const Color(0xFFC3DBFF),
-//                         shape: RoundedRectangleBorder(
-//                           borderRadius: BorderRadius.circular(999),
-//                         ),
-//                       ),
-//                       child: FractionallySizedBox(
-//                         alignment: Alignment.centerLeft,
-//                         widthFactor: 0.5, // 3/6 = 0.5
-//                         child: Container(
-//                           decoration: ShapeDecoration(
-//                             color: const Color(0xFF3D87F5),
-//                             shape: RoundedRectangleBorder(
-//                               borderRadius: BorderRadius.circular(999),
-//                             ),
-//                           ),
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-
-//                   const SizedBox(width: 8),
-
-//                   // Progress text
-//                   const Text(
-//                     '3/6',
-//                     style: TextStyle(
-//                       color: Color(0xFF4C586E),
-//                       fontSize: 12,
-//                       fontFamily: 'Work Sans',
-//                       fontWeight: FontWeight.w400,
-//                       height: 1.40,
-//                     ),
-//                   ),
-
-//                   const SizedBox(width: 16),
-
-//                   // Skip button
-//                   GestureDetector(
-//                     onTap: () {
-//                       // Skip to next screen
-//                       context.push("/nowliHowToUse");
-//                     },
-//                     child: Container(
-//                       padding: const EdgeInsets.all(8),
-//                       child: const Text(
-//                         'Skip',
-//                         textAlign: TextAlign.center,
-//                         style: TextStyle(
-//                           color: Color(0xFF011F54),
-//                           fontSize: 18,
-//                           fontFamily: 'Work Sans',
-//                           fontWeight: FontWeight.w900,
-//                           height: 0.80,
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 ],
-//               ),
-
-//               const SizedBox(height: 24),
-//               Text("MEET NOWLII", style: AppsTextStyles.black24Uppercase),
-//               const SizedBox(height: 24),
-
-//               /// Feature cards
-//               Expanded(
-//                 child: ListView(
-//                   padding: EdgeInsets.zero,
-//                   children: [
-//                     buildCard(
-//                       color: Colors.blue.shade300,
-//                       svgPath: Assets.svgIcons.realCompany.path,
-//                       title: "REAL COMPANY",
-//                       description:
-//                           "Nowlii is your always-available friend. Here for you - anytime, anywhere.",
-//                     ),
-//                     buildCard(
-//                       color: Colors.orange.shade400,
-//                       svgPath: Assets.svgIcons.dailyMoments.path,
-//                       title: "DAILY MOMENTS",
-//                       description:
-//                           "Whether you're walking, shopping, or hitting the gym - Nowlii joins in.",
-//                     ),
-//                     buildCard(
-//                       color: Colors.green.shade400,
-//                       svgPath: Assets.svgIcons.emotionalSupport.path,
-//                       title: "EMOTIONAL SUPPORT",
-//                       description:
-//                           "Low on motivation? Feeling alone? Nowlii listens, nudges, and cheers you on.",
-//                     ),
-//                   ],
-//                 ),
-//               ),
-
-//               /// CTA Button
-//               CustomNextButton(
-//                 isEnabled: true,
-//                 onTap: () => context.push("/nowliHowToUse"),
-//                 buttonText: "Let's start",
-//                 iconPath: Assets.svgIcons.startLetsGo.path,
-//                 textStyle: AppsTextStyles.letsStartNext,
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-
-//   static Widget buildCard({
-//     required Color color,
-//     required String svgPath,
-//     required String title,
-//     required String description,
-//   }) {
-//     return Container(
-//       margin: const EdgeInsets.symmetric(vertical: 8),
-//       padding: const EdgeInsets.all(16),
-//       decoration: BoxDecoration(
-//         color: color,
-//         borderRadius: BorderRadius.circular(16),
-//       ),
-//       child: Row(
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
-//           SvgPicture.asset(svgPath, width: 90, height: 90),
-//           const SizedBox(width: 16),
-//           Expanded(
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                   title,
-//                   style: const TextStyle(
-//                     color: Color(0xFF011F54),
-//                     fontSize: 28,
-//                     fontFamily: 'Wosker',
-//                     fontWeight: FontWeight.w400,
-//                     height: 1.1,
-//                     letterSpacing: 0.6,
-//                   ),
-//                 ),
-//                 const SizedBox(height: 8),
-//                 Text(description, style: AppsTextStyles.regular16l),
-//               ],
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -246,7 +51,7 @@ class OnboardingFeatures extends StatelessWidget {
                           context: context,
                           color: Colors.blue.shade300,
                           svgPath: Assets.svgIcons.realCompany.path,
-                          title: "REAL COMPANY",
+                          title: "REAL \nCOMPANY",
                           description:
                               "Nowlii is your always-available friend. Here for you - anytime, anywhere.",
                           availableWidth: constraints.maxWidth,
@@ -255,7 +60,7 @@ class OnboardingFeatures extends StatelessWidget {
                           context: context,
                           color: Colors.orange.shade400,
                           svgPath: Assets.svgIcons.dailyMoments.path,
-                          title: "DAILY MOMENTS",
+                          title: "DAILY \nMOMENTS",
                           description:
                               "Whether you're walking, shopping, or hitting the gym - Nowlii joins in.",
                           availableWidth: constraints.maxWidth,
@@ -402,8 +207,6 @@ class OnboardingFeatures extends StatelessWidget {
     final spaceBetween = (availableWidth * 0.035).clamp(12.0, 16.0);
 
     return Container(
-      height: 180,
-
       margin: EdgeInsets.symmetric(vertical: cardVerticalMargin),
       padding: EdgeInsets.all(cardPadding),
       decoration: BoxDecoration(
@@ -413,41 +216,39 @@ class OnboardingFeatures extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SvgPicture.asset(
-            svgPath,
-
-            // width: 97,
-            width: 97,
-
-            height: 97,
-            fit: BoxFit.contain,
-          ),
+          SvgPicture.asset(svgPath, width: 97, height: 97, fit: BoxFit.contain),
           SizedBox(width: spaceBetween),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    color: const Color(0xFF011F54),
-                    fontSize: titleFontSize,
-                    fontFamily: 'Wosker',
-                    fontWeight: FontWeight.w400,
-                    height: 1.1,
-                    letterSpacing: 0.6,
+                Flexible(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      color: const Color(0xFF011F54),
+                      fontSize: 24.sp,
+                      fontFamily: 'Wosker',
+                      fontWeight: FontWeight.w400,
+                      height: 1.1,
+                      letterSpacing: 0.6,
+                    ),
+                    overflow: TextOverflow.visible,
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.008),
-                Text(
-                  description,
-                  style: GoogleFonts.workSans(
-                    color: const Color(0xFF011F54), // Background-bg-dark
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                    height: 1.40,
-                    letterSpacing: -0.50,
+                Flexible(
+                  child: Text(
+                    description,
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFF011F54),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      height: 1.3,
+                      letterSpacing: -0.50,
+                    ),
+                    overflow: TextOverflow.visible,
                   ),
                 ),
               ],

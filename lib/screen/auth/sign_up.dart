@@ -1,7 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart' show Assets;
 import 'package:mobile_app_dea/themes/text_styles.dart' show AppsTextStyles;
 
@@ -89,7 +91,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     final borderRadius = BorderRadius.circular(15);
     final normalBorder = OutlineInputBorder(
       borderRadius: borderRadius,
-      borderSide: BorderSide.none,
+      borderSide: const BorderSide(color: Color(0xFFC3DBFF), width: 2),
       gapPadding: 8,
     );
     final highlightBorder = OutlineInputBorder(
@@ -141,73 +143,196 @@ class _SignUpScreenState extends State<SignUpScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // 🔙 Back button + logo
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            GestureDetector(
-              onTap: () => Navigator.pop(context),
-              child: Assets.svgIcons.signUnBackScrren.svg(
-                height: 60,
-                width: 60,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Assets.svgIcons.signUnBackScrren.svg(
+                  height: 60,
+                  width: 60,
+                ),
+              ),
+              const SizedBox(width: 12),
+              // Assets.svgIcons.appStoreAppIconSvg.svg(height: 80, width: 80),
+              Image.asset(
+                'assets/images/sadik.png',
+                height: 80,
+                width: 80,
+                fit: BoxFit.contain,
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 8),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SizedBox(
+            child: Text(
+              'SIGN UP',
+              style: TextStyle(
+                color: const Color(0xFF011F54) /* Background-bg-dark */,
+                fontSize: 86.sp,
+                fontFamily: 'Wosker',
+                fontWeight: FontWeight.w400,
+                height: 0.80,
               ),
             ),
-            const SizedBox(width: 12),
-            Assets.svgIcons.appStoreAppIconSvg.svg(height: 80, width: 80),
-          ],
+          ),
         ),
-        const SizedBox(height: 10),
-        Text("SIGN UP", style: AppsTextStyles.signupText),
-        const SizedBox(height: 10),
+        const SizedBox(height: 5),
 
         // 🧑 Name Field
-        TextFormField(
-          controller: _nameController,
-          focusNode: _nameFocus,
-          textInputAction: TextInputAction.next,
-          onFieldSubmitted: (_) =>
-              FocusScope.of(context).requestFocus(_emailFocus),
-          decoration: _fieldDecoration(
-            label: "Full Name",
-            labelStyle: AppsTextStyles.fullNameAndEmail,
-            hint: "Maria",
-            suffixIcon: _nameController.text.isNotEmpty
-                ? IconButton(
-                    icon: const Icon(Icons.close),
-                    onPressed: () => _nameController.clear(),
-                  )
-                : null,
+        SizedBox(
+          height: 64,
+          child: TextFormField(
+            controller: _nameController,
+            focusNode: _nameFocus,
+            textInputAction: TextInputAction.next,
+            onFieldSubmitted: (_) =>
+                FocusScope.of(context).requestFocus(_emailFocus),
+            decoration: InputDecoration(
+              labelText: "Full Name",
+              hintText: "Maria",
+              floatingLabelBehavior: FloatingLabelBehavior.auto,
+              floatingLabelAlignment: FloatingLabelAlignment.start,
+              floatingLabelStyle: TextStyle(
+                color: const Color(0xFF4A3AFF),
+                fontWeight: FontWeight.w600,
+                fontSize: 14,
+              ),
+              labelStyle: const TextStyle(
+                color: Color(0xFF4C586E),
+                fontWeight: FontWeight.w600,
+                fontSize: 16,
+              ),
+              filled: true,
+              fillColor: Colors.white,
+              contentPadding: const EdgeInsets.symmetric(
+                vertical: 18,
+                horizontal: 20,
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  color: Color(0xFFC3DBFF),
+                  width: 2,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  color: Color(0xFFC3DBFF),
+                  width: 2,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  color: Color(0xFF4A3AFF),
+                  width: 2,
+                ),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(color: Colors.red, width: 2),
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(color: Colors.red, width: 2),
+              ),
+              suffixIcon: _nameController.text.isNotEmpty
+                  ? IconButton(
+                      icon: const Icon(Icons.close),
+                      onPressed: () => _nameController.clear(),
+                    )
+                  : null,
+            ),
           ),
         ),
-        const SizedBox(height: 25),
+        // const SizedBox(height: 5),
+        const SizedBox(height: 8),
 
         // 📧 Email Field
-        TextFormField(
-          controller: _emailController,
-          focusNode: _emailFocus,
-          keyboardType: TextInputType.emailAddress,
-          textInputAction: TextInputAction.next,
-          onFieldSubmitted: (_) =>
-              FocusScope.of(context).requestFocus(_passwordFocus),
-          decoration: _fieldDecoration(
-            label: "Email Address",
-            labelStyle: AppsTextStyles.fullNameAndEmail,
-            hint: "maria@gmail.com",
-            showError: !_isEmailValid && _emailController.text.isNotEmpty,
-            suffixIcon: _emailController.text.isEmpty
-                ? null
-                : IconButton(
-                    icon: Icon(
-                      _isEmailValid
-                          ? Icons.check_circle
-                          : Icons.warning_amber_rounded,
-                      size: 20,
-                      color: _isEmailValid ? Colors.green : Colors.red,
+        SizedBox(
+          height: 64,
+          child: TextFormField(
+            controller: _emailController,
+            focusNode: _emailFocus,
+            keyboardType: TextInputType.emailAddress,
+            textInputAction: TextInputAction.next,
+            onFieldSubmitted: (_) =>
+                FocusScope.of(context).requestFocus(_passwordFocus),
+            decoration: InputDecoration(
+              labelText: "Email Address",
+              hintText: "maria@gmail.com",
+              floatingLabelBehavior: FloatingLabelBehavior.auto,
+              floatingLabelAlignment: FloatingLabelAlignment.start,
+              floatingLabelStyle: TextStyle(
+                color: (!_isEmailValid && _emailController.text.isNotEmpty)
+                    ? Colors.red
+                    : const Color(0xFF4A3AFF),
+                fontWeight: FontWeight.w600,
+                fontSize: 14,
+              ),
+              labelStyle: const TextStyle(
+                color: Color(0xFF4C586E),
+                fontWeight: FontWeight.w600,
+                fontSize: 16,
+              ),
+              filled: true,
+              fillColor: Colors.white,
+              contentPadding: const EdgeInsets.symmetric(
+                vertical: 18,
+                horizontal: 20,
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  color: Color(0xFFC3DBFF),
+                  width: 2,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  color: Color(0xFFC3DBFF),
+                  width: 2,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  color: Color(0xFF4A3AFF),
+                  width: 2,
+                ),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(color: Colors.red, width: 2),
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(color: Colors.red, width: 2),
+              ),
+              suffixIcon: _emailController.text.isEmpty
+                  ? null
+                  : IconButton(
+                      icon: Icon(
+                        _isEmailValid
+                            ? Icons.check_circle
+                            : Icons.warning_amber_rounded,
+                        size: 20,
+                        color: _isEmailValid ? Colors.green : Colors.red,
+                      ),
+                      onPressed: () => _emailController.clear(),
                     ),
-                    onPressed: () => _emailController.clear(),
-                  ),
+            ),
+            onChanged: _onEmailChanged,
           ),
-          onChanged: _onEmailChanged,
         ),
         if (!_isEmailValid && _emailController.text.isNotEmpty) ...[
           const SizedBox(height: 6),
@@ -219,57 +344,144 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
           ),
         ],
-        const SizedBox(height: 20),
+        const SizedBox(height: 8),
 
         // 🔒 Password Field
-        TextFormField(
-          controller: _passwordController,
-          focusNode: _passwordFocus,
-          obscureText: _obscurePassword,
-          textInputAction: TextInputAction.done,
-          decoration: _fieldDecoration(
-            label: "Password",
-            labelStyle: AppsTextStyles.fullNameAndEmail,
-            hint: "*****",
-            suffixIcon: IconButton(
-              icon: Icon(
-                _obscurePassword ? Icons.visibility_off : Icons.visibility,
+        SizedBox(
+          height: 64,
+          child: TextFormField(
+            controller: _passwordController,
+            focusNode: _passwordFocus,
+            obscureText: _obscurePassword,
+            textInputAction: TextInputAction.done,
+            decoration: InputDecoration(
+              labelText: "Password",
+              hintText: "*****",
+              floatingLabelBehavior: FloatingLabelBehavior.auto,
+              floatingLabelAlignment: FloatingLabelAlignment.start,
+              floatingLabelStyle: TextStyle(
+                color: const Color(0xFF4A3AFF),
+                fontWeight: FontWeight.w600,
+                fontSize: 14,
               ),
-              onPressed: () =>
-                  setState(() => _obscurePassword = !_obscurePassword),
+              labelStyle: const TextStyle(
+                color: Color(0xFF4C586E),
+                fontWeight: FontWeight.w600,
+                fontSize: 16,
+              ),
+              filled: true,
+              fillColor: Colors.white,
+              contentPadding: const EdgeInsets.symmetric(
+                vertical: 18,
+                horizontal: 20,
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  color: Color(0xFFC3DBFF),
+                  width: 2,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  color: Color(0xFFC3DBFF),
+                  width: 2,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  color: Color(0xFF4A3AFF),
+                  width: 2,
+                ),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(color: Colors.red, width: 2),
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(color: Colors.red, width: 2),
+              ),
+              suffixIcon: IconButton(
+                icon: Icon(
+                  _obscurePassword ? Icons.visibility_off : Icons.visibility,
+                ),
+                onPressed: () =>
+                    setState(() => _obscurePassword = !_obscurePassword),
+              ),
             ),
           ),
         ),
-        const SizedBox(height: 20),
-        RichText(
-          textAlign: TextAlign.center,
-          text: TextSpan(
-            text: 'By signing up, you agree to Nowlii’s ',
-            style: AppsTextStyles.normalText,
-            children: [
-              TextSpan(
-                text: 'Privacy Policy',
-                style: AppsTextStyles.linkText,
-                recognizer: TapGestureRecognizer()..onTap = () {},
+        const SizedBox(height: 10),
+
+        SizedBox(
+          width: double.infinity,
+          child: Text.rich(
+            TextSpan(
+              style: GoogleFonts.workSans(
+                fontSize: 14,
+                height: 1.60,
+                color: const Color(0xFF4C586E),
               ),
-              const TextSpan(
-                text: ' & ',
-                style: TextStyle(color: Colors.black87),
-              ),
-              TextSpan(
-                text: 'Terms of Service',
-                style: AppsTextStyles.linkText,
-                recognizer: TapGestureRecognizer()..onTap = () {},
-              ),
-              const TextSpan(text: '.'),
-            ],
+              children: [
+                const TextSpan(text: 'By signing up, you agree to Nowlii’s'),
+                TextSpan(
+                  text: 'Privacy Policy ',
+                  style: GoogleFonts.workSans(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                    color: const Color(0xFF4542EB),
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+                const TextSpan(text: '&'),
+                TextSpan(
+                  text: 'Terms of Service',
+                  style: GoogleFonts.workSans(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    color: const Color(0xFF4542EB),
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+                const TextSpan(text: '.'),
+              ],
+            ),
           ),
         ),
+
+        // RichText(
+        //   textAlign: TextAlign.center,
+        //   text: TextSpan(
+        //     text: 'By signing up, you agree to Nowlii’s ',
+        //     style: AppsTextStyles.normalText,
+        //     children: [
+        //       TextSpan(
+        //         text: 'Privacy Policy',
+        //         style: AppsTextStyles.linkText,
+        //         recognizer: TapGestureRecognizer()..onTap = () {},
+        //       ),
+        //       const TextSpan(
+        //         text: ' & ',
+        //         style: TextStyle(color: Colors.black87),
+        //       ),
+        //       TextSpan(
+        //         text: 'Terms of Service',
+        //         style: AppsTextStyles.linkText,
+        //         recognizer: TapGestureRecognizer()..onTap = () {},
+        //       ),
+        //       const TextSpan(text: '.'),
+        //     ],
+        //   ),
+        // ),
+
         // 🔘 Continue Button
         SizedBox(height: 20),
         SizedBox(
           width: double.infinity,
-          height: 55,
+          height: 60,
           child: ElevatedButton(
             onPressed: _isButtonEnabled ? () {} : null,
             style: ElevatedButton.styleFrom(
@@ -290,22 +502,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
           ),
         ),
-        const SizedBox(height: 25),
+        const SizedBox(height: 20),
 
         Row(
           children: const [
-            Expanded(child: Divider(thickness: 2, color: Colors.black26)),
+            Expanded(child: Divider(thickness: 2, color: Color(0xFFC3DBFF))),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8),
-              child: Text("or", style: TextStyle(color: Colors.black54)),
+              child: Text("or", style: TextStyle(color: Color(0xFF4C586E))),
             ),
-            Expanded(child: Divider(thickness: 1, color: Colors.black26)),
+            Expanded(child: Divider(thickness: 2, color: Color(0xFFC3DBFF))),
           ],
         ),
         const SizedBox(height: 25),
 
         _socialButton(
           icon: Assets.svgIcons.googleIconsBlue.path,
+
           text: "Continue with Google",
         ),
         const SizedBox(height: 15),
@@ -313,7 +526,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           icon: Assets.svgIcons.appleIconsBlue.path,
           text: "Continue with Apple",
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 60),
 
         Center(
           child: RichText(
@@ -341,10 +554,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget _socialButton({required String icon, required String text}) {
     return SizedBox(
       width: double.infinity,
-      height: 55,
-      child: OutlinedButton.icon(
-        icon: SvgPicture.asset(icon, height: 20, width: 20),
-        label: Text(text, style: AppsTextStyles.googleContinueButton),
+      height: 60,
+      child: OutlinedButton(
         style: OutlinedButton.styleFrom(
           side: const BorderSide(color: Color(0xFF4542EB), width: 2),
           shape: RoundedRectangleBorder(
@@ -352,7 +563,34 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
         ),
         onPressed: () {},
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(icon, height: 20, width: 20),
+            const SizedBox(width: 12),
+            Text(text, style: AppsTextStyles.googleContinueButton),
+          ],
+        ),
       ),
     );
   }
+
+  // Widget _socialButton({required String icon, required String text}) {
+  //   return SizedBox(
+  //     width: double.infinity,
+  //     height: 60,
+  //     child: OutlinedButton.icon(
+  //       icon: SvgPicture.asset(icon, height: 20, width: 20),
+  //       SizedBox(width: 12),
+  //       label: Text(text, style: AppsTextStyles.googleContinueButton),
+  //       style: OutlinedButton.styleFrom(
+  //         side: const BorderSide(color: Color(0xFF4542EB), width: 2),
+  //         shape: RoundedRectangleBorder(
+  //           borderRadius: BorderRadius.circular(30),
+  //         ),
+  //       ),
+  //       onPressed: () {},
+  //     ),
+  //   );
+  // }
 }

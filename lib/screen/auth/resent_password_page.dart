@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart' show Assets;
@@ -27,6 +28,7 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
     super.initState();
     _emailController.addListener(() => _onEmailChanged(_emailController.text));
     _passwordController.addListener(_validateForm);
+    _emailFocus.addListener(() => setState(() {}));
   }
 
   @override
@@ -108,22 +110,41 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Top Icons Row
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: () => Navigator.pop(context),
-                    child: Assets.svgIcons.backIconSvg.svg(
-                      height: 60,
-                      width: 60,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: Assets.svgIcons.backIconSvg.svg(
+                        height: 60,
+                        width: 60,
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Assets.svgIcons.signInPageIcon.svg(height: 80, width: 80),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  width: 335,
+                  child: Text(
+                    'RESET PASSWORD',
+                    style: TextStyle(
+                      color: const Color(0xFF011F54) /* Background-bg-dark */,
+                      fontSize: 64,
+                      fontFamily: 'Wosker',
+                      fontWeight: FontWeight.w400,
+                      height: 0.80,
                     ),
                   ),
-                  const SizedBox(width: 12),
-                  Assets.svgIcons.signInPageIcon.svg(height: 80, width: 80),
-                ],
+                ),
               ),
-              Text("Reset Password", style: AppsTextStyles.resetPassword),
               Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -144,41 +165,97 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
-              // 📧 Email Field
+              const SizedBox(height: 30),
+
+              // Email Input Field
               TextFormField(
                 controller: _emailController,
                 focusNode: _emailFocus,
                 keyboardType: TextInputType.emailAddress,
-                textInputAction: TextInputAction.next,
-                onFieldSubmitted: (_) =>
-                    FocusScope.of(context).requestFocus(_passwordFocus),
-                decoration: _fieldDecoration(
-                  label: "Email Address",
-                  hint: "maria@gmail.com",
-                  labelStyle: AppsTextStyles.fullNameAndEmailSignIn,
+                textInputAction: TextInputAction.done,
+                style: GoogleFonts.workSans(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black87,
+                ),
+                decoration: InputDecoration(
+                  labelText: "Email address",
+                  labelStyle: GoogleFonts.workSans(
+                    color: const Color(0xFF595754),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    height: 1.40,
+                  ),
+                  floatingLabelBehavior: FloatingLabelBehavior.auto,
+                  floatingLabelStyle: GoogleFonts.workSans(
+                    color: _emailFocus.hasFocus
+                        ? const Color(0xFF4542EB)
+                        : const Color(0xFF595754),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 20,
+                  ),
+                  constraints: const BoxConstraints(minHeight: 64),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: const BorderSide(
+                      color: Color(0xFFC3DBFF),
+                      width: 1,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: const BorderSide(
+                      color: Color(0xFFC3DBFF),
+                      width: 1,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF4542EB),
+                      width: 1.5,
+                    ),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: const BorderSide(color: Colors.red, width: 1.5),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: const BorderSide(color: Colors.red, width: 1.5),
+                  ),
                   suffixIcon: _emailController.text.isEmpty
                       ? null
-                      : IconButton(
-                          icon: Icon(
-                            _isEmailValid
-                                ? Icons.check_circle
-                                : Icons.warning_amber_rounded,
-                            size: 20,
-                            color: _isEmailValid ? Colors.green : Colors.red,
+                      : Padding(
+                          padding: const EdgeInsets.only(right: 12),
+                          child: Icon(
+                            _isEmailValid ? Icons.check_circle : Icons.cancel,
+                            size: 22,
+                            color: _isEmailValid
+                                ? Colors.green
+                                : const Color(0xFF4542EB).withOpacity(0.5),
                           ),
-                          onPressed: () => _emailController.clear(),
                         ),
                 ),
                 onChanged: _onEmailChanged,
               ),
               if (!_isEmailValid && _emailController.text.isNotEmpty) ...[
-                const SizedBox(height: 6),
-                const Padding(
-                  padding: EdgeInsets.only(left: 6),
+                const SizedBox(height: 8),
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
                   child: Text(
                     "Please enter a valid email address.",
-                    style: TextStyle(color: Colors.red, fontSize: 13),
+                    style: GoogleFonts.workSans(
+                      color: Colors.red,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
               ],
@@ -191,7 +268,7 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
                 },
                 child: SizedBox(
                   width: double.infinity,
-                  height: 55,
+                  height: 65.h,
                   child: ElevatedButton(
                     onPressed: _isButtonEnabled
                         ? () {
@@ -202,7 +279,7 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
                       backgroundColor: const Color(0xFFFF8F26),
                       disabledBackgroundColor: const Color(0xFFFF8F26),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(50),
                       ),
                     ),
                     child: Text(

@@ -7,7 +7,7 @@ class AppsTextStyles {
   static TextStyle workSansBodyEntryScreen = GoogleFonts.workSans(
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
-    fontSize: 16,
+    fontSize: 18,
     height: 1.4,
     color: const Color(0xFFC8CBD2) /* Text-text-primary-light */,
   );
@@ -47,13 +47,14 @@ class AppsTextStyles {
     decoration: TextDecoration.underline,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle signupText = const TextStyle(
+  static TextStyle signupText = TextStyle(
     fontFamily: 'Wosker',
-    fontWeight: FontWeight.w400, // Regular (400)
+    fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
-    fontSize: 52, // 50px responsive
-    color: Color(0xFF011F54), // Default color (can override)
+    fontSize: 68.sp, // ScreenUtil responsive font size
+    color: const Color(0xFF011F54),
   );
+
   static TextStyle signupText28 = const TextStyle(
     fontFamily: 'Wosker',
     fontWeight: FontWeight.w400, // Regular (400)
@@ -151,9 +152,9 @@ class AppsTextStyles {
     color: const Color(0xFF4542EB), // #4542EB
   );
   static final TextStyle workSansSemiBold16signIn = GoogleFonts.workSans(
-    fontWeight: FontWeight.w700, // SemiBold
+    fontWeight: FontWeight.w900, // SemiBold
     fontStyle: FontStyle.normal, // Regular style
-    fontSize: 16, // 16px
+    fontSize: 20, // 16px
     height: 1.0, // line-height: 100%
     letterSpacing: -0.5, // -0.5px
     color: const Color(0xFF011F54), // #011F54
@@ -174,10 +175,10 @@ class AppsTextStyles {
     letterSpacing: -0.5, // -0.5px
     color: const Color(0xFF4542EB), // Hex color #4542EB
   );
-  static TextStyle resetPassword = const TextStyle(
+  static TextStyle resetPassword = TextStyle(
     fontFamily: 'Wosker',
     color: Color(0xFF011F54), // Background-bg-dark
-    fontSize: 48,
+    fontSize: 48.sp, // 48px responsive
     fontWeight:
         FontWeight.w400, // AlfaSlabOne only has one weight, but this is fine
     height: 0.9,
@@ -228,15 +229,15 @@ class AppsTextStyles {
     color: const Color(0xFF4C586E),
   );
   // ignore: non_constant_identifier_names
-  static const TextStyle saimTitle = TextStyle(
+  static TextStyle saimTitle = TextStyle(
     fontFamily: 'Wosker',
     fontWeight: FontWeight.w400, // Regular
-    fontSize: 38,
+    fontSize: 38.sp,
     height: 1, // 80%
     letterSpacing: 0,
     color: Color(0xFF011F54),
   );
-  static const TextStyle saimTitle28 = TextStyle(
+  static TextStyle saimTitle28 = TextStyle(
     fontFamily: 'Wosker',
     fontWeight: FontWeight.w400, // Regular
     fontSize: 36,

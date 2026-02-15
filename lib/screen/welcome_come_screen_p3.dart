@@ -21,8 +21,8 @@ class WelcomeScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.centerLeft,
                 child: SizedBox(
-                  width: 57,
-                  height: 55,
+                  width: 64,
+                  height: 59,
                   child: CircleAvatar(
                     backgroundColor: Colors.blue.shade100,
                     child: IconButton(
@@ -57,12 +57,18 @@ class WelcomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50),
                     ),
                   ),
-                  icon: Assets.svgIcons.googleIcon.svg(height: 24, width: 24),
+                  icon: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Assets.svgIcons.googleIcon.svg(height: 24, width: 24),
+                      const SizedBox(width: 12),
+                    ],
+                  ),
                   label: Text(
                     'Continue with Google',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.workSans(
-                      color: const Color(0xFFFFFDF7), // Text-light
+                      color: const Color(0xFFFFFDF7),
                       fontSize: 20,
                       fontWeight: FontWeight.w900,
                       height: 0.80,
@@ -74,7 +80,34 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 24),
+              // SizedBox(
+              //   width: double.infinity,
+              //   height: 74,
+              //   child: ElevatedButton.icon(
+              //     style: ElevatedButton.styleFrom(
+              //       backgroundColor: const Color(0xFF4A46FF),
+              //       shape: RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(50),
+              //       ),
+              //     ),
+              //     icon: Assets.svgIcons.googleIcon.svg(height: 24, width: 24),
+              //     SizedBox(width: 12),
+              //     label: Text(
+              //       'Continue with Google',
+              //       textAlign: TextAlign.center,
+              //       style: GoogleFonts.workSans(
+              //         color: const Color(0xFFFFFDF7), // Text-light
+              //         fontSize: 20,
+              //         fontWeight: FontWeight.w900,
+              //         height: 0.80,
+              //       ),
+              //     ),
+              //     onPressed: () {
+              //       context.push("/readyToStartScreen");
+              //     },
+              //   ),
+              // ),
+              const SizedBox(height: 8),
 
               // Apple Button
               SizedBox(
@@ -87,11 +120,17 @@ class WelcomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50),
                     ),
                   ),
-                  icon: Assets.svgIcons.appleIcon.svg(height: 24, width: 24),
+                  icon: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Assets.svgIcons.appleIcon.svg(height: 24, width: 24),
+                      const SizedBox(width: 12),
+                    ],
+                  ),
                   label: Text(
                     'Continue with Apple',
                     style: GoogleFonts.workSans(
-                      color: const Color(0xFFFFFDF7), // Text-light
+                      color: const Color(0xFFFFFDF7),
                       fontSize: 20,
                       fontWeight: FontWeight.w900,
                       height: 0.80,

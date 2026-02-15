@@ -52,10 +52,11 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
           },
           child: ClipRRect(
             borderRadius: BorderRadius.circular(50), // Rounded border radius
-            child: SvgPicture.asset(
-              'assets/svg_images/App Icon.svg', // Your SVG image
-              width: 154, // Adjust the width as needed
-              height: 154, // Adjust the height as needed
+            child: Image.asset(
+              'assets/images/Android App Icon - Squircle.png', // তোমার PNG image path
+              width: 154,
+              height: 154,
+              fit: BoxFit.contain, // optional
             ),
           ),
         ),

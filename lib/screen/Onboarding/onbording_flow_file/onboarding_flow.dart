@@ -89,7 +89,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
                         Container(
                           height: 12,
                           decoration: BoxDecoration(
-                            color: Color(0xFFC3DBFF),
+                            color: const Color(0xFFC3DBFF),
                             borderRadius: BorderRadius.circular(999),
                           ),
                         ),
