@@ -1,5 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
+import 'package:mobile_app_dea/screen/Onboarding/energy_check_in_screen.dart';
+import 'package:mobile_app_dea/screen/Onboarding/pop_spking_loding.dart';
 import 'package:mobile_app_dea/screen/home/swaipe_to_talk/swaipe_to_talk_loding.dart';
 import 'package:mobile_app_dea/screen/home/swaipe_to_talk/voice_cheack/poup_your_share_you.dart';
 import 'package:mobile_app_dea/screen/home/swaipe_to_talk/voice_cheack/poup_spking.dart';
@@ -32,10 +34,13 @@ import 'package:mobile_app_dea/screen/settings/contact_support/chat_boot/support
 import 'package:mobile_app_dea/screen/settings/contact_support/sopprt/support.dart';
 import 'package:mobile_app_dea/screen/settings/setting.dart';
 import 'package:mobile_app_dea/screen/splash.dart';
+import 'package:mobile_app_dea/screen/welcome_activetion_flow/notice_loader_screen.dart';
 import 'package:mobile_app_dea/screen/welcome_activetion_flow/popup_speking.dart';
 import 'package:mobile_app_dea/screen/welcome_activetion_flow/procrastination_screen.dart';
 import 'package:mobile_app_dea/screen/welcome_activetion_flow/subscription_popup.dart';
 import 'package:mobile_app_dea/screen/welcome_come_screen_p3.dart';
+
+import 'package:mobile_app_dea/screen/Onboarding/popup_choose_mood_updates.dart';
 
 class AppPages {
   static final GoRouter router = GoRouter(
@@ -61,6 +66,21 @@ class AppPages {
         path: AppRoutespath.signInScreen,
         builder: (context, state) =>
             const SignInScreen(), // Placeholder for SignInScreen
+      ),
+      GoRoute(
+        path: AppRoutespath.popSpkingLoding,
+        builder: (context, state) =>
+            const PopSpkingLoding(), // Placeholder for SignInScreen
+      ),
+      GoRoute(
+        path: AppRoutespath.energyCheckInScreen,
+        builder: (context, state) =>
+            const EnergyCheckInScreen(), // Placeholder for SignInScreen
+      ),
+      GoRoute(
+        path: AppRoutespath.noticeLoaderScreen,
+        builder: (context, state) =>
+            const NoticeLoaderScreen(), // Placeholder for SignInScreen
       ),
       GoRoute(
         path: AppRoutespath.signUpScreen,
@@ -140,6 +160,10 @@ class AppPages {
       GoRoute(
         path: AppRoutespath.popPoSahre,
         builder: (context, state) => PopPoSahre(),
+      ),
+      GoRoute(
+        path: AppRoutespath.popupChooseMoodUpdates,
+        builder: (context, state) => const PopupChooseMoodUpdates(),
       ),
 
       /*   on boarding end  */

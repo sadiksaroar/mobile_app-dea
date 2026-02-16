@@ -60,14 +60,14 @@ class GenderPage extends StatelessWidget {
                     isSelected: selectedGender == 'man',
                     onPressed: () => onGenderSelected('man'),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   GenderButton(
                     text: 'I\'m a woman',
                     value: 'woman',
                     isSelected: selectedGender == 'woman',
                     onPressed: () => onGenderSelected('woman'),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   GenderButton(
                     text: 'Another gender',
                     value: 'other',

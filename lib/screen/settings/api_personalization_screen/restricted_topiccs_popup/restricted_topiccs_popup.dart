@@ -215,6 +215,7 @@
 //   }
 // }
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 
 import 'package:mobile_app_dea/themes/text_styles.dart';
@@ -277,10 +278,7 @@ class _RestrictedTopicsPopupState extends State<RestrictedTopicsPopup> {
             children: [
               Container(
                 padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: const Color(0xFF1E3A8A),
-                  borderRadius: BorderRadius.circular(8),
-                ),
+
                 child: Image.asset(
                   Assets.svgIcons.restrictedTopics.path,
                   width: 24,
@@ -291,15 +289,31 @@ class _RestrictedTopicsPopupState extends State<RestrictedTopicsPopup> {
               Expanded(
                 child: Text(
                   'Restricted Topics',
-                  style: AppsTextStyles.myWorkSansStyle,
+                  style: GoogleFonts.workSans(
+                    color: const Color(0xFF011F54), // Text-text-default
+                    fontSize: 20,
+                    fontWeight: FontWeight.w800,
+                    height: 1.20,
+                    letterSpacing: -0.50,
+                  ),
                 ),
               ),
             ],
           ),
           const SizedBox(height: 12),
-          Text(
-            'You control what Nowlli talks about - for a safe, positive space.',
-            style: AppsTextStyles.workSansRegular16,
+
+          SizedBox(
+            width: 295,
+            child: Text(
+              'You control what Nowlli talks about - for a safe, positive space.',
+              style: GoogleFonts.workSans(
+                color: const Color(0xFF011F54), // Text-text-default
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+                height: 1.40,
+                letterSpacing: -0.50,
+              ),
+            ),
           ),
           const SizedBox(height: 20),
 
@@ -321,12 +335,14 @@ class _RestrictedTopicsPopupState extends State<RestrictedTopicsPopup> {
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
-                  child: const Text(
+                  child: Text(
                     'Cancel',
-                    style: TextStyle(
-                      color: Color(0xFF1E3A8A),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFF011F54), // Text-text-default
+                      fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                      height: 0.80,
                     ),
                   ),
                 ),
@@ -345,12 +361,14 @@ class _RestrictedTopicsPopupState extends State<RestrictedTopicsPopup> {
                     ),
                     elevation: 0,
                   ),
-                  child: const Text(
+                  child: Text(
                     'Save',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFFFFFDF7), // Text-text-light
+                      fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                      height: 0.80,
                     ),
                   ),
                 ),
@@ -416,10 +434,13 @@ class _RestrictedTopicsPopupState extends State<RestrictedTopicsPopup> {
                 Expanded(
                   child: Text(
                     topic,
-                    style: const TextStyle(
-                      fontSize: 14,
+
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFF011F54), // Text-text-default
+                      fontSize: 18,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xFF1E3A8A),
+                      height: 1.40,
+                      letterSpacing: -0.90,
                     ),
                   ),
                 ),

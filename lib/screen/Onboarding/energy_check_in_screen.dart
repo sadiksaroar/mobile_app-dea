@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 
 class EnergyCheckInScreen extends StatefulWidget {
@@ -145,7 +146,7 @@ class _EnergyCheckInScreenState extends State<EnergyCheckInScreen> {
                             children: [
                               SizedBox(
                                 width: double.infinity,
-                                height: 56,
+                                height: 69,
                                 child: OutlinedButton(
                                   onPressed: () {
                                     // Handle "I'm not sure" action
@@ -173,10 +174,11 @@ class _EnergyCheckInScreenState extends State<EnergyCheckInScreen> {
                               const SizedBox(height: 12),
                               SizedBox(
                                 width: double.infinity,
-                                height: 56,
+                                height: 69,
                                 child: ElevatedButton(
                                   onPressed: () {
                                     // Handle "Share" action
+                                    context.push("/noticeLoaderScreen");
                                   },
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: const Color(0xFF4A4AF4),

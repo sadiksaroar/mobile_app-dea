@@ -595,6 +595,7 @@ class NowliHowToUse extends StatelessWidget {
 */
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
@@ -728,8 +729,8 @@ class NowliHowToUse extends StatelessWidget {
                             ),
                           ),
                           child: Assets.svgIcons.nowliHowToUse.svg(
-                            height: 130,
-                            width: 115,
+                            height: 160.sp,
+                            width: 130.sp,
                           ),
                         ),
                         SizedBox(width: screenWidth * 0.04),
@@ -742,7 +743,7 @@ class NowliHowToUse extends StatelessWidget {
                                 color: const Color(
                                   0xFF011F54,
                                 ), // Text-text-default
-                                fontSize: 17,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.w800,
                                 height: 1.40,
                                 letterSpacing: -0.50,
@@ -870,6 +871,7 @@ class NowliHowToUse extends StatelessWidget {
                         fontSize: screenWidth * 0.045,
                       ),
                     ),
+                    SizedBox(height: screenHeight * 0.03),
                   ],
                 ),
               ),

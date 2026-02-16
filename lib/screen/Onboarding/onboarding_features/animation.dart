@@ -153,6 +153,12 @@ class _AnimationState extends State<Animation> {
                     Expanded(
                       child: Row(
                         children: [
+                          // Expanded(
+                          //   child: _buildCharacterCard(
+                          //     0,
+                          //     'assets/svg_images/A.png',
+                          //   ),
+                          // ),
                           Expanded(
                             child: _buildCharacterCard(
                               0,

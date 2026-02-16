@@ -439,7 +439,9 @@ class _ProcrastinationScreenState extends State<ProcrastinationScreen> {
                       // Choose AI voice button
                       GestureDetector(
                         onTap: () {
-                          context.push("/aiVoice");
+                          // context.push("/aiVoice");
+                          // context.go("");
+                          context.push("/popSpkingLoding");
                         },
                         child: Container(
                           padding: const EdgeInsets.symmetric(

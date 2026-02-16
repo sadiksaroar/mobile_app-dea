@@ -1,14 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:go_router/go_router.dart';
 
-class LoaderScreen extends StatelessWidget {
-  const LoaderScreen({super.key});
+class NoticeLoaderScreen extends StatefulWidget {
+  const NoticeLoaderScreen({super.key});
+
+  @override
+  State<NoticeLoaderScreen> createState() => _NoticeLoaderScreenState();
+}
+
+class _NoticeLoaderScreenState extends State<NoticeLoaderScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 4), () {
+      if (mounted) {
+        context.push("/homeScreen");
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFFCF1),
+      backgroundColor: const Color(0xFFFFFCF1),
       body: Center(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 40.w),
@@ -17,8 +33,8 @@ class LoaderScreen extends StatelessWidget {
             children: [
               // Icon
               Container(
-                width: 24.w,
-                height: 24.w,
+                width: 60.sp,
+                height: 60.sp,
                 decoration: BoxDecoration(
                   color: const Color(0xFFFF9228),
                   borderRadius: BorderRadius.circular(8),
@@ -26,31 +42,33 @@ class LoaderScreen extends StatelessWidget {
                 child: const Icon(
                   Icons.favorite,
                   color: Color(0xFF011F54),
-                  size: 24,
+                  size: 48,
                 ),
               ),
-              SizedBox(height: 32.h),
+              SizedBox(height: 32.sp),
 
               // Title
-              Text(
-                "Noted! Thanks for your honesty!",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: const Color(0xFF011F54),
-                  fontSize: 20.sp,
-                  fontFamily: 'Wosker',
-                  fontWeight: FontWeight.w400,
-                  height: 1.1,
+              SizedBox(
+                width: 295,
+                child: Text(
+                  'You control what Nowlli talks about - for a safe, positive space.',
+                  style: GoogleFonts.workSans(
+                    color: const Color(0xFF011F54), // Text-text-default
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    height: 1.40,
+                    letterSpacing: -0.50,
+                  ),
                 ),
               ),
-              SizedBox(height: 16.h),
+              SizedBox(height: 16.sp),
 
               // Subtitle
               Text(
                 "Fuzzy's here to make today \n a little easier.",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
-                  fontSize: 10.sp,
+                  fontSize: 18.sp,
                   color: const Color(0xFF6B7280),
                   fontWeight: FontWeight.w400,
                 ),

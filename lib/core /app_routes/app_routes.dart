@@ -27,9 +27,12 @@ class AppRoutespath {
   static const String poupSpking = '/poupSpking';
   static const String poupError = '/poupError';
   static const String poupProssing = '/poupProssing';
+  static const String popupChooseMoodUpdates = '/popupChooseMoodUpdates';
+  static const String popSpkingLoding = '/popSpkingLoding';
 
   /*   on boarding */
-
+  static const String energyCheckInScreen = '/energyCheckInScreen';
+  static const String noticeLoaderScreen = '/noticeLoaderScreen';
   /*  home page start  */
   static const String homeScreen = '/homeScreen';
   static const String profileNotificationsScreen =

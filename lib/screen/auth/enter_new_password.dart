@@ -219,7 +219,7 @@ class _EnterNewPasswordState extends State<EnterNewPassword> {
                   ),
                 ),
               ],
-              SizedBox(height: 20),
+              SizedBox(height: 15),
               // Confirm Password Field
               TextFormField(
                 controller: _confirmPasswordController,

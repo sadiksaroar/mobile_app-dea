@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -31,11 +32,11 @@ class _HomeScreenState extends State<HomeScreen> {
   late ConfettiController _confettiController;
 
   final List<TaskItem> _tasks = [
-    TaskItem('To wake up ☀️', '10:00', false),
-    TaskItem('To walk 🚶', '10:30', false),
-    TaskItem('To study 📚', '12:00', false),
-    TaskItem('To train 💪', '16:00', false),
-    TaskItem('To Sleep 🌙', '22:00', false, isSpecial: true),
+    TaskItem('☀️ To wake up ', '10:00', false),
+    TaskItem('🚶 To walk ', '10:30', false),
+    TaskItem('📚 To study ', '12:00', false),
+    TaskItem('💪 To train ', '16:00', false),
+    TaskItem('🌙 To Sleep ', '22:00', false, isSpecial: true),
   ];
 
   @override
@@ -84,6 +85,25 @@ class _HomeScreenState extends State<HomeScreen> {
     );
 
     // Notification 2: Quest Suggestion (5 seconds later)
+    Future.delayed(const Duration(seconds: 10), () {
+      if (mounted) {
+        NotificationManager().show(
+          context,
+          NotificationData(
+            type: NotificationType.success,
+            title: 'Fuzzy\'s proud of you',
+            subtitle: 'One chat at a time, you\'re getting stronger',
+            buttonText: 'See progress',
+            displayDuration: const Duration(seconds: 5),
+            onButtonPressed: () {
+              debugPrint('See progress pressed');
+            },
+          ),
+        );
+      }
+    });
+
+    // Notification 3: Success (10 seconds later)
     Future.delayed(const Duration(seconds: 5), () {
       if (mounted) {
         NotificationManager().show(
@@ -97,25 +117,6 @@ class _HomeScreenState extends State<HomeScreen> {
             displayDuration: const Duration(seconds: 5),
             onButtonPressed: () {
               debugPrint('Add quest pressed');
-            },
-          ),
-        );
-      }
-    });
-
-    // Notification 3: Success (10 seconds later)
-    Future.delayed(const Duration(seconds: 10), () {
-      if (mounted) {
-        NotificationManager().show(
-          context,
-          NotificationData(
-            type: NotificationType.success,
-            title: 'Fuzzy\'s proud of you',
-            subtitle: 'One chat at a time, you\'re getting stronger',
-            buttonText: 'See progress',
-            displayDuration: const Duration(seconds: 5),
-            onButtonPressed: () {
-              debugPrint('See progress pressed');
             },
           ),
         );
@@ -262,7 +263,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildHeader() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      // mainAxisAlignment: MainAxisAlignment,
       children: [
         GestureDetector(
           onTap: () {
@@ -278,7 +279,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
+        const SizedBox(width: 12),
         Text('HI JULIE!', style: AppsTextStyles.extraBold32Centered),
+        const Spacer(),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
           decoration: BoxDecoration(
@@ -326,82 +329,89 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  'Ready to make\ntoday count?',
-                  style: AppsTextStyles.sendResetLinkButton,
-                ),
-                const SizedBox(height: 6),
-                Text(
-                  'Tiny wins make big shifts.',
-                  style: AppsTextStyles.workSansRegular14,
-                ),
-                const SizedBox(height: 16),
-                Row(
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Flexible(
-                      child: Text(
-                        'Today\'s progress',
-                        style: AppsTextStyles.regular16l,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    const SizedBox(width: 8),
                     Text(
-                      '${(progress * 100).toInt()}%',
-                      style: AppsTextStyles.regular16l,
+                      'Ready to make\ntoday count?',
+                      style: AppsTextStyles.sendResetLinkButton,
                     ),
+                    const SizedBox(height: 6),
+                    Text(
+                      'Tiny wins make big shifts.',
+                      style: AppsTextStyles.workSansRegular14,
+                    ),
+                    const SizedBox(height: 16),
                   ],
                 ),
-                const SizedBox(height: 10),
-                Container(
-                  height: 24,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFC3DBFF),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Stack(
-                    children: [
-                      LayoutBuilder(
-                        builder: (context, constraints) {
-                          return AnimatedContainer(
-                            duration: const Duration(milliseconds: 500),
-                            width: constraints.maxWidth * progress,
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [Color(0xFFDFEFFF), Color(0xFF4542EB)],
-                              ),
-                              borderRadius: BorderRadius.circular(25),
-                            ),
-                          );
-                        },
-                      ),
-                    ],
-                  ),
+              ),
+              const SizedBox(width: 20),
+
+              Container(
+                height: 100.h,
+                width: 100.w,
+                padding: const EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: AppColorsApps.royalBlue,
+                  borderRadius: BorderRadius.circular(20),
                 ),
-              ],
+                child: Image.asset(
+                  Assets.svgIcons.readyToMakeTodayCount.path,
+                  height: 44.h,
+                  width: 44.w,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+
+          Text(
+            'Todays progress',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.workSans(
+              color: const Color(0xFF011F54), // Text-text-default
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w700,
+              height: 1,
+              letterSpacing: -0.50,
             ),
           ),
-          const SizedBox(width: 20),
+          const SizedBox(height: 8),
+
           Container(
-            padding: const EdgeInsets.all(24),
+            height: 24,
+            width: double.infinity,
             decoration: BoxDecoration(
-              color: AppColorsApps.royalBlue,
-              borderRadius: BorderRadius.circular(20),
+              color: const Color(0xFFC3DBFF),
+              borderRadius: BorderRadius.circular(25),
             ),
-            child: Image.asset(
-              Assets.svgIcons.readyToMakeTodayCount.path,
-              height: 44,
-              width: 44,
+            child: Stack(
+              children: [
+                LayoutBuilder(
+                  builder: (context, constraints) {
+                    return AnimatedContainer(
+                      duration: const Duration(milliseconds: 500),
+                      width: constraints.maxWidth * progress,
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                          colors: [Color(0xFFDFEFFF), Color(0xFF4542EB)],
+                        ),
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
           ),
         ],
@@ -499,7 +509,7 @@ class _HomeScreenState extends State<HomeScreen> {
           textAlign: TextAlign.center,
           style: GoogleFonts.workSans(
             color: const Color(0xFF011F54),
-            fontSize: 28,
+            fontSize: 32.sp,
             fontWeight: FontWeight.w800,
             height: 1.2,
             letterSpacing: -1,
@@ -534,14 +544,14 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: Row(
                 children: [
-                  Icon(Icons.add, color: Color(0xFF5B7EFF), size: 20),
-                  SizedBox(width: 2),
+                  Icon(Icons.add, color: Color(0xFF5B7EFF), size: 20.sp),
+                  SizedBox(width: 2.sp),
                   Text(
                     'Add quest',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.workSans(
                       color: const Color(0xFF4542EB),
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.w900,
                       height: 0.80,
                     ),
@@ -758,46 +768,108 @@ class _AnimatedTaskItemState extends State<AnimatedTaskItem>
 
   @override
   Widget build(BuildContext context) {
-    return SlideTransition(
-      position: _slideAnimation,
-      child: Slidable(
-        key: ValueKey(widget.task),
-        endActionPane: ActionPane(
-          motion: const StretchMotion(),
-          extentRatio: 0.75,
-          children: [
-            SlidableAction(
-              onPressed: (_) => widget.onEdit(),
-              backgroundColor: const Color(0xFF5B7EFF),
-              foregroundColor: Colors.white,
-              icon: Icons.edit,
-              label: 'Edit',
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(16),
-                bottomLeft: Radius.circular(16),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: SlideTransition(
+        position: _slideAnimation,
+        child: Slidable(
+          key: ValueKey(widget.task),
+          endActionPane: ActionPane(
+            motion: const StretchMotion(),
+            extentRatio: 0.75,
+            children: [
+              CustomSlidableAction(
+                onPressed: (_) => widget.onEdit(),
+                backgroundColor: const Color(0xFFFAE3CE),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(16),
+                  bottomLeft: Radius.circular(16),
+                ),
+                autoClose: true,
+                padding: EdgeInsets.zero,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/svg_images/Edit.png',
+                      width: 24,
+                      height: 24,
+                    ),
+                    const SizedBox(height: 4),
+
+                    Text(
+                      'Edit',
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF011F54), // Text-text-default
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        height: 1.40,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SlidableAction(
-              onPressed: (_) => widget.onDelete(),
-              backgroundColor: const Color(0xFFFF6B35),
-              foregroundColor: Colors.white,
-              icon: Icons.delete,
-              label: 'Delete',
-            ),
-            SlidableAction(
-              onPressed: (_) => widget.onTomorrow(),
-              backgroundColor: const Color(0xFF4ECDC4),
-              foregroundColor: Colors.white,
-              icon: Icons.today,
-              label: 'Tomorrow',
-              borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(16),
-                bottomRight: Radius.circular(16),
+              CustomSlidableAction(
+                onPressed: (_) => widget.onDelete(),
+                backgroundColor: const Color(0xFFFEDCDC),
+                autoClose: true,
+                padding: EdgeInsets.zero,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/svg_images/Trash.png',
+                      width: 24,
+                      height: 24,
+                    ),
+                    const SizedBox(height: 4),
+
+                    Text(
+                      'Delete',
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF011F54), // Text-text-default
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        height: 1.40,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+              CustomSlidableAction(
+                onPressed: (_) => widget.onTomorrow(),
+                backgroundColor: const Color(0xFFC3DBFF),
+                borderRadius: const BorderRadius.only(
+                  topRight: Radius.circular(16),
+                  bottomRight: Radius.circular(16),
+                ),
+                autoClose: true,
+                padding: EdgeInsets.zero,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/svg_images/Tomowr.png',
+                      width: 24,
+                      height: 24,
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Tomorrow',
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF011F54), // Text-text-default
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        height: 1.40,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          child: _buildTaskCard(),
         ),
-        child: _buildTaskCard(),
       ),
     );
   }
@@ -1313,22 +1385,35 @@ class AICallNotification extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    if (config.buttonIcon != null) ...[
-                      Icon(
-                        config.buttonIcon,
-                        color: config.buttonTextColor,
-                        size: 20,
+                    if (config.buttonImagePath != null) ...[
+                      Image.asset(
+                        config.buttonImagePath!,
+                        width: 20,
+                        height: 20,
                       ),
                       const SizedBox(width: 8),
                     ],
                     Text(
                       notification.buttonText!,
-                      style: GoogleFonts.workSans(
-                        color: config.buttonTextColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        height: 1,
-                      ),
+                      textAlign: TextAlign.center,
+                      style:
+                          (notification.type ==
+                                  NotificationType.defaultYellow ||
+                              notification.type == NotificationType.success)
+                          ? GoogleFonts.workSans(
+                              color: const Color(
+                                0xFF011F54,
+                              ), // Text-text-default
+                              fontSize: 18,
+                              fontWeight: FontWeight.w900,
+                              height: 0.80,
+                            )
+                          : GoogleFonts.workSans(
+                              color: config.buttonTextColor,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                              height: 1,
+                            ),
                     ),
                   ],
                 ),
@@ -1345,17 +1430,27 @@ class AICallNotification extends StatelessWidget {
       case NotificationType.error:
         return const Icon(Icons.favorite, color: Colors.white, size: 24);
       case NotificationType.questSuggestion:
-        return const Text('☀️', style: TextStyle(fontSize: 22));
+        return Image.asset(
+          'assets/images/sun.png',
+          width: 24,
+          height: 24,
+          errorBuilder: (context, error, stackTrace) =>
+              Image.asset('assets/images/sun.png', width: 24, height: 24),
+        );
       case NotificationType.defaultYellow:
         return Image.asset(
-          'assets/images/Microphone.png',
+          'assets/images/star.png',
           width: 24,
           height: 24,
           errorBuilder: (context, error, stackTrace) =>
               const Icon(Icons.mic, color: Colors.white, size: 24),
         );
       case NotificationType.success:
-        return const Text('🎉', style: TextStyle(fontSize: 22));
+        return Image.asset(
+          'assets/images/celberation.png',
+          width: 24,
+          height: 24,
+        );
     }
   }
 
@@ -1373,7 +1468,7 @@ class AICallNotification extends StatelessWidget {
           buttonColor: const Color(0xFFE11D48),
           buttonTextColor: Colors.white,
           defaultIconPath: 'assets/images/plush.png',
-          buttonIcon: Icons.add,
+          buttonImagePath: 'assets/images/plush.png',
         );
       case NotificationType.questSuggestion:
         return _NotificationConfig(
@@ -1387,7 +1482,7 @@ class AICallNotification extends StatelessWidget {
           buttonColor: const Color(0xFF6366F1),
           buttonTextColor: Colors.white,
           defaultIconPath: 'assets/images/plush.png',
-          buttonIcon: Icons.add,
+          buttonImagePath: 'assets/images/plush.png',
         );
       case NotificationType.defaultYellow:
         return _NotificationConfig(
@@ -1401,7 +1496,7 @@ class AICallNotification extends StatelessWidget {
           buttonColor: const Color(0xFFFF8C00),
           buttonTextColor: Colors.white,
           defaultIconPath: 'assets/images/Microphone.png',
-          buttonIcon: Icons.mic,
+          buttonImagePath: 'assets/images/Microphone.png',
         );
       case NotificationType.success:
         return _NotificationConfig(
@@ -1415,7 +1510,7 @@ class AICallNotification extends StatelessWidget {
           buttonColor: const Color(0xFF22C55E),
           buttonTextColor: Colors.white,
           defaultIconPath: 'assets/images/fire_nave.png',
-          buttonIcon: Icons.emoji_events,
+          buttonImagePath: 'assets/images/fire_nave.png',
         );
     }
   }
@@ -1428,7 +1523,7 @@ class _NotificationConfig {
   final Color buttonColor;
   final Color buttonTextColor;
   final String defaultIconPath;
-  final IconData? buttonIcon;
+  final String? buttonImagePath;
 
   _NotificationConfig({
     required this.backgroundGradient,
@@ -1437,6 +1532,6 @@ class _NotificationConfig {
     required this.buttonColor,
     required this.buttonTextColor,
     required this.defaultIconPath,
-    this.buttonIcon,
+    this.buttonImagePath,
   });
 }
