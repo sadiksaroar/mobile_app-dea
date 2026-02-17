@@ -2763,28 +2763,34 @@ class _InsightsScreenState extends State<InsightsScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
+                        Text(
                           'Quest completed',
-                          style: TextStyle(
-                            fontSize: 14,
+                          style: GoogleFonts.workSans(
+                            color: const Color(0xFF4542EB), // Text-text-primary
+                            fontSize: 18,
                             fontWeight: FontWeight.w600,
-                            color: Color(0xFF1A2B4F),
+                            height: 1.40,
+                            letterSpacing: -0.90,
                           ),
                         ),
                         Row(
                           children: [
-                            const Icon(
-                              Icons.star,
-                              color: Color(0xFFFFD700),
-                              size: 20,
+                            Image.asset(
+                              Assets.svgIcons.questComapltedSatrt.path,
+                              height: 32,
+                              width: 32,
                             ),
                             const SizedBox(width: 8),
-                            const Text(
+                            Text(
                               '100',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF1A2B4F),
+                              style: GoogleFonts.workSans(
+                                color: const Color(
+                                  0xFF4542EB,
+                                ), // Text-text-primary
+                                fontSize: 32,
+                                fontWeight: FontWeight.w800,
+                                height: 1.20,
+                                letterSpacing: -1,
                               ),
                             ),
                           ],
@@ -2806,28 +2812,36 @@ class _InsightsScreenState extends State<InsightsScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
+                        Text(
                           'Longest streak',
-                          style: TextStyle(
-                            fontSize: 14,
+                          style: GoogleFonts.workSans(
+                            color: const Color(
+                              0xFF8C4F15,
+                            ), // Text-text-secondary-disabled
+                            fontSize: 18,
                             fontWeight: FontWeight.w600,
-                            color: Color(0xFF1A2B4F),
+                            height: 1.40,
+                            letterSpacing: -0.90,
                           ),
                         ),
                         Row(
                           children: [
-                            const Icon(
-                              Icons.local_fire_department,
-                              color: Color(0xFFFF6B35),
-                              size: 20,
+                            Image.asset(
+                              Assets.svgIcons.longestStreakFire.path,
+                              height: 32,
+                              width: 32,
                             ),
                             const SizedBox(width: 8),
-                            const Text(
+                            Text(
                               '100',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF1A2B4F),
+                              style: GoogleFonts.workSans(
+                                color: const Color(
+                                  0xFFFF8F26,
+                                ), // Text-text-secondary
+                                fontSize: 32,
+                                fontWeight: FontWeight.w800,
+                                height: 1.20,
+                                letterSpacing: -1,
                               ),
                             ),
                           ],
