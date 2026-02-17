@@ -97,7 +97,7 @@ Widget _buildProfileSection(BuildContext context) {
                     shape: BoxShape.circle,
                   ),
                   child: Image.asset(
-                    Assets.svgIcons.plush.path,
+                    Assets.images.love.path,
                     height: 20,
                     width: 20,
                   ),

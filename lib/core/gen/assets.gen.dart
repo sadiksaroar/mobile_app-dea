@@ -177,6 +177,9 @@ class $AssetsImagesGen {
   AssetGenImage get greatJob =>
       const AssetGenImage('assets/images/great job!.png');
 
+  /// File path: assets/images/love.png
+  AssetGenImage get love => const AssetGenImage('assets/images/love.png');
+
   /// File path: assets/images/one.png
   AssetGenImage get one => const AssetGenImage('assets/images/one.png');
 
@@ -279,6 +282,7 @@ class $AssetsImagesGen {
     emojiFun,
     fireNave,
     greatJob,
+    love,
     one,
     plush,
     puse,
