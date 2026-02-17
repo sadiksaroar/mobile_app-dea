@@ -43,6 +43,8 @@ class AppRoutespath {
   /*  quest page end  */
   static const String questHomePage = '/questHomePage';
   static const String createQuestPage = '/createQuestPage';
+  static const String editQuestPage = '/edit_quest';
+  static const String suggestedTaskOverview = '/suggestedTaskOverview';
   /*  progress page end  */
   static const String progress = '/progress';
 
@@ -50,6 +52,7 @@ class AppRoutespath {
 
   static const String settingsScreen = '/settingsScreen';
   static const String subscriptionPage = '/subscriptionPage';
+  static const String nowliProSubscription = '/nowliProSubscription';
   static const String supportScreen = '/supportScreen';
   static const String supportChatScreen = '/supportChatScreen';
 }

@@ -25,8 +25,8 @@ class PrivacyDataScreen extends StatelessWidget {
                     onPressed: () => Navigator.pop(context),
                     icon: Image.asset(
                       Assets.svgIcons.settingsBackIcon.path,
-                      width: 24,
-                      height: 24,
+                      width: 32,
+                      height: 32,
                     ),
                     padding: EdgeInsets.zero,
                     constraints: const BoxConstraints(),
@@ -34,7 +34,14 @@ class PrivacyDataScreen extends StatelessWidget {
                   const SizedBox(width: 12),
                   Text(
                     'PRIVACY & DATA',
-                    style: AppsTextStyles.kSettingsTitleStyle,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: const Color(0xFFFFFDF7) /* Text-text-light */,
+                      fontSize: 32,
+                      fontFamily: 'Wosker',
+                      fontWeight: FontWeight.w400,
+                      height: 0.80,
+                    ),
                   ),
                 ],
               ),

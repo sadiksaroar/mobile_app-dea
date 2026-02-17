@@ -208,7 +208,7 @@ class _NamePageState extends State<NamePage> {
                   'WHAT SHOULD NOWLII CALL YOU?',
                   style: TextStyle(
                     color: const Color(0xFF011F54) /* Background-bg-dark */,
-                    fontSize: 52,
+                    fontSize: 46,
                     fontFamily: 'Wosker',
                     fontWeight: FontWeight.w400,
                     height: 0.80,

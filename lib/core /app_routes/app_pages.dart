@@ -28,6 +28,8 @@ import 'package:mobile_app_dea/screen/profile/Edit_profile/efit_name.dart';
 import 'package:mobile_app_dea/screen/profile/profile_menu_with_notification/profile_menu_with_notification.dart';
 import 'package:mobile_app_dea/screen/progress/progress.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/create_quets_default.dart';
+import 'package:mobile_app_dea/screen/quests/edit_quest/edit_qust.dart.dart';
+import 'package:mobile_app_dea/screen/quests/suggested/suggested_task_overview.dart';
 import 'package:mobile_app_dea/screen/quests/quests_my_quests_today_emty_state.dart';
 import 'package:mobile_app_dea/screen/reday_to_start_screen_p4.dart';
 import 'package:mobile_app_dea/screen/settings/contact_support/chat_boot/support_chat_screen.dart';
@@ -37,7 +39,8 @@ import 'package:mobile_app_dea/screen/splash.dart';
 import 'package:mobile_app_dea/screen/welcome_activetion_flow/notice_loader_screen.dart';
 import 'package:mobile_app_dea/screen/welcome_activetion_flow/popup_speking.dart';
 import 'package:mobile_app_dea/screen/welcome_activetion_flow/procrastination_screen.dart';
-import 'package:mobile_app_dea/screen/welcome_activetion_flow/subscription_popup.dart';
+import 'package:mobile_app_dea/screen/settings/subcription/subscription_popup.dart';
+import 'package:mobile_app_dea/screen/settings/subcription/nowli_pro_subcription.dart';
 import 'package:mobile_app_dea/screen/welcome_come_screen_p3.dart';
 
 import 'package:mobile_app_dea/screen/Onboarding/popup_choose_mood_updates.dart';
@@ -114,6 +117,14 @@ class AppPages {
       GoRoute(
         path: AppRoutespath.createQuestPage,
         builder: (context, state) => const CreateQuestPage(),
+      ),
+      GoRoute(
+        path: AppRoutespath.editQuestPage,
+        builder: (context, state) => const EditQuestPage(),
+      ),
+      GoRoute(
+        path: AppRoutespath.suggestedTaskOverview,
+        builder: (context, state) => const SuggestedTaskOverview(),
       ),
 
       /*  create a quets end here  */
@@ -243,6 +254,12 @@ class AppPages {
         path: AppRoutespath.subscriptionPage,
         builder: (context, state) {
           return const SubscriptionPage(); // Placeholder for SubscriptionPage
+        },
+      ),
+      GoRoute(
+        path: AppRoutespath.nowliProSubscription,
+        builder: (context, state) {
+          return const NowliProSubscription();
         },
       ),
       GoRoute(

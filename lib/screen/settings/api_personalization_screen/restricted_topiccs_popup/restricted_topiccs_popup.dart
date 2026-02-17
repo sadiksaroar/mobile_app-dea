@@ -281,11 +281,11 @@ class _RestrictedTopicsPopupState extends State<RestrictedTopicsPopup> {
 
                 child: Image.asset(
                   Assets.svgIcons.restrictedTopics.path,
-                  width: 24,
-                  height: 24,
+                  width: 28,
+                  height: 28,
                 ),
               ),
-              const SizedBox(width: 12),
+              const SizedBox(width: 5),
               Expanded(
                 child: Text(
                   'Restricted Topics',
@@ -326,49 +326,52 @@ class _RestrictedTopicsPopupState extends State<RestrictedTopicsPopup> {
           Row(
             children: [
               Expanded(
-                child: OutlinedButton(
-                  onPressed: () => Navigator.pop(context),
-                  style: OutlinedButton.styleFrom(
+                child: GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 14),
-                    side: const BorderSide(color: Color(0xFF1E3A8A), width: 2),
-                    shape: RoundedRectangleBorder(
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      border: Border.all(
+                        color: const Color(0xFF1E3A8A),
+                        width: 2,
+                      ),
                       borderRadius: BorderRadius.circular(30),
                     ),
-                  ),
-                  child: Text(
-                    'Cancel',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.workSans(
-                      color: const Color(0xFF011F54), // Text-text-default
-                      fontSize: 18,
-                      fontWeight: FontWeight.w900,
-                      height: 0.80,
+                    child: Text(
+                      'Cancel',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF011F54), // Text-text-default
+                        fontSize: 18,
+                        fontWeight: FontWeight.w900,
+                        height: 0.80,
+                      ),
                     ),
                   ),
                 ),
               ),
               const SizedBox(width: 12),
               Expanded(
-                child: ElevatedButton(
-                  onPressed: () {
+                child: GestureDetector(
+                  onTap: () {
                     Navigator.pop(context, _selectedTopics.toList());
                   },
-                  style: ElevatedButton.styleFrom(
+                  child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 14),
-                    backgroundColor: const Color(0xFF4C3EDD),
-                    shape: RoundedRectangleBorder(
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF4C3EDD),
                       borderRadius: BorderRadius.circular(30),
                     ),
-                    elevation: 0,
-                  ),
-                  child: Text(
-                    'Save',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.workSans(
-                      color: const Color(0xFFFFFDF7), // Text-text-light
-                      fontSize: 18,
-                      fontWeight: FontWeight.w900,
-                      height: 0.80,
+                    child: Text(
+                      'Save',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFFFFFDF7), // Text-text-light
+                        fontSize: 18,
+                        fontWeight: FontWeight.w900,
+                        height: 0.80,
+                      ),
                     ),
                   ),
                 ),

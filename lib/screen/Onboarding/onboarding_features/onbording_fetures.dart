@@ -734,8 +734,8 @@ class OnboardingFeatures extends StatelessWidget {
           Center(
             child: SvgPicture.asset(
               svgPath,
-              width: 97.sp,
-              height: 100.sp,
+              width: 97,
+              height: 100,
               fit: BoxFit.contain,
             ),
           ),
@@ -752,7 +752,7 @@ class OnboardingFeatures extends StatelessWidget {
                   title,
                   style: TextStyle(
                     color: const Color(0xFF011F54),
-                    fontSize: 32.sp,
+                    fontSize: 32,
                     fontFamily: 'Wosker',
                     fontWeight: FontWeight.w400,
                     height: 1.1,

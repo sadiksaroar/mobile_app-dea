@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LanguageSelector extends StatelessWidget {
   final String currentLanguage;
@@ -24,12 +25,14 @@ class LanguageSelector extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               'Language',
-              style: TextStyle(
+              style: GoogleFonts.workSans(
+                color: const Color(0xFF011F54), // Text-text-default
                 fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFF1A3A52),
+                fontWeight: FontWeight.w700,
+                height: 1.40,
+                letterSpacing: -0.90,
               ),
             ),
             const SizedBox(height: 16),
@@ -60,7 +63,13 @@ class LanguageSelector extends StatelessWidget {
           children: [
             Text(
               language,
-              style: const TextStyle(fontSize: 16, color: Color(0xFF1A3A52)),
+              style: GoogleFonts.workSans(
+                color: const Color(0xFF011F54), // Text-text-default
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                height: 1.40,
+                letterSpacing: -0.90,
+              ),
             ),
             if (isSelected)
               const Icon(Icons.check, color: Color(0xFF4A90E2), size: 24),

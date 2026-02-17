@@ -10,19 +10,19 @@
 // import 'package:mobile_app_dea/screen/home/home_screen.dart';
 // import 'package:mobile_app_dea/screen/profile/Edit_profile/edit_from.dart';
 // import 'package:mobile_app_dea/screen/profile/Edit_profile/edit_profile.dart';
-// import 'package:mobile_app_dea/screen/welcome_activetion_flow/notice_loader_screen.dart';
+// import 'package:mobile_app_dea/screen/quests/edit_quest/edit_qust.dart.dart';
+// import 'package:mobile_app_dea/screen/quests/suggested/suggested_task_overview.dart';
+// import 'package:mobile_app_dea/screen/settings/subcription/nowli_pro_subcription.dart';
+// import 'package:mobile_app_dea/screen/settings/subcription/subscription_popup.dart';
 // import 'package:mobile_app_dea/screen/welcome_activetion_flow/popup_choose_mood_updates.dart';
 
-// // void main() {
-// //   runApp(
-// //     DevicePreview(
-// //       enabled: true,
-// //       builder: (context) => const MyApp(), // Wrap your app
-// //     ),
-// //   );
-// // }
 // void main() {
-//   runApp(const MyApp());
+//   runApp(
+//     DevicePreview(
+//       enabled: true,
+//       builder: (context) => const MyApp(), // Wrap your app
+//     ),
+//   );
 // }
 
 // class MyApp extends StatelessWidget {
@@ -46,57 +46,13 @@
 //             textTheme:
 //                 GoogleFonts.poppinsTextTheme(), // Optional: keeps your GoogleFonts styling
 //           ),
-//           home: const HomeScreen(),
+//           home: const SubscriptionPage(),
 //         );
 //       },
 //     );
 //   }
 // }
 // class EditProfileScreen extends StatefulWidget {
-
-// import 'package:device_preview/device_preview.dart';
-// import 'package:flutter/foundation.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:google_fonts/google_fonts.dart';
-// import 'package:mobile_app_dea/core%20/app_routes/app_pages.dart';
-
-// // void main() {
-// //   runApp(
-// //     DevicePreview(
-// //       enabled: !kReleaseMode, // Enable only in development mode
-// //       builder: (context) => MyApp(), // Wrap the app in DevicePreview
-// //     ),
-// //   );
-// // }
-// void main() {
-//   runApp(const MyApp());
-// }
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return ScreenUtilInit(
-//       minTextAdapt: true,
-//       splitScreenMode: true,
-//       designSize: const Size(375, 812),
-//       builder: (context, child) {
-//         return MaterialApp.router(
-//           debugShowCheckedModeBanner: false,
-//           title: 'Flutter Demo',
-//           theme: ThemeData(
-//             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-//             textTheme: GoogleFonts.poppinsTextTheme(),
-//           ),
-
-//           routerConfig: AppPages.router,
-//         );
-//       },
-//     );
-//   }
-// }
 
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
@@ -106,17 +62,62 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core%20/app_routes/app_pages.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode, // Enable only in development mode
+      builder: (context) => MyApp(), // Wrap the app in DevicePreview
+    ),
+  );
+}
+// void main() {
+//   runApp(const MyApp());
+// }
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ScreenUtilInit(
+      minTextAdapt: true,
+      splitScreenMode: true,
+      designSize: const Size(375, 812),
+      builder: (context, child) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            textTheme: GoogleFonts.poppinsTextTheme(),
+          ),
+
+          routerConfig: AppPages.router,
+        );
+      },
+    );
+  }
 }
 
+/*
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile_app_dea/core%20/app_routes/app_pages.dart';
+
 // void main() {
-//   runApp(
-//     DevicePreview(
-//       enabled: !kReleaseMode, // Enable only in development mode
-//       builder: (context) => MyApp(), // Wrap the app in DevicePreview
-//     ),
-//   );
+//   runApp(const MyApp());
 // }
+
+void main() {
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode, // Enable only in development mode
+      builder: (context) => MyApp(), // Wrap the app in DevicePreview
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -141,3 +142,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+*/

@@ -169,12 +169,17 @@ Widget _buildProfileSection(BuildContext context) {
                   ),
                   const SizedBox(height: 16),
 
-                  // Optional Image
+                  // Optional Image — tap to open NowliProSubscription
                   Assets.svgIcons.nowliJuli.path.isNotEmpty
-                      ? Image.asset(
-                          Assets.svgIcons.nowliJuli.path,
-                          height: 87,
-                          width: 303,
+                      ? GestureDetector(
+                          onTap: () {
+                            context.push('/nowliProSubscription');
+                          },
+                          child: Image.asset(
+                            Assets.svgIcons.nowliJuli.path,
+                            height: 87,
+                            width: 303,
+                          ),
                         )
                       : const SizedBox.shrink(),
                 ],

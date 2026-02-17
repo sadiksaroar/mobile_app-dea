@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/screen/settings/api_personalization_screen/ai_personalization_screen.dart';
 import 'package:mobile_app_dea/screen/settings/language/languegs_selector_screen.dart';
@@ -266,115 +267,89 @@ class _SettingsScreenState extends State<SettingsScreen> {
           backgroundColor: Colors.transparent,
           insetPadding: const EdgeInsets.symmetric(horizontal: 20),
           child: Container(
-            padding: const EdgeInsets.all(24),
+            width: 335,
+            padding: const EdgeInsets.only(
+              top: 16,
+              left: 20,
+              right: 20,
+              bottom: 40,
+            ),
             decoration: BoxDecoration(
-              color: const Color(0xFFFFFEF8),
+              color: const Color(0xFFDFEFFF),
               borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.1),
-                  blurRadius: 20,
-                  offset: const Offset(0, 10),
-                ),
-              ],
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                // Icon container
+                /// Drag Indicator
                 Container(
-                  padding: const EdgeInsets.all(16),
+                  width: 38,
+                  height: 4,
                   decoration: BoxDecoration(
-                    color: const Color(0xFFE8E5FF),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: const Icon(
-                    Icons.logout_rounded,
-                    color: Color(0xFF4C3EDD),
-                    size: 32,
+                    color: const Color(0xFFBEC3CB),
+                    borderRadius: BorderRadius.circular(999),
                   ),
                 ),
-                const SizedBox(height: 20),
 
-                // Title
-                const Text(
-                  'Log Out',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xFF1A1A1A),
-                    letterSpacing: -0.5,
-                  ),
-                ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 24),
 
-                // Description
-                const Text(
+                /// Title
+                Text(
                   'Are you sure you want to log out?',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF666666),
-                    height: 1.4,
+                  style: GoogleFonts.workSans(
+                    color: const Color(0xFF011F54),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w800,
+                    height: 1.20,
+                    letterSpacing: -0.50,
                   ),
-                  textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 28),
 
-                // Buttons row
+                const SizedBox(height: 32),
+
+                /// Buttons Row
                 Row(
                   children: [
-                    // Cancel button
                     Expanded(
-                      child: OutlinedButton(
-                        onPressed: () => Navigator.pop(context),
-                        style: OutlinedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                          side: const BorderSide(
-                            color: Color(0xFF4C3EDD),
+                      child: Container(
+                        height: 44,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          border: Border.all(
                             width: 2,
+                            color: const Color(0xFF011F54),
                           ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          backgroundColor: Colors.white,
+                          borderRadius: BorderRadius.circular(999),
                         ),
-                        child: const Text(
+                        child: Text(
                           'Cancel',
-                          style: TextStyle(
-                            color: Color(0xFF4C3EDD),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: -0.3,
+                          style: GoogleFonts.workSans(
+                            color: const Color(0xFF011F54),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w900,
+                            height: 0.80,
                           ),
                         ),
                       ),
                     ),
-                    const SizedBox(width: 12),
 
-                    // Log out button
+                    const SizedBox(width: 8),
+
                     Expanded(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                          _performLogout();
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                          backgroundColor: const Color(0xFFE53935),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          elevation: 0,
-                          shadowColor: Colors.transparent,
+                      child: Container(
+                        height: 44,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF4542EB),
+                          borderRadius: BorderRadius.circular(999),
                         ),
-                        child: const Text(
+                        child: Text(
                           'Log out',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: -0.3,
+                          style: GoogleFonts.workSans(
+                            color: const Color(0xFFFFFDF7),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w900,
+                            height: 0.80,
                           ),
                         ),
                       ),

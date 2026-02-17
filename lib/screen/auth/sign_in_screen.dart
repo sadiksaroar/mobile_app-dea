@@ -102,7 +102,7 @@ class SignInScreen extends StatelessWidget {
                   'SIGN IN',
                   style: TextStyle(
                     color: const Color(0xFF011F54) /* Background-bg-dark */,
-                    fontSize: 86.sp,
+                    fontSize: 68.sp,
                     fontFamily: 'Wosker',
                     fontWeight: FontWeight.w400,
                     height: 0.80,

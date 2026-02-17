@@ -28,6 +28,180 @@ class $AssetsDeaPngGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/0x99FF8411.png
+  AssetGenImage get a0x99FF8411 =>
+      const AssetGenImage('assets/images/0x99FF8411.png');
+
+  /// File path: assets/images/AI.png
+  AssetGenImage get ai => const AssetGenImage('assets/images/AI.png');
+
+  /// File path: assets/images/Android App Icon - Squircle.png
+  AssetGenImage get androidAppIconSquircle =>
+      const AssetGenImage('assets/images/Android App Icon - Squircle.png');
+
+  /// File path: assets/images/AvatarLobe.png
+  AssetGenImage get avatarLobe =>
+      const AssetGenImage('assets/images/AvatarLobe.png');
+
+  /// File path: assets/images/CheckCircle.png
+  AssetGenImage get checkCircle =>
+      const AssetGenImage('assets/images/CheckCircle.png');
+
+  /// File path: assets/images/Clean kitchen.png
+  AssetGenImage get cleanKitchen =>
+      const AssetGenImage('assets/images/Clean kitchen.png');
+
+  /// File path: assets/images/Clean windows.png
+  AssetGenImage get cleanWindows =>
+      const AssetGenImage('assets/images/Clean windows.png');
+
+  /// File path: assets/images/Clean windows_refers.png
+  AssetGenImage get cleanWindowsRefers =>
+      const AssetGenImage('assets/images/Clean windows_refers.png');
+
+  /// File path: assets/images/Default-Toast.png
+  AssetGenImage get defaultToast =>
+      const AssetGenImage('assets/images/Default-Toast.png');
+
+  /// File path: assets/images/Deselect all.png
+  AssetGenImage get deselectAll =>
+      const AssetGenImage('assets/images/Deselect all.png');
+
+  /// File path: assets/images/Energy shift.png
+  AssetGenImage get energyShift =>
+      const AssetGenImage('assets/images/Energy shift.png');
+
+  /// File path: assets/images/Error-toast.png
+  AssetGenImage get errorToast =>
+      const AssetGenImage('assets/images/Error-toast.png');
+
+  /// File path: assets/images/Focus topic.png
+  AssetGenImage get focusTopic =>
+      const AssetGenImage('assets/images/Focus topic.png');
+
+  /// File path: assets/images/Group 2085661835.png
+  AssetGenImage get group2085661835 =>
+      const AssetGenImage('assets/images/Group 2085661835.png');
+
+  /// File path: assets/images/Microphone!.png
+  AssetGenImage get microphonePng =>
+      const AssetGenImage('assets/images/Microphone!.png');
+
+  /// File path: assets/images/Microphone.png
+  AssetGenImage get microphonePng_ =>
+      const AssetGenImage('assets/images/Microphone.png');
+
+  /// File path: assets/images/Mood detected.png
+  AssetGenImage get moodDetected =>
+      const AssetGenImage('assets/images/Mood detected.png');
+
+  /// File path: assets/images/Next step.png
+  AssetGenImage get nextStep =>
+      const AssetGenImage('assets/images/Next step.png');
+
+  /// File path: assets/images/Popup_Choose mood updates (1).png
+  AssetGenImage get popupChooseMoodUpdates1 =>
+      const AssetGenImage('assets/images/Popup_Choose mood updates (1).png');
+
+  /// File path: assets/images/Popup_Choose mood updates.png
+  AssetGenImage get popupChooseMoodUpdates =>
+      const AssetGenImage('assets/images/Popup_Choose mood updates.png');
+
+  /// File path: assets/images/Popup_Multiple Missed Talks (1).png
+  AssetGenImage get popupMultipleMissedTalks1 =>
+      const AssetGenImage('assets/images/Popup_Multiple Missed Talks (1).png');
+
+  /// File path: assets/images/Popup_Multiple Missed Talks.png
+  AssetGenImage get popupMultipleMissedTalks =>
+      const AssetGenImage('assets/images/Popup_Multiple Missed Talks.png');
+
+  /// File path: assets/images/Popup_Share how you feel.png
+  AssetGenImage get popupShareHowYouFeel =>
+      const AssetGenImage('assets/images/Popup_Share how you feel.png');
+
+  /// File path: assets/images/Quest suggestion-purple.png
+  AssetGenImage get questSuggestionPurple =>
+      const AssetGenImage('assets/images/Quest suggestion-purple.png');
+
+  /// File path: assets/images/Subscription Popup.png
+  AssetGenImage get subscriptionPopup =>
+      const AssetGenImage('assets/images/Subscription Popup.png');
+
+  /// File path: assets/images/Success-Toast.png
+  AssetGenImage get successToast =>
+      const AssetGenImage('assets/images/Success-Toast.png');
+
+  /// File path: assets/images/Suggested task_Overview.png
+  AssetGenImage get suggestedTaskOverview =>
+      const AssetGenImage('assets/images/Suggested task_Overview.png');
+
+  /// File path: assets/images/Toast.png
+  AssetGenImage get toast => const AssetGenImage('assets/images/Toast.png');
+
+  /// File path: assets/images/Today.png
+  AssetGenImage get today => const AssetGenImage('assets/images/Today.png');
+
+  /// File path: assets/images/blu_cross.png
+  AssetGenImage get bluCross =>
+      const AssetGenImage('assets/images/blu_cross.png');
+
+  /// File path: assets/images/call_ending.png
+  AssetGenImage get callEnding =>
+      const AssetGenImage('assets/images/call_ending.png');
+
+  /// File path: assets/images/celberation.png
+  AssetGenImage get celberation =>
+      const AssetGenImage('assets/images/celberation.png');
+
+  /// File path: assets/images/clock.png
+  AssetGenImage get clock => const AssetGenImage('assets/images/clock.png');
+
+  /// File path: assets/images/clock1.png
+  AssetGenImage get clock1 => const AssetGenImage('assets/images/clock1.png');
+
+  /// File path: assets/images/device.png
+  AssetGenImage get device => const AssetGenImage('assets/images/device.png');
+
+  /// File path: assets/images/emoji.png
+  AssetGenImage get emoji => const AssetGenImage('assets/images/emoji.png');
+
+  /// File path: assets/images/emoji_fun.png
+  AssetGenImage get emojiFun =>
+      const AssetGenImage('assets/images/emoji_fun.png');
+
+  /// File path: assets/images/fire_nave.png
+  AssetGenImage get fireNave =>
+      const AssetGenImage('assets/images/fire_nave.png');
+
+  /// File path: assets/images/great job!.png
+  AssetGenImage get greatJob =>
+      const AssetGenImage('assets/images/great job!.png');
+
+  /// File path: assets/images/one.png
+  AssetGenImage get one => const AssetGenImage('assets/images/one.png');
+
+  /// File path: assets/images/plush.png
+  AssetGenImage get plush => const AssetGenImage('assets/images/plush.png');
+
+  /// File path: assets/images/puse.png
+  AssetGenImage get puse => const AssetGenImage('assets/images/puse.png');
+
+  /// File path: assets/images/quest_complate.png
+  AssetGenImage get questComplate =>
+      const AssetGenImage('assets/images/quest_complate.png');
+
+  /// File path: assets/images/quested_complate_icons.png
+  AssetGenImage get questedComplateIcons =>
+      const AssetGenImage('assets/images/quested_complate_icons.png');
+
+  /// File path: assets/images/quests completed.png
+  AssetGenImage get questsCompleted =>
+      const AssetGenImage('assets/images/quests completed.png');
+
+  /// File path: assets/images/rate_nowlli.png
+  AssetGenImage get rateNowlli =>
+      const AssetGenImage('assets/images/rate_nowlli.png');
+
   /// File path: assets/images/reminder_green.png
   AssetGenImage get reminderGreen =>
       const AssetGenImage('assets/images/reminder_green.png');
@@ -40,11 +214,88 @@ class $AssetsImagesGen {
   AssetGenImage get reminderYellow =>
       const AssetGenImage('assets/images/reminder_yellow.png');
 
+  /// File path: assets/images/right_sound.png
+  AssetGenImage get rightSound =>
+      const AssetGenImage('assets/images/right_sound.png');
+
+  /// File path: assets/images/sadik.png
+  AssetGenImage get sadik => const AssetGenImage('assets/images/sadik.png');
+
+  /// File path: assets/images/soubd_icon.png
+  AssetGenImage get soubdIcon =>
+      const AssetGenImage('assets/images/soubd_icon.png');
+
+  /// File path: assets/images/star.png
+  AssetGenImage get star => const AssetGenImage('assets/images/star.png');
+
+  /// File path: assets/images/sun.png
+  AssetGenImage get sun => const AssetGenImage('assets/images/sun.png');
+
+  /// File path: assets/images/swapto fuzi.png
+  AssetGenImage get swaptoFuzi =>
+      const AssetGenImage('assets/images/swapto fuzi.png');
+
+  /// File path: assets/images/two.png
+  AssetGenImage get two => const AssetGenImage('assets/images/two.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
+    a0x99FF8411,
+    ai,
+    androidAppIconSquircle,
+    avatarLobe,
+    checkCircle,
+    cleanKitchen,
+    cleanWindows,
+    cleanWindowsRefers,
+    defaultToast,
+    deselectAll,
+    energyShift,
+    errorToast,
+    focusTopic,
+    group2085661835,
+    microphonePng,
+    microphonePng_,
+    moodDetected,
+    nextStep,
+    popupChooseMoodUpdates1,
+    popupChooseMoodUpdates,
+    popupMultipleMissedTalks1,
+    popupMultipleMissedTalks,
+    popupShareHowYouFeel,
+    questSuggestionPurple,
+    subscriptionPopup,
+    successToast,
+    suggestedTaskOverview,
+    toast,
+    today,
+    bluCross,
+    callEnding,
+    celberation,
+    clock,
+    clock1,
+    device,
+    emoji,
+    emojiFun,
+    fireNave,
+    greatJob,
+    one,
+    plush,
+    puse,
+    questComplate,
+    questedComplateIcons,
+    questsCompleted,
+    rateNowlli,
     reminderGreen,
     reminderRed,
     reminderYellow,
+    rightSound,
+    sadik,
+    soubdIcon,
+    star,
+    sun,
+    swaptoFuzi,
+    two,
   ];
 }
 
@@ -88,6 +339,9 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg_icons/120Days.png
   AssetGenImage get a120Days =>
       const AssetGenImage('assets/svg_icons/120Days.png');
+
+  /// File path: assets/svg_icons/A.png
+  AssetGenImage get a => const AssetGenImage('assets/svg_icons/A.png');
 
   /// File path: assets/svg_icons/AI Insights & Reflections.png
   AssetGenImage get aIInsightsReflections =>
@@ -637,6 +891,7 @@ class $AssetsSvgIconsGen {
   /// List of all assets
   List<dynamic> get values => [
     a120Days,
+    a,
     aIInsightsReflections,
     aIPersonalization,
     appStoreAppIconPng,
@@ -816,6 +1071,9 @@ class $AssetsSvgImagesGen {
   /// File path: assets/svg_images/E.png
   AssetGenImage get e => const AssetGenImage('assets/svg_images/E.png');
 
+  /// File path: assets/svg_images/Edit.png
+  AssetGenImage get edit => const AssetGenImage('assets/svg_images/Edit.png');
+
   /// File path: assets/svg_images/Error-toast.png
   AssetGenImage get errorToast =>
       const AssetGenImage('assets/svg_images/Error-toast.png');
@@ -855,13 +1113,19 @@ class $AssetsSvgImagesGen {
   /// File path: assets/svg_images/Toast.png
   AssetGenImage get toast => const AssetGenImage('assets/svg_images/Toast.png');
 
+  /// File path: assets/svg_images/Tomowr.png
+  AssetGenImage get tomowr =>
+      const AssetGenImage('assets/svg_images/Tomowr.png');
+
+  /// File path: assets/svg_images/Trash.png
+  AssetGenImage get trash => const AssetGenImage('assets/svg_images/Trash.png');
+
+  /// File path: assets/svg_images/app-release.apk
+  String get appRelease => 'assets/svg_images/app-release.apk';
+
   /// File path: assets/svg_images/callStarted.png
   AssetGenImage get callStarted =>
       const AssetGenImage('assets/svg_images/callStarted.png');
-
-  /// File path: assets/svg_images/call_ending_back_screen.png
-  AssetGenImage get callEndingBackScreen =>
-      const AssetGenImage('assets/svg_images/call_ending_back_screen.png');
 
   /// File path: assets/svg_images/deaMagi.png
   AssetGenImage get deaMagi =>
@@ -889,10 +1153,6 @@ class $AssetsSvgImagesGen {
   /// File path: assets/svg_images/popupSpekingeacond.png
   AssetGenImage get popupSpekingeacond =>
       const AssetGenImage('assets/svg_images/popupSpekingeacond.png');
-
-  /// File path: assets/svg_images/popup_Share how you feel.png
-  AssetGenImage get popupShareHowYouFeel =>
-      const AssetGenImage('assets/svg_images/popup_Share how you feel.png');
 
   /// File path: assets/svg_images/popup_pro_icon.png
   AssetGenImage get popupProIcon =>
@@ -940,6 +1200,7 @@ class $AssetsSvgImagesGen {
     d,
     defaultToast,
     e,
+    edit,
     errorToast,
     f,
     frame2147228547,
@@ -950,8 +1211,10 @@ class $AssetsSvgImagesGen {
     subscriptionPopupSvg,
     successToast,
     toast,
+    tomowr,
+    trash,
+    appRelease,
     callStarted,
-    callEndingBackScreen,
     deaMagi,
     enttryTwoScrenn,
     onboarding,
@@ -959,7 +1222,6 @@ class $AssetsSvgImagesGen {
     popUpSpekingTwoCarton,
     popupSpeking,
     popupSpekingeacond,
-    popupShareHowYouFeel,
     popupProIcon,
     popupScreeLiner,
     popupScreenCarton,

@@ -509,7 +509,7 @@ class _HomeScreenState extends State<HomeScreen> {
           textAlign: TextAlign.center,
           style: GoogleFonts.workSans(
             color: const Color(0xFF011F54),
-            fontSize: 32.sp,
+            fontSize: 32,
             fontWeight: FontWeight.w800,
             height: 1.2,
             letterSpacing: -1,
@@ -551,7 +551,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.workSans(
                       color: const Color(0xFF4542EB),
-                      fontSize: 18.sp,
+                      fontSize: 18,
                       fontWeight: FontWeight.w900,
                       height: 0.80,
                     ),

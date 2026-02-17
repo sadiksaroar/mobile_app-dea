@@ -729,8 +729,8 @@ class NowliHowToUse extends StatelessWidget {
                             ),
                           ),
                           child: Assets.svgIcons.nowliHowToUse.svg(
-                            height: 160.sp,
-                            width: 130.sp,
+                            height: 160,
+                            width: 130,
                           ),
                         ),
                         SizedBox(width: screenWidth * 0.04),
@@ -743,7 +743,7 @@ class NowliHowToUse extends StatelessWidget {
                                 color: const Color(
                                   0xFF011F54,
                                 ), // Text-text-default
-                                fontSize: 18.sp,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w800,
                                 height: 1.40,
                                 letterSpacing: -0.50,

@@ -553,6 +553,7 @@
 //   }
 // }
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
@@ -722,15 +723,20 @@ class SleepRoutineCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset(emoji, width: 64, height: 64),
-              Container(
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Image.asset(
-                  Assets.svgIcons.toMoonPlus.path,
-                  width: 48,
-                  height: 48,
+              GestureDetector(
+                onTap: () {
+                  context.push('/suggestedTaskOverview');
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Image.asset(
+                    Assets.svgIcons.toMoonPlus.path,
+                    width: 48,
+                    height: 48,
+                  ),
                 ),
               ),
             ],
@@ -931,12 +937,17 @@ class RoutineCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset(emoji, width: 64, height: 64),
-              Container(
-                padding: const EdgeInsets.all(8),
-                child: Image.asset(
-                  Assets.svgIcons.buttonCalendar.path,
-                  width: 48,
-                  height: 48,
+              GestureDetector(
+                onTap: () {
+                  context.push('/suggestedTaskOverview');
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  child: Image.asset(
+                    Assets.svgIcons.buttonCalendar.path,
+                    width: 48,
+                    height: 48,
+                  ),
                 ),
               ),
             ],

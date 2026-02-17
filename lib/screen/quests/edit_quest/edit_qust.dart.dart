@@ -1,53 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mobile_app_dea/custom_code/bottom_nav.dart';
+import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/_buildInputCard/input_widget_card.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/buildAddSubtasksButton/build_add_subtask_button.dart';
-
 import 'package:mobile_app_dea/screen/quests/create_quets/buildTitle/title_widget.dart';
-import 'package:mobile_app_dea/screen/quests/create_quets/enabable_card/enabable_card.dart';
-import 'package:mobile_app_dea/screen/quests/create_quets/repeat_quest_card/repeat_quest_card.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/select_zone_card/select_zone_card.dart';
-import 'package:mobile_app_dea/screen/quests/create_quets/time_picker_card/time_picker_card.dart';
 import 'package:mobile_app_dea/screen/quests/create_quets/when_card/when_card.dart';
+import 'package:mobile_app_dea/screen/quests/edit_quest/enabable_card_edit/enabable_card_edit.dart';
+import 'package:mobile_app_dea/screen/quests/edit_quest/repeat_quest_repit_edit_card_/repeat_quest_card_edit_card.dart';
+import 'package:mobile_app_dea/themes/create_qutes.dart';
 
-class CreateQuestPage extends StatefulWidget {
-  const CreateQuestPage({super.key});
+class EditQuestPage extends StatefulWidget {
+  const EditQuestPage({super.key});
 
   @override
-  State<CreateQuestPage> createState() => _CreateQuestPageState();
+  State<EditQuestPage> createState() => _EditQuestPageState();
 }
 
-class _CreateQuestPageState extends State<CreateQuestPage> {
+class _EditQuestPageState extends State<EditQuestPage> {
   bool showSubtaskGenerator = false;
   bool showDesignScreen = false;
   bool showDateSelectionScreen = false;
   String? selectedZone;
   bool isCallEnabled = true;
+  bool isSetAlarmEnabled = false;
 
   String selectedDateOption = 'Today';
-  // int _currentIndex = 0;
-
-  // void _onNavTap(int index) {
-  //   setState(() {
-  //     _currentIndex = index;
-  //   });
-
-  //   switch (index) {
-  //     case 0:
-  //       context.go(AppRoutespath.homePage);
-  //       break;
-  //     case 1:
-  //       context.go(AppRoutespath.chatBoot);
-  //       break;
-  //     case 2:
-  //       context.go(AppRoutespath.explor);
-  //       break;
-  //     case 3:
-  //       context.go(AppRoutespath.user);
-  //       break;
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -79,12 +57,16 @@ class _CreateQuestPageState extends State<CreateQuestPage> {
                   SizedBox(height: 12 * baseScale),
                   WhenCard(),
                   SizedBox(height: 12 * baseScale),
-                  // _buildTimeCard(baseScale),
-                  TimePickerCard(),
+
                   SizedBox(height: 12 * baseScale),
-                  EnableCallCard(),
+                  _buildTimeDisplayCard(baseScale),
                   SizedBox(height: 12 * baseScale),
-                  RepeatQuestCard(),
+                  EnabableCardEdit(),
+                  SizedBox(height: 12 * baseScale),
+                  RepeatQuestCardEditCard(),
+                  SizedBox(height: 12 * baseScale),
+
+                  _buildSetAlarmCard(baseScale),
                   SizedBox(
                     height: 130 * baseScale,
                   ), // Extra space for fixed button
@@ -103,30 +85,6 @@ class _CreateQuestPageState extends State<CreateQuestPage> {
                 child: Stack(
                   children: [
                     /// Bottom rounded bar
-                    Positioned(
-                      left: 0,
-                      top: 74,
-                      child: Container(
-                        width: width,
-                        height: 34,
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              left: (width - 134) / 2,
-                              top: 21,
-                              child: Container(
-                                width: 134,
-                                height: 5,
-                                decoration: BoxDecoration(
-                                  color: const Color(0xFFFFFDF7),
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
 
                     /// Button
                     Positioned(
@@ -157,7 +115,7 @@ class _CreateQuestPageState extends State<CreateQuestPage> {
                               ),
                               alignment: Alignment.center,
                               child: Text(
-                                'Create Quest',
+                                'Save',
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.workSans(
                                   color: const Color(0xFF011F54),
@@ -232,11 +190,68 @@ class _CreateQuestPageState extends State<CreateQuestPage> {
           ],
         ),
       ),
-      bottomNavigationBar: CustomNavigationBar(
-        currentIndex: 0,
-        onTap: (index) {
-          // Handle navigation tap
-        },
+    );
+  }
+
+  Widget _buildTimeDisplayCard(double s) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 16 * s, vertical: 14 * s),
+      decoration: BoxDecoration(
+        color: const Color(0xFFFFFCF1),
+        borderRadius: BorderRadius.circular(16 * s),
+      ),
+      child: Row(
+        children: [
+          Image.asset(
+            Assets.images.clock.path,
+            height: 24 * s,
+            width: 24 * s,
+            fit: BoxFit.cover,
+          ),
+          SizedBox(width: 8 * s),
+          Text('22:00', style: AppTextStylesQutes.workSansBlack24),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSetAlarmCard(double s) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(16 * s),
+      decoration: BoxDecoration(
+        color: const Color(0xFFDFEFFF),
+        borderRadius: BorderRadius.circular(16 * s),
+      ),
+      child: Row(
+        children: [
+          Transform.scale(
+            scale: s,
+            child: Switch(
+              value: isSetAlarmEnabled,
+              onChanged: (value) {
+                setState(() {
+                  isSetAlarmEnabled = value;
+                });
+              },
+              activeColor: Colors.white,
+              activeTrackColor: const Color(0xFF4542EB),
+              inactiveThumbColor: Colors.white,
+              inactiveTrackColor: const Color(0xFFB0B0B0),
+            ),
+          ),
+          SizedBox(width: 4 * s),
+          // Alarm icon
+          Image.asset(
+            Assets.images.clock.path,
+            height: 24 * s,
+            width: 24 * s,
+            fit: BoxFit.cover,
+          ),
+          SizedBox(width: 8 * s),
+          Text('SET ALARM', style: AppTextStylesQutes.workSansBlack24),
+        ],
       ),
     );
   }
