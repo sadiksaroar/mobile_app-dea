@@ -78,10 +78,9 @@ class _AnimationState extends State<Animation> {
                   // Progress text
                   Text(
                     '5/6',
-                    style: TextStyle(
+                    style: GoogleFonts.workSans(
                       color: const Color(0xFF4C586E),
                       fontSize: 12,
-                      fontFamily: 'Work Sans',
                       fontWeight: FontWeight.w400,
                       height: 1.40,
                     ),
@@ -102,10 +101,9 @@ class _AnimationState extends State<Animation> {
                       child: Text(
                         'Skip',
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: GoogleFonts.workSans(
                           color: const Color(0xFF011F54),
                           fontSize: 18,
-                          fontFamily: 'Work Sans',
                           fontWeight: FontWeight.w900,
                           height: 0.80,
                         ),

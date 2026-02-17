@@ -51,11 +51,12 @@ class _NoticeLoaderScreenState extends State<NoticeLoaderScreen> {
               SizedBox(
                 width: 295,
                 child: Text(
-                  'You control what Nowlli talks about - for a safe, positive space.',
+                  textAlign: TextAlign.center,
+                  'Noted! Thanks for \n your honesty!',
                   style: GoogleFonts.workSans(
                     color: const Color(0xFF011F54), // Text-text-default
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
+                    fontSize: 32,
+                    fontWeight: FontWeight.w900,
                     height: 1.40,
                     letterSpacing: -0.50,
                   ),
@@ -68,7 +69,7 @@ class _NoticeLoaderScreenState extends State<NoticeLoaderScreen> {
                 "Fuzzy's here to make today \n a little easier.",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
-                  fontSize: 18.sp,
+                  fontSize: 16,
                   color: const Color(0xFF6B7280),
                   fontWeight: FontWeight.w400,
                 ),

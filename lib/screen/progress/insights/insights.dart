@@ -1943,10 +1943,9 @@ class _InsightsScreenState extends State<InsightsScreen> {
               Text(
                 'Weekly reflection',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: GoogleFonts.workSans(
                   color: const Color(0xFF011F54),
                   fontSize: 32,
-                  fontFamily: 'Work Sans',
                   fontWeight: FontWeight.w800,
                   height: 1.20,
                   letterSpacing: -1,
@@ -1954,24 +1953,44 @@ class _InsightsScreenState extends State<InsightsScreen> {
               ),
 
               const SizedBox(height: 16),
+
               Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: AppColorsApps.babyBlue,
-                  borderRadius: BorderRadius.circular(25),
+                padding: const EdgeInsets.only(
+                  top: 8,
+                  left: 16,
+                  right: 12,
+                  bottom: 8,
+                ),
+                decoration: ShapeDecoration(
+                  color: const Color(
+                    0xFFC3DBFF,
+                  ), // Background-bg-primary-level-2
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(999),
+                  ),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      selectedWeek,
-                      style: AppsTextStyles.workSansSemiBold15,
+                      'This week',
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF011F54),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                        height: 1.40,
+                        letterSpacing: -0.50,
+                      ),
                     ),
-                    const SizedBox(width: 8),
-                    const Icon(
-                      Icons.keyboard_arrow_down,
-                      color: AppColorsApps.darkBlue,
-                      size: 18,
+                    const SizedBox(width: 4),
+                    Container(
+                      child: Image.asset(
+                        Assets.images.arow.path,
+                        height: 20,
+                        width: 20,
+                      ),
                     ),
                   ],
                 ),
@@ -1996,6 +2015,41 @@ class _InsightsScreenState extends State<InsightsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Container(
+                        width: double.infinity,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Quests completed',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.workSans(
+                                color: const Color(
+                                  0xFF011F54,
+                                ), // Text-text-default
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                height: 1,
+                                letterSpacing: -0.50,
+                              ),
+                            ),
+                            Text(
+                              '7/10',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.workSans(
+                                color: const Color(
+                                  0xFF011F54,
+                                ), // Text-text-default
+                                fontSize: 18,
+                                fontWeight: FontWeight.w900,
+                                height: 0.80,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                       const SizedBox(height: 12),
                       Container(
                         height: 25,
@@ -2046,12 +2100,14 @@ class _InsightsScreenState extends State<InsightsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         'Your mood',
-                        style: TextStyle(
+                        style: GoogleFonts.workSans(
+                          color: const Color(0xFF011F54),
                           fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF1A2B4F),
+                          fontWeight: FontWeight.w800,
+                          height: 1.20,
+                          letterSpacing: -0.50,
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -2138,12 +2194,14 @@ class _InsightsScreenState extends State<InsightsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         'Your progress',
-                        style: TextStyle(
+                        style: GoogleFonts.workSans(
+                          color: const Color(0xFF011F54),
                           fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF1A2B4F),
+                          fontWeight: FontWeight.w800,
+                          height: 1.20,
+                          letterSpacing: -0.50,
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -2169,44 +2227,96 @@ class _InsightsScreenState extends State<InsightsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Skipped days',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF1A2B4F),
+                      SizedBox(
+                        width: 276,
+                        child: Text(
+                          'Skipped days',
+                          style: GoogleFonts.workSans(
+                            color: const Color(0xFF011F54),
+                            fontSize: 20,
+                            fontWeight: FontWeight.w800,
+                            height: 1.20,
+                            letterSpacing: -0.50,
+                          ),
                         ),
                       ),
                       const SizedBox(height: 8),
-                      const Text(
-                        'You usually skip Sundays. Maybe a rest day?',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Color(0xFF6B7280),
-                          height: 1.4,
+                      SizedBox(
+                        width: 276,
+                        height: 39,
+                        child: Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'You usually skip ',
+                                style: GoogleFonts.workSans(
+                                  color: const Color(
+                                    0xFF011F54,
+                                  ), // Text-text-default
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  height: 1.40,
+                                  letterSpacing: -0.50,
+                                ),
+                              ),
+                              TextSpan(
+                                text: 'Sundays.',
+                                style: GoogleFonts.workSans(
+                                  color: const Color(0xFF011F54),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  height: 1.40,
+                                  letterSpacing: -0.50,
+                                ),
+                              ),
+                              TextSpan(
+                                text: ' Maybe a rest day?',
+                                style: GoogleFonts.workSans(
+                                  color: const Color(0xFF011F54),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  height: 1.40,
+                                  letterSpacing: -0.50,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       const SizedBox(height: 16),
                       Container(
+                        height: 44,
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 12,
+                          horizontal: 40,
+                          vertical: 14,
                         ),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(25),
-                          border: Border.all(
-                            color: const Color(0xFF5B6FFF),
-                            width: 1,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: const BorderSide(
+                              width: 2,
+                              color: Color(0xFF6A68EF), // Border-border-subtle
+                            ),
+                            borderRadius: BorderRadius.circular(999),
                           ),
                         ),
-                        child: const Text(
-                          'Yes, it\'s my rest day',
-                          style: TextStyle(
-                            color: Color(0xFF5B6FFF),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Yes, It’s my rest day',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.workSans(
+                                color: const Color(
+                                  0xFF4542EB,
+                                ), // Text-text-primary
+                                fontSize: 18,
+                                fontWeight: FontWeight.w900,
+                                height: 0.80,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -2222,13 +2332,14 @@ class _InsightsScreenState extends State<InsightsScreen> {
 
   Widget _buildProgressItem(String title, int completed, int total) {
     double progress = completed / total;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        children: [
+          // Title
+          SizedBox(
+            width: 100,
+            child: Text(
               title,
               style: const TextStyle(
                 fontSize: 14,
@@ -2236,38 +2347,44 @@ class _InsightsScreenState extends State<InsightsScreen> {
                 color: Color(0xFF1A2B4F),
               ),
             ),
-            Text(
-              '$completed/$total',
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFF1A2B4F),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 8),
-        Container(
-          height: 25,
-          decoration: BoxDecoration(
-            color: const Color(0xFFE8E8FF),
-            borderRadius: BorderRadius.circular(25),
           ),
-          child: FractionallySizedBox(
-            widthFactor: progress,
+          const SizedBox(width: 12),
+          // Progress bar
+          Expanded(
             child: Container(
+              height: 25,
               decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: [Color(0xFFDFEFFF), Color(0xFF4542EB)],
-                ),
+                color: const Color(0xFFE8E8FF),
                 borderRadius: BorderRadius.circular(25),
               ),
+              child: FractionallySizedBox(
+                alignment: Alignment.centerLeft,
+                widthFactor: progress,
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [Color(0xFFDFEFFF), Color(0xFF4542EB)],
+                    ),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                ),
+              ),
             ),
           ),
-        ),
-      ],
+          const SizedBox(width: 12),
+          // Count
+          Text(
+            '$completed/$total',
+            style: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF1A2B4F),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -2281,27 +2398,49 @@ class _InsightsScreenState extends State<InsightsScreen> {
           children: [
             Text('Monthly Overview', style: AppsTextStyles.extraBold32Centered),
             const SizedBox(height: 8),
+
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              decoration: BoxDecoration(
-                color: AppColorsApps.babyBlue,
-                borderRadius: BorderRadius.circular(8),
+              padding: const EdgeInsets.only(
+                top: 8,
+                left: 16,
+                right: 12,
+                bottom: 8,
+              ),
+              decoration: ShapeDecoration(
+                color: const Color(0xFF89B6F7), // Background-bg-primary-level-3
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(999),
+                ),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Flexible(
-                    child: Text(
-                      selectedMonth,
-                      overflow: TextOverflow.ellipsis,
-                      style: AppsTextStyles.workSansSemiBold15,
+                  Text(
+                    'This month',
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFF011F54),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      height: 1.40,
+                      letterSpacing: -0.50,
                     ),
                   ),
-                  const SizedBox(width: 6),
-                  const Icon(Icons.keyboard_arrow_down),
+                  const SizedBox(width: 4),
+                  Container(
+                    width: 20,
+                    height: 20,
+                    child: Image.asset(
+                      Assets.images.arow.path,
+                      height: 20,
+                      width: 20,
+                    ),
+                  ),
                 ],
               ),
             ),
+
             const SizedBox(height: 16),
             Center(
               child: Container(
@@ -2388,12 +2527,14 @@ class _InsightsScreenState extends State<InsightsScreen> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Text(
+                      Text(
                         'January',
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF1a1a1a),
+                        style: GoogleFonts.workSans(
+                          color: const Color(0xFF011F54),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w800,
+                          height: 1.20,
+                          letterSpacing: -0.50,
                         ),
                       ),
                       const SizedBox(height: 24),
@@ -2407,12 +2548,17 @@ class _InsightsScreenState extends State<InsightsScreen> {
                 ),
               ),
             ),
-            const Text(
-              'Add personal note',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFF1A2B4F),
+            SizedBox(
+              width: 287,
+              child: Text(
+                'Add personal note',
+                style: GoogleFonts.workSans(
+                  color: const Color(0xFF011F54), // Text-text-default
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  height: 1,
+                  letterSpacing: -0.50,
+                ),
               ),
             ),
             const SizedBox(height: 8),
@@ -2594,10 +2740,9 @@ class _InsightsScreenState extends State<InsightsScreen> {
                     width: 296,
                     child: Text(
                       'Milestones & Achievements',
-                      style: TextStyle(
-                        color: const Color(0xFF011F54) /* Text-text-default */,
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF011F54), // Text-text-default
                         fontSize: 32,
-                        fontFamily: 'Work Sans',
                         fontWeight: FontWeight.w800,
                         height: 1.20,
                         letterSpacing: -1,
@@ -2728,17 +2873,17 @@ class _InsightsScreenState extends State<InsightsScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 2),
-          width: 8,
-          height: 8,
+          margin: const EdgeInsets.only(top: 3),
+          width: 22,
+          height: 22,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(Assets.svgIcons.loveBlue.path),
+              fit: BoxFit.contain,
             ),
-            borderRadius: BorderRadius.circular(12),
           ),
         ),
-        const SizedBox(width: 12),
+        const SizedBox(width: 10),
         Expanded(child: Text(text, style: AppsTextStyles.regular16l)),
       ],
     );

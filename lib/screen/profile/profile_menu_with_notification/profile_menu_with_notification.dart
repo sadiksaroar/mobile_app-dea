@@ -88,17 +88,14 @@ Widget _buildProfileSection(BuildContext context) {
                 ),
               ),
               Positioned(
-                left: 95,
-                bottom: 70,
+                right: 20,
+                bottom: 90,
                 child: Container(
                   padding: const EdgeInsets.all(4),
-                  decoration: const BoxDecoration(
-                    color: Colors.green,
-                    shape: BoxShape.circle,
-                  ),
+
                   child: Image.asset(
                     Assets.images.love.path,
-                    height: 20,
+                    height: 26,
                     width: 20,
                   ),
                 ),
@@ -106,6 +103,37 @@ Widget _buildProfileSection(BuildContext context) {
             ],
           ),
         ),
+        // Center(
+        //   child: Stack(
+        //     children: [
+        //       Container(
+        //         width: 120,
+        //         height: 120,
+        //         decoration: BoxDecoration(
+        //           shape: BoxShape.circle,
+        //           border: Border.all(color: Colors.white, width: 4),
+        //           image: DecorationImage(
+        //             image: AssetImage(Assets.svgIcons.editProfilePng_.path),
+        //             fit: BoxFit.cover,
+        //           ),
+        //         ),
+        //       ),
+        //       Positioned(
+        //         left: 95,
+        //         bottom: 70,
+        //         child: Container(
+        //           padding: const EdgeInsets.all(4),
+
+        //           child: Image.asset(
+        //             Assets.images.love.path,
+        //             height: 32,
+        //             width: 32,
+        //           ),
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // ),
         const SizedBox(height: 65),
 
         // Profile Card

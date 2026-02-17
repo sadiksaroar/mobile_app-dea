@@ -295,7 +295,7 @@ class AppsTextStyles {
   );
   static final TextStyle regular16l = GoogleFonts.workSans(
     fontWeight: FontWeight.w400, // Regular
-    fontSize: 20,
+    fontSize: 18,
     height: 1.4, // line-height: 140%
     letterSpacing: -0.5,
     color: const Color(0xFF011F54), // #011F54

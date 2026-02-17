@@ -141,6 +141,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/Today.png
   AssetGenImage get today => const AssetGenImage('assets/images/Today.png');
 
+  /// File path: assets/images/arow.png
+  AssetGenImage get arow => const AssetGenImage('assets/images/arow.png');
+
   /// File path: assets/images/blu_cross.png
   AssetGenImage get bluCross =>
       const AssetGenImage('assets/images/blu_cross.png');
@@ -272,6 +275,7 @@ class $AssetsImagesGen {
     suggestedTaskOverview,
     toast,
     today,
+    arow,
     bluCross,
     callEnding,
     celberation,

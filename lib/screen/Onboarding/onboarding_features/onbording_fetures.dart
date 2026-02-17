@@ -667,10 +667,9 @@ class OnboardingFeatures extends StatelessWidget {
         // Progress text - Responsive
         Text(
           '3/6',
-          style: TextStyle(
+          style: GoogleFonts.workSans(
             color: const Color(0xFF4C586E),
-            fontSize: isSmallDevice ? 10 : 12,
-            fontFamily: 'Work Sans',
+            fontSize: 12,
             fontWeight: FontWeight.w400,
             height: 1.40,
           ),
@@ -689,10 +688,9 @@ class OnboardingFeatures extends StatelessWidget {
             child: Text(
               'Skip',
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: GoogleFonts.workSans(
                 color: const Color(0xFF011F54),
-                fontSize: isSmallDevice ? 14 : (isMediumDevice ? 16 : 18),
-                fontFamily: 'Work Sans',
+                fontSize: 18,
                 fontWeight: FontWeight.w900,
                 height: 0.80,
               ),

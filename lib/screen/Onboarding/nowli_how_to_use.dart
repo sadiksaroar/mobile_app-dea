@@ -678,11 +678,11 @@ class NowliHowToUse extends StatelessWidget {
 
                       Text(
                         '4/6',
-                        style: TextStyle(
+                        style: GoogleFonts.workSans(
                           color: const Color(0xFF4C586E),
-                          fontSize: screenWidth * 0.035,
+                          fontSize: 12,
                           fontWeight: FontWeight.w400,
-                          height: 1.4,
+                          height: 1.40,
                         ),
                       ),
 
@@ -697,10 +697,12 @@ class NowliHowToUse extends StatelessWidget {
                           ),
                           child: Text(
                             'Skip',
-                            style: TextStyle(
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.workSans(
                               color: const Color(0xFF011F54),
-                              fontSize: screenWidth * 0.045,
+                              fontSize: 18,
                               fontWeight: FontWeight.w900,
+                              height: 0.80,
                             ),
                           ),
                         ),
@@ -764,12 +766,12 @@ class NowliHowToUse extends StatelessWidget {
                       horizontal: screenWidth * 0.02,
                     ),
                     child: SizedBox(
-                      width: screenWidth * 0.9,
+                      // width: screenWidth * 0.9,
                       child: Text(
                         'Our biggest goal is you to stop to use Nowlii after 12 months.',
                         style: GoogleFonts.workSans(
                           fontWeight: FontWeight.w900,
-                          fontSize: screenWidth * 0.052, // Responsive font size
+                          fontSize: 14, // Responsive font size
                           height: 1.4,
                           color: const Color(0xFF011F54),
                         ),
@@ -778,7 +780,7 @@ class NowliHowToUse extends StatelessWidget {
                   ),
 
                   // Added bottom spacing before the Expanded widget
-                  SizedBox(height: screenHeight * 0.02),
+                  SizedBox(height: 30),
 
                   // Spacer pushes content up
                   const Expanded(child: SizedBox()),

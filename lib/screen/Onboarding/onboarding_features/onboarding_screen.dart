@@ -131,10 +131,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           // Progress text
           Text(
             '6/6',
-            style: TextStyle(
+            style: GoogleFonts.workSans(
               color: const Color(0xFF4C586E),
               fontSize: 12,
-              fontFamily: 'Work Sans',
               fontWeight: FontWeight.w400,
               height: 1.40,
             ),
@@ -152,10 +151,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: Text(
                 'Skip',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: GoogleFonts.workSans(
                   color: const Color(0xFF011F54),
                   fontSize: 18,
-                  fontFamily: 'Work Sans',
                   fontWeight: FontWeight.w900,
                   height: 0.80,
                 ),
