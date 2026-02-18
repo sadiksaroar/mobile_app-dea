@@ -170,8 +170,8 @@ class _AddSubtasksButtonState extends State<AddSubtasksButton> {
                         ),
                         child: Image.asset(
                           Assets.images.cleanWindowsRefers.path,
-                          height: 16 * s,
-                          width: 16 * s,
+                          height: 24 * s,
+                          width: 24 * s,
                         ),
                       ),
                     ),

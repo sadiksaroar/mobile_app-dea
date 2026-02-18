@@ -120,10 +120,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           _soundsEnabled = value;
                         });
                       },
-                      activeThumbColor: const Color(0xFF4C3EDD),
-                      activeTrackColor: const Color(
-                        0xFF4C3EDD,
-                      ).withValues(alpha: 0.5),
+                      activeColor: Colors.white,
+                      activeTrackColor: const Color(0xFF4542EB),
+                      inactiveThumbColor: Colors.white,
+                      inactiveTrackColor: const Color(0xFFB0B0B0),
                     ),
                     onTap: null,
                   ),

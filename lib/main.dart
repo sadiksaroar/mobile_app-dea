@@ -3,18 +3,7 @@
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:google_fonts/google_fonts.dart';
 // import 'package:mobile_app_dea/aaa/ai_voice_call/ai_test_call.dart';
-// import 'package:mobile_app_dea/aaa/ai_voice_call/ai_voice_call.dart';
-// import 'package:mobile_app_dea/aaa/great_job.dart';
-// import 'package:mobile_app_dea/screen/Onboarding/pop_spking_loding.dart';
-// import 'package:mobile_app_dea/screen/auth/sign_in_screen.dart';
-// import 'package:mobile_app_dea/screen/home/home_screen.dart';
-// import 'package:mobile_app_dea/screen/profile/Edit_profile/edit_from.dart';
-// import 'package:mobile_app_dea/screen/profile/Edit_profile/edit_profile.dart';
-// import 'package:mobile_app_dea/screen/quests/edit_quest/edit_qust.dart.dart';
-// import 'package:mobile_app_dea/screen/quests/suggested/suggested_task_overview.dart';
-// import 'package:mobile_app_dea/screen/settings/subcription/nowli_pro_subcription.dart';
-// import 'package:mobile_app_dea/screen/settings/subcription/subscription_popup.dart';
-// import 'package:mobile_app_dea/screen/welcome_activetion_flow/popup_choose_mood_updates.dart';
+// import 'package:mobile_app_dea/aaa/clean_the_housescreen.dart';
 
 // void main() {
 //   runApp(
@@ -46,7 +35,7 @@
 //             textTheme:
 //                 GoogleFonts.poppinsTextTheme(), // Optional: keeps your GoogleFonts styling
 //           ),
-//           home: const AiTestCall(),
+//           home: AiTestCall(),
 //         );
 //       },
 //     );

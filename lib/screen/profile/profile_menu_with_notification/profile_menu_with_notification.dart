@@ -47,14 +47,6 @@ class ProfileNotificationsScreen extends StatelessWidget {
 Widget _buildProfileSection(BuildContext context) {
   return Container(
     padding: const EdgeInsets.all(16),
-    decoration: const BoxDecoration(
-      image: DecorationImage(
-        image: AssetImage(
-          "assets/bg.jpg",
-        ), // Fixed: removed duplicate "assets/"
-        fit: BoxFit.cover,
-      ),
-    ),
     child: Column(
       children: [
         // Header

@@ -645,6 +645,7 @@ class QuestCard extends StatelessWidget {
 
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 
 class Today extends StatefulWidget {
@@ -801,10 +802,12 @@ class _TodayState extends State<Today> {
                   Icons.keyboard_arrow_down,
                   color: Colors.black,
                 ),
-                style: const TextStyle(
-                  fontSize: 16,
+                style: GoogleFonts.workSans(
+                  color: const Color(0xFF011F54), // Text-text-default
+                  fontSize: 18,
                   fontWeight: FontWeight.w600,
-                  color: Colors.black,
+                  height: 1.4,
+                  letterSpacing: -0.9,
                 ),
                 items: options.map((value) {
                   return DropdownMenuItem<String>(

@@ -277,21 +277,41 @@ class _PopupSpekingState extends State<PopupSpeking> {
                         ),
                       ),
                       const SizedBox(height: 30),
-                      Text(
-                        "YOU'RE ALL\nSET, JULIE!",
-                        style: GoogleFonts.poppins(
-                          fontSize: 32,
-                          fontWeight: FontWeight.w800,
-                          color: const Color(0xFF042C5C),
+                      Center(
+                        child: SizedBox(
+                          width: 273,
+                          child: Text(
+                            'YOU’RE ALL SET, JULIE!',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: const Color(
+                                0xFF011F54,
+                              ) /* Text-text-default */,
+                              fontSize: 42,
+                              fontFamily: 'Wosker',
+                              fontWeight: FontWeight.w400,
+                              height: 0.80,
+                            ),
+                          ),
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Text(
-                        "Your Nowli is ready to help you\nstart strong.",
-                        style: GoogleFonts.poppins(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
-                          color: const Color(0xFF39608F),
+                      Center(
+                        child: SizedBox(
+                          width: 274,
+                          child: Text(
+                            'Your Nowlii is ready to help you start strong.',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.workSans(
+                              color: const Color(
+                                0xFF011F54,
+                              ), // Text-text-default
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              height: 1.40,
+                              letterSpacing: -0.50,
+                            ),
+                          ),
                         ),
                       ),
                       const SizedBox(height: 30),
@@ -312,23 +332,35 @@ class _PopupSpekingState extends State<PopupSpeking> {
                         ),
                         child: Column(
                           children: [
-                            Text(
-                              "Let's do a quick\nvoice check!",
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.poppins(
-                                fontSize: 22,
-                                fontWeight: FontWeight.w700,
-                                color: const Color(0xFF06306A),
+                            SizedBox(
+                              width: 270,
+                              child: Text(
+                                'Let’s do a quick voice check!',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.workSans(
+                                  color: const Color(0xFF011F54),
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w800,
+                                  height: 1.20,
+                                  letterSpacing: -1,
+                                ),
                               ),
                             ),
                             const SizedBox(height: 12),
-                            Text(
-                              "Tell me how you feel today - no\npressure, just say it out loud.",
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.poppins(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                color: const Color(0xFF5B7BA8),
+                            SizedBox(
+                              width: 289,
+                              child: Text(
+                                'Tell me how you feel today - no pressure, just say it out loud. 🎧',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.workSans(
+                                  color: const Color(
+                                    0xFF011F54,
+                                  ), // Text-text-default
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  height: 1.40,
+                                  letterSpacing: -0.50,
+                                ),
                               ),
                             ),
                             const SizedBox(height: 25),
@@ -359,21 +391,20 @@ class _PopupSpekingState extends State<PopupSpeking> {
                               ),
                             ),
                             const SizedBox(height: 20),
-                            Text(
-                              "Hold to speak 🎙️",
-                              style: GoogleFonts.poppins(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w600,
-                                color: const Color(0xFF315C95),
-                              ),
-                            ),
-                            const SizedBox(height: 6),
-                            Text(
-                              "Nowli will listen once you say something.",
-                              style: GoogleFonts.poppins(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w400,
-                                color: const Color(0xFF5D7BA5),
+                            SizedBox(
+                              width: 315,
+                              child: Text(
+                                'Hold to speak 🎙️\nsNowlii will listen once you say something.',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.workSans(
+                                  color: const Color(
+                                    0xFF4542EB,
+                                  ), // Text-text-primary
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600,
+                                  height: 1.40,
+                                  letterSpacing: -0.50,
+                                ),
                               ),
                             ),
                           ],

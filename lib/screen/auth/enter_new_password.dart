@@ -155,7 +155,7 @@ class _EnterNewPasswordState extends State<EnterNewPassword> {
                     'ENTER NEW PASSWOD',
                     style: TextStyle(
                       color: const Color(0xFF011F54) /* Background-bg-dark */,
-                      fontSize: 64,
+                      fontSize: 58,
                       fontFamily: 'Wosker',
                       fontWeight: FontWeight.w400,
                       height: 0.80,

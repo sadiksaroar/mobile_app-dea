@@ -167,7 +167,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ],
           ),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 0),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: SizedBox(
@@ -175,7 +175,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               'SIGN UP',
               style: TextStyle(
                 color: const Color(0xFF011F54) /* Background-bg-dark */,
-                fontSize: 86.sp,
+                fontSize: 86,
                 fontFamily: 'Wosker',
                 fontWeight: FontWeight.w400,
                 height: 0.80,
@@ -183,7 +183,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
           ),
         ),
-        const SizedBox(height: 5),
+        const SizedBox(height: 0),
 
         // 🧑 Name Field
         SizedBox(
@@ -344,7 +344,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
           ),
         ],
-        const SizedBox(height: 8),
+        const SizedBox(height: 0),
 
         // 🔒 Password Field
         SizedBox(

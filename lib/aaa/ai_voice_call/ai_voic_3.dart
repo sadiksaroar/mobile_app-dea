@@ -175,6 +175,7 @@ class AiVoic3 extends StatelessWidget {
                                           padding: const EdgeInsets.all(10),
                                           decoration: ShapeDecoration(
                                             color: controller.isRecording.value
+                                                // ignore: deprecated_member_use
                                                 ? Colors.red.withOpacity(0.2)
                                                 : const Color(0xFFC3DBFF),
                                             shape: RoundedRectangleBorder(
@@ -438,10 +439,6 @@ class AiVoic3 extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Widget _buildCallEndingSoonWidget() {
-    return _buildCallEndingSoonBanner(Get.find<VoiceCheckController>());
   }
 
   Widget _buildMinutesAddedWidget() {
@@ -854,7 +851,6 @@ class AiVoic3 extends StatelessWidget {
 
   Widget _buildVoiceAvatar(VoiceCheckController controller) {
     return Obx(() {
-      final isRecording = controller.state.value == VoiceCheckState.recording;
       final isSpeaking = controller.isSpeaking.value;
       final isEndingSoon =
           controller.aiCallState.value == AiCallState.endingSoon;

@@ -196,7 +196,7 @@ class _QuestHomePageState extends State<QuestHomePage>
                         titles[index],
                         style: AppsTextStyles.workSansSemiBold18.copyWith(
                           color: isCurrentlySelected
-                              ? Colors.white
+                              ? Color(0xFF011F54)
                               : Colors.grey[600],
                         ),
                       ),
@@ -253,14 +253,16 @@ class _QuestHomePageState extends State<QuestHomePage>
                         border: Border.all(
                           color: isSelected
                               ? const Color(0xFFC3DBFF)
-                              : Colors.grey.shade300,
+                              : Color(0xFFC3DBFF),
                           width: 2,
                         ),
                       ),
                       child: Text(
                         titles[index],
                         style: AppsTextStyles.workSansSemiBold18.copyWith(
-                          color: isSelected ? Colors.white : Colors.grey[600],
+                          color: isSelected
+                              ? Color(0xFF011F54)
+                              : Colors.grey[600],
                         ),
                       ),
                     );

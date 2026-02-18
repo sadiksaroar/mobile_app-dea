@@ -40,7 +40,7 @@ class _EnabableCardEditState extends State<EnabableCardEdit> {
                       isCallEnabled = value;
                     });
                   },
-                  // activeColor: Colors.white,
+                  activeColor: Colors.white,
                   activeTrackColor: const Color(0xFF4542EB),
                   inactiveThumbColor: Colors.white,
                   inactiveTrackColor: const Color(0xFFB0B0B0),

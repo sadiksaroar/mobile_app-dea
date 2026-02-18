@@ -461,10 +461,10 @@ class _AIPersonalizationScreenState extends State<AIPersonalizationScreen> {
             Switch(
               value: switchValue,
               onChanged: onSwitchChanged,
-              activeTrackColor: const Color(0xFF4C3EDD),
-              activeThumbColor: Colors.white,
+              activeColor: Colors.white,
+              activeTrackColor: const Color(0xFF4542EB),
               inactiveThumbColor: Colors.white,
-              inactiveTrackColor: const Color(0xFFD1D5DB),
+              inactiveTrackColor: const Color(0xFFB0B0B0),
             ),
         ],
       ),

@@ -48,35 +48,86 @@ class StreakScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Daily streak', style: AppsTextStyles.regular32Uppercase),
+          SizedBox(
+            width: 302,
+            child: Text(
+              'Daily streak',
+              style: GoogleFonts.workSans(
+                color: const Color(0xFF011F54), // Text color
+                fontSize: 32,
+                fontWeight: FontWeight.w800, // Extra Bold
+                height: 1.2,
+                letterSpacing: -1,
+              ),
+            ),
+          ),
           const SizedBox(height: 4),
-          Text(
-            "You've stayed consistent for\n7 days straight!",
-            style: AppTextStylesQutes.workSansSemiBold18,
+          SizedBox(
+            width: 302,
+            child: Text(
+              "You've stayed consistent for \n7 days straight!",
+              style: GoogleFonts.workSans(
+                color: const Color(0xFF011F54), // Text color
+                fontSize: 18,
+                fontWeight: FontWeight.w400,
+                height: 1.4,
+                letterSpacing: -0.5,
+              ),
+            ),
           ),
           const SizedBox(height: 20),
           Container(
-            height: 104,
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-            decoration: BoxDecoration(
-              color: Color(0xFFFF8F26),
-              borderRadius: BorderRadius.circular(50),
+            padding: const EdgeInsets.all(20),
+            decoration: ShapeDecoration(
+              color: const Color(0xFFFF8F26) /* Background-bg-secondary */,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(999),
+              ),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              spacing: 8,
               children: [
                 Image.asset(Assets.svgIcons.fire.path, width: 44, height: 44),
-                const SizedBox(width: 8),
-                Flexible(
-                  child: Text(
-                    '120 DAYS',
-                    style: AppTextStylesQutes.woskerRegular52,
-                    overflow: TextOverflow.ellipsis,
+                Text(
+                  '120 DAYS',
+                  style: TextStyle(
+                    color: const Color(
+                      0xFF3F3CD6,
+                    ) /* Background-bg-primary-on-press */,
+                    fontSize: 52,
+                    fontFamily: 'Wosker',
+                    fontWeight: FontWeight.w400,
+                    height: 0.80,
                   ),
                 ),
               ],
             ),
           ),
+          // Container(
+          //   height: 104,
+          //   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          //   decoration: BoxDecoration(
+          //     color: Color(0xFFFF8F26),
+          //     borderRadius: BorderRadius.circular(50),
+          //   ),
+          //   child: Row(
+          //     mainAxisSize: MainAxisSize.min,
+          //     children: [
+          //       Image.asset(Assets.svgIcons.fire.path, width: 44, height: 44),
+          //       const SizedBox(width: 8),
+          //       Flexible(
+          //         child: Text(
+          //           '120 DAYS',
+          //           style: AppTextStylesQutes.woskerRegular52,
+          //           overflow: TextOverflow.ellipsis,
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
           const SizedBox(height: 20),
           SizedBox(
             width: double.infinity,
@@ -194,9 +245,24 @@ class StreakScreen extends StatelessWidget {
             children: [
               Text(
                 '7-Day Streak',
-                style: AppTextStylesQutes.workSansSemiBold18,
+                style: GoogleFonts.workSans(
+                  color: const Color(0xFF4C586E), // Text-text-primary-default
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  height: 1.4,
+                  letterSpacing: -0.9,
+                ),
               ),
-              Text('23% to 30 days', style: AppTextStylesQutes.workSansBlack18),
+              Text(
+                '23% to 30 days',
+                style: GoogleFonts.workSans(
+                  color: const Color(0xFF4542EB), // Text-text-primary
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  height: 1.4,
+                  letterSpacing: -0.5,
+                ),
+              ),
             ],
           ),
         ],
@@ -219,23 +285,44 @@ class StreakScreen extends StatelessWidget {
             children: [
               Text('Your moves', style: AppTextStylesQutes.workSansBlack20),
               Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 8,
+                padding: const EdgeInsets.only(
+                  top: 4,
+                  left: 8,
+                  right: 4,
+                  bottom: 4,
                 ),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xFFFFCB9B)),
-                  color: Color(0xFFFFFCF1),
-                  borderRadius: BorderRadius.circular(16),
+                decoration: ShapeDecoration(
+                  color: const Color(
+                    0xFFFAE3CE,
+                  ), // Background-bg-secondary-level-2
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(999),
+                  ),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('This week', style: AppsTextStyles.regular16l),
-                    const SizedBox(width: 4),
-                    Icon(
-                      Icons.keyboard_arrow_down,
-                      color: Colors.grey.shade600,
+                    Text(
+                      'This week',
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF011F54),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        height: 1,
+                        letterSpacing: -0.5,
+                      ),
+                    ),
+                    const SizedBox(width: 4), // spacing between text and box
+                    Container(
+                      width: 20,
+                      height: 20,
+                      child: Image.asset(
+                        Assets.images.arow.path,
+                        height: 20,
+                        width: 20,
+                      ),
                     ),
                   ],
                 ),
@@ -365,14 +452,46 @@ class StreakScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Row(
-                children: [
-                  const Text(
-                    'This week',
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
+              Container(
+                padding: const EdgeInsets.only(
+                  top: 4,
+                  left: 8,
+                  right: 4,
+                  bottom: 4,
+                ),
+                decoration: ShapeDecoration(
+                  color: const Color(0xFFC3DBFF), // Background
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(999),
                   ),
-                  Icon(Icons.keyboard_arrow_down, color: Colors.grey.shade600),
-                ],
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'This week',
+                      style: GoogleFonts.workSans(
+                        color: const Color(0xFF011F54),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        height: 1,
+                        letterSpacing: -0.5,
+                      ),
+                    ),
+                    const SizedBox(width: 4), // spacing between text and box
+                    Container(
+                      width: 20,
+                      height: 20,
+                      child: Image.asset(
+                        Assets.images.arow.path,
+                        height: 20,
+                        width: 20,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

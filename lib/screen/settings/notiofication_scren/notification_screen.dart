@@ -318,10 +318,10 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 _notifications[key] = value;
               });
             },
-            activeThumbColor: Colors.white,
-            activeTrackColor: const Color(0xFF4F46E5),
+            activeColor: Colors.white,
+            activeTrackColor: const Color(0xFF4542EB),
             inactiveThumbColor: Colors.white,
-            inactiveTrackColor: const Color(0xFFD1D5DB),
+            inactiveTrackColor: const Color(0xFFB0B0B0),
           ),
         ],
       ),

@@ -24,12 +24,6 @@ class _AiVoiceState extends State<AiVoice> {
     super.dispose();
   }
 
-  String _formatTime(int seconds) {
-    int mins = seconds ~/ 60;
-    int secs = seconds % 60;
-    return '${mins.toString().padLeft(2, '0')}:${secs.toString().padLeft(2, '0')}';
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

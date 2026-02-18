@@ -55,7 +55,7 @@ class _NoticeLoaderScreenState extends State<NoticeLoaderScreen> {
                   'Noted! Thanks for \n your honesty!',
                   style: GoogleFonts.workSans(
                     color: const Color(0xFF011F54), // Text-text-default
-                    fontSize: 32,
+                    fontSize: 28,
                     fontWeight: FontWeight.w900,
                     height: 1.40,
                     letterSpacing: -0.50,

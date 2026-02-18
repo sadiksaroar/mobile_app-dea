@@ -37,6 +37,10 @@ class _EnableCallCardState extends State<EnableCallCard> {
                     isCallEnabled = newValue;
                   });
                 },
+                activeColor: Colors.white,
+                activeTrackColor: const Color(0xFF4542EB),
+                inactiveThumbColor: Colors.white,
+                inactiveTrackColor: const Color(0xFFB0B0B0),
               ),
               Text('ENABLE CALL', style: AppTextStylesQutes.workSansBlack24),
             ],

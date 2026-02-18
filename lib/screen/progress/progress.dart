@@ -43,16 +43,19 @@ class _ProgressState extends State<Progress> with TickerProviderStateMixin {
         backgroundColor: Color(0xFFFFFEF8),
         elevation: 0,
         toolbarHeight: 90,
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("PROGRESS", style: AppsTextStyles.saimTitle),
-            const SizedBox(height: 4),
-            Text(
-              "Track your growth and reflections",
-              style: AppsTextStyles.workSansRegularF16,
-            ),
-          ],
+        title: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("PROGRESS", style: AppsTextStyles.saimTitle),
+              const SizedBox(height: 4),
+              Text(
+                "Track your growth and reflections",
+                style: AppsTextStyles.workSansRegularF16,
+              ),
+            ],
+          ),
         ),
       ),
 

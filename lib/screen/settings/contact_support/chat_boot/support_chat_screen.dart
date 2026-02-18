@@ -93,8 +93,8 @@ class _SupportChatScreenState extends State<SupportChatScreen> {
             onPressed: () => Navigator.pop(context),
             icon: Image.asset(
               Assets.svgIcons.settingsBackIcon.path,
-              width: 24,
-              height: 24,
+              width: 32,
+              height: 32,
             ),
             padding: EdgeInsets.zero,
             constraints: const BoxConstraints(),

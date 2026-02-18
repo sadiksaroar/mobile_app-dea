@@ -66,7 +66,7 @@ class CustomNextButton extends StatelessWidget {
                         textStyle ??
                         TextStyle(
                           color: Colors.white,
-                          fontSize: 35.sp,
+                          fontSize: 45.sp,
                           fontWeight: FontWeight.bold,
                         ),
                   ),
@@ -77,8 +77,8 @@ class CustomNextButton extends StatelessWidget {
                     top: 8,
                     bottom: 8,
                     child: Container(
-                      width: 60,
-                      height: 60,
+                      width: 80,
+                      height: 78,
                       decoration: const BoxDecoration(
                         color: Color(0xFF1A1A40),
                         shape: BoxShape.circle,
