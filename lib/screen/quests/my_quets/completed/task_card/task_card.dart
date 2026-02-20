@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 
 import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
@@ -14,34 +16,34 @@ List<Map<String, dynamic>> quests = [
     "emoji": "🧹",
     "title": "Clean house",
     "levelText": "Soft steps",
-    "levelColor": Color(0xFF77D47D),
+    "levelColor": Color(0xFFA0E871),
     "time": "22:00",
     "duration": "10 mins",
   },
-  {
-    "emoji": "📘",
-    "title": "Do homework",
-    "levelText": "Elevated",
-    "levelColor": Color(0xFFF7A94B),
-    "time": "22:00",
-    "duration": "10 mins",
-  },
-  {
-    "emoji": "🍽️",
-    "title": "Do dishes",
-    "levelText": "Stretch zone",
-    "levelColor": Color(0xFF6AA7FF),
-    "time": "22:00",
-    "duration": "10 mins",
-  },
-  {
-    "emoji": "🏋️",
-    "title": "Workout",
-    "levelText": "Power move",
-    "levelColor": Color(0xFFFF5A5A),
-    "time": "22:00",
-    "duration": "10 mins",
-  },
+  // {
+  //   "emoji": "📘",
+  //   "title": "Do homework",
+  //   "levelText": "Elevated",
+  //   "levelColor": Color(0xFFF7A94B),
+  //   "time": "22:00",
+  //   "duration": "10 mins",
+  // },
+  // {
+  //   "emoji": "🍽️",
+  //   "title": "Do dishes",
+  //   "levelText": "Stretch zone",
+  //   "levelColor": Color(0xFF6AA7FF),
+  //   "time": "22:00",
+  //   "duration": "10 mins",
+  // },
+  // {
+  //   "emoji": "🏋️",
+  //   "title": "Workout",
+  //   "levelText": "Power move",
+  //   "levelColor": Color(0xFFFF5A5A),
+  //   "time": "22:00",
+  //   "duration": "10 mins",
+  // },
 ];
 
 class QuestList extends StatelessWidget {
@@ -99,6 +101,12 @@ class TaskCard extends StatefulWidget {
 
 class _TaskCardState extends State<TaskCard> {
   bool isCompleted = true;
+
+  Color _getTextColor(Color backgroundColor) {
+    final luminance = backgroundColor.computeLuminance();
+    return luminance > 0.5 ? Colors.black : Colors.white;
+  }
+
   void _showPopup(BuildContext context) {
     showGeneralDialog(
       context: context,
@@ -206,7 +214,7 @@ class _TaskCardState extends State<TaskCard> {
         side: const BorderSide(color: Color(0xFFF4DCC9), width: 1),
       ),
       elevation: 0,
-      color: const Color(0xFFFFF9F3),
+      color: Color(0xFFFFFCF1),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -230,15 +238,18 @@ class _TaskCardState extends State<TaskCard> {
                   const SizedBox(width: 6),
                   Text(
                     isCompleted ? 'Completed' : 'Not completed',
-                    style: const TextStyle(
-                      color: Color(0xFF4C4CE6),
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFF4542EB), // Text-text-primary
+                      fontSize: 16,
                       fontWeight: FontWeight.w600,
+                      height: 1.40,
+                      letterSpacing: -0.50,
                     ),
                   ),
                   const Spacer(),
                   Container(
-                    width: 40,
-                    height: 40,
+                    width: 48,
+                    height: 48,
                     decoration: BoxDecoration(
                       color: const Color(0xFFFFEFE0),
                       borderRadius: BorderRadius.circular(10),
@@ -270,61 +281,86 @@ class _TaskCardState extends State<TaskCard> {
             // TIME + DATE
             Row(
               children: [
-                const Icon(
-                  Icons.calendar_today_outlined,
-                  size: 18,
-                  color: Color(0xFF223A60),
+                Image.asset(Assets.images.today.path, height: 20, width: 20),
+                const SizedBox(width: 10),
+                Text(
+                  "Today",
+                  style: GoogleFonts.workSans(
+                    color: const Color(0xFF011F54),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: -0.5,
+                  ),
                 ),
-                const SizedBox(width: 6),
-                Text('Yesterday', style: AppsTextStyles.extraBold16),
-
-                const SizedBox(width: 16),
-                const Icon(
-                  Icons.access_time_outlined,
-                  size: 18,
-                  color: Color(0xFF223A60),
+                const SizedBox(width: 20),
+                Image.asset(Assets.images.clock1.path, height: 20, width: 20),
+                const SizedBox(width: 10),
+                Text(
+                  widget.time,
+                  style: GoogleFonts.workSans(
+                    color: const Color(0xFF011F54),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: -0.5,
+                  ),
                 ),
-                const SizedBox(width: 6),
-                Text(widget.time, style: AppsTextStyles.extraBold16),
               ],
             ),
-
             const SizedBox(height: 12),
 
             // CHIPS
-            Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 6,
-                  ),
-                  decoration: BoxDecoration(
-                    color: widget.levelColor.withValues(alpha: 0.2),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Text(
-                    widget.levelText,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
+           Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // Level Tag
+              Container(
+                height: 34,
+                padding: const EdgeInsets.symmetric(horizontal: 14),
+                decoration: ShapeDecoration(
+                  color: widget.levelColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(999),
                   ),
                 ),
-                const SizedBox(width: 10),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 6,
-                  ),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF6E6D5),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Text(
-                    widget.duration,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
+                alignment: Alignment.center,
+                child: Text(
+                  widget.levelText,
+                  style: GoogleFonts.workSans(
+                    color: _getTextColor(widget.levelColor),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    height: 1.40,
+                    letterSpacing: -0.40,
                   ),
                 ),
-              ],
-            ),
+              ),
+
+              const SizedBox(width: 8),
+
+              // Duration Tag
+              Container(
+                height: 34,
+                padding: const EdgeInsets.symmetric(horizontal: 14),
+                decoration: ShapeDecoration(
+                  color: const Color(0xFFFAE3CE),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(999),
+                  ),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  widget.duration,
+                  style: GoogleFonts.workSans(
+                    color: const Color(0xFF011F54),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    height: 1.0,
+                    letterSpacing: -0.40,
+                  ),
+                ),
+              ),
+            ],
+          ),
 
             const SizedBox(height: 16),
 

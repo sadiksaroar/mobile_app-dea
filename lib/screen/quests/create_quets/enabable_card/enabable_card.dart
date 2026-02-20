@@ -11,7 +11,7 @@ class EnableCallCard extends StatefulWidget {
 }
 
 class _EnableCallCardState extends State<EnableCallCard> {
-  bool isCallEnabled = false;
+  bool isCallEnabled = true;
 
   @override
   Widget build(BuildContext context) {

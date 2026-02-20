@@ -60,38 +60,41 @@ class _PoupYourShareYouState extends State<PoupYourShareYou>
                     // ✅ FIXED HEADER
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          // Left side - Profile/Avatar
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SizedBox(
-                                width: 24,
-                                height: 24,
-                                child: Image.asset(
-                                  "assets/images/blu_cross.png",
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            // Left side - Profile/Avatar
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(
+                                  width: 24,
+                                  height: 24,
+                                  child: Image.asset(
+                                    "assets/images/blu_cross.png",
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                              ],
+                            ),
+
+                            // Right side - AI Label
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(width: 8),
+                                Image.asset(
+                                  "assets/images/AI.png",
+                                  height: 28,
                                   fit: BoxFit.contain,
                                 ),
-                              ),
-                            ],
-                          ),
-
-                          // Right side - AI Label
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SizedBox(width: 8),
-                              Image.asset(
-                                "assets/images/AI.png",
-                                height: 28,
-                                fit: BoxFit.contain,
-                              ),
-                            ],
-                          ),
-                        ],
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
 

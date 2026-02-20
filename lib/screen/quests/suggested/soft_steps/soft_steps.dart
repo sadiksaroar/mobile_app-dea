@@ -579,7 +579,7 @@ class ShuffleScreen extends StatelessWidget {
                         'Wind down, unplug, and prep your mind for rest.',
                     time: '22:00',
                     softSteps: 'Soft steps',
-                    hardSteps: '10 Hard',
+                    hardSteps: '10 mins',
                     imagePath: Assets.svgIcons.moon4.path,
                     emoji: Assets.svgIcons.moonPng_.path,
                     hardStepsColor: const Color(0xFF89B6F8),
@@ -770,8 +770,8 @@ class SleepRoutineCard extends StatelessWidget {
                     children: [
                       Image.asset(
                         Assets.svgIcons.calendarBlank.path,
-                        width: 12,
-                        height: 12,
+                        width: 15,
+                        height: 15,
                         color: Colors.white,
                       ),
                       const SizedBox(width: 4),
@@ -806,8 +806,8 @@ class SleepRoutineCard extends StatelessWidget {
                     children: [
                       Image.asset(
                         Assets.svgIcons.clockBlack.path,
-                        width: 12,
-                        height: 12,
+                        width: 15,
+                        height: 15,
                         color: Colors.white,
                       ),
                       const SizedBox(width: 4),
@@ -834,7 +834,7 @@ class SleepRoutineCard extends StatelessWidget {
             style: GoogleFonts.workSans(
               color: const Color(0xFFFFFEF8),
               fontSize: 18,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
               height: 1.4,
               letterSpacing: -0.9,
             ),
@@ -856,10 +856,12 @@ class SleepRoutineCard extends StatelessWidget {
                   ),
                   child: Text(
                     hardSteps,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFF011F54),
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
+                      height: 1.2,
+                      letterSpacing: -0.5,
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -880,8 +882,8 @@ class SleepRoutineCard extends StatelessWidget {
                     softSteps,
                     style: GoogleFonts.workSans(
                       color: const Color(0xFF011F54),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
                       height: 1.2,
                       letterSpacing: -0.5,
                     ),
@@ -936,7 +938,7 @@ class RoutineCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset(emoji, width: 64, height: 64),
+              Image.asset(emoji, width: 84, height: 84),
               GestureDetector(
                 onTap: () {
                   context.push('/suggestedTaskOverview');
@@ -1065,8 +1067,8 @@ class RoutineCard extends StatelessWidget {
                     hardSteps,
                     style: GoogleFonts.workSans(
                       color: const Color(0xFF011F54),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
                       height: 1.2,
                       letterSpacing: -0.5,
                     ),
@@ -1089,8 +1091,8 @@ class RoutineCard extends StatelessWidget {
                     softSteps,
                     style: GoogleFonts.workSans(
                       color: const Color(0xFF011F54),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
                       height: 1.2,
                       letterSpacing: -0.5,
                     ),

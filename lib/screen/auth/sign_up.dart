@@ -253,8 +253,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
           ),
         ),
-        // const SizedBox(height: 5),
-        const SizedBox(height: 8),
+        const SizedBox(height: 5),
+        // const SizedBox(height: 8),
 
         // 📧 Email Field
         SizedBox(
@@ -344,7 +344,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
           ),
         ],
-        const SizedBox(height: 0),
+        const SizedBox(height: 5),
 
         // 🔒 Password Field
         SizedBox(

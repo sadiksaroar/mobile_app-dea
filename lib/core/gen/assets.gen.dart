@@ -43,6 +43,14 @@ class $AssetsImagesGen {
   AssetGenImage get avatarLobe =>
       const AssetGenImage('assets/images/AvatarLobe.png');
 
+  /// File path: assets/images/Button Calendar .png
+  AssetGenImage get buttonCalendar =>
+      const AssetGenImage('assets/images/Button Calendar .png');
+
+  /// File path: assets/images/Button Calendar delate.png
+  AssetGenImage get buttonCalendarDelate =>
+      const AssetGenImage('assets/images/Button Calendar delate.png');
+
   /// File path: assets/images/CheckCircle.png
   AssetGenImage get checkCircle =>
       const AssetGenImage('assets/images/CheckCircle.png');
@@ -78,6 +86,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/Focus topic.png
   AssetGenImage get focusTopic =>
       const AssetGenImage('assets/images/Focus topic.png');
+
+  /// File path: assets/images/Group 2085661819.png
+  AssetGenImage get group2085661819 =>
+      const AssetGenImage('assets/images/Group 2085661819.png');
 
   /// File path: assets/images/Group 2085661835.png
   AssetGenImage get group2085661835 =>
@@ -135,11 +147,18 @@ class $AssetsImagesGen {
   AssetGenImage get suggestedTaskOverview =>
       const AssetGenImage('assets/images/Suggested task_Overview.png');
 
+  /// File path: assets/images/Time filter popup.png
+  AssetGenImage get timeFilterPopup =>
+      const AssetGenImage('assets/images/Time filter popup.png');
+
   /// File path: assets/images/Toast.png
   AssetGenImage get toast => const AssetGenImage('assets/images/Toast.png');
 
   /// File path: assets/images/Today.png
   AssetGenImage get today => const AssetGenImage('assets/images/Today.png');
+
+  /// File path: assets/images/Untitled.zip
+  String get untitled => 'assets/images/Untitled.zip';
 
   /// File path: assets/images/arow.png
   AssetGenImage get arow => const AssetGenImage('assets/images/arow.png');
@@ -165,6 +184,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/device.png
   AssetGenImage get device => const AssetGenImage('assets/images/device.png');
 
+  /// File path: assets/images/eight.png
+  AssetGenImage get eight => const AssetGenImage('assets/images/eight.png');
+
   /// File path: assets/images/emoji.png
   AssetGenImage get emoji => const AssetGenImage('assets/images/emoji.png');
 
@@ -180,8 +202,14 @@ class $AssetsImagesGen {
   AssetGenImage get greatJob =>
       const AssetGenImage('assets/images/great job!.png');
 
+  /// File path: assets/images/january.png
+  AssetGenImage get january => const AssetGenImage('assets/images/january.png');
+
   /// File path: assets/images/love.png
   AssetGenImage get love => const AssetGenImage('assets/images/love.png');
+
+  /// File path: assets/images/nowli.png
+  AssetGenImage get nowli => const AssetGenImage('assets/images/nowli.png');
 
   /// File path: assets/images/one.png
   AssetGenImage get one => const AssetGenImage('assets/images/one.png');
@@ -207,6 +235,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/rate_nowlli.png
   AssetGenImage get rateNowlli =>
       const AssetGenImage('assets/images/rate_nowlli.png');
+
+  /// File path: assets/images/refresh.png
+  AssetGenImage get refresh => const AssetGenImage('assets/images/refresh.png');
 
   /// File path: assets/images/reminder_green.png
   AssetGenImage get reminderGreen =>
@@ -241,15 +272,21 @@ class $AssetsImagesGen {
   AssetGenImage get swaptoFuzi =>
       const AssetGenImage('assets/images/swapto fuzi.png');
 
+  /// File path: assets/images/twintytwo.png
+  AssetGenImage get twintytwo =>
+      const AssetGenImage('assets/images/twintytwo.png');
+
   /// File path: assets/images/two.png
   AssetGenImage get two => const AssetGenImage('assets/images/two.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
+  List<dynamic> get values => [
     a0x99FF8411,
     ai,
     androidAppIconSquircle,
     avatarLobe,
+    buttonCalendar,
+    buttonCalendarDelate,
     checkCircle,
     cleanKitchen,
     cleanWindows,
@@ -259,6 +296,7 @@ class $AssetsImagesGen {
     energyShift,
     errorToast,
     focusTopic,
+    group2085661819,
     group2085661835,
     microphonePng,
     microphonePng_,
@@ -273,8 +311,10 @@ class $AssetsImagesGen {
     subscriptionPopup,
     successToast,
     suggestedTaskOverview,
+    timeFilterPopup,
     toast,
     today,
+    untitled,
     arow,
     bluCross,
     callEnding,
@@ -282,11 +322,14 @@ class $AssetsImagesGen {
     clock,
     clock1,
     device,
+    eight,
     emoji,
     emojiFun,
     fireNave,
     greatJob,
+    january,
     love,
+    nowli,
     one,
     plush,
     puse,
@@ -294,6 +337,7 @@ class $AssetsImagesGen {
     questedComplateIcons,
     questsCompleted,
     rateNowlli,
+    refresh,
     reminderGreen,
     reminderRed,
     reminderYellow,
@@ -303,6 +347,7 @@ class $AssetsImagesGen {
     star,
     sun,
     swaptoFuzi,
+    twintytwo,
     two,
   ];
 }

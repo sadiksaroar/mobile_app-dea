@@ -14,7 +14,7 @@ class SuggestedTaskOverview extends StatefulWidget {
 class _SuggestedTaskOverviewState extends State<SuggestedTaskOverview> {
   bool isCallEnabled = true;
   bool isRepeatQuestEnabled = true;
-  bool isSetAlarmEnabled = false;
+  bool isSetAlarmEnabled = true;
 
   @override
   Widget build(BuildContext context) {

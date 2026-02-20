@@ -102,18 +102,28 @@ class TitleWidget extends StatelessWidget {
           mainAxisSize:
               MainAxisSize.min, // Prevent Row from expanding infinitely
           children: [
-            GestureDetector(
-              onTap: () {
-                context.pop("");
-              },
-              child: CircleAvatar(
-                // radius: 10 * scale,
-                child: Image.asset(
-                  Assets.svgIcons.settingsBackIcon.path,
-                  height: 50,
-                  width: 50,
-                ),
+            // GestureDetector(
+            //   onTap: () {
+            //     context.pop("");
+            //   },
+            //   child: CircleAvatar(
+            //     // radius: 10 * scale,
+            //     child: Image.asset(
+            //       Assets.svgIcons.settingsBackIcon.path,
+            //       height: 50,
+            //       width: 50,
+            //     ),
+            //   ),
+            // ),
+            IconButton(
+              onPressed: () => context.pop(""),
+              icon: Image.asset(
+                Assets.svgIcons.settingsBackIcon.path,
+                width: 32,
+                height: 32,
               ),
+              padding: EdgeInsets.zero,
+              constraints: const BoxConstraints(),
             ),
             SizedBox(width: 30 * scale),
             Flexible(

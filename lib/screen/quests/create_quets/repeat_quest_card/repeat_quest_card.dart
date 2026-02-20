@@ -11,7 +11,7 @@ class RepeatQuestCard extends StatefulWidget {
 }
 
 class _RepeatQuestCardState extends State<RepeatQuestCard> {
-  bool isCallEnabled = false;
+  bool isCallEnabled = true;
 
   @override
   Widget build(BuildContext context) {

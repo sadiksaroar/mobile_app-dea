@@ -115,8 +115,12 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
     required int index,
     required bool isSelected,
   }) {
-    final iconColor = isSelected ? Colors.blue : Colors.grey;
-    final textColor = isSelected ? Colors.blue : Colors.grey;
+    final iconColor = isSelected
+        ? const Color(0xFF4542EB)
+        : const Color(0xFF011F54);
+    final textColor = isSelected
+        ? const Color(0xFF4542EB)
+        : const Color(0xFF011F54);
 
     return GestureDetector(
       onTap: () => _onNavTap(index), // FIXED

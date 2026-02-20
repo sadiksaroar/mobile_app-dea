@@ -69,9 +69,9 @@ class _PopupSpekingState extends State<PopupSpeking> {
               'Nowlii will listen once you say\nsomething. Your voice stays private.\nAlways.',
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
-                fontSize: 13,
+                fontSize: 13.5,
                 fontWeight: FontWeight.w400,
-                color: Colors.white.withOpacity(0.7),
+                color: Colors.white,
                 height: 1.4,
               ),
             ),
@@ -152,7 +152,7 @@ class _PopupSpekingState extends State<PopupSpeking> {
               style: GoogleFonts.poppins(
                 fontSize: 13,
                 fontWeight: FontWeight.w400,
-                color: Colors.white.withOpacity(0.7),
+                color: Colors.white,
                 height: 1.4,
               ),
             ),
@@ -163,7 +163,7 @@ class _PopupSpekingState extends State<PopupSpeking> {
               style: GoogleFonts.poppins(
                 fontSize: 13,
                 fontWeight: FontWeight.w400,
-                color: Colors.white.withOpacity(0.7),
+                color: Colors.white,
                 height: 1.4,
               ),
             ),
@@ -174,12 +174,12 @@ class _PopupSpekingState extends State<PopupSpeking> {
               style: GoogleFonts.poppins(
                 fontSize: 13,
                 fontWeight: FontWeight.w400,
-                color: Colors.white.withOpacity(0.7),
+                color: Colors.white,
                 height: 1.4,
               ),
             ),
             const SizedBox(height: 20),
-            Container(height: 0.5, color: Colors.white.withOpacity(0.2)),
+            Container(height: 0.5, color: Colors.white),
             Row(
               children: [
                 Expanded(
@@ -287,7 +287,7 @@ class _PopupSpekingState extends State<PopupSpeking> {
                               color: const Color(
                                 0xFF011F54,
                               ) /* Text-text-default */,
-                              fontSize: 42,
+                              fontSize: 46,
                               fontFamily: 'Wosker',
                               fontWeight: FontWeight.w400,
                               height: 0.80,
@@ -306,7 +306,7 @@ class _PopupSpekingState extends State<PopupSpeking> {
                               color: const Color(
                                 0xFF011F54,
                               ), // Text-text-default
-                              fontSize: 16,
+                              fontSize: 18,
                               fontWeight: FontWeight.w400,
                               height: 1.40,
                               letterSpacing: -0.50,
@@ -339,7 +339,7 @@ class _PopupSpekingState extends State<PopupSpeking> {
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.workSans(
                                   color: const Color(0xFF011F54),
-                                  fontSize: 28,
+                                  fontSize: 30,
                                   fontWeight: FontWeight.w800,
                                   height: 1.20,
                                   letterSpacing: -1,
@@ -356,8 +356,8 @@ class _PopupSpekingState extends State<PopupSpeking> {
                                   color: const Color(
                                     0xFF011F54,
                                   ), // Text-text-default
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
                                   height: 1.40,
                                   letterSpacing: -0.50,
                                 ),
@@ -394,14 +394,14 @@ class _PopupSpekingState extends State<PopupSpeking> {
                             SizedBox(
                               width: 315,
                               child: Text(
-                                'Hold to speak 🎙️\nsNowlii will listen once you say something.',
+                                'Hold to speak 🎙️\nNowlii will listen once you say something.',
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.workSans(
                                   color: const Color(
                                     0xFF4542EB,
                                   ), // Text-text-primary
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
                                   height: 1.40,
                                   letterSpacing: -0.50,
                                 ),

@@ -1,4 +1,5 @@
 // import 'package:flutter/material.dart';
+// import 'package:flutter_svg/svg.dart';
 // import 'package:go_router/go_router.dart';
 // import 'package:google_fonts/google_fonts.dart';
 // import 'package:mobile_app_dea/core/gen/assets.gen.dart';
@@ -26,20 +27,18 @@
 //     super.dispose();
 //   }
 
-//   void _completeOnboarding() {
-//     // print('Name: $_selectedName, Gender: $_selectedGender');
-//     // Navigate to the next screen
-//     context.push("/popupSpeking");
-//   }
+//   // void _completeOnboarding() {
+//   //   context.push("/popupSpeking");
+//   // }
 
-//   bool _canProceed() {
-//     if (_currentPage == 0) {
-//       return _selectedName.isNotEmpty;
-//     } else if (_currentPage == 1) {
-//       return _selectedGender.isNotEmpty;
-//     }
-//     return false;
-//   }
+//   // bool _canProceed() {
+//   //   if (_currentPage == 0) {
+//   //     return _selectedName.isNotEmpty;
+//   //   } else if (_currentPage == 1) {
+//   //     return _selectedGender.isNotEmpty;
+//   //   }
+//   //   return false;
+//   // }
 
 //   @override
 //   Widget build(BuildContext context) {
@@ -70,7 +69,75 @@
 //                 ],
 //               ),
 //             ),
-//             _buildNextButton(),
+//             // _buildNextButton(),
+//             GestureDetector(
+//               onTap: () => context.push("/popupSpeking"),
+//               child: Container(
+//                 width: 334,
+//                 height: 116,
+//                 padding: const EdgeInsets.only(
+//                   top: 8,
+//                   left: 40,
+//                   right: 8,
+//                   bottom: 8,
+//                 ),
+//                 decoration: ShapeDecoration(
+//                   color: const Color(0xFFFF8F26) /* Background-bg-secondary */,
+//                   shape: RoundedRectangleBorder(
+//                     borderRadius: BorderRadius.circular(999),
+//                   ),
+//                   shadows: [
+//                     BoxShadow(
+//                       color: Color(0x070A0C12),
+//                       blurRadius: 6,
+//                       offset: Offset(0, 4),
+//                       spreadRadius: -2,
+//                     ),
+//                     BoxShadow(
+//                       color: Color(0x140A0C12),
+//                       blurRadius: 16,
+//                       offset: Offset(0, 12),
+//                       spreadRadius: -4,
+//                     ),
+//                   ],
+//                 ),
+//                 child: Row(
+//                   mainAxisSize: MainAxisSize.min,
+//                   mainAxisAlignment: MainAxisAlignment.start,
+//                   crossAxisAlignment: CrossAxisAlignment.center,
+//                   children: [
+//                     SizedBox(
+//                       width: 170,
+//                       child: Text(
+//                         'Next',
+//                         textAlign: TextAlign.center,
+//                         style: GoogleFonts.workSans(
+//                           color: const Color(0xFF011F54),
+//                           fontSize: 28,
+//                           fontWeight: FontWeight.w900,
+//                           height: 0.8,
+//                         ),
+//                       ),
+//                     ),
+//                     SizedBox(width: 20), // spacing
+//                     Container(
+//                       padding: const EdgeInsets.all(16), // আগে 24 ছিল
+//                       decoration: ShapeDecoration(
+//                         color: const Color(0xFF011F54),
+//                         shape: RoundedRectangleBorder(
+//                           borderRadius: BorderRadius.circular(999),
+//                         ),
+//                       ),
+//                       child: SvgPicture.asset(
+//                         Assets.svgIcons.startLetsGo.path,
+//                         width: 60,
+//                         height: 60,
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ),
 //             const SizedBox(height: 30),
 //           ],
 //         ),
@@ -99,7 +166,7 @@
 //             ),
 //           ),
 
-//           SizedBox(width: 20),
+//           const SizedBox(width: 20),
 
 //           // Progress bar
 //           Expanded(
@@ -113,7 +180,7 @@
 //               ),
 //               child: FractionallySizedBox(
 //                 alignment: Alignment.centerLeft,
-//                 widthFactor: 0.5, // 3/6 = 0.5
+//                 widthFactor: 0.5,
 //                 child: Container(
 //                   decoration: ShapeDecoration(
 //                     color: const Color(0xFF3D87F5),
@@ -126,7 +193,7 @@
 //             ),
 //           ),
 
-//           SizedBox(width: 15),
+//           const SizedBox(width: 15),
 
 //           // Progress text
 //           Text(
@@ -139,15 +206,13 @@
 //             ),
 //           ),
 
-//           // SizedBox(width: 5),
-
-//           // Skip button - Fixed navigation
+//           // Skip button
 //           GestureDetector(
 //             onTap: () {
-//               context.push("/onboardingScreen"); // Skip to next screen
+//               context.push("/onboardingScreen");
 //             },
 //             child: Container(
-//               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+//               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
 //               child: Text(
 //                 'Skip',
 //                 textAlign: TextAlign.center,
@@ -165,17 +230,17 @@
 //     );
 //   }
 
-//   Widget _buildNextButton() {
-//     return CustomNextButton(
-//       isEnabled: _canProceed(),
-//       onTap: () {
-//         context.push("/popupSpeking");
-//       },
-//       buttonText: 'NEXT',
-//       iconPath: Assets.svgIcons.startLetsGo.path,
-//       textStyle: AppsTextStyles.letsStartNext,
-//     );
-//   }
+//   // Widget _buildNextButton() {
+//   //   return CustomNextButton(
+//   //     isEnabled: _canProceed(),
+//   //     onTap: () {
+//   //       context.push("/popupSpeking");
+//   //     },
+//   //     buttonText: 'NEXT',
+//   //     iconPath: Assets.svgIcons.startLetsGo.path,
+//   //     textStyle: AppsTextStyles.letsStartNext.copyWith(fontSize: 32),
+//   //   );
+//   // }
 // }
 
 // class NameSelectionPage extends StatefulWidget {
@@ -200,8 +265,7 @@
 
 //   bool _showTextField = false;
 //   int _currentAvatarIndex = 0;
-//   bool _isAnimating = true;
-//   bool _showNameDisplay = false;
+//   bool _showNameDisplay = true;
 
 //   // Avatar list with PNG images
 //   final List<AvatarData> avatars = [
@@ -250,31 +314,31 @@
 //       CurvedAnimation(parent: _bounceController, curve: Curves.elasticOut),
 //     );
 
+//     // ✅ FIX: Deferred until after the first frame is built
+//     // to avoid calling setState() on the parent during the build phase.
+//     WidgetsBinding.instance.addPostFrameCallback((_) {
+//       widget.onNameSelected(avatars[_currentAvatarIndex].name);
+//     });
+
 //     _startAutoRotation();
 //   }
 
 //   void _startAutoRotation() async {
-//     // Auto-rotate through avatars every 3 seconds
 //     for (int i = 0; i < avatars.length; i++) {
-//       if (!mounted || !_isAnimating) break;
+//       if (!mounted) break;
 
 //       await Future.delayed(const Duration(seconds: 3));
 
-//       if (!mounted || !_isAnimating) break;
+//       if (!mounted) break;
 
 //       setState(() {
 //         _currentAvatarIndex = (i + 1) % avatars.length;
 //       });
 //       _bounceController.forward(from: 0);
-//     }
 
-//     // After showing all avatars, show the name display
-//     if (mounted && _isAnimating) {
-//       setState(() {
-//         _isAnimating = false;
-//         _showNameDisplay = true;
-//       });
-//       widget.onNameSelected(avatars[_currentAvatarIndex].name);
+//       if (!_showTextField) {
+//         widget.onNameSelected(avatars[_currentAvatarIndex].name);
+//       }
 //     }
 //   }
 
@@ -325,7 +389,7 @@
 //               child: Text(
 //                 'HOW WOULD YOU LIKE TO CALL IT?',
 //                 style: GoogleFonts.workSans(
-//                   color: const Color(0xFF011F54), // Background-bg-dark
+//                   color: const Color(0xFF011F54),
 //                   fontSize: 24,
 //                   fontWeight: FontWeight.w900,
 //                   height: 0.90,
@@ -354,9 +418,6 @@
 //                     assetPath: _showTextField
 //                         ? avatars[0].assetPath
 //                         : avatars[_currentAvatarIndex].assetPath,
-//                     // isLottie: _showTextField
-//                     //     ? avatars[0].isLottie
-//                     //     : avatars[_currentAvatarIndex].isLottie,
 //                   ),
 //                 ),
 //               ),
@@ -364,27 +425,7 @@
 
 //             const SizedBox(height: 32),
 
-//             // Show loading indicator during animation
-//             if (_isAnimating) ...[
-//               Center(
-//                 child: Column(
-//                   children: const [
-//                     CircularProgressIndicator(
-//                       valueColor: AlwaysStoppedAnimation<Color>(
-//                         Color(0xFF4169E1),
-//                       ),
-//                     ),
-//                     SizedBox(height: 16),
-//                     Text(
-//                       'Discovering your character...',
-//                       style: TextStyle(fontSize: 16, color: Color(0xFF64748B)),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//             ]
-//             // Name display or input after animation
-//             else if (!_showTextField && _showNameDisplay) ...[
+//             if (!_showTextField && _showNameDisplay) ...[
 //               Container(
 //                 padding: const EdgeInsets.symmetric(vertical: 16),
 //                 child: Row(
@@ -521,8 +562,8 @@
 
 //             const SizedBox(height: 40),
 
-//             Center(
-//               child: const Text(
+//             const Center(
+//               child: Text(
 //                 'You can always rename it later.',
 //                 style: TextStyle(fontSize: 14, color: Color(0xFF94A3B8)),
 //                 textAlign: TextAlign.center,
@@ -547,46 +588,6 @@
 //     this.isLottie = false,
 //   });
 // }
-// /*
-// // Character widget with border radius applied to images
-// class CharacterWidget extends StatelessWidget {
-//   final String assetPath;
-//   final bool isLottie;
-
-//   const CharacterWidget({
-//     super.key,
-//     required this.assetPath,
-//     this.isLottie = false,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     // if (isLottie) {
-//     //   // Lottie animations with border radius
-//     //   return ClipRRect(
-//     //     borderRadius: BorderRadius.circular(25),
-//     //     child: Lottie.asset(
-//     //       assetPath,
-//     //       width: 180,
-//     //       height: 180,
-//     //       fit: BoxFit.contain,
-//     //     ),
-//     //   );
-//     // } else {
-//     // PNG/JPG images with border radius
-//     return ClipRRect(
-//       borderRadius: BorderRadius.circular(0),
-//       child: Image.asset(
-//         assetPath,
-//         width: 338,
-//         height: 160,
-//         fit: BoxFit.contain,
-//       ),
-//     );
-//     // }
-//   }
-// }
-// */
 
 // class CharacterWidget extends StatelessWidget {
 //   final String assetPath;
@@ -596,23 +597,18 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return ClipRRect(
-//       borderRadius: BorderRadius.circular(24), // ✅ rounded corner
-//       child: Image.asset(
-//         assetPath,
-//         width: 260,
-//         height: 210,
-//         fit: BoxFit.cover, // ✅ image full fill করবে
-//       ),
+//       borderRadius: BorderRadius.circular(24),
+//       child: Image.asset(assetPath, width: 260, height: 210, fit: BoxFit.cover),
 //     );
 //   }
 // }
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
-import 'package:mobile_app_dea/widget/custom_button.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -632,19 +628,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   void dispose() {
     _pageController.dispose();
     super.dispose();
-  }
-
-  void _completeOnboarding() {
-    context.push("/popupSpeking");
-  }
-
-  bool _canProceed() {
-    if (_currentPage == 0) {
-      return _selectedName.isNotEmpty;
-    } else if (_currentPage == 1) {
-      return _selectedGender.isNotEmpty;
-    }
-    return false;
   }
 
   @override
@@ -676,7 +659,74 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ],
               ),
             ),
-            _buildNextButton(),
+            GestureDetector(
+              onTap: () => context.push("/popupSpeking"),
+              child: Container(
+                width: 334,
+                height: 116,
+                padding: const EdgeInsets.only(
+                  top: 8,
+                  left: 40,
+                  right: 8,
+                  bottom: 8,
+                ),
+                decoration: ShapeDecoration(
+                  color: const Color(0xFFFF8F26),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(999),
+                  ),
+                  shadows: const [
+                    BoxShadow(
+                      color: Color(0x070A0C12),
+                      blurRadius: 6,
+                      offset: Offset(0, 4),
+                      spreadRadius: -2,
+                    ),
+                    BoxShadow(
+                      color: Color(0x140A0C12),
+                      blurRadius: 16,
+                      offset: Offset(0, 12),
+                      spreadRadius: -4,
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 170,
+                      child: Text(
+                        'Next',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.workSans(
+                          color: const Color(0xFF011F54),
+                          fontSize: 28,
+                          fontWeight: FontWeight.w900,
+                          height: 0.8,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 20),
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: ShapeDecoration(
+                        color: const Color(0xFF011F54),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(999),
+                        ),
+                      ),
+                      child: SvgPicture.asset(
+                        Assets.svgIcons.startLetsGo.path,
+                        width: 60,
+                        height: 60,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
             const SizedBox(height: 30),
           ],
         ),
@@ -684,14 +734,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 
-  Widget _buildHeader() {
+  Widget _buildHeader({double progress = 1.0}) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Back button
+          /// 🔙 Back Button
           GestureDetector(
             onTap: () {
               context.push("/onbordingFetures");
@@ -704,48 +754,52 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
           ),
-
           const SizedBox(width: 20),
 
-          // Progress bar
+          /// 📊 Progress Bar
           Expanded(
             child: Container(
               height: 10,
-              decoration: ShapeDecoration(
-                color: const Color(0xFFC3DBFF),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(999),
-                ),
+              decoration: BoxDecoration(
+                color: const Color(0xFFE0E0E0), // 🔹 Background Color
+                borderRadius: BorderRadius.circular(999),
               ),
-              child: FractionallySizedBox(
-                alignment: Alignment.centerLeft,
-                widthFactor: 0.5,
-                child: Container(
-                  decoration: ShapeDecoration(
-                    color: const Color(0xFF3D87F5),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(999),
+              child: Stack(
+                children: [
+                  FractionallySizedBox(
+                    alignment: Alignment.centerLeft,
+                    widthFactor: progress, // 0.0 to 1.0
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF3D87F5), // 🔵 Progress Color
+                        // gradient: const LinearGradient(
+                        //   colors: [
+                        //     Color(0xFF3D87F5), // 🔵 Start Color
+                        //     Color(0xFF6FB1FF), // 🔵 End Color
+                        //   ],
+                        // ),
+                        borderRadius: BorderRadius.circular(999),
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
             ),
           ),
 
           const SizedBox(width: 15),
 
-          // Progress text
-          Text(
+          /// Step Text
+          const Text(
             '6/6',
-            style: GoogleFonts.workSans(
-              color: const Color(0xFF4C586E),
+            style: TextStyle(
+              color: Color(0xFF4C586E),
               fontSize: 12,
               fontWeight: FontWeight.w400,
-              height: 1.40,
             ),
           ),
 
-          // Skip button
+          /// Skip Button
           GestureDetector(
             onTap: () {
               context.push("/onboardingScreen");
@@ -769,19 +823,84 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 
-  Widget _buildNextButton() {
-    return CustomNextButton(
-      isEnabled: _canProceed(),
-      onTap: () {
-        context.push("/popupSpeking");
-      },
-      buttonText: 'NEXT',
-      iconPath: Assets.svgIcons.startLetsGo.path,
-      textStyle: AppsTextStyles.letsStartNext,
-    );
-  }
+  // Widget _buildHeader() {
+  //   return Padding(
+  //     padding: const EdgeInsets.all(16.0),
+  //     child: Row(
+  //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //       crossAxisAlignment: CrossAxisAlignment.center,
+  //       children: [
+  //         GestureDetector(
+  //           onTap: () {
+  //             context.push("/onbordingFetures");
+  //           },
+  //           child: SizedBox(
+  //             height: 56,
+  //             width: 56,
+  //             child: CircleAvatar(
+  //               child: Assets.svgIcons.backIconSvg.svg(height: 56, width: 56),
+  //             ),
+  //           ),
+  //         ),
+  //         const SizedBox(width: 20),
+  //         Expanded(
+  //           child: Container(
+  //             height: 10,
+  //             decoration: ShapeDecoration(
+  //               color: const Color(0xFFC3DBFF),
+  //               shape: RoundedRectangleBorder(
+  //                 borderRadius: BorderRadius.circular(999),
+  //               ),
+  //             ),
+  //             child: FractionallySizedBox(
+  //               alignment: Alignment.centerLeft,
+  //               widthFactor: 0.5,
+  //               child: Container(
+  //                 decoration: ShapeDecoration(
+  //                   color: const Color(0xFF3D87F5),
+  //                   shape: RoundedRectangleBorder(
+  //                     borderRadius: BorderRadius.circular(999),
+  //                   ),
+  //                 ),
+  //               ),
+  //             ),
+  //           ),
+  //         ),
+  //         const SizedBox(width: 15),
+  //         Text(
+  //           '6/6',
+  //           style: GoogleFonts.workSans(
+  //             color: const Color(0xFF4C586E),
+  //             fontSize: 12,
+  //             fontWeight: FontWeight.w400,
+  //             height: 1.40,
+  //           ),
+  //         ),
+  // GestureDetector(
+  //   onTap: () {
+  //     context.push("/onboardingScreen");
+  //   },
+  //   child: Container(
+  //     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+  //     child: Text(
+  //       'Skip',
+  //       textAlign: TextAlign.center,
+  //       style: GoogleFonts.workSans(
+  //         color: const Color(0xFF011F54),
+  //         fontSize: 18,
+  //         fontWeight: FontWeight.w900,
+  //         height: 0.80,
+  //       ),
+  //     ),
+  //   ),
+  // ),
+  //       ],
+  //     ),
+  //   );
+  // }
 }
 
+// ─────────────────────────────────────────────
 class NameSelectionPage extends StatefulWidget {
   final String selectedName;
   final Function(String) onNameSelected;
@@ -806,38 +925,13 @@ class _NameSelectionPageState extends State<NameSelectionPage>
   int _currentAvatarIndex = 0;
   bool _showNameDisplay = true;
 
-  // Avatar list with PNG images
   final List<AvatarData> avatars = [
-    AvatarData(
-      name: 'KNOTTY',
-      assetPath: 'assets/svg_images/A.png',
-      isLottie: false,
-    ),
-    AvatarData(
-      name: 'BLOOBY',
-      assetPath: 'assets/svg_images/B.png',
-      isLottie: false,
-    ),
-    AvatarData(
-      name: 'FIZZY',
-      assetPath: 'assets/svg_images/C.png',
-      isLottie: false,
-    ),
-    AvatarData(
-      name: 'BOUNCY',
-      assetPath: 'assets/svg_images/D.png',
-      isLottie: false,
-    ),
-    AvatarData(
-      name: 'ZIPPY',
-      assetPath: 'assets/svg_images/E.png',
-      isLottie: false,
-    ),
-    AvatarData(
-      name: 'MELON',
-      assetPath: 'assets/svg_images/F.png',
-      isLottie: false,
-    ),
+    AvatarData(name: 'KNOTTY', assetPath: 'assets/svg_images/A.png'),
+    AvatarData(name: 'BLOOBY', assetPath: 'assets/svg_images/B.png'),
+    AvatarData(name: 'FIZZY', assetPath: 'assets/svg_images/C.png'),
+    AvatarData(name: 'BOUNCY', assetPath: 'assets/svg_images/D.png'),
+    AvatarData(name: 'ZIPPY', assetPath: 'assets/svg_images/E.png'),
+    AvatarData(name: 'MELON', assetPath: 'assets/svg_images/F.png'),
   ];
 
   @override
@@ -853,8 +947,6 @@ class _NameSelectionPageState extends State<NameSelectionPage>
       CurvedAnimation(parent: _bounceController, curve: Curves.elasticOut),
     );
 
-    // ✅ FIX: Deferred until after the first frame is built
-    // to avoid calling setState() on the parent during the build phase.
     WidgetsBinding.instance.addPostFrameCallback((_) {
       widget.onNameSelected(avatars[_currentAvatarIndex].name);
     });
@@ -865,16 +957,12 @@ class _NameSelectionPageState extends State<NameSelectionPage>
   void _startAutoRotation() async {
     for (int i = 0; i < avatars.length; i++) {
       if (!mounted) break;
-
       await Future.delayed(const Duration(seconds: 3));
-
       if (!mounted) break;
-
       setState(() {
         _currentAvatarIndex = (i + 1) % avatars.length;
       });
       _bounceController.forward(from: 0);
-
       if (!_showTextField) {
         widget.onNameSelected(avatars[_currentAvatarIndex].name);
       }
@@ -915,16 +1003,17 @@ class _NameSelectionPageState extends State<NameSelectionPage>
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
 
-    return SingleChildScrollView(
+    return SizedBox.expand(
       child: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // ── Title ──
             SizedBox(
-              width: 335,
+              width: screenWidth * 0.85,
               child: Text(
                 'HOW WOULD YOU LIKE TO CALL IT?',
                 style: GoogleFonts.workSans(
@@ -936,57 +1025,61 @@ class _NameSelectionPageState extends State<NameSelectionPage>
                 ),
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 6),
             Text(
               'Give your form a name.',
               style: AppsTextStyles.passwordDescription,
             ),
-            const SizedBox(height: 32),
+            const SizedBox(height: 16),
 
-            // Character with animation and border radius
-            ScaleTransition(
-              scale: _bounceAnimation,
-              child: Container(
-                height: screenHeight * 0.25,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: Center(
-                  child: CharacterWidget(
-                    assetPath: _showTextField
-                        ? avatars[0].assetPath
-                        : avatars[_currentAvatarIndex].assetPath,
+            // ── Avatar ──
+            Flexible(
+              flex: 4,
+              child: ScaleTransition(
+                scale: _bounceAnimation,
+                child: Container(
+                  width: double.infinity,
+                  constraints: const BoxConstraints(
+                    minHeight: 120,
+                    maxHeight: 260,
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Center(
+                    child: CharacterWidget(
+                      assetPath: _showTextField
+                          ? avatars[0].assetPath
+                          : avatars[_currentAvatarIndex].assetPath,
+                    ),
                   ),
                 ),
               ),
             ),
 
-            const SizedBox(height: 32),
+            const SizedBox(height: 16),
 
+            // ── Name Display / TextField ──
             if (!_showTextField && _showNameDisplay) ...[
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      avatars[_currentAvatarIndex].name,
-                      style: AppsTextStyles.signupText28,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    avatars[_currentAvatarIndex].name,
+                    style: AppsTextStyles.signupText28,
+                  ),
+                  const SizedBox(width: 16),
+                  GestureDetector(
+                    onTap: _rotateAvatar,
+                    child: Image.asset(
+                      Assets.svgIcons.buttonRegular.path,
+                      width: 66,
+                      height: 44,
                     ),
-                    const SizedBox(width: 16),
-                    GestureDetector(
-                      onTap: _rotateAvatar,
-                      child: Image.asset(
-                        Assets.svgIcons.buttonRegular.path,
-                        width: 66,
-                        height: 44,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 12),
               Center(
                 child: SizedBox(
                   width: 320,
@@ -1000,7 +1093,6 @@ class _NameSelectionPageState extends State<NameSelectionPage>
                     ),
                     label: Text(
                       'Choose your own name',
-                      textAlign: TextAlign.center,
                       style: GoogleFonts.workSans(
                         color: const Color(0xFF011F54),
                         fontSize: 18,
@@ -1026,33 +1118,26 @@ class _NameSelectionPageState extends State<NameSelectionPage>
                 ),
               ),
             ] else if (_showTextField) ...[
-              // Custom name input
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 4,
+              TextField(
+                controller: _nameController,
+                textAlign: TextAlign.center,
+                maxLength: 12,
+                autofocus: true,
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w900,
+                  color: Color(0xFF1E293B),
+                  letterSpacing: 2,
                 ),
-                child: TextField(
-                  controller: _nameController,
-                  textAlign: TextAlign.center,
-                  maxLength: 12,
-                  autofocus: true,
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w900,
-                    color: Color(0xFF1E293B),
-                    letterSpacing: 2,
-                  ),
-                  decoration: InputDecoration(
-                    hintText: 'TYPE SOMETHING FUN...',
-                    hintStyle: AppsTextStyles.typeSomeThingHere,
-                    border: InputBorder.none,
-                    counterText: '',
-                  ),
-                  onChanged: _onCustomNameChanged,
+                decoration: InputDecoration(
+                  hintText: 'TYPE SOMETHING FUN...',
+                  hintStyle: AppsTextStyles.typeSomeThingHere,
+                  border: InputBorder.none,
+                  counterText: '',
                 ),
+                onChanged: _onCustomNameChanged,
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 12),
               Center(
                 child: SizedBox(
                   width: 320,
@@ -1072,7 +1157,6 @@ class _NameSelectionPageState extends State<NameSelectionPage>
                     icon: const Icon(Icons.close, size: 18),
                     label: Text(
                       'Back to suggestions',
-                      textAlign: TextAlign.center,
                       style: GoogleFonts.workSans(
                         color: const Color(0xFF011F54),
                         fontSize: 18,
@@ -1099,8 +1183,8 @@ class _NameSelectionPageState extends State<NameSelectionPage>
               ),
             ],
 
-            const SizedBox(height: 40),
-
+            // ── Spacer + Bottom hint ──
+            const Spacer(),
             const Center(
               child: Text(
                 'You can always rename it later.',
@@ -1108,6 +1192,7 @@ class _NameSelectionPageState extends State<NameSelectionPage>
                 textAlign: TextAlign.center,
               ),
             ),
+            const SizedBox(height: 8),
           ],
         ),
       ),
@@ -1115,7 +1200,7 @@ class _NameSelectionPageState extends State<NameSelectionPage>
   }
 }
 
-// Avatar data model
+// ─────────────────────────────────────────────
 class AvatarData {
   final String name;
   final String assetPath;

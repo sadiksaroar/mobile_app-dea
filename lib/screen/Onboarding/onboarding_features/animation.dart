@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
@@ -46,7 +47,7 @@ class _AnimationState extends State<Animation> {
                     ),
                   ),
 
-                  SizedBox(width: 20),
+                  SizedBox(width: 15),
 
                   // Progress bar
                   Expanded(
@@ -60,7 +61,7 @@ class _AnimationState extends State<Animation> {
                       ),
                       child: FractionallySizedBox(
                         alignment: Alignment.centerLeft,
-                        widthFactor: 0.5, // 3/6 = 0.5
+                        widthFactor: 0.9, // 3/6 = 0.5
                         child: Container(
                           decoration: ShapeDecoration(
                             color: const Color(0xFF3D87F5),
@@ -73,7 +74,7 @@ class _AnimationState extends State<Animation> {
                     ),
                   ),
 
-                  SizedBox(width: 15),
+                  SizedBox(width: 10),
 
                   // Progress text
                   Text(
@@ -219,14 +220,83 @@ class _AnimationState extends State<Animation> {
             ),
             SizedBox(height: 20),
             // Next button
-            CustomNextButton(
-              isEnabled: true,
-              onTap: () {
-                context.push("/onboardingScreen");
-              },
-              buttonText: "Next",
-              iconPath: Assets.svgIcons.startLetsGo.path,
-              textStyle: AppsTextStyles.letsStartNext,
+            // CustomNextButton(
+            //   isEnabled: true,
+            //   onTap: () {
+            //     context.push("/onboardingScreen");
+            //   },
+            //   buttonText: "Next",
+            //   iconPath: Assets.svgIcons.startLetsGo.path,
+            //   // textStyle: AppsTextStyles.letsStartNext,
+            //   textStyle: AppsTextStyles.letsStartNext.copyWith(fontSize: 36),
+            // ),
+            GestureDetector(
+              onTap: () => context.push("/onboardingScreen"),
+              child: Container(
+                width: 354,
+                height: 116,
+                padding: const EdgeInsets.only(
+                  top: 8,
+                  left: 60,
+                  right: 8,
+                  bottom: 8,
+                ),
+                decoration: ShapeDecoration(
+                  color: const Color(0xFFFF8F26) /* Background-bg-secondary */,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(999),
+                  ),
+                  shadows: [
+                    BoxShadow(
+                      color: Color(0x070A0C12),
+                      blurRadius: 6,
+                      offset: Offset(0, 4),
+                      spreadRadius: -2,
+                    ),
+                    BoxShadow(
+                      color: Color(0x140A0C12),
+                      blurRadius: 16,
+                      offset: Offset(0, 12),
+                      spreadRadius: -4,
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 170,
+                      child: Text(
+                        'Next',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.workSans(
+                          color: const Color(0xFF011F54),
+                          fontSize: 28,
+                          fontWeight: FontWeight.w900,
+                          height: 0.8,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 20), // spacing
+                    Container(
+                      padding: const EdgeInsets.all(16), // আগে 24 ছিল
+                      decoration: ShapeDecoration(
+                        color: const Color(0xFF011F54),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(999),
+                        ),
+                      ),
+                      child: SvgPicture.asset(
+                        Assets.svgIcons.startLetsGo.path,
+                        width: 60,
+                        height: 60,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
             SizedBox(height: 20),
           ],

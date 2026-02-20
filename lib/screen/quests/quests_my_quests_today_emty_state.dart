@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/custom_code/bottom_nav.dart';
@@ -71,11 +72,27 @@ class _QuestHomePageState extends State<QuestHomePage>
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text("QUESTS", style: AppsTextStyles.saimTitle),
+            Text(
+              'QUESTS',
+              style: TextStyle(
+                color: const Color(0xFF011F54),
+                fontSize: 52,
+                fontFamily: 'Wosker',
+                fontWeight: FontWeight.w400,
+                height: 0.80,
+              ),
+            ),
             const SizedBox(height: 6),
             Text(
-              "Small steps, big progress.",
-              style: AppsTextStyles.workSansRegularF16,
+              'Small steps, big progress.',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.workSans(
+                color: const Color(0xFF4C586E),
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+                height: 1.40,
+                letterSpacing: -0.50,
+              ),
             ),
           ],
         ),
@@ -119,7 +136,7 @@ class _QuestHomePageState extends State<QuestHomePage>
                 ),
                 overlayColor: WidgetStateProperty.all(Colors.transparent),
                 splashFactory: NoSplash.splashFactory,
-                labelColor: Colors.black,
+                labelColor: const Color(0xFF011F54),
                 unselectedLabelColor: const Color(0xFFADB2BC),
                 labelStyle: AppsTextStyles.workSansExtraBold20,
                 unselectedLabelStyle: AppsTextStyles.workSansy6ExtraBold20,

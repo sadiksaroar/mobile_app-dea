@@ -398,8 +398,8 @@ class _ProcrastinationScreenState extends State<ProcrastinationScreen> {
                     alignment: Alignment.center,
                     children: [
                       Container(
-                        width: 270,
-                        height: 270,
+                        width: 300,
+                        height: 300,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: Assets.svgImages.twoColorPopupSpkeing
@@ -410,8 +410,8 @@ class _ProcrastinationScreenState extends State<ProcrastinationScreen> {
                         ),
                       ),
                       Container(
-                        width: 180,
-                        height: 180,
+                        width: 200,
+                        height: 200,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: Assets.svgImages.popupSpeking.image().image,
@@ -421,8 +421,8 @@ class _ProcrastinationScreenState extends State<ProcrastinationScreen> {
                         child: Center(
                           child: ClipOval(
                             child: Assets.svgImages.popUpSpekingTwoCarton.image(
-                              width: 100,
-                              height: 100,
+                              width: 120,
+                              height: 120,
                             ),
                           ),
                         ),

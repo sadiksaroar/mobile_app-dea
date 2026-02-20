@@ -124,13 +124,13 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
                       ),
                     ),
                     const SizedBox(width: 12),
-                    Assets.svgIcons.signInPageIcon.svg(height: 80, width: 80),
+                    Assets.svgIcons.signInPageIcon.svg(height: 57, width: 62),
                   ],
                 ),
               ),
               SizedBox(height: 10),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(3.0),
                 child: SizedBox(
                   width: 335,
                   child: Text(
@@ -140,7 +140,7 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
                       fontSize: 58,
                       fontFamily: 'Wosker',
                       fontWeight: FontWeight.w400,
-                      height: 0.80,
+                      height: 0.70,
                     ),
                   ),
                 ),
@@ -152,14 +152,22 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
                 spacing: 16,
                 children: [
                   Text(
-                    'Don’t worry. It happens to the best of us. Enter your email to get back on track.',
+                    "Don't worry. It happens to the best of us.",
                     style: GoogleFonts.workSans(
-                      color: const Color(
-                        0xFF595754,
-                      ), // Text-text-secondary-default
-                      fontSize: 16,
+                      fontSize: 15,
                       fontWeight: FontWeight.w400,
-                      height: 1.40,
+                      color: const Color(0xFF595754),
+                      height: 1.20,
+                      letterSpacing: -0.50,
+                    ),
+                  ),
+                  Text(
+                    'Enter your email to get back on track.',
+                    style: GoogleFonts.workSans(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFF595754),
+                      height: 1,
                       letterSpacing: -0.50,
                     ),
                   ),
@@ -294,18 +302,34 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
               // Divider with "or"
 
               // Sign In Text
-              Center(
-                child: RichText(
-                  text: TextSpan(
-                    text: "Didn’t get the email? → ",
-                    style: AppsTextStyles.didNotGetEmail,
+              SizedBox(
+                width: 335,
+                child: Text.rich(
+                  TextSpan(
                     children: [
                       TextSpan(
-                        text: "Resend link",
-                        style: AppsTextStyles.resendLink,
+                        text: "Didn't get the email? → ",
+                        style: GoogleFonts.workSans(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: const Color(0xFF011F54),
+                          height: 1,
+                          letterSpacing: -0.50,
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'Resend link',
+                        style: GoogleFonts.workSans(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: const Color(0xFFFF8F26),
+                          height: 1,
+                          letterSpacing: -0.50,
+                        ),
                       ),
                     ],
                   ),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ],

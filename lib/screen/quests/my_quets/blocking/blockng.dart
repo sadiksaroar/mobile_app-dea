@@ -1,7 +1,6 @@
-// import 'dart:io';
-
 // import 'package:flutter/material.dart';
-// import 'package:flutter_slidable/flutter_slidable.dart';
+// import 'package:google_fonts/google_fonts.dart';
+// import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 // import 'package:mobile_app_dea/themes/text_styles.dart';
 
 // class Blockng extends StatefulWidget {
@@ -65,73 +64,75 @@
 //     return Center(
 //       child: Padding(
 //         padding: const EdgeInsets.symmetric(horizontal: 24.0),
-//         child: Column(
-//           mainAxisSize: MainAxisSize.min,
-//           children: [
-//             // ===== TOP ICON =====
-//             Container(
-//               padding: const EdgeInsets.all(18),
-//               decoration: BoxDecoration(
-//                 color: const Color(0xFFE9F0FF),
-//                 borderRadius: BorderRadius.circular(16),
-//               ),
-//               child: Image.asset(
-//                 "assets/svg_images/Button Calendar.png",
-//                 height: 50,
-//                 width: 50,
-//               ),
-//             ),
-
-//             const SizedBox(height: 24),
-
-//             // ===== BIG TITLE =====
-//             Text(
-//               "No quests yet, but your\njourney starts here.",
-//               textAlign: TextAlign.center,
-//               style: AppsTextStyles.workSansExtraBold20Center,
-//             ),
-
-//             const SizedBox(height: 12),
-
-//             // ===== SUBTEXT =====
-//             Text(
-//               "Add your first quest and take the smallest\npossible step — we're not chasing\nperfection, just progress.",
-//               textAlign: TextAlign.center,
-//               style: AppsTextStyles.workSansRegularAdd16,
-//             ),
-
-//             const SizedBox(height: 24),
-
-//             // ===== CREATE QUEST BUTTON =====
-//             SizedBox(
-//               width: 210,
-//               child: ElevatedButton(
-//                 onPressed: () {
-//                   setState(() {
-//                     showQuests = true;
-//                   });
-//                 },
-//                 style: ElevatedButton.styleFrom(
-//                   backgroundColor: const Color(0xFF4C46F5),
-//                   shape: RoundedRectangleBorder(
-//                     borderRadius: BorderRadius.circular(50),
-//                   ),
-//                   padding: const EdgeInsets.symmetric(vertical: 14),
+//         child: SingleChildScrollView(
+//           // Wrap the Column with SingleChildScrollView
+//           child: Column(
+//             mainAxisSize: MainAxisSize.min,
+//             children: [
+//               // ===== TOP ICON =====
+//               Container(
+//                 padding: const EdgeInsets.all(18),
+//                 decoration: BoxDecoration(
+//                   borderRadius: BorderRadius.circular(16),
 //                 ),
-//                 child: Row(
-//                   mainAxisSize: MainAxisSize.min,
-//                   children: [
-//                     const Icon(Icons.add, color: Colors.white, size: 24),
-//                     const SizedBox(width: 6),
-//                     Text(
-//                       "Create quest",
-//                       style: AppsTextStyles.workSansBlack18Center,
+//                 child: Image.asset(
+//                   "assets/svg_images/Button Calendar.png",
+//                   height: 62,
+//                   width: 62,
+//                 ),
+//               ),
+
+//               const SizedBox(height: 24),
+
+//               // ===== BIG TITLE =====
+//               Text(
+//                 "No quests",
+//                 textAlign: TextAlign.center,
+//                 style: AppsTextStyles.workSansExtraBold20Center,
+//               ),
+
+//               const SizedBox(height: 12),
+
+//               // ===== SUBTEXT =====
+//               Text(
+//                 'Look at you — on top of everything!\nIf you ever miss a quest, it’ll show up here.',
+//                 textAlign: TextAlign.center,
+//                 style: AppsTextStyles.workSansRegularAdd16,
+//               ),
+
+//               const SizedBox(height: 24),
+
+//               // ===== CREATE QUEST BUTTON =====
+//               SizedBox(
+//                 width: 210,
+//                 child: ElevatedButton(
+//                   onPressed: () {
+//                     setState(() {
+//                       showQuests = true;
+//                     });
+//                   },
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: const Color(0xFF4C46F5),
+//                     shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(50),
 //                     ),
-//                   ],
+//                     padding: const EdgeInsets.symmetric(vertical: 14),
+//                   ),
+//                   child: Row(
+//                     mainAxisSize: MainAxisSize.min,
+//                     children: [
+//                       const Icon(Icons.add, color: Colors.white, size: 24),
+//                       const SizedBox(width: 6),
+//                       Text(
+//                         "Create quest",
+//                         style: AppsTextStyles.workSansBlack18Center,
+//                       ),
+//                     ],
+//                   ),
 //                 ),
 //               ),
-//             ),
-//           ],
+//             ],
+//           ),
 //         ),
 //       ),
 //     );
@@ -150,6 +151,7 @@
 //               Padding(
 //                 padding: const EdgeInsets.all(16),
 //                 child: Container(
+//                   decoration: BoxDecoration(),
 //                   padding: const EdgeInsets.symmetric(horizontal: 12),
 //                   child: DropdownButtonHideUnderline(
 //                     child: DropdownButton<String>(
@@ -181,13 +183,21 @@
 //               ),
 //               Padding(
 //                 padding: const EdgeInsets.symmetric(horizontal: 18.0),
-//                 child: Text(
-//                   "Clear all",
-//                   style: TextStyle(
-//                     fontSize: 16,
-//                     fontWeight: FontWeight.w600,
-//                     color: Colors.blue.shade700,
-//                   ),
+//                 child: Row(
+//                   children: [
+//                     Image.asset(Assets.svgIcons.x.path, height: 20, width: 20),
+//                     SizedBox(width: 6),
+//                     Text(
+//                       'Clear all',
+//                       textAlign: TextAlign.center,
+//                       style: GoogleFonts.workSans(
+//                         color: const Color(0xFF4542EB), // Text-text-primary
+//                         fontSize: 18,
+//                         fontWeight: FontWeight.w900,
+//                         height: 0.80,
+//                       ),
+//                     ),
+//                   ],
 //                 ),
 //               ),
 //             ],
@@ -238,7 +248,6 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return Container(
-//       // width: ,
 //       padding: const EdgeInsets.all(18),
 //       decoration: BoxDecoration(
 //         color: Color(0xFFFFFEF8),
@@ -384,8 +393,14 @@
 //                     ),
 //                     alignment: Alignment.center,
 //                     child: Text(
-//                       "Actually, I did this",
-//                       style: AppsTextStyles.workSansBlack18CenterBlue,
+//                       'Actually, I did this',
+//                       textAlign: TextAlign.center,
+//                       style: GoogleFonts.workSans(
+//                         color: const Color(0xFF4542EB), // Text-primary
+//                         fontSize: 16,
+//                         fontWeight: FontWeight.w900,
+//                         height: 0.80,
+//                       ),
 //                     ),
 //                   ),
 //                 ),
@@ -404,8 +419,14 @@
 //                     ),
 //                     alignment: Alignment.center,
 //                     child: Text(
-//                       "Skip",
-//                       style: AppsTextStyles.workSansBlack18CenterBlue,
+//                       'Skip',
+//                       textAlign: TextAlign.center,
+//                       style: GoogleFonts.workSans(
+//                         color: const Color(0xFF4542EB), // Text-primary
+//                         fontSize: 16,
+//                         fontWeight: FontWeight.w900,
+//                         height: 0.80,
+//                       ),
 //                     ),
 //                   ),
 //                 ),
@@ -417,7 +438,6 @@
 //     );
 //   }
 // }
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
@@ -437,7 +457,7 @@ class _BlockngState extends State<Blockng> {
       "emoji": "🧹",
       "title": "Clean house",
       "levelText": "Soft steps",
-      "levelColor": const Color(0xFF77D47D),
+      "levelColor": const Color(0xFFA0E871),
       "time": "22:00",
       "duration": "10 mins",
     },
@@ -485,7 +505,6 @@ class _BlockngState extends State<Blockng> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: SingleChildScrollView(
-          // Wrap the Column with SingleChildScrollView
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -493,13 +512,12 @@ class _BlockngState extends State<Blockng> {
               Container(
                 padding: const EdgeInsets.all(18),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFE9F0FF),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Image.asset(
                   "assets/svg_images/Button Calendar.png",
-                  height: 50,
-                  width: 50,
+                  height: 62,
+                  width: 62,
                 ),
               ),
 
@@ -507,7 +525,7 @@ class _BlockngState extends State<Blockng> {
 
               // ===== BIG TITLE =====
               Text(
-                "No quests yet, but your\njourney starts here.",
+                "No quests",
                 textAlign: TextAlign.center,
                 style: AppsTextStyles.workSansExtraBold20Center,
               ),
@@ -516,7 +534,7 @@ class _BlockngState extends State<Blockng> {
 
               // ===== SUBTEXT =====
               Text(
-                "Add your first quest and take the smallest\npossible step — we're not chasing\nperfection, just progress.",
+                'Look at you — on top of everything!\nIf you ever miss a quest, it\'ll show up here.',
                 textAlign: TextAlign.center,
                 style: AppsTextStyles.workSansRegularAdd16,
               ),
@@ -572,7 +590,7 @@ class _BlockngState extends State<Blockng> {
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: Container(
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: DropdownButtonHideUnderline(
                     child: DropdownButton<String>(
@@ -607,12 +625,12 @@ class _BlockngState extends State<Blockng> {
                 child: Row(
                   children: [
                     Image.asset(Assets.svgIcons.x.path, height: 20, width: 20),
-                    SizedBox(width: 6),
+                    const SizedBox(width: 6),
                     Text(
                       'Clear all',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.workSans(
-                        color: const Color(0xFF4542EB), // Text-text-primary
+                        color: const Color(0xFF4542EB),
                         fontSize: 18,
                         fontWeight: FontWeight.w900,
                         height: 0.80,
@@ -666,12 +684,17 @@ class QuestCard extends StatelessWidget {
     required this.duration,
   });
 
+  Color _getTextColor(Color backgroundColor) {
+    final luminance = backgroundColor.computeLuminance();
+    return luminance > 0.5 ? Colors.black : Colors.white;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
-        color: Color(0xFFFFFEF8),
+        color: const Color(0xFFFFFEF8),
         borderRadius: BorderRadius.circular(18),
         border: Border.all(color: const Color(0xFFEEDCC5)),
       ),
@@ -701,19 +724,17 @@ class QuestCard extends StatelessWidget {
                 ],
               ),
               GestureDetector(
-                onTap: () {
-                  // Refresh action
-                },
+                onTap: () {},
                 child: Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     color: const Color(0xFFF7E7D9),
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: Icon(
-                    Icons.refresh,
-                    color: Colors.brown.shade400,
-                    size: 18,
+                  child: Image.asset(
+                    Assets.images.refresh.path,
+                    height: 24,
+                    width: 24,
                   ),
                 ),
               ),
@@ -736,59 +757,81 @@ class QuestCard extends StatelessWidget {
           // --- Date + Time ---
           Row(
             children: [
-              const Icon(
-                Icons.calendar_today,
-                size: 18,
-                color: Color(0xFF03145B),
+              Image.asset(Assets.images.today.path, height: 20, width: 20),
+              const SizedBox(width: 10),
+              Text(
+                "Today",
+                style: GoogleFonts.workSans(
+                  color: const Color(0xFF011F54),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: -0.5,
+                ),
               ),
-              const SizedBox(width: 6),
-              Text("Yesterday", style: AppsTextStyles.extraBold16),
-              const SizedBox(width: 14),
-              const Icon(
-                Icons.check_circle,
-                size: 20,
-                color: Color(0xFF011F54),
+              const SizedBox(width: 20),
+              Image.asset(Assets.images.clock1.path, height: 20, width: 20),
+              const SizedBox(width: 10),
+              Text(
+                time,
+                style: GoogleFonts.workSans(
+                  color: const Color(0xFF011F54),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: -0.5,
+                ),
               ),
-              const SizedBox(width: 6),
-              Text(time, style: AppsTextStyles.extraBold16),
             ],
           ),
-
           const SizedBox(height: 16),
 
           // --- Tags ---
           Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
+              // Level Tag
               Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 14,
-                  vertical: 6,
+                height: 34,
+                padding: const EdgeInsets.symmetric(horizontal: 14),
+                decoration: ShapeDecoration(
+                  color: levelColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(999),
+                  ),
                 ),
-                decoration: BoxDecoration(
-                  color: Color(0xFFFFFEF8),
-                  borderRadius: BorderRadius.circular(20),
-                ),
+                alignment: Alignment.center,
                 child: Text(
                   levelText,
-                  style: AppsTextStyles.labelworkSansSemiBold18,
+                  style: GoogleFonts.workSans(
+                    color: _getTextColor(levelColor),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    height: 1.40,
+                    letterSpacing: -0.40,
+                  ),
                 ),
               ),
-              const SizedBox(width: 12),
+
+              const SizedBox(width: 8),
+
+              // Duration Tag
               Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 14,
-                  vertical: 6,
+                height: 34,
+                padding: const EdgeInsets.symmetric(horizontal: 14),
+                decoration: ShapeDecoration(
+                  color: const Color(0xFFFAE3CE),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(999),
+                  ),
                 ),
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF8E7D3),
-                  borderRadius: BorderRadius.circular(20),
-                ),
+                alignment: Alignment.center,
                 child: Text(
                   duration,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: Color(0xFF8A5C31),
-                    fontWeight: FontWeight.w600,
+                  style: GoogleFonts.workSans(
+                    color: const Color(0xFF011F54),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    height: 1.0,
+                    letterSpacing: -0.40,
                   ),
                 ),
               ),
@@ -802,9 +845,7 @@ class QuestCard extends StatelessWidget {
             children: [
               Expanded(
                 child: GestureDetector(
-                  onTap: () {
-                    // Mark as completed action
-                  },
+                  onTap: () {},
                   child: Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(vertical: 10),
@@ -817,7 +858,7 @@ class QuestCard extends StatelessWidget {
                       'Actually, I did this',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.workSans(
-                        color: const Color(0xFF4542EB), // Text-primary
+                        color: const Color(0xFF4542EB),
                         fontSize: 16,
                         fontWeight: FontWeight.w900,
                         height: 0.80,
@@ -829,9 +870,7 @@ class QuestCard extends StatelessWidget {
               const SizedBox(width: 14),
               Expanded(
                 child: GestureDetector(
-                  onTap: () {
-                    // Skip action
-                  },
+                  onTap: () {},
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     decoration: BoxDecoration(
@@ -843,7 +882,7 @@ class QuestCard extends StatelessWidget {
                       'Skip',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.workSans(
-                        color: const Color(0xFF4542EB), // Text-primary
+                        color: const Color(0xFF4542EB),
                         fontSize: 16,
                         fontWeight: FontWeight.w900,
                         height: 0.80,
