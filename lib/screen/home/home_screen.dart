@@ -8,7 +8,6 @@
 // import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 // import 'package:mobile_app_dea/custom_code/bottom_nav.dart';
 // import 'package:mobile_app_dea/screen/home/contextual_onboarding/popup_screen.dart';
-
 // import 'package:mobile_app_dea/screen/home/swipe_on_quest/delete_toast.dart';
 // import 'package:mobile_app_dea/screen/home/swipe_on_quest/tomorow_card.dart';
 // import 'package:mobile_app_dea/themes/create_qutes.dart';
@@ -16,9 +15,6 @@
 // import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 // import 'package:mobile_app_dea/screen/home/swaipe_to_talk/swipe_button_widget.dart';
 // import 'dart:math';
-
-// // Import the notification system
-// // import 'notification_system.dart';
 
 // class HomeScreen extends StatefulWidget {
 //   const HomeScreen({super.key});
@@ -42,18 +38,12 @@
 //   @override
 //   void initState() {
 //     super.initState();
-
 //     _confettiController = ConfettiController(
 //       duration: const Duration(seconds: 3),
 //     );
-
 //     WidgetsBinding.instance.addPostFrameCallback((_) {
 //       if (mounted) {
-//         // Show onboarding first - notifications will be triggered after onboarding completes
-//         OnboardingOverlay.show(
-//           context,
-//           onComplete: _showAllNotifications, // ✅ Callback when onboarding done
-//         );
+//         OnboardingOverlay.show(context, onComplete: _showAllNotifications);
 //       }
 //     });
 //   }
@@ -68,7 +58,6 @@
 //   void _showAllNotifications() {
 //     if (!mounted) return;
 
-//     // Notification 1: Default Yellow (shows immediately after onboarding)
 //     NotificationManager().show(
 //       context,
 //       NotificationData(
@@ -84,7 +73,6 @@
 //       ),
 //     );
 
-//     // Notification 2: Quest Suggestion (5 seconds later)
 //     Future.delayed(const Duration(seconds: 10), () {
 //       if (mounted) {
 //         NotificationManager().show(
@@ -103,7 +91,6 @@
 //       }
 //     });
 
-//     // Notification 3: Success (10 seconds later)
 //     Future.delayed(const Duration(seconds: 5), () {
 //       if (mounted) {
 //         NotificationManager().show(
@@ -123,7 +110,6 @@
 //       }
 //     });
 
-//     // Notification 4: Error (15 seconds later)
 //     Future.delayed(const Duration(seconds: 15), () {
 //       if (mounted) {
 //         NotificationManager().show(
@@ -145,7 +131,6 @@
 
 //   void _showCompletionDialog() {
 //     if (!mounted) return;
-
 //     final overlay = Overlay.of(context);
 //     late OverlayEntry overlayEntry;
 
@@ -172,7 +157,6 @@
 //     );
 
 //     overlay.insert(overlayEntry);
-
 //     Future.delayed(const Duration(seconds: 3), () {
 //       if (mounted) {
 //         overlayEntry.remove();
@@ -223,7 +207,6 @@
 //               ),
 //             ),
 //           ),
-
 //           Align(
 //             alignment: Alignment.topCenter,
 //             child: ConfettiWidget(
@@ -279,12 +262,21 @@
 //           ),
 //         ),
 //         const SizedBox(width: 12),
-//         Text('HI JULIE!', style: AppsTextStyles.extraBold32Centered),
+//         Text(
+//           'HI JULIE!',
+//           style: TextStyle(
+//             color: const Color(0xFF011F54),
+//             fontSize: 32,
+//             fontFamily: 'Wosker',
+//             fontWeight: FontWeight.w400,
+//             height: 0.80,
+//           ),
+//         ),
 //         const Spacer(),
 //         Container(
 //           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
 //           decoration: BoxDecoration(
-//             color: AppColorsApps.skyBlueLight,
+//             color: const Color(0xFFDFEFFF),
 //             borderRadius: BorderRadius.circular(20),
 //             boxShadow: [
 //               BoxShadow(
@@ -363,17 +355,17 @@
 //               ),
 //               const SizedBox(width: 20),
 //               Container(
-//                 height: 90.h,
-//                 width: 90.w,
+//                 width: 100,
+//                 height: 100,
 //                 padding: const EdgeInsets.all(24),
 //                 decoration: BoxDecoration(
-//                   color: AppColorsApps.royalBlue,
+//                   color: const Color(0xFF4542EB),
 //                   borderRadius: BorderRadius.circular(20),
 //                 ),
 //                 child: Image.asset(
 //                   Assets.svgIcons.readyToMakeTodayCount.path,
-//                   height: 44.h,
-//                   width: 44.w,
+//                   width: 90.28,
+//                   height: 90.37,
 //                 ),
 //               ),
 //             ],
@@ -384,8 +376,8 @@
 //             textAlign: TextAlign.center,
 //             style: GoogleFonts.workSans(
 //               color: const Color(0xFF011F54),
-//               fontSize: 18.sp,
-//               fontWeight: FontWeight.w700,
+//               fontSize: 16.sp,
+//               fontWeight: FontWeight.w600,
 //               height: 1,
 //               letterSpacing: -0.50,
 //             ),
@@ -429,73 +421,66 @@
 //     return Row(
 //       children: [
 //         Container(
-//           height: 120,
-//           width: 120,
-//           padding: const EdgeInsets.all(18),
+//           height: 84,
+//           width: 78,
+//           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
 //           decoration: BoxDecoration(
-//             color: Colors.white,
+//             color: const Color(0xFFDFEFFF),
 //             borderRadius: BorderRadius.circular(18),
-//             border: Border.all(color: const Color(0xFF5B7EFF), width: 2.5),
-//             boxShadow: [
-//               BoxShadow(
-//                 color: const Color(0xFF5B7EFF).withValues(alpha: 0.1),
-//                 blurRadius: 10,
-//                 offset: const Offset(0, 2),
-//               ),
-//             ],
+//             border: Border.all(color: const Color(0xFF4542EB), width: 2.5),
 //           ),
 //           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             mainAxisSize: MainAxisSize.min,
 //             children: [
 //               Text(
 //                 'Today',
 //                 style: GoogleFonts.workSans(
 //                   color: const Color(0xFF011F54),
-//                   fontSize: 16,
+//                   fontSize: 14,
 //                   fontWeight: FontWeight.w600,
 //                   height: 1,
-//                   letterSpacing: -0.5,
 //                 ),
 //               ),
-//               const SizedBox(height: 6),
-//               Text('${now.day}', style: AppsTextStyles.extraBold32Centered),
+//               const SizedBox(height: 4),
+//               Text(
+//                 '${now.day}',
+//                 style: GoogleFonts.workSans(
+//                   fontSize: 28,
+//                   fontWeight: FontWeight.w800,
+//                   height: 1,
+//                 ),
+//               ),
 //             ],
 //           ),
 //         ),
 //         const SizedBox(width: 12),
 //         Container(
-//           height: 120,
-//           width: 120,
-//           padding: const EdgeInsets.all(18),
+//           width: 78,
+//           height: 84,
+//           padding: const EdgeInsets.symmetric(vertical: 10),
 //           decoration: BoxDecoration(
-//             gradient: const LinearGradient(
-//               colors: [Color(0xFF5B7EFF), Color(0xFF4542EB)],
-//             ),
-//             borderRadius: BorderRadius.circular(18),
-//             boxShadow: [
-//               BoxShadow(
-//                 color: const Color(0xFF5B7EFF).withValues(alpha: 0.3),
-//                 blurRadius: 10,
-//                 offset: const Offset(0, 2),
-//               ),
-//             ],
+//             color: const Color(0xFF4542EB),
+//             borderRadius: BorderRadius.circular(16),
 //           ),
 //           child: Column(
 //             mainAxisAlignment: MainAxisAlignment.center,
+//             mainAxisSize: MainAxisSize.min,
 //             children: [
 //               const Icon(
 //                 Icons.add_circle_outline,
-//                 color: Colors.white,
-//                 size: 24,
+//                 color: Color(0xFFFFFDF7),
+//                 size: 22,
 //               ),
-//               const SizedBox(height: 8),
+//               const SizedBox(height: 6),
 //               Text(
 //                 'Plan',
 //                 textAlign: TextAlign.center,
 //                 style: GoogleFonts.workSans(
 //                   color: const Color(0xFFFFFDF7),
-//                   fontSize: 18,
-//                   fontWeight: FontWeight.w900,
-//                   height: 0.80,
+//                   fontSize: 16,
+//                   fontWeight: FontWeight.w800,
+//                   height: 1,
 //                 ),
 //               ),
 //             ],
@@ -505,21 +490,29 @@
 //     );
 //   }
 
+//   // ✅ FIX: Wrapped "Todays plan" text in Flexible + FittedBox to prevent overflow
 //   Widget _buildTodaysPlanHeader() {
 //     return Row(
 //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //       children: [
-//         Text(
-//           'Todays plan',
-//           textAlign: TextAlign.center,
-//           style: GoogleFonts.workSans(
-//             color: const Color(0xFF011F54),
-//             fontSize: 32,
-//             fontWeight: FontWeight.w800,
-//             height: 1.2,
-//             letterSpacing: -1,
+//         Flexible(
+//           child: FittedBox(
+//             fit: BoxFit.scaleDown,
+//             alignment: Alignment.centerLeft,
+//             child: Text(
+//               'Todays plan',
+//               textAlign: TextAlign.center,
+//               style: GoogleFonts.workSans(
+//                 color: const Color(0xFF011F54),
+//                 fontSize: 32,
+//                 fontWeight: FontWeight.w800,
+//                 height: 1.2,
+//                 letterSpacing: -1,
+//               ),
+//             ),
 //           ),
 //         ),
+//         const SizedBox(width: 8),
 //         Material(
 //           color: Colors.white,
 //           borderRadius: BorderRadius.circular(24),
@@ -547,8 +540,9 @@
 //                 borderRadius: BorderRadius.circular(24),
 //               ),
 //               child: Row(
+//                 mainAxisSize: MainAxisSize.min,
 //                 children: [
-//                   Icon(Icons.add, color: Color(0xFF5B7EFF), size: 20.sp),
+//                   Icon(Icons.add, color: const Color(0xFF5B7EFF), size: 20.sp),
 //                   SizedBox(width: 2.sp),
 //                   Text(
 //                     'Add quest',
@@ -569,7 +563,6 @@
 //     );
 //   }
 
-//   // ✅ UPDATED: 8px gap between each TaskItem, no extra margin inside card
 //   Widget _buildTaskList() {
 //     final items = _tasks.asMap().entries.map((entry) {
 //       final index = entry.key;
@@ -585,11 +578,9 @@
 //             setState(() {
 //               task.isCompleted = !task.isCompleted;
 //             });
-
 //             if (task.isCompleted) {
 //               _confettiController.play();
 //               _showCompletionDialog();
-
 //               final allCompleted = _tasks.every((t) => t.isCompleted);
 //               if (allCompleted) {
 //                 Future.delayed(const Duration(seconds: 2), () {
@@ -636,10 +627,8 @@
 
 //   void _deleteTask(int index) {
 //     if (!mounted) return;
-
 //     final removed = _tasks[index];
 //     setState(() => _tasks.removeAt(index));
-
 //     _showCustomToast(
 //       context,
 //       child: DeleteToast(
@@ -650,7 +639,6 @@
 //         },
 //       ),
 //     );
-
 //     Future.delayed(const Duration(seconds: 3), () {
 //       if (mounted) {
 //         NotificationManager().show(
@@ -671,15 +659,12 @@
 
 //   void _moveToTomorrow(int index) {
 //     if (!mounted) return;
-
 //     setState(() => _tasks.removeAt(index));
-
 //     _showCustomToast(context, child: const TomorrowCard());
 //   }
 
 //   void _showCustomToast(BuildContext context, {required Widget child}) {
 //     if (!mounted) return;
-
 //     final overlay = Overlay.of(context);
 //     late OverlayEntry overlayEntry;
 
@@ -705,14 +690,15 @@
 //     );
 
 //     overlay.insert(overlayEntry);
-
 //     Future.delayed(const Duration(seconds: 3), () {
 //       overlayEntry.remove();
 //     });
 //   }
 // }
 
+// // ============================================
 // // Task Model
+// // ============================================
 // class TaskItem {
 //   String title;
 //   String time;
@@ -729,7 +715,9 @@
 //   });
 // }
 
-// // ✅ UPDATED: Removed outer Padding, removed bottom margin from card
+// // ============================================
+// // Animated Task Item
+// // ============================================
 // class AnimatedTaskItem extends StatefulWidget {
 //   final TaskItem task;
 //   final VoidCallback onEdit;
@@ -777,7 +765,6 @@
 
 //   @override
 //   Widget build(BuildContext context) {
-//     // ✅ No outer Padding wrapper — gap is controlled by _buildTaskList()
 //     return SlideTransition(
 //       position: _slideAnimation,
 //       child: Slidable(
@@ -893,7 +880,6 @@
 
 //   Widget _buildTaskCard() {
 //     return Container(
-//       // ✅ margin সরানো হয়েছে — gap এখন _buildTaskList() এর SizedBox(height: 8) দিয়ে হয়
 //       padding: const EdgeInsets.all(18),
 //       decoration: BoxDecoration(
 //         border: widget.task.isSpecial
@@ -994,7 +980,9 @@
 //   }
 // }
 
-// // Completion Dialog Widget
+// // ============================================
+// // Completion Dialog
+// // ============================================
 // class CompletionDialog extends StatelessWidget {
 //   const CompletionDialog({super.key});
 
@@ -1094,7 +1082,9 @@
 //   }
 // }
 
+// // ============================================
 // // Onboarding System
+// // ============================================
 // class OnboardingOverlay {
 //   static void show(BuildContext context, {VoidCallback? onComplete}) {
 //     showDialog(
@@ -1108,7 +1098,6 @@
 
 // class OnboardingDialog extends StatefulWidget {
 //   final VoidCallback? onComplete;
-
 //   const OnboardingDialog({super.key, this.onComplete});
 
 //   @override
@@ -1205,14 +1194,12 @@
 // class OnboardingStep {
 //   final Widget widget;
 //   final Alignment position;
-
 //   OnboardingStep({required this.widget, required this.position});
 // }
 
 // // ============================================
-// // NOTIFICATION SYSTEM (Inline)
+// // NOTIFICATION SYSTEM
 // // ============================================
-
 // enum NotificationType { error, questSuggestion, defaultYellow, success }
 
 // class NotificationData {
@@ -1255,10 +1242,8 @@
 //       _isShowing = false;
 //       return;
 //     }
-
 //     _isShowing = true;
 //     final notification = _queue.removeAt(0);
-
 //     final overlay = Overlay.of(context);
 //     late OverlayEntry overlayEntry;
 
@@ -1286,7 +1271,6 @@
 //     );
 
 //     overlay.insert(overlayEntry);
-
 //     Future.delayed(notification.displayDuration, () {
 //       if (overlayEntry.mounted) {
 //         overlayEntry.remove();
@@ -1305,13 +1289,11 @@
 
 // class AICallNotification extends StatelessWidget {
 //   final NotificationData notification;
-
 //   const AICallNotification({super.key, required this.notification});
 
 //   @override
 //   Widget build(BuildContext context) {
 //     final config = _getNotificationConfig(notification.type);
-
 //     return Container(
 //       width: double.infinity,
 //       padding: const EdgeInsets.all(16),
@@ -1543,6 +1525,7 @@
 //     this.buttonImagePath,
 //   });
 // }
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -1715,6 +1698,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: const Color(0xFFF5F7FA),
       body: Stack(
         children: [
+          // ── Main scrollable content ──
           SingleChildScrollView(
             controller: _scrollController,
             child: Container(
@@ -1752,32 +1736,40 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.topCenter,
-            child: ConfettiWidget(
-              confettiController: _confettiController,
-              blastDirection: pi / 2,
-              blastDirectionality: BlastDirectionality.explosive,
-              emissionFrequency: 0.03,
-              numberOfParticles: 30,
-              gravity: 0.3,
-              shouldLoop: false,
-              colors: const [
-                Colors.red,
-                Colors.blue,
-                Colors.green,
-                Colors.yellow,
-                Colors.purple,
-                Colors.orange,
-                Colors.pink,
-              ],
-              createParticlePath: (size) {
-                final path = Path();
-                path.addOval(
-                  Rect.fromCircle(center: Offset.zero, radius: size.width / 2),
-                );
-                return path;
-              },
+
+          // ── Rain Confetti — 20+ scattered ──
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: ConfettiWidget(
+                confettiController: _confettiController,
+                blastDirection: pi / 2,
+                // explosive → চারদিকে এলোমেলো ছড়াবে, gravity নিচে টানবে
+                blastDirectionality: BlastDirectionality.explosive,
+                emissionFrequency: 0.08, // ঘন ঘন emit হবে
+                numberOfParticles: 25, // ২৫টা একসাথে
+                gravity: 0.25, // ধীরে ধীরে নিচে পড়বে — বেশি float
+                minBlastForce: 5,
+                maxBlastForce: 25, // force random → এলোমেলো দূরত্ব
+                shouldLoop: false,
+                colors: const [
+                  Color(0xFF4285F4), // Blue
+                  Color(0xFFEA4335), // Red-orange
+                  Color(0xFFFBBC05), // Yellow
+                  Color(0xFF34A853), // Green
+                  Color(0xFFFF6D00), // Orange
+                ],
+                createParticlePath: (size) {
+                  // Image এর মতো irregular চতুর্ভুজ
+                  final path = Path();
+                  path.moveTo(0, size.height * 0.3);
+                  path.lineTo(size.width * 0.6, 0);
+                  path.lineTo(size.width, size.height * 0.7);
+                  path.lineTo(size.width * 0.4, size.height);
+                  path.close();
+                  return path;
+                },
+              ),
             ),
           ),
         ],
@@ -2035,7 +2027,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // ✅ FIX: Wrapped "Todays plan" text in Flexible + FittedBox to prevent overflow
   Widget _buildTodaysPlanHeader() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,

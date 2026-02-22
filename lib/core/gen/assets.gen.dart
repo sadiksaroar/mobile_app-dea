@@ -127,6 +127,10 @@ class $AssetsImagesGen {
   AssetGenImage get popupMultipleMissedTalks =>
       const AssetGenImage('assets/images/Popup_Multiple Missed Talks.png');
 
+  /// File path: assets/images/Popup_Multiple Missed Talks_png.png
+  AssetGenImage get popupMultipleMissedTalksPng =>
+      const AssetGenImage('assets/images/Popup_Multiple Missed Talks_png.png');
+
   /// File path: assets/images/Popup_Share how you feel.png
   AssetGenImage get popupShareHowYouFeel =>
       const AssetGenImage('assets/images/Popup_Share how you feel.png');
@@ -134,6 +138,17 @@ class $AssetsImagesGen {
   /// File path: assets/images/Quest suggestion-purple.png
   AssetGenImage get questSuggestionPurple =>
       const AssetGenImage('assets/images/Quest suggestion-purple.png');
+
+  /// File path: assets/images/Quests for today done popup.png
+  AssetGenImage get questsForTodayDonePopup =>
+      const AssetGenImage('assets/images/Quests for today done popup.png');
+
+  /// File path: assets/images/Star 3.png
+  AssetGenImage get star3 => const AssetGenImage('assets/images/Star 3.png');
+
+  /// File path: assets/images/Streak popup _poup.png
+  AssetGenImage get streakPopupPoup =>
+      const AssetGenImage('assets/images/Streak popup _poup.png');
 
   /// File path: assets/images/Subscription Popup.png
   AssetGenImage get subscriptionPopup =>
@@ -171,6 +186,9 @@ class $AssetsImagesGen {
   AssetGenImage get callEnding =>
       const AssetGenImage('assets/images/call_ending.png');
 
+  /// File path: assets/images/carton.png
+  AssetGenImage get carton => const AssetGenImage('assets/images/carton.png');
+
   /// File path: assets/images/celberation.png
   AssetGenImage get celberation =>
       const AssetGenImage('assets/images/celberation.png');
@@ -180,6 +198,9 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/clock1.png
   AssetGenImage get clock1 => const AssetGenImage('assets/images/clock1.png');
+
+  /// File path: assets/images/cross.png
+  AssetGenImage get cross => const AssetGenImage('assets/images/cross.png');
 
   /// File path: assets/images/device.png
   AssetGenImage get device => const AssetGenImage('assets/images/device.png');
@@ -194,9 +215,16 @@ class $AssetsImagesGen {
   AssetGenImage get emojiFun =>
       const AssetGenImage('assets/images/emoji_fun.png');
 
+  /// File path: assets/images/fire blue.png
+  AssetGenImage get fireBlue =>
+      const AssetGenImage('assets/images/fire blue.png');
+
   /// File path: assets/images/fire_nave.png
   AssetGenImage get fireNave =>
       const AssetGenImage('assets/images/fire_nave.png');
+
+  /// File path: assets/images/friends.png
+  AssetGenImage get friends => const AssetGenImage('assets/images/friends.png');
 
   /// File path: assets/images/great job!.png
   AssetGenImage get greatJob =>
@@ -204,6 +232,9 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/january.png
   AssetGenImage get january => const AssetGenImage('assets/images/january.png');
+
+  /// File path: assets/images/left.png
+  AssetGenImage get left => const AssetGenImage('assets/images/left.png');
 
   /// File path: assets/images/love.png
   AssetGenImage get love => const AssetGenImage('assets/images/love.png');
@@ -279,6 +310,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/two.png
   AssetGenImage get two => const AssetGenImage('assets/images/two.png');
 
+  /// File path: assets/images/white_plus.png
+  AssetGenImage get whitePlus =>
+      const AssetGenImage('assets/images/white_plus.png');
+
   /// List of all assets
   List<dynamic> get values => [
     a0x99FF8411,
@@ -306,8 +341,12 @@ class $AssetsImagesGen {
     popupChooseMoodUpdates,
     popupMultipleMissedTalks1,
     popupMultipleMissedTalks,
+    popupMultipleMissedTalksPng,
     popupShareHowYouFeel,
     questSuggestionPurple,
+    questsForTodayDonePopup,
+    star3,
+    streakPopupPoup,
     subscriptionPopup,
     successToast,
     suggestedTaskOverview,
@@ -318,16 +357,21 @@ class $AssetsImagesGen {
     arow,
     bluCross,
     callEnding,
+    carton,
     celberation,
     clock,
     clock1,
+    cross,
     device,
     eight,
     emoji,
     emojiFun,
+    fireBlue,
     fireNave,
+    friends,
     greatJob,
     january,
+    left,
     love,
     nowli,
     one,
@@ -349,6 +393,7 @@ class $AssetsImagesGen {
     swaptoFuzi,
     twintytwo,
     two,
+    whitePlus,
   ];
 }
 

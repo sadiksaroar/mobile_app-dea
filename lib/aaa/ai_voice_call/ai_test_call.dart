@@ -895,7 +895,7 @@ class AiTestCall extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: isEndingSoon
-                        ? const Color(0xFFFFE8B8).withValues(alpha: 0.3)
+                        ? const Color(0xFFFFE8B8)
                         : const Color(0xFF5B9DFF).withValues(alpha: 0.1),
                   ),
                   child: CustomPaint(
@@ -1007,19 +1007,19 @@ class AiTestCall extends StatelessWidget {
                   ),
                 ),
                 // Middle layer
-                Positioned(
-                  left: 0,
-                  top: 48.15,
-                  child: Container(
-                    width: 266,
-                    height: 154.39,
-                    decoration: ShapeDecoration(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.13),
-                      ),
-                    ),
-                  ),
-                ),
+                // Positioned(
+                //   left: 0,
+                //   top: 48.15,
+                //   child: Container(
+                //     width: 266,
+                //     height: 154.39,
+                //     decoration: ShapeDecoration(
+                //       shape: RoundedRectangleBorder(
+                //         borderRadius: BorderRadius.circular(40.13),
+                //       ),
+                //     ),
+                //   ),
+                // ),
                 // Center image/emoji
                 Positioned(
                   left: 67.17,
@@ -1045,47 +1045,47 @@ class AiTestCall extends StatelessWidget {
 }
 
 /// Custom painter for progress ring
-class ProgressRingPainter extends CustomPainter {
-  final double progress;
-  final Color color;
-  final double strokeWidth;
+// class ProgressRingPainter extends CustomPainter {
+//   final double progress;
+//   final Color color;
+//   final double strokeWidth;
 
-  ProgressRingPainter({
-    required this.progress,
-    required this.color,
-    required this.strokeWidth,
-  });
+//   ProgressRingPainter({
+//     required this.progress,
+//     required this.color,
+//     required this.strokeWidth,
+//   });
 
-  @override
-  void paint(Canvas canvas, Size size) {
-    final center = Offset(size.width / 2, size.height / 2);
-    final radius = (size.width - strokeWidth) / 2;
+//   @override
+//   void paint(Canvas canvas, Size size) {
+//     final center = Offset(size.width / 2, size.height / 2);
+//     final radius = (size.width - strokeWidth) / 2;
 
-    if (progress > 0) {
-      final progressPaint = Paint()
-        ..color = color
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = strokeWidth
-        ..strokeCap = StrokeCap.round;
+//     if (progress > 0) {
+//       final progressPaint = Paint()
+//         ..color = color
+//         ..style = PaintingStyle.stroke
+//         ..strokeWidth = strokeWidth
+//         ..strokeCap = StrokeCap.round;
 
-      final startAngle = -3.14159 / 2;
-      final sweepAngle = 2 * 3.14159 * progress;
+//       final startAngle = -3.14159 / 2;
+//       final sweepAngle = 2 * 3.14159 * progress;
 
-      canvas.drawArc(
-        Rect.fromCircle(center: center, radius: radius),
-        startAngle,
-        sweepAngle,
-        false,
-        progressPaint,
-      );
-    }
-  }
+//       canvas.drawArc(
+//         Rect.fromCircle(center: center, radius: radius),
+//         startAngle,
+//         sweepAngle,
+//         false,
+//         progressPaint,
+//       );
+//     }
+//   }
 
-  @override
-  bool shouldRepaint(covariant ProgressRingPainter oldDelegate) {
-    return oldDelegate.progress != progress || oldDelegate.color != color;
-  }
-}
+//   @override
+//   bool shouldRepaint(covariant ProgressRingPainter oldDelegate) {
+//     return oldDelegate.progress != progress || oldDelegate.color != color;
+//   }
+// }
 
 /// Loading dots animation widget
 class LoadingDotsAnimation extends StatefulWidget {

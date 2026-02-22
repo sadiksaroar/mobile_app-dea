@@ -4585,7 +4585,7 @@ class _InsightsScreenState extends State<InsightsScreen> {
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: FractionallySizedBox(
-                        widthFactor: 0.66,
+                        widthFactor: 0.70,
                         child: Container(
                           height: 25,
                           decoration: BoxDecoration(
