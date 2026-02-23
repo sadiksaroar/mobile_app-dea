@@ -1218,6 +1218,14 @@ class $AssetsSvgImagesGen {
   /// File path: assets/svg_images/Trash.png
   AssetGenImage get trash => const AssetGenImage('assets/svg_images/Trash.png');
 
+  /// File path: assets/svg_images/Vector.png
+  AssetGenImage get vector =>
+      const AssetGenImage('assets/svg_images/Vector.png');
+
+  /// File path: assets/svg_images/XCircle.png
+  AssetGenImage get xCircle =>
+      const AssetGenImage('assets/svg_images/XCircle.png');
+
   /// File path: assets/svg_images/app-release.apk
   String get appRelease => 'assets/svg_images/app-release.apk';
 
@@ -1272,6 +1280,10 @@ class $AssetsSvgImagesGen {
   SvgGenImage get readyToStart =>
       const SvgGenImage('assets/svg_images/ready_to_start.svg');
 
+  /// File path: assets/svg_images/rigth_symbol.png
+  AssetGenImage get rigthSymbol =>
+      const AssetGenImage('assets/svg_images/rigth_symbol.png');
+
   /// File path: assets/svg_images/three.png
   AssetGenImage get three => const AssetGenImage('assets/svg_images/three.png');
 
@@ -1311,6 +1323,8 @@ class $AssetsSvgImagesGen {
     toast,
     tomowr,
     trash,
+    vector,
+    xCircle,
     appRelease,
     callStarted,
     deaMagi,
@@ -1325,6 +1339,7 @@ class $AssetsSvgImagesGen {
     popupScreenCarton,
     profile,
     readyToStart,
+    rigthSymbol,
     three,
     twoColorPopupSpkeing,
     upscalemediaTransformed,

@@ -44,7 +44,7 @@ class _ProgressState extends State<Progress> with TickerProviderStateMixin {
         elevation: 0,
         toolbarHeight: 90,
         title: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(15.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -91,7 +91,7 @@ class _ProgressState extends State<Progress> with TickerProviderStateMixin {
             Expanded(
               child: TabBarView(
                 controller: mainTab,
-                children: [StreakScreen(), InsightsScreen()],
+                children: [MyProgress(), InsightsScreen()],
               ),
             ),
           ],
