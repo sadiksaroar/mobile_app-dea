@@ -62,7 +62,7 @@ class _PopupMultiMisscalTalkState extends State<PopupMultiMisscalTalk>
 
                     SizedBox(height: 15),
                     // Fuzzy avatar card
-                    Container(
+                    SizedBox(
                       width: 120,
                       height: 120,
                       child: Image.asset(Assets.images.carton.path),
@@ -136,6 +136,7 @@ class _PopupMultiMisscalTalkState extends State<PopupMultiMisscalTalk>
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
+                        // ignore: deprecated_member_use
                         color: Colors.black.withOpacity(0.1),
                         blurRadius: 6,
                         offset: const Offset(0, 2),
@@ -158,6 +159,7 @@ class _PopupMultiMisscalTalkState extends State<PopupMultiMisscalTalk>
   }
 }
 
+// ignore: unused_element
 class _GreenBlob extends StatelessWidget {
   final double size;
   const _GreenBlob({required this.size});
@@ -175,97 +177,14 @@ class _GreenBlob extends StatelessWidget {
   }
 }
 
-class _FuzzyCharacter extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return CustomPaint(size: const Size(70, 80), painter: _FuzzyPainter());
-  }
-}
-
-class _FuzzyPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = const Color(0xFFF97316);
-
-    // Body
-    canvas.drawOval(
-      Rect.fromCenter(
-        center: Offset(size.width * 0.5, size.height * 0.68),
-        width: size.width * 0.72,
-        height: size.height * 0.55,
-      ),
-      paint,
-    );
-
-    // Head
-    canvas.drawCircle(
-      Offset(size.width * 0.5, size.height * 0.32),
-      size.width * 0.28,
-      paint,
-    );
-
-    // Left arm
-    canvas.drawOval(
-      Rect.fromCenter(
-        center: Offset(size.width * 0.25, size.height * 0.6),
-        width: size.width * 0.28,
-        height: size.height * 0.32,
-      ),
-      paint,
-    );
-
-    // Right arm
-    canvas.drawOval(
-      Rect.fromCenter(
-        center: Offset(size.width * 0.75, size.height * 0.6),
-        width: size.width * 0.28,
-        height: size.height * 0.32,
-      ),
-      paint,
-    );
-
-    // Eyes
-    final eyePaint = Paint()
-      ..color = const Color(0xFF7C2D12)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.5
-      ..strokeCap = StrokeCap.round;
-
-    // Left eye
-    final leftEyePath = Path();
-    leftEyePath.moveTo(size.width * 0.39, size.height * 0.30);
-    leftEyePath.quadraticBezierTo(
-      size.width * 0.43,
-      size.height * 0.26,
-      size.width * 0.47,
-      size.height * 0.30,
-    );
-    canvas.drawPath(leftEyePath, eyePaint);
-
-    // Right eye
-    final rightEyePath = Path();
-    rightEyePath.moveTo(size.width * 0.53, size.height * 0.30);
-    rightEyePath.quadraticBezierTo(
-      size.width * 0.57,
-      size.height * 0.26,
-      size.width * 0.61,
-      size.height * 0.30,
-    );
-    canvas.drawPath(rightEyePath, eyePaint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
-
 class _SwipeButton extends StatefulWidget {
   @override
   State<_SwipeButton> createState() => _SwipeButtonState();
 }
 
 class _SwipeButtonState extends State<_SwipeButton> {
-  double _dragOffset = 0;
-  final double _maxDrag = 220;
+  // double _dragOffset = 0;
+  // final double _maxDrag = 220;
 
   @override
   Widget build(BuildContext context) {
@@ -305,12 +224,11 @@ class _SwipeButtonState extends State<_SwipeButton> {
           Text(
             'Swipe to start',
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: GoogleFonts.workSans(
               color: const Color(0xFFEEEEEE),
               fontSize: 24,
-              fontFamily: 'Work Sans',
               fontWeight: FontWeight.w900,
-              height: 0.80,
+              height: 0.8, // 0.80 same
             ),
           ),
         ],

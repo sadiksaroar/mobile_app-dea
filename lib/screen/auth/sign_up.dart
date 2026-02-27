@@ -1,10 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart' show Assets;
+import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart' show AppsTextStyles;
 
 class SignUpScreen extends StatefulWidget {
@@ -79,50 +79,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
       setState(() => _isEmailValid = valid);
     }
     _validateForm();
-  }
-
-  InputDecoration _fieldDecoration({
-    required String label,
-    required String hint,
-    Widget? suffixIcon,
-    bool showError = false,
-    required TextStyle labelStyle,
-  }) {
-    final borderRadius = BorderRadius.circular(15);
-    final normalBorder = OutlineInputBorder(
-      borderRadius: borderRadius,
-      borderSide: const BorderSide(color: Color(0xFFC3DBFF), width: 2),
-      gapPadding: 8,
-    );
-    final highlightBorder = OutlineInputBorder(
-      borderRadius: borderRadius,
-      borderSide: BorderSide(
-        color: showError ? Colors.red : const Color(0xFF4A3AFF),
-        width: 2,
-      ),
-      gapPadding: 8,
-    );
-
-    return InputDecoration(
-      labelText: label,
-      hintText: hint,
-      floatingLabelBehavior: FloatingLabelBehavior.auto,
-      floatingLabelAlignment: FloatingLabelAlignment.start,
-      floatingLabelStyle: TextStyle(
-        color: showError ? Colors.red : const Color(0xFF4A3AFF),
-        fontWeight: FontWeight.w600,
-        fontSize: 14,
-      ),
-      labelStyle: const TextStyle(color: Colors.black54),
-      filled: true,
-      fillColor: Colors.white,
-      contentPadding: const EdgeInsets.symmetric(vertical: 18, horizontal: 20),
-      enabledBorder: normalBorder,
-      focusedBorder: highlightBorder,
-      errorBorder: highlightBorder,
-      focusedErrorBorder: highlightBorder,
-      suffixIcon: suffixIcon,
-    );
   }
 
   @override
@@ -452,38 +408,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
         ),
 
-        // RichText(
-        //   textAlign: TextAlign.center,
-        //   text: TextSpan(
-        //     text: 'By signing up, you agree to Nowlii’s ',
-        //     style: AppsTextStyles.normalText,
-        //     children: [
-        //       TextSpan(
-        //         text: 'Privacy Policy',
-        //         style: AppsTextStyles.linkText,
-        //         recognizer: TapGestureRecognizer()..onTap = () {},
-        //       ),
-        //       const TextSpan(
-        //         text: ' & ',
-        //         style: TextStyle(color: Colors.black87),
-        //       ),
-        //       TextSpan(
-        //         text: 'Terms of Service',
-        //         style: AppsTextStyles.linkText,
-        //         recognizer: TapGestureRecognizer()..onTap = () {},
-        //       ),
-        //       const TextSpan(text: '.'),
-        //     ],
-        //   ),
-        // ),
-
         // 🔘 Continue Button
         SizedBox(height: 20),
         SizedBox(
           width: double.infinity,
           height: 60,
           child: ElevatedButton(
-            onPressed: _isButtonEnabled ? () {} : null,
+            onPressed: _isButtonEnabled
+                ? () {
+                    context.push(
+                      AppRoutespath.otpVerificationScreen,
+                      extra: _emailController.text,
+                    );
+                  }
+                : null,
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF4A3AFF),
               disabledBackgroundColor: const Color(0xFF4A3AFF),

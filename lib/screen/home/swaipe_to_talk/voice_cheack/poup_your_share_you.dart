@@ -655,7 +655,6 @@ class _PoupYourShareYouState extends State<PoupYourShareYou>
   Widget _buildVoiceAvatar(VoiceCheckController controller) {
     return Obx(() {
       final isRecording = controller.state.value == VoiceCheckState.recording;
-      final isSpeaking = controller.isSpeaking.value;
 
       return Stack(
         alignment: Alignment.center,

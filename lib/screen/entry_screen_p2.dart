@@ -261,7 +261,7 @@ class EntryScreen extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
-                          context.push("/welcomeScreen");
+                          context.push("/readyToStartScreen");
                         },
                         child: Text(
                           'Get Started',

@@ -1,13 +1,18 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
-import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
 
-class ReadyToStartScreen extends StatelessWidget {
+class ReadyToStartScreen extends StatefulWidget {
   const ReadyToStartScreen({super.key});
+
+  @override
+  State<ReadyToStartScreen> createState() => _ReadyToStartScreenState();
+}
+
+class _ReadyToStartScreenState extends State<ReadyToStartScreen> {
+  bool _isWelcomeBack = true;
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +47,19 @@ class ReadyToStartScreen extends StatelessWidget {
 
               const SizedBox(height: 60),
 
-              // Illustration
-              Center(child: Assets.svgImages.readyToStart.svg(height: 180)),
-
+              // Illustration - tap to toggle
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _isWelcomeBack = !_isWelcomeBack;
+                  });
+                },
+                child: Center(
+                  child: _isWelcomeBack
+                      ? Assets.svgImages.welcomeBack.svg(height: 180)
+                      : Assets.svgImages.readyToStart.svg(height: 180),
+                ),
+              ),
               const Spacer(),
 
               // Google Button

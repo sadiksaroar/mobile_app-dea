@@ -761,6 +761,7 @@ class _EnterNewPasswordState extends State<EnterNewPassword> {
                             size: 22,
                             color: _isConfirmPasswordValid
                                 ? Colors.green
+                                // ignore: deprecated_member_use
                                 : const Color(0xFF4542EB).withOpacity(0.5),
                           ),
                         ),

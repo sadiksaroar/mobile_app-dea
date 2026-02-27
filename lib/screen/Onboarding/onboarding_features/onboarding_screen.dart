@@ -619,10 +619,8 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _pageController = PageController();
-  int _currentPage = 0;
 
   String _selectedName = '';
-  final String _selectedGender = '';
 
   @override
   void dispose() {
@@ -643,9 +641,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 controller: _pageController,
                 physics: const NeverScrollableScrollPhysics(),
                 onPageChanged: (index) {
-                  setState(() {
-                    _currentPage = index;
-                  });
+                  setState(() {});
                 },
                 children: [
                   NameSelectionPage(

@@ -1,108 +1,11 @@
-// import 'package:flutter/material.dart';
-
-// import 'package:mobile_app_dea/core/gen/assets.gen.dart';
-
-// class AiCalling extends StatefulWidget {
-//   const AiCalling({super.key});
-
-//   @override
-//   State<AiCalling> createState() => _AiCallingState();
-// }
-
-// class _AiCallingState extends State<AiCalling> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Container(
-//         width: double.infinity,
-//         height: double.infinity,
-//         decoration: BoxDecoration(
-//           image: DecorationImage(
-//             image: Assets.svgImages.popupScreeLiner.image().image,
-//             fit: BoxFit.cover,
-//           ),
-//         ),
-//         child: SafeArea(
-//           child: Column(
-//             children: [
-//               // Close Button
-//               Align(
-//                 alignment: Alignment.topLeft,
-//                 child: Padding(
-//                   padding: const EdgeInsets.all(16.0),
-//                   child: GestureDetector(
-//                     onTap: () => Navigator.pop(context),
-//                     child: const CircleAvatar(
-//                       backgroundColor: Colors.white,
-//                       child: Icon(Icons.close, color: Colors.blue),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-
-//               // ✅ Outer Circle with Inner Circle + Image
-//               Center(
-//                 child: Container(
-//                   width: 258,
-//                   height: 255,
-//                   decoration: const BoxDecoration(
-//                     shape: BoxShape.circle,
-//                     gradient: RadialGradient(
-//                       center: Alignment(-0.08, 0.0),
-//                       radius: 1.0,
-//                       colors: [Color(0x003F3CD6), Color(0x333F3CD6)],
-//                       stops: [0.0, 0.6683],
-//                     ),
-//                   ),
-//                   child: Center(
-//                     child: Container(
-//                       width: 182.58,
-//                       height: 182.58,
-//                       decoration: ShapeDecoration(
-//                         gradient: const RadialGradient(
-//                           center: Alignment(0.50, 0.50),
-//                           radius: 0.73,
-//                           colors: [Color(0xFF7270F3), Color(0xFF3F3CD6)],
-//                         ),
-//                         shape: const OvalBorder(),
-//                         shadows: const [
-//                           BoxShadow(
-//                             color: Color(0x995550FF),
-//                             blurRadius: 19.60,
-//                             offset: Offset(0, 0),
-//                             spreadRadius: 11,
-//                           ),
-//                         ],
-//                       ),
-//                       // ✅ Image inside inner circle
-//                       child: ClipOval(
-//                         child: Assets.deaPng.popupSpeaking.image(
-//                           width: 130.58,
-//                           height: 129.58,
-//                           // fit: BoxFit.cover,
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-
-//               const Spacer(),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 
-class AiCalling extends StatefulWidget {
-  const AiCalling({super.key});
+class AicallingTwo extends StatefulWidget {
+  const AicallingTwo({super.key});
 
   @override
   State createState() => _AiCallingState();
@@ -196,32 +99,6 @@ class _AiCallingState extends State {
                       Container(
                         width: 258,
                         height: 255,
-
-                        // decoration: BoxDecoration(
-                        //   shape: BoxShape.circle,
-                        //   gradient: RadialGradient(
-                        //     center: Alignment(
-                        //       0.0,
-                        //       0.004,
-                        //     ), // Approximate 45.93% X, 50.2% Y
-                        //     radius: 0.97, // Approximate 97.45%
-                        //     colors: [
-                        //       Color.fromRGBO(
-                        //         63,
-                        //         60,
-                        //         214,
-                        //         0.0,
-                        //       ), // Transparent start
-                        //       Color.fromRGBO(
-                        //         63,
-                        //         60,
-                        //         214,
-                        //         0.2,
-                        //       ), // Slightly visible
-                        //     ],
-                        //     stops: [0.0, 0.6683], // 0% and 66.83%
-                        //   ),
-                        // ),
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           gradient: RadialGradient(
@@ -267,7 +144,6 @@ class _AiCallingState extends State {
                 ),
               ),
 
-              SizedBox(height: 90),
               // Timer Row
               Row(
                 mainAxisSize: MainAxisSize.min,
@@ -300,7 +176,7 @@ class _AiCallingState extends State {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const Text(
-                        '1:21',
+                        '05:43',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xFF4542EB),

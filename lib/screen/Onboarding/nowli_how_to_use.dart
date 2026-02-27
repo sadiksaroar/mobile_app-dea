@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
-import 'package:mobile_app_dea/themes/text_styles.dart';
-import 'package:mobile_app_dea/widget/custom_button.dart';
 
 class NowliHowToUse extends StatelessWidget {
   const NowliHowToUse({super.key});
@@ -19,7 +16,6 @@ class NowliHowToUse extends StatelessWidget {
 
     // Dynamic sizes
     final backIconSize = screenWidth * 0.08;
-    final progressHeight = screenWidth * 0.015;
     final horizontalPadding = screenWidth * 0.04;
 
     return Scaffold(

@@ -5,6 +5,7 @@ class AppRoutespath {
   static const String readyToStartScreen = '/readyToStartScreen';
   static const String signInScreen = '/signInScreen';
   static const String signUpScreen = '/signUpScreen';
+  static const String otpVerificationScreen = '/otpVerificationScreen';
   static const String resentPasswordPage = '/resentPasswordPage';
   static const String passwordUpdatedPopupScreen =
       '/passwordUpdatedPopupScreen';

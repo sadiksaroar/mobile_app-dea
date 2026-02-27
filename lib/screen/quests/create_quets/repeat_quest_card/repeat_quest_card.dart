@@ -37,7 +37,7 @@ class _RepeatQuestCardState extends State<RepeatQuestCard> {
                     isCallEnabled = newValue;
                   });
                 },
-                activeColor: Colors.white,
+                activeThumbColor: Colors.white,
                 activeTrackColor: const Color(0xFF4542EB),
                 inactiveThumbColor: Colors.white,
                 inactiveTrackColor: const Color(0xFFB0B0B0),

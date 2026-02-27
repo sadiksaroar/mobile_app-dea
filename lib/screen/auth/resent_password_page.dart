@@ -62,43 +62,6 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
     _validateForm();
   }
 
-  InputDecoration _fieldDecoration({
-    required String label,
-    required String hint,
-    Widget? suffixIcon,
-    required TextStyle labelStyle,
-  }) {
-    const borderSide = BorderSide(color: Color(0xFFC3DBFF), width: 1);
-    final borderRadius = BorderRadius.circular(30);
-
-    final fixedBorder = OutlineInputBorder(
-      borderRadius: borderRadius,
-      borderSide: borderSide,
-      gapPadding: 8,
-    );
-
-    return InputDecoration(
-      labelText: label,
-      hintText: hint,
-      floatingLabelBehavior: FloatingLabelBehavior.auto,
-      floatingLabelAlignment: FloatingLabelAlignment.start,
-      floatingLabelStyle: labelStyle,
-      labelStyle: const TextStyle(color: Colors.black54),
-      filled: true,
-      fillColor: Colors.white,
-      contentPadding: const EdgeInsets.symmetric(vertical: 18, horizontal: 20),
-      enabledBorder: fixedBorder,
-      focusedBorder: fixedBorder,
-      errorBorder: fixedBorder.copyWith(
-        borderSide: const BorderSide(color: Colors.red, width: 2),
-      ),
-      focusedErrorBorder: fixedBorder.copyWith(
-        borderSide: const BorderSide(color: Colors.red, width: 2),
-      ),
-      suffixIcon: suffixIcon,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -247,6 +210,7 @@ class _ResentPasswordPageState extends State<ResentPasswordPage> {
                             size: 22,
                             color: _isEmailValid
                                 ? Colors.green
+                                // ignore: deprecated_member_use
                                 : const Color(0xFF4542EB).withOpacity(0.5),
                           ),
                         ),

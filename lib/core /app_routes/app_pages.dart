@@ -20,6 +20,7 @@ import 'package:mobile_app_dea/screen/auth/password_updated_popup_screen.dart';
 import 'package:mobile_app_dea/screen/auth/resent_password_page.dart';
 import 'package:mobile_app_dea/screen/auth/sign_in_screen.dart';
 import 'package:mobile_app_dea/screen/auth/sign_up.dart';
+import 'package:mobile_app_dea/screen/auth/otp_verification_screen.dart';
 import 'package:mobile_app_dea/screen/entry_screen_p2.dart';
 import 'package:mobile_app_dea/screen/home/home_screen.dart';
 import 'package:mobile_app_dea/screen/profile/Edit_profile/edit_from.dart';
@@ -89,6 +90,13 @@ class AppPages {
         path: AppRoutespath.signUpScreen,
         builder: (context, state) =>
             const SignUpScreen(), // Placeholder for SignUpScreen
+      ),
+      GoRoute(
+        path: AppRoutespath.otpVerificationScreen,
+        builder: (context, state) {
+          final email = state.extra as String? ?? '';
+          return OtpVerificationScreen(email: email);
+        },
       ),
       GoRoute(
         path: AppRoutespath.resentPasswordPage,

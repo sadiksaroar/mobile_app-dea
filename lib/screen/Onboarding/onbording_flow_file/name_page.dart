@@ -136,9 +136,6 @@ class _NamePageState extends State<NamePage> {
   late TextEditingController _nameController;
   late FocusNode _focusNode;
 
-  bool _isButtonEnabled = false;
-  bool _isFocused = false;
-
   @override
   void initState() {
     super.initState();
@@ -146,15 +143,11 @@ class _NamePageState extends State<NamePage> {
     _focusNode = FocusNode();
 
     _focusNode.addListener(() {
-      setState(() {
-        _isFocused = _focusNode.hasFocus;
-      });
+      setState(() {});
     });
 
     _nameController.addListener(() {
-      setState(() {
-        _isButtonEnabled = _nameController.text.trim().isNotEmpty;
-      });
+      setState(() {});
     });
   }
 

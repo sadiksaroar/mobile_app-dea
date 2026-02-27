@@ -76,7 +76,7 @@ class _PopupSpekingState extends State<PopupSpeking> {
               ),
             ),
             const SizedBox(height: 20),
-            Container(height: 0.5, color: Colors.white.withOpacity(0.2)),
+            Container(height: 0.5, color: Colors.white.withValues(alpha: 0.2)),
             Row(
               children: [
                 Expanded(
@@ -99,7 +99,7 @@ class _PopupSpekingState extends State<PopupSpeking> {
                 Container(
                   width: 0.5,
                   height: 44,
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                 ),
                 Expanded(
                   child: TextButton(
@@ -202,7 +202,7 @@ class _PopupSpekingState extends State<PopupSpeking> {
                 Container(
                   width: 0.5,
                   height: 44,
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                 ),
                 Expanded(
                   child: TextButton(

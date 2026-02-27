@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:go_router/go_router.dart';
-import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
+
 import 'package:mobile_app_dea/screen/home/swaipe_to_talk/screen_flow_controller.dart';
 import 'package:mobile_app_dea/screen/home/swaipe_to_talk/voice_cheack/voice_check_controller.dart';
 
@@ -894,6 +893,7 @@ class _PoupSpkingState extends State<PoupSpking> with ScreenFlowMixin {
                   height: 210.w,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
+                    // ignore: deprecated_member_use
                     color: const Color(0xFF5B9DFF).withOpacity(0.1),
                   ),
                   // child: CustomPaint(

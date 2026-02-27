@@ -109,7 +109,7 @@ class _SuggestedTaskOverviewState extends State<SuggestedTaskOverview> {
             width: 40 * s,
             height: 40 * s,
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.5),
+              color: Colors.white.withValues(alpha: 0.5),
               shape: BoxShape.circle,
             ),
             child: Icon(
@@ -142,7 +142,7 @@ class _SuggestedTaskOverviewState extends State<SuggestedTaskOverview> {
             height: 54 * s,
             child: DecoratedBox(
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.5),
+                color: Colors.white.withValues(alpha: 0.5),
                 shape: BoxShape.circle,
               ),
               child: Padding(
@@ -247,7 +247,7 @@ class _SuggestedTaskOverviewState extends State<SuggestedTaskOverview> {
                       isCallEnabled = value;
                     });
                   },
-                  activeColor: Colors.white,
+                  activeThumbColor: Colors.white,
                   activeTrackColor: const Color(0xFF4542EB),
                   inactiveThumbColor: Colors.white,
                   inactiveTrackColor: const Color(0xFFB0B0B0),
@@ -300,7 +300,7 @@ class _SuggestedTaskOverviewState extends State<SuggestedTaskOverview> {
                       isRepeatQuestEnabled = value;
                     });
                   },
-                  activeColor: Colors.white,
+                  activeThumbColor: Colors.white,
                   activeTrackColor: const Color(0xFF4542EB),
                   inactiveThumbColor: Colors.white,
                   inactiveTrackColor: const Color(0xFFB0B0B0),
@@ -349,7 +349,7 @@ class _SuggestedTaskOverviewState extends State<SuggestedTaskOverview> {
                   isSetAlarmEnabled = value;
                 });
               },
-              activeColor: Colors.white,
+              activeThumbColor: Colors.white,
               activeTrackColor: const Color(0xFF4542EB),
               inactiveThumbColor: Colors.white,
               inactiveTrackColor: const Color(0xFFB0B0B0),

@@ -341,9 +341,7 @@ class _NowliProSubscriptionState extends State<NowliProSubscription> {
                         width: double.infinity,
                         height: 72,
                         child: ElevatedButton(
-                          onPressed: () {
-                            // TODO: handle renew subscription
-                          },
+                          onPressed: () {},
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF3F3CD6),
                             shape: RoundedRectangleBorder(

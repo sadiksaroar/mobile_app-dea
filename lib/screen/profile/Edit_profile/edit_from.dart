@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
-import 'package:mobile_app_dea/themes/text_styles.dart';
-import 'package:mobile_app_dea/widget/custom_button.dart';
 
 class EditFrom extends StatefulWidget {
   const EditFrom({super.key});
@@ -456,6 +451,7 @@ class _EditFromState extends State<EditFrom> {
           ),
           boxShadow: [
             BoxShadow(
+              // ignore: deprecated_member_use
               color: Colors.black.withOpacity(0.1),
               blurRadius: 10,
               offset: const Offset(0, 4),

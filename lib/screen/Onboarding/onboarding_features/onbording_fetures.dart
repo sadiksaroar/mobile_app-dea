@@ -1261,7 +1261,6 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
-import 'package:mobile_app_dea/widget/custom_button.dart';
 
 class OnboardingFeatures extends StatelessWidget {
   const OnboardingFeatures({super.key});

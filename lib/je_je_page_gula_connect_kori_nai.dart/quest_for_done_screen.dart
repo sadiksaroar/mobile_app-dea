@@ -26,7 +26,7 @@ class QuestForDoneScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   // App icon
-                  Container(
+                  SizedBox(
                     width: 90,
                     height: 90,
                     child: Image.asset(
@@ -73,7 +73,7 @@ class QuestForDoneScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Container(
+                        SizedBox(
                           width: 20,
                           height: 20,
                           child: Image.asset(

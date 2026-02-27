@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
 import 'package:mobile_app_dea/themes/text_styles.dart';
 import 'package:mobile_app_dea/utlis/color_palette/color_palette.dart';
-import 'package:mobile_app_dea/widget/custom_button.dart';
 
 class EditNameScreen extends StatefulWidget {
   const EditNameScreen({super.key});
@@ -17,30 +14,13 @@ class EditNameScreen extends StatefulWidget {
 
 class _EditNameScreenState extends State<EditNameScreen> {
   final PageController _pageController = PageController();
-  int _currentPage = 0;
 
   String _selectedName = '';
-  final String _selectedGender = '';
 
   @override
   void dispose() {
     _pageController.dispose();
     super.dispose();
-  }
-
-  void _completeEdit() {
-    // print('Name: $_selectedName, Gender: $_selectedGender');
-    // Navigate to the next screen
-    context.push("/popupSpeking");
-  }
-
-  bool _canProceed() {
-    if (_currentPage == 0) {
-      return _selectedName.isNotEmpty;
-    } else if (_currentPage == 1) {
-      return _selectedGender.isNotEmpty;
-    }
-    return false;
   }
 
   @override
@@ -72,9 +52,7 @@ class _EditNameScreenState extends State<EditNameScreen> {
                 controller: _pageController,
                 physics: const NeverScrollableScrollPhysics(),
                 onPageChanged: (index) {
-                  setState(() {
-                    _currentPage = index;
-                  });
+                  setState(() {});
                 },
                 children: [
                   NameSelectionPage(
@@ -124,95 +102,6 @@ class _EditNameScreenState extends State<EditNameScreen> {
       ),
     );
   }
-
-  Widget _buildHeader() {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          // Back button
-          GestureDetector(
-            onTap: () {
-              context.push("/onbordingFetures");
-            },
-            child: SizedBox(
-              height: 56,
-              width: 56,
-              child: CircleAvatar(
-                child: Assets.svgIcons.backIconSvg.svg(height: 56, width: 56),
-              ),
-            ),
-          ),
-
-          SizedBox(width: 20),
-
-          // Progress bar
-          Expanded(
-            child: Container(
-              height: 10,
-              decoration: ShapeDecoration(
-                color: const Color(0xFFC3DBFF),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(999),
-                ),
-              ),
-              child: FractionallySizedBox(
-                alignment: Alignment.centerLeft,
-                widthFactor: 0.5, // 3/6 = 0.5
-                child: Container(
-                  decoration: ShapeDecoration(
-                    color: const Color(0xFF3D87F5),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(999),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-
-          SizedBox(width: 15),
-
-          // Progress text
-          Text(
-            '6/6',
-            style: TextStyle(
-              color: const Color(0xFF4C586E),
-              fontSize: 12,
-              fontFamily: 'Work Sans',
-              fontWeight: FontWeight.w400,
-              height: 1.40,
-            ),
-          ),
-
-          // SizedBox(width: 5),
-
-          // Skip button - Fixed navigation
-          GestureDetector(
-            onTap: () {
-              context.push("/onboardingScreen"); // Skip to next screen
-            },
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Text(
-                'Skip',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: const Color(0xFF011F54),
-                  fontSize: 18,
-                  fontFamily: 'Work Sans',
-                  fontWeight: FontWeight.w900,
-                  height: 0.80,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
 
 class NameSelectionPage extends StatefulWidget {
@@ -237,7 +126,6 @@ class _NameSelectionPageState extends State<NameSelectionPage>
 
   bool _showTextField = false;
   int _currentAvatarIndex = 0;
-  final bool _isAnimating = false;
   bool _showNameDisplay = true;
 
   // Avatar list with PNG images
@@ -368,7 +256,7 @@ class _NameSelectionPageState extends State<NameSelectionPage>
                         : avatars[_currentAvatarIndex].assetPath,
                     onEditTap: () {
                       // Add your edit functionality here
-                      print('Edit icon tapped');
+                      debugPrint('Edit icon tapped');
                     },
                   ),
                 ),
@@ -569,6 +457,7 @@ class CharacterWidget extends StatelessWidget {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
+                    // ignore: deprecated_member_use
                     color: Colors.black.withOpacity(0.1),
                     blurRadius: 8,
                     offset: const Offset(0, 2),

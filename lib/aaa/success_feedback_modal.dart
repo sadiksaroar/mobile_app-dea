@@ -9,14 +9,14 @@ class SuccessFeedbackModal extends StatefulWidget {
   final VoidCallback onDismiss;
 
   const SuccessFeedbackModal({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     required this.feedbackItems,
     required this.nextStepText,
     required this.onSaveReflection,
     required this.onDismiss,
-  }) : super(key: key);
+  });
 
   @override
   State<SuccessFeedbackModal> createState() => _SuccessFeedbackModalState();
@@ -224,7 +224,7 @@ class FeedbackItem {
 class FeedbackItemWidget extends StatelessWidget {
   final FeedbackItem item;
 
-  const FeedbackItemWidget({Key? key, required this.item}) : super(key: key);
+  const FeedbackItemWidget({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -237,6 +237,7 @@ class FeedbackItemWidget extends StatelessWidget {
             width: 40,
             height: 40,
             decoration: BoxDecoration(
+              // ignore: deprecated_member_use
               color: item.iconColor.withOpacity(0.1),
               borderRadius: BorderRadius.circular(8),
             ),

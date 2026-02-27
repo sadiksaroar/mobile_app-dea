@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CallSummary extends StatelessWidget {
+  const CallSummary({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +37,7 @@ class CallSummary extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 // Avatar
-                Container(
+                SizedBox(
                   width: 100,
                   height: 100,
 
@@ -228,7 +230,7 @@ class CallSummary extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
             width: 40,
             height: 40,
 

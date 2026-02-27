@@ -79,7 +79,7 @@ class _EditQuestPageState extends State<EditQuestPage> {
               left: 0,
               right: 0,
               bottom: 0,
-              child: Container(
+              child: SizedBox(
                 width: width,
                 height: 108,
                 child: Stack(
@@ -235,7 +235,7 @@ class _EditQuestPageState extends State<EditQuestPage> {
                   isSetAlarmEnabled = value;
                 });
               },
-              activeColor: Colors.white,
+              activeThumbColor: Colors.white,
               activeTrackColor: const Color(0xFF4542EB),
               inactiveThumbColor: Colors.white,
               inactiveTrackColor: const Color(0xFFB0B0B0),

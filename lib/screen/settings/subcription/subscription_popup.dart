@@ -13,15 +13,12 @@ class SubscriptionPage extends StatefulWidget {
 
 class _SubscriptionPageState extends State<SubscriptionPage> {
   final ScrollController _scrollController = ScrollController();
-  double _scrollOffset = 0;
 
   @override
   void initState() {
     super.initState();
     _scrollController.addListener(() {
-      setState(() {
-        _scrollOffset = _scrollController.offset;
-      });
+      setState(() {});
     });
   }
 

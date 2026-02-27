@@ -28,27 +28,6 @@ class _CreateQuestPageState extends State<CreateQuestPage> {
   String selectedDateOption = 'Today';
   // int _currentIndex = 0;
 
-  // void _onNavTap(int index) {
-  //   setState(() {
-  //     _currentIndex = index;
-  //   });
-
-  //   switch (index) {
-  //     case 0:
-  //       context.go(AppRoutespath.homePage);
-  //       break;
-  //     case 1:
-  //       context.go(AppRoutespath.chatBoot);
-  //       break;
-  //     case 2:
-  //       context.go(AppRoutespath.explor);
-  //       break;
-  //     case 3:
-  //       context.go(AppRoutespath.user);
-  //       break;
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
@@ -97,7 +76,7 @@ class _CreateQuestPageState extends State<CreateQuestPage> {
               left: 0,
               right: 0,
               bottom: 0,
-              child: Container(
+              child: SizedBox(
                 width: width,
                 height: 108,
                 child: Stack(
@@ -106,7 +85,7 @@ class _CreateQuestPageState extends State<CreateQuestPage> {
                     Positioned(
                       left: 0,
                       top: 74,
-                      child: Container(
+                      child: SizedBox(
                         width: width,
                         height: 34,
                         child: Stack(

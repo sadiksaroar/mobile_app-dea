@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_dea/core/gen/assets.gen.dart';
-import 'package:go_router/go_router.dart';
-import 'package:mobile_app_dea/core%20/app_routes/app_routes.dart';
+
 import 'package:mobile_app_dea/screen/home/swaipe_to_talk/screen_flow_controller.dart';
 
 class PoupError extends StatefulWidget {
@@ -28,120 +28,10 @@ class _PoupErrorState extends State<PoupError> with ScreenFlowMixin {
   // -------------------------------
   // LANGUAGE BOTTOM SHEET
   // -------------------------------
-  void _showLanguageSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      isScrollControlled: true,
-      builder: (_) {
-        return Transform.translate(
-          offset: const Offset(0, -20), // Move up 20px
-          child: Container(
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-            ),
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const SizedBox(height: 16),
-                const Text(
-                  'Select Language',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                const Divider(),
-
-                _languageTile("English"),
-                _languageTile("Deutsch"),
-                _languageTile("Español"),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-  Widget _languageTile(String title) {
-    return ListTile(
-      title: Text(
-        title,
-        style: TextStyle(
-          fontWeight: selectedLanguage == title
-              ? FontWeight.bold
-              : FontWeight.normal,
-          color: selectedLanguage == title ? Colors.blue : Colors.black,
-        ),
-      ),
-      trailing: selectedLanguage == title
-          ? const Icon(Icons.check, color: Colors.blue)
-          : null,
-      onTap: () {
-        setState(() => selectedLanguage = title);
-        Navigator.pop(context);
-        _showVoiceSheet(context);
-      },
-    );
-  }
 
   // -------------------------------
   // VOICE BOTTOM SHEET
   // -------------------------------
-  void _showVoiceSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      isScrollControlled: true,
-      builder: (_) {
-        return Transform.translate(
-          offset: const Offset(0, -20),
-          child: Container(
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-            ),
-            padding: const EdgeInsets.only(left: 10, right: 10, bottom: 30),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const SizedBox(height: 16),
-                const Text(
-                  'Choose Voice',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                const Divider(),
-
-                _voiceTile("Male"),
-                _voiceTile("Female"),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-  Widget _voiceTile(String title) {
-    return ListTile(
-      title: Text(
-        title,
-        style: TextStyle(
-          fontWeight: selectedVoice == title
-              ? FontWeight.bold
-              : FontWeight.normal,
-          color: selectedVoice == title ? Colors.blue : Colors.black,
-        ),
-      ),
-      trailing: selectedVoice == title
-          ? const Icon(Icons.check, color: Colors.blue)
-          : null,
-      onTap: () {
-        setState(() => selectedVoice = title);
-        Navigator.pop(context);
-      },
-    );
-  }
 
   // -------------------------------
   // MAIN SCREEN UI
@@ -282,10 +172,9 @@ class _PoupErrorState extends State<PoupError> with ScreenFlowMixin {
                   Text(
                     'You didn’t say anything?\nHold and speak again.',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: const Color(0xFF4542EB) /* Text-text-primary */,
+                    style: GoogleFonts.workSans(
+                      color: const Color(0xFF4542EB),
                       fontSize: 18,
-                      fontFamily: 'Work Sans',
                       fontWeight: FontWeight.w600,
                       height: 1.40,
                       letterSpacing: -0.90,

@@ -176,7 +176,7 @@ class CustomNextButton extends StatelessWidget {
               boxShadow: isEnabled
                   ? [
                       BoxShadow(
-                        color: Colors.orange.withOpacity(0.3),
+                        color: Colors.orange.withValues(alpha: 0.3),
                         blurRadius: 10,
                         offset: const Offset(0, 5),
                       ),

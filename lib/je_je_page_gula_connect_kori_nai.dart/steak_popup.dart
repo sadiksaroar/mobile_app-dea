@@ -169,6 +169,7 @@ class _StreakScreenState extends State<StreakScreen> {
                         width: 36,
                         height: 36,
                         decoration: BoxDecoration(
+                          // ignore: deprecated_member_use
                           color: Colors.white.withOpacity(0.7),
                           shape: BoxShape.circle,
                         ),

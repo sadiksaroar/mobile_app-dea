@@ -120,7 +120,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           _soundsEnabled = value;
                         });
                       },
-                      activeColor: Colors.white,
+                      activeThumbColor: Colors.white,
                       activeTrackColor: const Color(0xFF4542EB),
                       inactiveThumbColor: Colors.white,
                       inactiveTrackColor: const Color(0xFFB0B0B0),
@@ -363,6 +363,4 @@ class _SettingsScreenState extends State<SettingsScreen> {
       },
     );
   }
-
-  void _performLogout() {}
 }

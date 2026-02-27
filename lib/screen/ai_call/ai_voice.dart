@@ -75,23 +75,21 @@ class _AiVoiceState extends State<AiVoice> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 spacing: 8,
                 children: [
-                  Container(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      spacing: 10,
-                      children: [
-                        SizedBox(
-                          width: 48,
-                          height: 48,
-                          child: Image.asset(
-                            'assets/images/puse.png',
-                            fit: BoxFit.cover,
-                          ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    spacing: 10,
+                    children: [
+                      SizedBox(
+                        width: 48,
+                        height: 48,
+                        child: Image.asset(
+                          'assets/images/puse.png',
+                          fit: BoxFit.cover,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.min,
@@ -190,66 +188,59 @@ class _AiVoiceState extends State<AiVoice> {
                         // ),
                       ],
                     ),
-                    Container(
-                      // width: 80,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        spacing: 12,
-                        children: [
-                          SizedBox(
-                            width: 64,
-                            height: 64,
-                            // padding: const EdgeInsets.all(10),
-                            // decoration: ShapeDecoration(
-                            //   color: const Color(
-                            //     0xFFC3DBFF,
-                            //   ) /* Background-bg-primary-level-2 */,
-                            //   shape: RoundedRectangleBorder(
-                            //     borderRadius: BorderRadius.circular(999),
-                            //   ),
-                            // ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                GestureDetector(
-                                  onTap: () {
-                                    // Handle "Mark as done" tap
-                                    context.push("/homeScreen");
-                                  },
-                                  child: Container(
-                                    // width: 64,
-                                    // height: 64,
-                                    child: Image.asset(
-                                      'assets/images/right_sound.png',
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      spacing: 12,
+                      children: [
+                        SizedBox(
+                          width: 64,
+                          height: 64,
+                          // padding: const EdgeInsets.all(10),
+                          // decoration: ShapeDecoration(
+                          //   color: const Color(
+                          //     0xFFC3DBFF,
+                          //   ) /* Background-bg-primary-level-2 */,
+                          //   shape: RoundedRectangleBorder(
+                          //     borderRadius: BorderRadius.circular(999),
+                          //   ),
+                          // ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  // Handle "Mark as done" tap
+                                  context.push("/homeScreen");
+                                },
+                                child: Image.asset(
+                                  'assets/images/right_sound.png',
+                                  fit: BoxFit.cover,
                                 ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 80,
-                            child: Text(
-                              'Mark as done',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: const Color(
-                                  0xFF011F54,
-                                ) /* Text-text-default */,
-                                fontSize: 12,
-                                fontFamily: 'Work Sans',
-                                fontWeight: FontWeight.w600,
-                                height: 1,
                               ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 80,
+                          child: Text(
+                            'Mark as done',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: const Color(
+                                0xFF011F54,
+                              ) /* Text-text-default */,
+                              fontSize: 12,
+                              fontFamily: 'Work Sans',
+                              fontWeight: FontWeight.w600,
+                              height: 1,
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

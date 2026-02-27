@@ -11,7 +11,6 @@ class SwipeToTalkLoading extends StatefulWidget {
 class _SwipeToTalkLoadingState extends State<SwipeToTalkLoading>
     with SingleTickerProviderStateMixin, ScreenFlowMixin {
   late AnimationController _controller;
-  late Animation<double> _animation;
   int _currentDot = 0;
 
   @override
@@ -30,7 +29,6 @@ class _SwipeToTalkLoadingState extends State<SwipeToTalkLoading>
             }
           })
           ..repeat();
-    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInOut);
     _startDotAnimation();
 
     // Initialize automatic navigation flow (3 seconds delay)
@@ -72,6 +70,7 @@ class _SwipeToTalkLoadingState extends State<SwipeToTalkLoading>
                   decoration: BoxDecoration(
                     color: index == _currentDot
                         ? Colors.blueAccent
+                        // ignore: deprecated_member_use
                         : Colors.blueAccent.withOpacity(0.3),
                     shape: BoxShape.circle,
                   ),

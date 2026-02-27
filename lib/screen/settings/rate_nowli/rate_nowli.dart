@@ -148,7 +148,6 @@ class RatingPopup extends StatelessWidget {
         ],
       ),
     );
-    ;
   }
 }
 /*
